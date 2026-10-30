@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#151b22">
+  <title>Голубь v2 — ход работы</title>
+  <style>
+    :root{color-scheme:dark;font:16px/1.6 system-ui,sans-serif;background:#10151c;color:#e7edf4}
+    *{box-sizing:border-box}body{margin:0}main{max-width:1160px;padding:56px 28px 80px;margin:auto}
+    a{color:#a6cafa}a:hover{color:#fff}.eyebrow{letter-spacing:.14em;text-transform:uppercase;color:#e4b965;font-size:.8rem}
+    h1{font-size:clamp(2.6rem,7vw,5.8rem);line-height:1.05;margin:18px 0 24px;letter-spacing:-.055em;font-weight:800}
+    .intro{font-size:1.2rem;max-width:760px;color:#b7c5d5}nav{display:flex;flex-wrap:wrap;gap:12px 24px;margin:30px 0 44px}
+    h2{font-size:1.6rem;line-height:1.3;margin:0 0 18px}.card{padding:28px;border:1px solid #354252;background:#18212c;border-radius:16px}
+    .status{border-left:4px solid #e4b965}.subtle{color:#9dabbc}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:20px 0 44px}
+    .metric strong{font-size:2rem;display:block;color:#e4b965}.metric span{color:#b7c5d5}.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin:20px 0 44px}
+    figure{margin:0;border:1px solid #354252;border-radius:14px;overflow:hidden;background:#18212c}figure img{width:100%;aspect-ratio:16/9;object-fit:contain;display:block;background:#0a0e14}
+    figcaption{padding:16px 20px}figcaption small{display:block;color:#9dabbc}.checks{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:18px 0 36px}
+    .check{padding:16px 20px;border:1px solid #354252;border-radius:10px}.ok{color:#94d6b0}.failed{color:#ffb29d}ol{padding-left:24px}li{margin:10px 0}
+    footer{border-top:1px solid #354252;padding-top:24px;margin-top:44px;font-size:.85rem;color:#9dabbc}.notice{color:#e4b965}.loading{min-height:100px}
+    @media(max-width:650px){main{padding:34px 18px 60px}.gallery,.checks{grid-template-columns:1fr}.metrics{gap:8px}.metric{padding:16px 10px}.metric strong{font-size:1.6rem}.metric span{font-size:.8rem}}
+  </style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">PiGine / Pascal / WebAssembly</div>
+  <h1>Голубь.<br>Вторая посадка.</h1>
+  <p class="intro">Переносим нативную игру в браузер на том же Pascal-коде. Здесь появляются результаты по мере работы: проверки, кадры и затем сама игра.</p>
+  <nav aria-label="Ссылки проекта">
+    <a href="https://github.com/andrewsboev/golub-play-v2">Репозиторий v2 ↗</a>
+    <a href="https://andrewsboev.github.io/golub-play/">Играть в первую версию ↗</a>
+  </nav>
+  <section class="card status" aria-labelledby="status-title">
+    <div class="eyebrow">Сейчас в работе</div>
+    <h2 id="status-title">Этап 0. Эталон перед переносом</h2>
+    <p>Фиксируем поведение Windows-версии, сохраняем первую веб-версию и готовим воспроизводимые маршруты для сравнения.</p>
+    <p class="notice">Это страница прогресса. Игровая Wasm-сборка ещё не готова; снимки ниже сняты в Windows-версии.</p>
+    <p class="subtle" id="updated">Загружаем последний отчёт…</p>
+  </section>
+  <div id="content" class="loading" aria-live="polite"></div>
+  <h2>Что дальше</h2>
+  <ol>
+    <li><strong>Компилятор и независимые модули.</strong> Закрепить FPC для браузера и проверить Pascal-код в Wasm.</li>
+    <li><strong>Ресурсы, память и звук.</strong> Проверить декодирование в worker и аудио до разделения движка.</li>
+    <li><strong>Графика и вода.</strong> Добавить WebGL2, шейдеры и настоящую водную сцену.</li>
+    <li><strong>Вся игра.</strong> Подключить сцены, сохранения, управление и мобильный интерфейс.</li>
+  </ol>
+  <footer>Первая версия остаётся доступна по прежнему адресу. Снимки этой страницы — промежуточные результаты разработки, а не готовая браузерная игра.</footer>
+</main>
+<script type="module">
+  const text = (tag, value, className) => { const e=document.createElement(tag);e.textContent=value;if(className)e.className=className;return e; };
+  try {
+    const pointerResponse=await fetch('./current-progress.json',{cache:'no-store'});
+    if(!pointerResponse.ok)throw new Error('Не удалось получить адрес отчёта');
+    const pointer=await pointerResponse.json();
+    if(!/^[a-z0-9-]+$/.test(pointer.id))throw new Error('Некорректный адрес отчёта');
+    const base=new URL(`./progress/${pointer.id}/`,location.href);
+    const response=await fetch(new URL('report.json',base));
+    if(!response.ok)throw new Error('Не удалось загрузить отчёт');
+    const report=await response.json();
+    document.querySelector('#updated').textContent=`Обновлено: ${new Date(report.updatedAt).toLocaleString('ru-RU')}. Этап 0 продолжается.`;
+    const content=document.querySelector('#content');content.replaceChildren();
+    const metrics=text('div','', 'metrics');
+    for(const [value,label] of [[`${report.passedRoutes}/${report.totalRoutes}`,'маршрутов проверено'],[report.screenshots.length,'контрольных кадров'],['0/19','этапов полностью закрыто']]){
+      const card=text('div','', 'card metric');card.append(text('strong',String(value)),text('span',label));metrics.append(card);
+    }
+    content.append(metrics,text('h2','Последние кадры'));
+    const gallery=text('div','', 'gallery');
+    for(const shot of report.screenshots){
+      const figure=document.createElement('figure'),link=document.createElement('a'),img=document.createElement('img');
+      link.href=new URL(shot.file,base).href;img.src=link.href;img.alt=shot.title;img.loading='lazy';img.width=1280;img.height=720;link.append(img);
+      const caption=text('figcaption',shot.title);caption.append(text('small',shot.description));figure.append(link,caption);gallery.append(figure);
+    }
+    content.append(gallery,text('h2','Автоматические проверки'));
+    const checks=text('div','', 'checks');
+    for(const route of report.routes){const card=text('div','', 'check');card.append(text('strong',route.status==='passed'?'✓ '+route.id:'• '+route.id,route.status==='passed'?'ok':'failed'),text('div',route.purpose,'subtle'));checks.append(card);}
+    content.append(checks);
+    if(report.gates.length){
+      const gates=text('div','', 'card');gates.append(text('h2','Сборка и прогоны'));
+      for(const gate of report.gates)gates.append(text('p',`${gate.name}: ${gate.status==='passed'?'пройдено':'есть ошибки'}`,gate.status==='passed'?'ok':'failed'));
+      content.append(gates);
+    }
+    const pending=text('section','', 'card');pending.append(text('h2','До завершения этапа'));
+    for(const item of report.pending)pending.append(text('p',item,'subtle'));
+    content.append(pending);
+  }catch(error){document.querySelector('#content').replaceChildren(text('p',`${error.message}. Попробуйте обновить страницу.`,'notice'));}
+</script>
+</body>
+</html>
