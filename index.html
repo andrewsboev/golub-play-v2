@@ -186,9 +186,9 @@
         <a href="https://andrewsboev.github.io/golub-play/">Играть в первую версию ↗</a>
       </nav>
       <section class="card status" aria-labelledby="status-title">
-        <div class="eyebrow">Сейчас в работе</div>
+        <div class="eyebrow" id="stage-label">Сейчас в работе</div>
         <h2 id="status-title">Этап 0. Эталон перед переносом</h2>
-        <p>
+        <p id="stage-description">
           Фиксируем поведение Windows-версии, сохраняем первую веб-версию и готовим воспроизводимые маршруты для
           сравнения.
         </p>
@@ -229,14 +229,20 @@
         if (!response.ok) throw new Error('Не удалось загрузить отчёт');
         const report = await response.json();
         document.querySelector('#updated').textContent =
-          `Обновлено: ${new Date(report.updatedAt).toLocaleString('ru-RU')}. Этап 0 продолжается.`;
+          `Обновлено: ${new Date(report.updatedAt).toLocaleString('ru-RU')}.`;
+        if (report.stage0Complete) {
+          document.querySelector('#stage-label').textContent = 'Готово';
+          document.querySelector('#status-title').textContent = 'Этап 0 завершён. Эталон сохранён.';
+          document.querySelector('#stage-description').textContent =
+            'Проверки проходят, контрольные кадры и состояния зафиксированы. Историческая версия сохранена. Следующий шаг — компилятор FPC для браузера.';
+        }
         const content = document.querySelector('#content');
         content.replaceChildren();
         const metrics = text('div', '', 'metrics');
         for (const [value, label] of [
           [`${report.passedRoutes}/${report.totalRoutes}`, 'маршрутов проверено'],
           [report.screenshots.length, 'контрольных кадров'],
-          ['0/19', 'этапов полностью закрыто'],
+          [`${report.completedStages ?? 0}/19`, 'этапов полностью закрыто'],
         ]) {
           const card = text('div', '', 'card metric');
           card.append(text('strong', String(value)), text('span', label));
@@ -282,15 +288,17 @@
             gates.append(
               text(
                 'p',
-                `${gate.name}: ${gate.status === 'passed' ? 'пройдено' : 'есть ошибки'}`,
-                gate.status === 'passed' ? 'ok' : 'failed',
+                `${gate.name}: ${gate.status === 'passed' ? 'пройдено' : gate.status === 'skipped' ? 'пропущено по просьбе пользователя' : 'есть ошибки'}`,
+                gate.status === 'passed' ? 'ok' : gate.status === 'skipped' ? 'subtle' : 'failed',
               ),
             );
           content.append(gates);
         }
         const pending = text('section', '', 'card');
-        pending.append(text('h2', 'До завершения этапа'));
+        pending.append(text('h2', report.stage0Complete ? 'Следующий этап' : 'До завершения этапа'));
         for (const item of report.pending) pending.append(text('p', item, 'subtle'));
+        if (report.stage0Complete) pending.append(text('p', report.nextStep));
+        if (report.scopeNote) pending.append(text('p', report.scopeNote, 'subtle'));
         content.append(pending);
       } catch (error) {
         document
