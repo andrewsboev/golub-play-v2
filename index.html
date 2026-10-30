@@ -262,6 +262,12 @@
           spikes.append(link);
           for (const check of report.stage1.checks)
             spikes.append(text('p', `✓ ${check.browser} ${check.version} · ${check.configuration}`, 'ok'));
+          if (report.stage1.cleanBuildPassed)
+            spikes.append(
+              text('p', '✓ Toolchain собран с нуля в новом каталоге; браузерные проверки повторены.', 'ok'),
+            );
+          if (report.stage1.nativeCompilerUnchanged)
+            spikes.append(text('p', '✓ Системный FPC 3.2.2 не изменён.', 'ok'));
           for (const item of report.stage1.pending) spikes.append(text('p', item, 'subtle'));
           content.append(spikes);
         }
