@@ -230,7 +230,12 @@
         const report = await response.json();
         document.querySelector('#updated').textContent =
           `Обновлено: ${new Date(report.updatedAt).toLocaleString('ru-RU')}.`;
-        if (report.stage0Complete) {
+        if (report.stage === 1 && report.stage1) {
+          document.querySelector('#stage-label').textContent = 'Этап 1';
+          document.querySelector('#status-title').textContent = 'Первые модули Pascal Wasm работают в браузере.';
+          document.querySelector('#stage-description').textContent =
+            'Компилятор закреплён. Вычисления, Unicode, исключения и обратные вызовы проходят проверки в Debug и Release. Полная игра переносится следующими этапами.';
+        } else if (report.stage0Complete) {
           document.querySelector('#stage-label').textContent = 'Готово';
           document.querySelector('#status-title').textContent = 'Этап 0 завершён. Эталон сохранён.';
           document.querySelector('#stage-description').textContent =
@@ -248,7 +253,19 @@
           card.append(text('strong', String(value)), text('span', label));
           metrics.append(card);
         }
-        content.append(metrics, text('h2', 'Последние кадры'));
+        content.append(metrics);
+        if (report.stage1) {
+          const spikes = text('section', '', 'card');
+          spikes.append(text('h2', 'Запустить WebAssembly на своём устройстве'));
+          const link = text('a', 'Открыть три пробных модуля →');
+          link.href = new URL(report.stage1.page, base).href;
+          spikes.append(link);
+          for (const check of report.stage1.checks)
+            spikes.append(text('p', `✓ ${check.browser} ${check.version} · ${check.configuration}`, 'ok'));
+          for (const item of report.stage1.pending) spikes.append(text('p', item, 'subtle'));
+          content.append(spikes);
+        }
+        content.append(text('h2', 'Контрольные кадры Windows — этап 0'));
         const gallery = text('div', '', 'gallery');
         for (const shot of report.screenshots) {
           const figure = document.createElement('figure'),
