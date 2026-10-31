@@ -285,6 +285,10 @@
           resources.append(text('p',`${report.stage2b.images} реальных изображений в отчёте. Decoder worker передаёт готовые пиксели и вспомогательные данные; WebGL принимает их порциями. Общий PCM используется Windows и Wasm.`));
           if(report.stage2b.nativePcmByteIdentical)resources.append(text('p','✓ Windows PCM до и после выделения общего модуля совпал побайтно.','ok'));
           if(report.stage2b.tenMinuteAudioPassed)resources.append(text('p','✓ Есть прошедший 10-минутный desktop-аудиопрогон; проверка телефона учитывается отдельно.','ok'));
+          if(report.stage2b.candidate){
+            resources.append(text('p','Кандидат мобильного профиля: уменьшенные наземные текстуры; UI/курсор/dive сохранены. Физические targets 1440×810, логическое поле 1920×1080. Полная игровая сцена ещё не перенесена.'));
+            for(const group of report.stage2b.candidate.groups||[])resources.append(text('p',`${group.id}: CPU ${(group.cpuBytesWithReserve/1048576).toFixed(1)} МиБ · GPU ${(group.gpuBytesWithReserve/1048576).toFixed(1)} МиБ с резервом 25%`,group.mobileAccountingPassed?'ok':'notice'));
+          }
           for(const check of report.stage2b.checks)resources.append(text('p',`${check.browser} ${check.version} · ${check.configuration}: ${check.status}${check.error?' · '+check.error:''}`,check.status==='passed'?'ok':'subtle'));
           for(const item of report.stage2b.pending)resources.append(text('p',item,'subtle'));content.append(resources);
         }

@@ -1,0 +1,2605 @@
+{
+  "schemaVersion": 1,
+  "stage": 2,
+  "updatedAt": "2026-10-31T04:59:39.131Z",
+  "stage0Complete": true,
+  "completedStages": 1,
+  "nextStep": "Проверить 2Б на телефоне, принять группы/профиль ресурсов и аудиотракт. До закрытия A1 этап 3 не начинать.",
+  "sourceRevision": "1961fef6fe60548cc9f7930d66f57c9258f45aba",
+  "passedRoutes": 13,
+  "totalRoutes": 13,
+  "screenshots": [
+    {
+      "route": "dive",
+      "shot": "dive-swim_000",
+      "title": "Водолаз в движении",
+      "description": "Вода, пузырьки и подводный мир",
+      "file": "dive-dive-swim_000.png",
+      "sha256": "c7011b81f571fd35302c676ab6ea4baad2499c7b687905d33cfe4b2e88dace08"
+    },
+    {
+      "route": "level",
+      "shot": "level",
+      "title": "Городской уровень",
+      "description": "Обычная игра, камера и персонажи",
+      "file": "level-level.png",
+      "sha256": "ddbe61bfe9aab5a5ca42f4de8674d69fd3463ef172d9260e2957bf03a75151fd"
+    },
+    {
+      "route": "title-ru",
+      "shot": "title-ru",
+      "title": "Титульный экран",
+      "description": "Русский текст и главное меню",
+      "file": "title-ru-title-ru.png",
+      "sha256": "bc5267997fe2502cab3d168eec5f8df41c26d13a5e4301ecc71f9347851de8fa"
+    },
+    {
+      "route": "menus",
+      "shot": "settings-en",
+      "title": "Настройки на английском",
+      "description": "Смена языка во время работы",
+      "file": "menus-settings-en.png",
+      "sha256": "213837ff55686bc9579928f69880bfe4902c17b681a4d61e9591da95e8ee1688"
+    },
+    {
+      "route": "dive",
+      "shot": "dive-surface",
+      "title": "У поверхности",
+      "description": "Подъём к поверхности и обратное погружение",
+      "file": "dive-dive-surface.png",
+      "sha256": "c6244b5155b47c2c6eababa704ba53dce5b680ed9b4e103b4e9e781e28286969"
+    },
+    {
+      "route": "dive",
+      "shot": "dive-air",
+      "title": "Перед нырком",
+      "description": "Начальная фаза air над водой",
+      "file": "dive-dive-air.png",
+      "sha256": "97d84f3c1cc3510d829a47597d5149113b75f44a52f770580dd19dde49680505"
+    },
+    {
+      "route": "dive",
+      "shot": "dive-entry",
+      "title": "Вход в воду",
+      "description": "Фаза sink, волна и брызги",
+      "file": "dive-dive-entry.png",
+      "sha256": "ca16e72ad568e971933e2e06d98677318ece97717a4628f70e78672d53b645fa"
+    },
+    {
+      "route": "showcase",
+      "shot": "showcase_000",
+      "title": "Витрина PiGine",
+      "description": "Дождь, частицы, свечение и постобработка",
+      "file": "showcase-showcase_000.png",
+      "sha256": "fddba38abe15aafbf681bac5d4499a4505561d1dc408dedc5b66d3930a182f00"
+    }
+  ],
+  "routes": [
+    {
+      "id": "splash",
+      "purpose": "Заставка PiGine, осколки и текст",
+      "status": "passed"
+    },
+    {
+      "id": "title-ru",
+      "purpose": "Титул и длинный русский текст",
+      "status": "passed"
+    },
+    {
+      "id": "title-en",
+      "purpose": "Титул и английский текст",
+      "status": "passed"
+    },
+    {
+      "id": "menus",
+      "purpose": "Выбор уровня, настройки, смена локали внутри процесса",
+      "status": "passed"
+    },
+    {
+      "id": "level",
+      "purpose": "Физика, камера и обычный уровень; повторяемость контрольных полей",
+      "status": "passed"
+    },
+    {
+      "id": "pause",
+      "purpose": "Пауза и возврат с сохранением состояния игры",
+      "status": "passed"
+    },
+    {
+      "id": "save-load",
+      "purpose": "Полное сохранение и загрузка через новый экземпляр сцены, в тестовом TMemoryStore",
+      "status": "passed"
+    },
+    {
+      "id": "restart-write",
+      "purpose": "Запись полного state в изолированный файл перед завершением процесса",
+      "status": "passed"
+    },
+    {
+      "id": "restart-read",
+      "purpose": "Загрузка того же state в новом процессе; пользовательское хранилище не используется",
+      "status": "passed"
+    },
+    {
+      "id": "cutscene",
+      "purpose": "Pascal VM, PigeonScript и субтитры кат-сцены",
+      "status": "passed"
+    },
+    {
+      "id": "film",
+      "purpose": "Кино и его текст",
+      "status": "passed"
+    },
+    {
+      "id": "dive",
+      "purpose": "Нырок air → sink → swim, плавание, поверхность, обратное погружение и выход в меню",
+      "status": "passed"
+    },
+    {
+      "id": "showcase",
+      "purpose": "Независимая витрина PiGine: частицы, погода, blur, post, альфа и текст",
+      "status": "passed"
+    }
+  ],
+  "gates": [
+    {
+      "name": "build-tests",
+      "status": "passed"
+    },
+    {
+      "name": "smoke",
+      "status": "passed"
+    },
+    {
+      "name": "monkey",
+      "status": "skipped"
+    },
+    {
+      "name": "saves",
+      "status": "passed"
+    },
+    {
+      "name": "web-tests",
+      "status": "passed"
+    },
+    {
+      "name": "web-build",
+      "status": "passed"
+    },
+    {
+      "name": "baseline-tests",
+      "status": "passed"
+    }
+  ],
+  "pending": [],
+  "scopeNote": "По решению пользователя дополнительные замеры на устройствах исключены из этапа 0. Эмуляция не выдаётся за испытания телефона. Бюджеты памяти и звука проверяются на этапе 2Б.",
+  "stage1": {
+    "implementationReady": true,
+    "complete": false,
+    "revision": "170b0e9481078be61c655aab62bbd1111191da1b",
+    "compilerHash": "1c18676974797cf708374df47fe2cd744b724283c2b692fcf3ead42bfa00d60c",
+    "files": [
+      {
+        "file": "spikes/index.html",
+        "sha256": "3ff78b1ad8205e8c9fe11a1db3b558612982d916b6cdffe05b30ecd0b8a405e5"
+      },
+      {
+        "file": "spikes/suite.mjs",
+        "sha256": "ecbed65e4bbb8cfdd5d11a3ae152c0590eaf9513ec80b4a6eb611d3c654885ae"
+      },
+      {
+        "file": "spikes/wasm-runtime.mjs",
+        "sha256": "8bcd73daa0d7c1a52934918dd74c32fc539b351cb653ac9cf716dd44e06eae6f"
+      },
+      {
+        "file": "spikes/third-party-notices.txt",
+        "sha256": "a9f27250a958a408957a5de1c7f2a36b3d4682b1f58ac79c11611122d8048fe8"
+      },
+      {
+        "file": "spikes/Debug/compute.wasm",
+        "sha256": "5a40193fc4ee72947e2983bfff3878c86eae6632a54a3e5be722dc8af1d40544"
+      },
+      {
+        "file": "spikes/Debug/runtime.wasm",
+        "sha256": "b522dc3bf3a909442a8f8806fd571463210a522f1ae73b160428e151bb6e5dcc"
+      },
+      {
+        "file": "spikes/Debug/callbacks.wasm",
+        "sha256": "2ebc5815fd41c160f3fc9451c8c6eafe9047273078d2a827131fa00ee3aba950"
+      },
+      {
+        "file": "spikes/Release/compute.wasm",
+        "sha256": "81e69dd14a9a205e1f67d6dd83c92ca71cc5697dfc3c7bcfdaf5aaf6b111230f"
+      },
+      {
+        "file": "spikes/Release/runtime.wasm",
+        "sha256": "ac2d5b33964a775be8aba10298212596b9f0e99fe17ac685a83e8e21cd9e9535"
+      },
+      {
+        "file": "spikes/Release/callbacks.wasm",
+        "sha256": "fdd956096761dd1b28c7dbe723e6ab5e2d5449a2111bd7610df3e74819ac899d"
+      }
+    ],
+    "page": "spikes/index.html",
+    "checks": [
+      {
+        "browser": "chrome",
+        "version": "Chrome/156.0.8078.76",
+        "configuration": "Debug",
+        "status": "passed"
+      },
+      {
+        "browser": "chrome",
+        "version": "Chrome/156.0.8078.76",
+        "configuration": "Release",
+        "status": "passed"
+      },
+      {
+        "browser": "firefox",
+        "version": "firefox/159.0",
+        "configuration": "Debug",
+        "status": "passed"
+      },
+      {
+        "browser": "firefox",
+        "version": "firefox/159.0",
+        "configuration": "Release",
+        "status": "passed"
+      },
+      {
+        "browser": "webkit",
+        "version": "27.2",
+        "configuration": "Debug",
+        "status": "passed"
+      },
+      {
+        "browser": "webkit",
+        "version": "27.2",
+        "configuration": "Release",
+        "status": "passed"
+      }
+    ],
+    "pending": [
+      "Проверка в настоящем Safari на macOS/iOS ещё не выполнена. WebKit на Windows учитывается отдельно."
+    ],
+    "cleanBuildPassed": true,
+    "nativeCompilerUnchanged": true
+  },
+  "stage2a": {
+    "implementationReady": true,
+    "complete": false,
+    "page": "independent/index.html",
+    "modules": [
+      "json",
+      "webp",
+      "physics",
+      "wavefield",
+      "fluidgrid",
+      "pigeonscript"
+    ],
+    "counts": {
+      "units": 78,
+      "includes": 24,
+      "platformBound": 66,
+      "fileCallCandidates": 36,
+      "scenes": 11,
+      "scripts": 34
+    },
+    "files": [
+      {
+        "file": "independent/index.html",
+        "sha256": "b1f1369414bdd8ee03e0f6f0c29624cbcf48d8deb9dea694307e83814dbd6fa0"
+      },
+      {
+        "file": "independent/suite.mjs",
+        "sha256": "efdf7b5b8ebd721e7e8272c72623fa07c61a79f0bf33a5c7dedcb9e736c18052"
+      },
+      {
+        "file": "independent/wasm-runtime.mjs",
+        "sha256": "8bcd73daa0d7c1a52934918dd74c32fc539b351cb653ac9cf716dd44e06eae6f"
+      },
+      {
+        "file": "independent/native-reference.json",
+        "sha256": "21f28b888d239787f916f94870fe20cef5dabb32de2af4146b24f0decebb4330"
+      },
+      {
+        "file": "independent/third-party-notices.txt",
+        "sha256": "a9f27250a958a408957a5de1c7f2a36b3d4682b1f58ac79c11611122d8048fe8"
+      },
+      {
+        "file": "independent/Debug/independent.wasm",
+        "sha256": "b491cb981aefdf13ff7992ee10ac7c122c957048c4a5e251fcb5d5d63e86b77c"
+      },
+      {
+        "file": "independent/Release/independent.wasm",
+        "sha256": "ecb7714741ce7912c1a676e470c7daac9347a712b1bb9036ed554b74270ce9a1"
+      }
+    ],
+    "checks": [
+      {
+        "browser": "chrome",
+        "version": "Chrome/156.0.8078.76",
+        "configuration": "Debug",
+        "status": "passed"
+      },
+      {
+        "browser": "chrome",
+        "version": "Chrome/156.0.8078.76",
+        "configuration": "Release",
+        "status": "passed"
+      },
+      {
+        "browser": "firefox",
+        "version": "firefox/159.0",
+        "configuration": "Debug",
+        "status": "passed"
+      },
+      {
+        "browser": "firefox",
+        "version": "firefox/159.0",
+        "configuration": "Release",
+        "status": "passed"
+      },
+      {
+        "browser": "webkit",
+        "version": "27.2",
+        "configuration": "Debug",
+        "status": "passed"
+      },
+      {
+        "browser": "webkit",
+        "version": "27.2",
+        "configuration": "Release",
+        "status": "passed"
+      }
+    ],
+    "pending": [
+      "Настоящий Safari ещё не проверен: полная приёмка этапа 1 и рубеж A0 остаются открытыми.",
+      "2Б ещё не выполнен: decoder worker, пики групп, мобильный профиль и выбор аудиотракта.",
+      "Перечни ресурсов предварительные: динамические имена и замкнутость групп требуют ручной проверки.",
+      "TVertex/TGpuVertex описаны по исходнику; исполняемый layout-тест после выделения общих types на этапе 3.",
+      "Стандартный Random при одинаковом RandSeed различается между FPC 3.2.2/3.3.1; fixture VM использует явную арифметическую последовательность.",
+      "TWater, renderer и игровые сцены ещё не перенесены; файловые функции VM/import не вызываются в этом harness."
+    ],
+    "tolerances": {
+      "wave": "abs 0.0005 px + rel 0.00002",
+      "waveVolume": "abs 0.05 px² + rel 0.00002",
+      "fluid": "abs 0.0002 + rel 0.00002",
+      "other": "exact"
+    },
+    "nativeFullBuild": {
+      "status": "passed",
+      "engineChecks": 519,
+      "gameChecks": 1650
+    }
+  },
+  "stage2b": {
+    "status": "partial",
+    "page": "resources/index.html",
+    "files": [
+      {
+        "file": "resources/Debug/decoder.wasm",
+        "sha256": "c03502159247d1651538ab757cf38c9bc81fe2456d7949ca9fe530fa63bdbed2"
+      },
+      {
+        "file": "resources/Debug/pcm.wasm",
+        "sha256": "d56c33090af12491bf54fbfa93066e327a76fbc8d19ce8a38a8b7ab49a027a56"
+      },
+      {
+        "file": "resources/Release/decoder.wasm",
+        "sha256": "16c0389144007673f14cc2b74b2d17f09a5092a18830f2b99fd44da419a90977"
+      },
+      {
+        "file": "resources/Release/pcm.wasm",
+        "sha256": "2d13260c843df0b21cd25286284e8e3741d306c2beb677b96e2203b5198eb13c"
+      },
+      {
+        "file": "resources/audio-producer.mjs",
+        "sha256": "8145b1cb43ebf1510aab31c8ce99042a2f80fe019bf701a6178f59d883f569c8"
+      },
+      {
+        "file": "resources/audio-sink.mjs",
+        "sha256": "9c01f3dc44c8327d9a50dd2031dd18d997cbb0e9b567bdf8430c44c61f7cae66"
+      },
+      {
+        "file": "resources/audio-test.mjs",
+        "sha256": "18947250468aecf5f2832f565e5af70254393da02ff138eff3893b114886b044"
+      },
+      {
+        "file": "resources/audio-worker.mjs",
+        "sha256": "7b0e63454fb3c3f2a16a05fd7da1f597705bec4ad35b83b2122af58289effb3c"
+      },
+      {
+        "file": "resources/decoder-client.mjs",
+        "sha256": "5d8d7a932ec891472ecb694123009feac5484ab3c5ada752ac11769b47b4881d"
+      },
+      {
+        "file": "resources/decoder-worker.mjs",
+        "sha256": "b5ba26998f57f2a8fd3ca3e1932756de00d0ba9356f3e8f546e9742f6e60000b"
+      },
+      {
+        "file": "resources/index.html",
+        "sha256": "66e1694e38f6913ae0bc488e79d2a757723531f45e2ee95db9b802217fba4ad4"
+      },
+      {
+        "file": "resources/resampler.mjs",
+        "sha256": "31cee1598adf1a8a61a1306c8066829fe407cc2e74dca9ebada281f2998b65a8"
+      },
+      {
+        "file": "resources/suite.mjs",
+        "sha256": "1accb8d516b83b3c3e90f2386e1e926dfa194d0a83fc546596a6d68dd031e2c7"
+      },
+      {
+        "file": "resources/upload.mjs",
+        "sha256": "5d4e3f6947c4bb25f6e48a398dd1db34f30e638d99d3149869d458a04f88aef1"
+      },
+      {
+        "file": "resources/wasm-runtime.mjs",
+        "sha256": "8bcd73daa0d7c1a52934918dd74c32fc539b351cb653ac9cf716dd44e06eae6f"
+      },
+      {
+        "file": "resources/third-party-notices.txt",
+        "sha256": "a9f27250a958a408957a5de1c7f2a36b3d4682b1f58ac79c11611122d8048fe8"
+      },
+      {
+        "file": "resources/test-assets.json",
+        "sha256": "ce14277bc4c2280c83fb7e20cf02459478117160da0451580b1cee09e847c7c4"
+      },
+      {
+        "file": "resources/resource-budget.json",
+        "sha256": "93518cf4538033882af35fb0cf701b247eade3a0e730ff6090afa8893f079798"
+      },
+      {
+        "file": "resources/native-reference.json",
+        "sha256": "4f3c6513fd9b18bccbc20cc64cf9f6de010475376c00f386fe5021cf8a34d2e0"
+      },
+      {
+        "file": "resources/native-reference.pcm",
+        "sha256": "b47c474ae2ca9c28352a22e221e285cab6005ca3ea133f339d16b3cd11890cea"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_ambient.webp",
+        "sha256": "68da9ec67b7e03a5f4198120a68152371a45dbffe0a51f31a42cd1d12cd26e08"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_bin.webp",
+        "sha256": "6d146f4313d4cb5b86b34e04324bdf8b3508d2ee0afcda2c7050c4edc3bc82f9"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_clerk_nocup.webp",
+        "sha256": "b21fb8f1dfad00a5120803394021455ef1f2d8276be4d140149d7c8c356a3277"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_dog.webp",
+        "sha256": "eca8c2e9ade15ed6010e1973ed2ca6b1bd6ce1b63c766b2df41a09fab3ade2ef"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_fill_facade.webp",
+        "sha256": "f47da523181ee40ce1b75f91d6914d71b4b2e15eee8085478c6dd85f86160e77"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_fill_perches.webp",
+        "sha256": "2c23024c8289bdce4b92f40a33e569a4bb197a1e54d04db19ea4e5f3f66a8063"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_fill_reactive.webp",
+        "sha256": "55b2d5b9b3822788dedded5220e15bb4884914c5b81b1b9a40f90fa01e05576e"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_fill_street.webp",
+        "sha256": "9bb2fa000a4c5aa130312e36618b0cd9d316c1c920b2281a0692724ccac5434d"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_fill_transitions.webp",
+        "sha256": "43195eb1676a5bbff33cd4aec55b2cff9af7c752a16a350c69a7fed6af4534b7"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_film_front.webp",
+        "sha256": "1a2f92880ee15524c803ce4a46bd740802e6a89c5b09f17197f07496817d0722"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_film_low.webp",
+        "sha256": "ae9881b948296e4cad8f793737e3c63be985d953365a2bb9b90a3b24e78b5144"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_film_top.webp",
+        "sha256": "01d5b1c2b5fa0e36dbb2dea07e5f53eebf77d19d7bce3a11750275b67b991cb5"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_foreground.webp",
+        "sha256": "4ff40dc9f7538abd8cf2b79beee2f8f48f00991f2764e69b9af6d95a5e59f575"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_gang.webp",
+        "sha256": "545c985de7b0abb7ed742d56dcd83a12e0ab05a9da3c69f4e399662bfa7517a1"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_granny.webp",
+        "sha256": "f7960605cf7c19c229fa1034c7a351c2819d1fd3627f188b0793dc1be3fc6e28"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_items.webp",
+        "sha256": "6a612097007c796bdd8d274a05974de6a50d66bc2a20074f9b24919ddf74a446"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_kids.webp",
+        "sha256": "254f8ff9bda1218b5a495d855f1e3adad6fe30dd940e517f3f0c909b3ffa3ab6"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_l1_boss.webp",
+        "sha256": "f81e93b71594d89099a7e267f0bd8b1b43061a87798c84e96704a9f752003470"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_l1_home.webp",
+        "sha256": "2b33f22e6501cbde3e8feb26f78ec8498c1d881b87e0b400693f3312ca06ed80"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_l1_jerk.webp",
+        "sha256": "db8736c971ddaf6f830714586238428119698a4e66c597c0d0d9c1373354decd"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_l1_misc.webp",
+        "sha256": "f44b93d33be74ae590ddadb1d89e63d7ac901992a5c85830443bef7e339d7d96"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_l1_paper.webp",
+        "sha256": "d31fc73cc614d0c5d7981b3eb6c180f13e9b7046f791f73ed15d320a6c0b3962"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_l1_park.webp",
+        "sha256": "0034c31d6d0f156a5a8514ad06f9c0af859b6de0465aa3299a1318af20292c93"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_l1_people.webp",
+        "sha256": "7c14d1c379fbede4b40425177184e6b215879a8617a5a7cb308e153650015f0f"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_l2_dive.webp",
+        "sha256": "3dfd959f86a99ec704ecae7aeb8ca0eeb6aa28115088974feec31a5168961911"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_l2_water.webp",
+        "sha256": "60fd57e830dec13150eea06a9e2caa1a6c3d2d4b4b798c2cf54d6f55aa199f6d"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_leaves.webp",
+        "sha256": "2b6889bef7d74d728281b994bfafc92cbc8715422360355046c11f2ebde4db15"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_mentor.webp",
+        "sha256": "6d8226a88d74c6543d69c71323023dc40ab5c9484b854b0f35761e02987b2705"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_park_brick.webp",
+        "sha256": "bf94fa45dc86818b3b10fa32d1d7a1cd05486c7c1c56bc9d517d1f20b9744e91"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_park_tree_wide.webp",
+        "sha256": "3b0225fb99f958eabfa4162c034b60626d034472026d072f4e85f5337f9168cd"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_people.webp",
+        "sha256": "c0484e2ca3df233793b109365ddec999fa51e3f814a13896d21e648c20a450af"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_pigeon_kick.webp",
+        "sha256": "a2d258cb6bf8f22912cdb3ed38d876962e05b0f31c50a162a819e06680516471"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_pigeon_rig.webp",
+        "sha256": "79a493953fc56a2f40362e4711e21d64bc2efa3d9611af1f68b25eee162a0d93"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_pigeon.webp",
+        "sha256": "2edb689797cdb55bc48b1dbae46a20f5e21d381c0100ab0884ab71bdf8756e90"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_props.webp",
+        "sha256": "3825b99960b0048221c13d1a43bdb20d448067cb35159928b69e566920138e7c"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_reactions.webp",
+        "sha256": "0c72dba7f8b9fbc2bb2676fdf00edd18d8befb0bc5d6dbab70766582b081811f"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_style_alley.webp",
+        "sha256": "94198c58cd00868f47911647f2994700592fe6e1e20860a40fbbc4b9cb854a03"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_style_front.webp",
+        "sha256": "90a971eaf193e9216e200af5ef3333b48ebb4a3db78574bae74dae730b36d793"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_style_ground.webp",
+        "sha256": "ec88f81c80969743ba60e03e4d065c13a7de01af6cd65b900a5280aebb1ca468"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_style_house.webp",
+        "sha256": "cd816cc2623c3332433cf68593a5e47694e859f16bbad630bdb2219fda264d70"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_style_market.webp",
+        "sha256": "7c17ce974287981701da5114613407a365859856c90ca63487f8ddeb25c9b13c"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_style_park.webp",
+        "sha256": "6775f3e88042be278b7fe5d1c1180f024bbd6cec599be406873def446fcdf1a9"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_style_street.webp",
+        "sha256": "313f31cb51e4d562e338001abd35812f3b2cfbac8beb651069b30854785315f7"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_style_yard.webp",
+        "sha256": "ae53331d0c88330b7e1615932c430e56da10af1761c198c5fb52f90de7a1d665"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_tiles.webp",
+        "sha256": "bd97c0e191b08e07b012436fe0f7a7a54d7790b698eb7ee3b28b8dbb31ab880f"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_tour.webp",
+        "sha256": "2b0ef2fe8ffa22b6fc9801849a4e5edeb0e52452906c0709b38b60757e3b1967"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_tour2.webp",
+        "sha256": "09330c3179a0bdc8ab3220fc32f2a0e2d5f48263e7e2307d53fa40544160c883"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_ui.webp",
+        "sha256": "182aa6ee28911405100d67134030306744cd5534a4bf6615032cefbfbd608003"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_water_fx.webp",
+        "sha256": "48c781e7b6a1d06486660bf99fb6e38627616502f9e3e460e62326b3ad7ab5fb"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_water_light.webp",
+        "sha256": "8833bad956f703087be9f5010c37880136da26600faffcc02b47a51c5c1b6bd4"
+      },
+      {
+        "file": "resources/assets/mobile_atlases_wedding.webp",
+        "sha256": "47d1a556e276f635353e1ac8de56fe300fb8e55ee02e1fc743e73949fb214892"
+      },
+      {
+        "file": "resources/assets/mobile_bg_bg_alley_door.webp",
+        "sha256": "d6d621c9cdf1836107409b596e60ff20df08c933e13edbe3924fbff00bdd728b"
+      },
+      {
+        "file": "resources/assets/mobile_bg_bg_alley_dumpster.webp",
+        "sha256": "2c80fa8e7c304b11a56abd2dae8ae90bd273c386a4b935bd6b4fee394f163045"
+      },
+      {
+        "file": "resources/assets/mobile_bg_bg_alley_service.webp",
+        "sha256": "d40ca63a08b454a5a73c19078ab877a3b86d3238aea235ff7cd728ec9d4596b7"
+      },
+      {
+        "file": "resources/assets/mobile_bg_bg_bakery_citybread.webp",
+        "sha256": "9dce887a51af35296e2275985e912425a2a670ee33eaeef20d2bd5a2f7184611"
+      },
+      {
+        "file": "resources/assets/mobile_bg_bg_bakery_fresh.webp",
+        "sha256": "9471dce73123334a0ed1a90d4bf1c495fa2d1ec78cad9269d52057cf2a850fca"
+      },
+      {
+        "file": "resources/assets/mobile_bg_bg_courtyard.webp",
+        "sha256": "ad4cce2f062c864e251e0abfe3664df175d27ad4e83f9e79b046aebd87df9c89"
+      },
+      {
+        "file": "resources/assets/mobile_bg_bg_market_cafe.webp",
+        "sha256": "1b4274e6811eaa743ab6e589c40aff756b15bf72952f960ac7bf914be4402e67"
+      },
+      {
+        "file": "resources/assets/mobile_bg_bg_market_goods.webp",
+        "sha256": "35b01dfa37ef049a3b94065330bc1bc3300b84bf8de31d424f35840d77cdb98d"
+      },
+      {
+        "file": "resources/assets/mobile_bg_bg_park_statue.webp",
+        "sha256": "1d655e632797082598347fa8f34c18aa77623bfbdc0d1534b5e84df0031dcd39"
+      },
+      {
+        "file": "resources/assets/mobile_bg_bg_park_tree.webp",
+        "sha256": "91db9a41d9eb37c9534d76667b0a388d89de7165574af99fb98ce5ba307d3c50"
+      },
+      {
+        "file": "resources/assets/mobile_bg_bg_park_wall.webp",
+        "sha256": "a60ffa2ac322fc8831bd34702fe00dbe948736d1e48af986edc91f4dce11c0b9"
+      },
+      {
+        "file": "resources/assets/mobile_bg_dive_quay.webp",
+        "sha256": "e91e767e321cea428e7d67fa37057b7b95b228b4857ad78afe9d9e31eb0da717"
+      },
+      {
+        "file": "resources/assets/mobile_bg_illus_pigine.webp",
+        "sha256": "9a029cab50fcc58b10c830596c2ec5ed006c3f7db65c8a3c5cd2821f7ae85ec4"
+      },
+      {
+        "file": "resources/assets/mobile_bg_illus_title_dusk.webp",
+        "sha256": "2a04e2dc2969536e1e3a5e291e374c63b179481ca2f786f39741d77d537c4576"
+      },
+      {
+        "file": "resources/assets/mobile_bg_illus_title_night.webp",
+        "sha256": "cbe100a6cd499ecee87e334ec27e589a4c0b36bf988f4c1a8f93648935c4cd04"
+      },
+      {
+        "file": "resources/assets/mobile_bg_illus_victory.webp",
+        "sha256": "2554e52a28189567294152973cc3ca63dc1e5643fb7ad0adfbb38f05eb38c98c"
+      },
+      {
+        "file": "resources/assets/mobile_levels_level1.webp",
+        "sha256": "30963ec662f948af8ffb29e20addfbff58e25e51e456f0070110572fb93165c7"
+      },
+      {
+        "file": "resources/assets/mobile_levels_level2_underwater.webp",
+        "sha256": "20ecd920168fe5c8cd5f14ecbb24ae9d65b7e6833439bb47fb5505776cc373c5"
+      },
+      {
+        "file": "resources/assets/mobile_levels_level3_christmas.webp",
+        "sha256": "8a22c44a6245952cc0e51446eed7f3b58d49f24b63409aad1a27acc702d5ff52"
+      },
+      {
+        "file": "resources/assets/mobile_levels_level3_night.webp",
+        "sha256": "fd68e14075d5ec480cda6ad57ff7115c7297a269933847170ad1e3886eb7c308"
+      },
+      {
+        "file": "resources/assets/mobile_parallax_city.webp",
+        "sha256": "72e1340daa86b48af0972fd419d7f6a5ec7fe28535068c76e2e225c601477939"
+      },
+      {
+        "file": "resources/assets/mobile_parallax_middle.webp",
+        "sha256": "c8fffc3c2d4021d2c66c58e39377afbb18bfe46e872437808455f0abbcab5fd3"
+      },
+      {
+        "file": "resources/assets/mobile_parallax_sky.webp",
+        "sha256": "5feb1030dcb3941d1908ab2fe30251903522d22ba4aafc609d2d6e1ed831f827"
+      },
+      {
+        "file": "resources/assets/mobile_strips_strip_level1_00.webp",
+        "sha256": "1f55421661852c011e164aa64340802914cac5669dcc1f5bf82fdcda5d765e96"
+      },
+      {
+        "file": "resources/assets/mobile_strips_strip_level1_01.webp",
+        "sha256": "eb6a33050649454a9e8567567dfd6fdd6101722089e55cd5d3371e5354e06022"
+      },
+      {
+        "file": "resources/assets/mobile_strips_strip_level1_02.webp",
+        "sha256": "cad176749e3b2dda1d74cafa45b6804dd7357214029fb9678c1dc1e5a5bfb953"
+      },
+      {
+        "file": "resources/assets/mobile_strips_strip_level1_03.webp",
+        "sha256": "d1c59b0307f90e7881c9d6e62e92323269d02f578a23d92d7e43e3b25de0be3a"
+      },
+      {
+        "file": "resources/assets/mobile_strips_strip_level1_04.webp",
+        "sha256": "532d4e04511215878a85b5e16557e6c705d0832abdb8929583a1b43ff921e587"
+      },
+      {
+        "file": "resources/assets/mobile_strips_strip_level1_05.webp",
+        "sha256": "db1110fbb9d1543dc5c4e21aead6d34cf301fe6cddb5addbb49bc1ca7a939286"
+      },
+      {
+        "file": "resources/assets/mobile_strips_strip_level1_06.webp",
+        "sha256": "6b02def09e0a1b521cf16d48107e3d493b8b76ebf7b03b0b2d18c378cd3c938a"
+      },
+      {
+        "file": "resources/assets/mobile_strips_strip_level1_07.webp",
+        "sha256": "1b3510f5e46c89c1111f8cd22cf5db5de3649d45dfda3f13975ec8c8b573c3f8"
+      },
+      {
+        "file": "resources/assets/mobile_strips_strip_level1_08.webp",
+        "sha256": "f0f3b06087b68aeffec4de31b23281472497a72095f0b2109ab240f7f944dd4d"
+      },
+      {
+        "file": "resources/assets/mobile_strips_strip_level1_win_00.webp",
+        "sha256": "68516ce9c16c2e6cef04fd18b806f53f221dc55bbe3a58c44f2496b375b550a2"
+      },
+      {
+        "file": "resources/assets/mobile_strips_strip_level1_win_01.webp",
+        "sha256": "84d5ac0afbf11ff5ef9195c49bb210b464b642466a0fb301dea6c25af27c78f5"
+      },
+      {
+        "file": "resources/assets/mobile_strips_strip_level1_win_02.webp",
+        "sha256": "1c15c8f836f00a87910188dde618ec089fa73e4fd8c60b4895e7523aca6b63bc"
+      },
+      {
+        "file": "resources/assets/mobile_strips_strip_level1_win_03.webp",
+        "sha256": "c8a3102e78603c79d9624f32603cbc6c4e3727a74c5a29154ccbbc1ef0983b8b"
+      },
+      {
+        "file": "resources/assets/mobile_strips_strip_level1_win_04.webp",
+        "sha256": "02f1ac9799731388c07f75fe521aae36a63f3a094f0459a0ac2f02be02da3c6f"
+      },
+      {
+        "file": "resources/assets/mobile_strips_strip_level1_win_05.webp",
+        "sha256": "d756159394d000c9048884acdb54cc88d68ee7d978ef4e970caa06f84bfbd815"
+      },
+      {
+        "file": "resources/assets/mobile_strips_strip_level1_win_06.webp",
+        "sha256": "dadff6d37e98247ad2b708455c5813379d79d1bc1100c6c216d5dd536040d8d0"
+      },
+      {
+        "file": "resources/assets/mobile_strips_strip_level1_win_07.webp",
+        "sha256": "5c36ea72d7a85ba98fef92f9ab11ac01ce4e2ad20096cdb94230fe70334dc70e"
+      },
+      {
+        "file": "resources/assets/mobile_strips_strip_level1_win_08.webp",
+        "sha256": "e1e6f664ab248176bad66f44aad867323a7705690afe1c9bed94898210fc469b"
+      },
+      {
+        "file": "resources/assets/mobile_strips_strip_level1_win_09.webp",
+        "sha256": "af24f79be803c8d07d3ec6fca82693d5497bf703ebbbee014d1e123ab81c7cdf"
+      },
+      {
+        "file": "resources/assets/mobile_strips_strip_level1_win_10.webp",
+        "sha256": "30410789b4b79223890b8d108554a25596eee5abcde03cd215a1f6d8fb1495b8"
+      },
+      {
+        "file": "resources/assets/mobile_strips_strip_level1_win_11.webp",
+        "sha256": "106c154a43eb1e83161e139feaed846188ead34dd54a9f5e34aa1f92a45e4a8f"
+      },
+      {
+        "file": "resources/assets/mobile_ui_cursor.webp",
+        "sha256": "99ef5b37a9330de86ece613ca7b966be48086166df9db7d338b516788ed41378"
+      },
+      {
+        "file": "resources/build-id.json",
+        "sha256": "38d1277d8e0a3e864f9e9cc92ff355c7743efe0418d376807d012ec917755720"
+      }
+    ],
+    "checks": [
+      {
+        "browser": "chrome",
+        "version": "Chrome/156.0.8078.76",
+        "configuration": "Debug",
+        "status": "passed",
+        "decoder": "passed",
+        "pcm": "passed",
+        "audio": [
+          {
+            "candidate": "worker",
+            "rate": 48000,
+            "underrunFrames": 0,
+            "p95LatencyMs": 46.02490234375
+          },
+          {
+            "candidate": "worker",
+            "rate": 44100,
+            "underrunFrames": 0,
+            "p95LatencyMs": 57.94482421875
+          },
+          {
+            "candidate": "main",
+            "rate": 48000,
+            "underrunFrames": 17137,
+            "p95LatencyMs": 47.27490234375
+          }
+        ]
+      },
+      {
+        "browser": "chrome",
+        "version": "Chrome/156.0.8078.76",
+        "configuration": "Release",
+        "status": "passed",
+        "decoder": "passed",
+        "pcm": "passed",
+        "audio": [
+          {
+            "candidate": "worker",
+            "rate": 48000,
+            "underrunFrames": 0,
+            "p95LatencyMs": 52.112548828125
+          },
+          {
+            "candidate": "worker",
+            "rate": 44100,
+            "underrunFrames": 0,
+            "p95LatencyMs": 56.644775390625
+          },
+          {
+            "candidate": "main",
+            "rate": 48000,
+            "underrunFrames": 17430,
+            "p95LatencyMs": 41.241455078125
+          }
+        ]
+      },
+      {
+        "browser": "firefox",
+        "version": "firefox/159.0",
+        "configuration": "Debug",
+        "status": "passed",
+        "decoder": "passed",
+        "pcm": "passed",
+        "audio": [
+          {
+            "candidate": "worker",
+            "rate": 48000,
+            "underrunFrames": 0,
+            "p95LatencyMs": 52.854248046875
+          },
+          {
+            "candidate": "worker",
+            "rate": 44100,
+            "underrunFrames": 0,
+            "p95LatencyMs": 55.3447265625
+          },
+          {
+            "candidate": "main",
+            "rate": 48000,
+            "underrunFrames": 15217,
+            "p95LatencyMs": 52.95849609375
+          }
+        ]
+      },
+      {
+        "browser": "firefox",
+        "version": "firefox/159.0",
+        "configuration": "Release",
+        "status": "passed",
+        "decoder": "passed",
+        "pcm": "passed",
+        "audio": [
+          {
+            "candidate": "worker",
+            "rate": 48000,
+            "underrunFrames": 0,
+            "p95LatencyMs": 54.666748046875
+          },
+          {
+            "candidate": "worker",
+            "rate": 44100,
+            "underrunFrames": 0,
+            "p95LatencyMs": 54.909423828125
+          },
+          {
+            "candidate": "main",
+            "rate": 48000,
+            "underrunFrames": 14833,
+            "p95LatencyMs": 52.20849609375
+          }
+        ]
+      },
+      {
+        "browser": "webkit",
+        "version": "27.2",
+        "configuration": "Debug",
+        "status": "partial",
+        "decoder": "passed",
+        "pcm": "passed",
+        "audio": []
+      },
+      {
+        "browser": "webkit",
+        "version": "27.2",
+        "configuration": "Release",
+        "status": "partial",
+        "decoder": "passed",
+        "pcm": "passed",
+        "audio": []
+      }
+    ],
+    "images": 96,
+    "nativePcmByteIdentical": true,
+    "tenMinuteAudioPassed": false,
+    "pending": [
+      "Требуется проверка на настоящем телефоне и отдельная приёмка Safari/A0.",
+      "Кандидат профиля укладывается в desktop-проверке в мобильные учётные лимиты; подтвердить реальную стабильность и timings на телефоне.",
+      "Замкнутость групп и интеграция физических/логических размеров текстур проверяются на сценах после backend.",
+      "Этап 3 не начат: A1 остаётся открытым до получения мобильного отчёта."
+    ],
+    "candidate": {
+      "modelReady": true,
+      "physicalTargets": {
+        "width": 1440,
+        "height": 810,
+        "count": 4
+      },
+      "profileHash": "775a5df4017b3a187ea4bf3901dc836ee3d46051e9efec098a147dd277fa3638",
+      "groupsExercised": true,
+      "groups": [
+        {
+          "id": "title",
+          "cpuBytesWithReserve": 93129363,
+          "gpuBytesWithReserve": 86423585,
+          "decoderHeap": 22675456,
+          "mobileAccountingPassed": true
+        },
+        {
+          "id": "dive",
+          "cpuBytesWithReserve": 108303118,
+          "gpuBytesWithReserve": 80456700,
+          "decoderHeap": 32571392,
+          "mobileAccountingPassed": true
+        },
+        {
+          "id": "film",
+          "cpuBytesWithReserve": 105291485,
+          "gpuBytesWithReserve": 72653370,
+          "decoderHeap": 32440320,
+          "mobileAccountingPassed": true
+        },
+        {
+          "id": "ground-blocks",
+          "cpuBytesWithReserve": 138801854,
+          "gpuBytesWithReserve": 185016555,
+          "decoderHeap": 45481984,
+          "mobileAccountingPassed": true
+        },
+        {
+          "id": "ground-strips",
+          "cpuBytesWithReserve": 122075930,
+          "gpuBytesWithReserve": 167974390,
+          "decoderHeap": 39649280,
+          "mobileAccountingPassed": true
+        },
+        {
+          "id": "ground-panels",
+          "cpuBytesWithReserve": 121570690,
+          "gpuBytesWithReserve": 164391490,
+          "decoderHeap": 39649280,
+          "mobileAccountingPassed": true
+        }
+      ]
+    },
+    "native": [
+      {
+        "name": "native-full-build.log",
+        "status": "passed",
+        "engineChecks": 519,
+        "gameChecks": 1650,
+        "logHash": "3efb54329e4ba1491eab33555fd48b3696608ca5ec29a5560d50e75c48f085ae"
+      },
+      {
+        "name": "native-release-build.log",
+        "status": "passed",
+        "engineChecks": 519,
+        "gameChecks": 1650,
+        "logHash": "60ffa283aa7e7ff9d8ce9cbf84f9cb4271daa1897d9dbf63c139f9eb9bb37dcc"
+      }
+    ]
+  },
+  "plan": {
+    "schemaVersion": 1,
+    "sourceHash": "2004ec18df7d252cf15d7a8c11a1593f4517c1ebcf957fddfb3f7c53299ad347",
+    "stages": [
+      {
+        "id": 0,
+        "title": "База для сравнения",
+        "status": "done",
+        "statusLabel": "Завершён в согласованном объёме",
+        "work": "Сохранить воспроизводимый Windows-эталон, маршруты, состояния, кадры и историческую публикацию. Дополнительные замеры и monkey исключены по решению пользователя; это отмечено в шагах ниже.",
+        "result": "Воспроизводимый набор команд и эталонных состояний, список обязательных возможностей веб-версии, измеренные исходные показатели.",
+        "steps": [
+          {
+            "id": "0-1",
+            "number": 1,
+            "group": "",
+            "text": "Зафиксировать не только commit, но и состояние рабочих ассетов: хеши manifest.json, атласов, уровней, сценариев и шрифтов. Эталон, снятый с одними JSON и WebP, нельзя сравнивать с браузерной сборкой на других. Незакоммиченные изменения перед замером либо довести до воспроизводимой ревизии, либо явно записать как часть эталона.",
+            "status": "done",
+            "statusLabel": "Проверено",
+            "evidence": "Эталон 30 октября: 13 маршрутов, 519 проверок движка, 1650 игровых, 58 веб-тестов; контрольные кадры и hashes сохранены."
+          },
+          {
+            "id": "0-2",
+            "number": 2,
+            "group": "",
+            "text": "Составить таблицу маршрутов с начальным состоянием, последовательностью клавиш/указателя, ожидаемой сценой, контрольными значениями счёта/физики/скрипта и названием снимка. Отдельно включить вход в воду и выход из неё, много частиц, длинный текст на русском и английском, смену локали, возврат из паузы, загрузку после перезапуска процесса.",
+            "status": "done",
+            "statusLabel": "Проверено",
+            "evidence": "Эталон 30 октября: 13 маршрутов, 519 проверок движка, 1650 игровых, 58 веб-тестов; контрольные кадры и hashes сохранены."
+          },
+          {
+            "id": "0-3",
+            "number": 3,
+            "group": "",
+            "text": "Привязать --script к фиксированному шагу и постоянному seed там, где это возможно. Для показателей, зависящих от времени или порядка обхода коллекции, определить устойчивые контрольные поля вместо сравнения полного дампа памяти. Сохранить отдельные сценарии для логического и визуального сравнения.",
+            "status": "done",
+            "statusLabel": "Проверено",
+            "evidence": "Эталон 30 октября: 13 маршрутов, 519 проверок движка, 1650 игровых, 58 веб-тестов; контрольные кадры и hashes сохранены."
+          },
+          {
+            "id": "0-4",
+            "number": 4,
+            "group": "",
+            "text": "Снять Windows-эталон через предусмотренные smoke.ps1, monkey.ps1, --shot/--burst; фиксировать размер окна, режим постобработки и масштаб. Проверить, что кадр теста действительно снят после нужного Step, а не на кадр раньше. Отметить известные ошибки эталона, чтобы не объявить их регрессией порта.",
+            "status": "done",
+            "statusLabel": "Проверено",
+            "evidence": "Windows build/tests, smoke и кадры проверены; monkey пропущен по просьбе пользователя, его результат не считается passed."
+          },
+          {
+            "id": "0-5",
+            "number": 5,
+            "group": "",
+            "text": "Замерить текущий сайт Phaser для контекста выпуска: размер загрузки, время до первого видимого меню, поведение при медленной сети, управление на телефоне и сохранённые ключи. Это UX-исходник, а не эталон правил игры. Зафиксировать конкретные устройства, ОС, браузеры и версии, а также условия сети и зарядки.",
+            "status": "excluded",
+            "statusLabel": "Исключено из объёма",
+            "evidence": "Дополнительные замеры и другие устройства исключены пользователем. Уже снятая справка сохранена; новых benchmark-страниц для этапа 0 не требуется."
+          },
+          {
+            "id": "0-6",
+            "number": 6,
+            "group": "",
+            "text": "Создать короткий журнал решений: что обязано совпасть функционально, где допускается графическое отклонение и кто утверждает новый скриншот. Измерение памяти разделить на Wasm heap, JS heap и оценку GPU-ресурсов; иначе легко принять перенос затрат между областями за улучшение.",
+            "status": "done",
+            "statusLabel": "Проверено",
+            "evidence": "Эталон 30 октября: 13 маршрутов, 519 проверок движка, 1650 игровых, 58 веб-тестов; контрольные кадры и hashes сохранены."
+          },
+          {
+            "id": "0-7",
+            "number": 7,
+            "group": "",
+            "text": "Зафиксировать историческую публикацию golub-play: ревизию публичного репозитория, артефакт сайта и соответствующую ревизию исходников. Записать существующие ключи браузерного хранилища как контрольный набор для будущего теста изоляции. Все эксперименты v2 выполнять в отдельных output и preview, не запуская старую команду deploy против исторического репозитория.",
+            "status": "done",
+            "statusLabel": "Проверено",
+            "evidence": "Эталон 30 октября: 13 маршрутов, 519 проверок движка, 1650 игровых, 58 веб-тестов; контрольные кадры и hashes сохранены."
+          },
+          {
+            "id": "0-8",
+            "number": 8,
+            "group": "",
+            "text": "Выбрать минимальный мобильный и настольный профиль для эксперимента 2Б. Начать отчёт памяти по размерам изображений и перечню ресурсов каждой сцены; числа из сжатой поставки не использовать как оценку heap/GPU. Подготовить реальные крупные WebP, сценарии переходов и аудиопартитуру для раннего harness. Окончательные бюджеты закрепить по 2Б и проверить заново на настоящей воде в рубеже C.",
+            "status": "done",
+            "statusLabel": "Проверено",
+            "evidence": "Начальный список ресурсов, крупных WebP и переходов подготовлен. Выбор профиля и проверка окончательных бюджетов относятся к 2Б."
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "title": "Установка и закрепление FPC для WebAssembly",
+        "status": "partial",
+        "statusLabel": "Код готов · Safari открыт",
+        "work": "Установить отдельный FPC 3.3.1 development и cross compiler wasm32/browser; проверить наличие ppcrosswasm32, поддержку -Twasip1 -tbrowser, соответствующих RTL units, linker и вывод .wasm. Здесь browser — subtarget, а не OS target; прежнее указание -Tbrowser исправлено по проверенной ревизии. Начать с минимальной library, затем собрать Pascal-объекты с UnicodeString, Generics.Collections, исключениями и callback — именно эти механизмы широко используются в Golub. Проверить линковку используемых библиотечных units, включая paszlib для PNG. Записать источник toolchain, ревизию, команды и hashes; подготовить build_web.ps1 либо контейнерную/WSL-сборку, которую можно повторить в CI. Не объявлять Windows 3.3.1 обязательным, пока обычная игра и редакторы не прошли отдельную проверку.",
+        "result": "Простейший Pascal Wasm загружается через локальный HTTP-сервер и выполняет экспортируемый вызов; сборка повторяется из инструкции.",
+        "steps": [
+          {
+            "id": "1-1",
+            "number": 1,
+            "group": "",
+            "text": "Провести инвентаризацию установленного FPC и сборочных команд проекта (windows/build.ps1, сборка образцов, тестов и утилит). Создать отдельный каталог для development toolchain; проверить, что fpc.cfg, переменные окружения и -Fu не подхватывают units 3.2.2. В журнале сборки выводить полный путь и версию реально вызванного компилятора.",
+            "status": "done",
+            "statusLabel": "Проверено",
+            "evidence": "Закреплён FPC 3.3.1; пройдены проверки модулей и hashes. Native FPC 3.2.2 сохранён. Подробные результаты — в браузерном срезе этапа 1."
+          },
+          {
+            "id": "1-2",
+            "number": 2,
+            "group": "",
+            "text": "Установить или воспроизводимо собрать compiler, cross RTL для wasm32/browser и связанные инструменты одной и той же ревизии. Проверить ppcrosswasm32 -i/список targets, -Twasip1 -tbrowser, поиск system, sysutils, classes, fgl/Generics.Collections и конечный формат файла. Команда, которая только компилирует unit без линковки приложения, не закрывает этот этап.",
+            "status": "done",
+            "statusLabel": "Проверено",
+            "evidence": "Закреплён FPC 3.3.1; пройдены проверки модулей и hashes. Native FPC 3.2.2 сохранён. Подробные результаты — в браузерном срезе этапа 1."
+          },
+          {
+            "id": "1-3",
+            "number": 3,
+            "group": "",
+            "text": "Собрать три минимальных spike: вычисление и экспорт i32/f32, строка с UTF-8 и исключением, callback браузера после загрузки страницы. Проверить в Chrome, Firefox и Safari, что RTL инициализируется единожды, экспорт сохраняет ожидаемые имена и ошибки не превращаются в молчаливый trap. Записать реальный loader, сгенерированные файлы и параметры инициализации.",
+            "status": "partial",
+            "statusLabel": "Частично проверено",
+            "evidence": "Chrome, Firefox, WebKit: Debug/Release прошли. Настоящий Safari на macOS/iOS ещё не проверен."
+          },
+          {
+            "id": "1-4",
+            "number": 4,
+            "group": "",
+            "text": "Проверить именно конструкции игры: UnicodeString, динамические массивы, packed records, generic dictionaries, TObject lifecycle, SysUtils форматирование чисел, чтение paszlib, Math, GetMem/FreeMem. Отдельно измерить стартовый размер Wasm и память малого примера, чтобы оценивать рост от подключаемых units.",
+            "status": "done",
+            "statusLabel": "Проверено",
+            "evidence": "Закреплён FPC 3.3.1; пройдены проверки модулей и hashes. Native FPC 3.2.2 сохранён. Подробные результаты — в браузерном срезе этапа 1."
+          },
+          {
+            "id": "1-5",
+            "number": 5,
+            "group": "",
+            "text": "Ввести две конфигурации Debug/Release. Debug должен сохранять читаемые ошибки и, если поддержано сборкой и браузером, DWARF; Release — оптимизацию и предсказуемые имена файлов. Хешировать binary toolchain/исходную ревизию и проверять версию в сборочном скрипте, чтобы случайный fpc.exe из PATH не собирал релиз.",
+            "status": "done",
+            "statusLabel": "Проверено",
+            "evidence": "Закреплён FPC 3.3.1; пройдены проверки модулей и hashes. Native FPC 3.2.2 сохранён. Подробные результаты — в браузерном срезе этапа 1."
+          },
+          {
+            "id": "1-6",
+            "number": 6,
+            "group": "",
+            "text": "Заранее проверить сборку в чистом окружении или CI без локальных глобальных папок. Если Windows-hosted cross toolchain трудно воспроизвести, рассмотреть WSL/контейнер только как способ запуска того же FPC, с явным монтированием исходников и отделением output. Критерий выбора — воспроизводимость и отладка, а не предполагаемое удобство.",
+            "status": "done",
+            "statusLabel": "Проверено",
+            "evidence": "Toolchain реально собран с нуля, 18 браузерных проверок повторены. Удалённый CI runner ещё не запускался."
+          },
+          {
+            "id": "1-7",
+            "number": 7,
+            "group": "",
+            "text": "Если конкретный unit не поддерживается, минимизировать пример и выяснить: ошибка кода игры, неподходящая ревизия compiler/RTL или реально отсутствующая возможность browser target. Исправление общего кода проверять обеими версиями FPC; патч toolchain документировать отдельно и не скрывать в локальной установке.",
+            "status": "done",
+            "statusLabel": "Проверено",
+            "evidence": "Закреплён FPC 3.3.1; пройдены проверки модулей и hashes. Native FPC 3.2.2 сохранён. Подробные результаты — в браузерном срезе этапа 1."
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Аудит зависимостей и ранняя проверка ресурсов, памяти и звука",
+        "status": "partial",
+        "statusLabel": "2А проверен · 2Б в работе",
+        "work": "Этап состоит из 2А и 2Б. В 2А компилируются только независимые модули; для зависимых units фиксируются границы будущего разделения. В 2Б отдельный browser harness проверяет реальные изображения, worker, память и аудиотракт без подключения TEngine, nodes, TWater и игровых сцен. Для spike допустимо заранее выделить чистые операции над пикселями и PCM из платформенных units с проверкой Windows; полный рефакторинг renderer начинается после этого.",
+        "result": "Карта зависимостей, исполняемые тесты независимых модулей, рабочий decoder worker, отчёт о памяти групп и принятый вариант аудиотракта. На выбранном мобильном устройстве подтверждены исходные бюджеты либо до этапа 3 утверждены изменения размеров ассетов/групп и способа производства PCM. Сборка сцен требуется после этапов 3–6 и подготовки минимальных ресурсов/текста, а не для закрытия 2А.",
+        "steps": [
+          {
+            "id": "2-1",
+            "number": 1,
+            "group": "2А. Независимые модули и карта платформенных границ",
+            "text": "Автоматически выписать uses и {$include} для windows/engine и windows/src; пометить зависимости интерфейса отдельно от реализации. Составить таблицу «unit → платформенная зависимость → будущий контракт → проверка → этап устранения». Включить gfx, platform, textgdi, synth, nodes, widgets, ui, film, autoscript, i18n, assetstore, frameflow, meshanim и игровые units.",
+            "status": "done",
+            "statusLabel": "Проверено",
+            "evidence": "Лексическая карта uses/include с интерфейсом и реализацией, транзитивными границами и будущими контрактами сохранена."
+          },
+          {
+            "id": "2-2",
+            "number": 2,
+            "group": "2А. Независимые модули и карта платформенных границ",
+            "text": "Собрать и исполнить небольшой Wasm harness с json, webp, wavefield, fluidgrid, physics и ядром pigeonscript, проверяя реальные uses каждого unit. Если конкретная файловая функция мешает сборке, выделить только её provider либо тестировать parser по тексту; не подключать D3D9 и не создавать фиктивные окна/рендереры ради компиляции. Полный движок и сцены пометить как отложенные до backend-этапов.",
+            "status": "done",
+            "statusLabel": "Проверено",
+            "evidence": "Общие fixtures шести исходных модулей прошли FPC 3.2.2/Win32 и Wasm в Chrome, Firefox, WebKit; Debug/Release. Сцены и TWater отложены до backend-этапов."
+          },
+          {
+            "id": "2-3",
+            "number": 3,
+            "group": "2А. Независимые модули и карта платформенных границ",
+            "text": "Проверить формат Single, размеры Integer/NativeInt/Pointer, packed records, кодировку строк и массивы, которые будут пересекать JS-границу. Layout будущих TVertex/TGpuVertex выписать по исходникам сейчас; исполняемые SizeOf/offset-проверки этих типов выполнить после выделения нейтрального graphics unit на этапе 3.",
+            "status": "done",
+            "statusLabel": "Проверено",
+            "evidence": "32-битные ABI и packed record проверены в обеих сборках. Layout вершин описан по исходнику; исполняемый тест графических типов запланирован на этап 3."
+          },
+          {
+            "id": "2-4",
+            "number": 4,
+            "group": "2А. Независимые модули и карта платформенных границ",
+            "text": "Проверить {$codepage utf8}, преобразование UnicodeString ↔ UTF-8, символы против байтов, BOM в JSON/PigeonScript и локаль дробных чисел. Один и тот же fixture с кириллицей должен пройти parser, ошибку с номером строки и вывод в browser log.",
+            "status": "done",
+            "statusLabel": "Проверено",
+            "evidence": "Общие fixtures шести исходных модулей прошли FPC 3.2.2/Win32 и Wasm в Chrome, Firefox, WebKit; Debug/Release. Сцены и TWater отложены до backend-этапов."
+          },
+          {
+            "id": "2-5",
+            "number": 5,
+            "group": "2А. Независимые модули и карта платформенных границ",
+            "text": "Выписать файловые вызовы и назначить замены: наличие в поставке — Catalog.Contains, перечисление — Catalog.List, готовые байты — ReadReady, постоянные данные — storage. Для каждой сцены построить начальный список ресурсов и импортов, в том числе динамических имён из .pigeon и вариантов уровней. Неполные зависимости группы явно пометить для ручной проверки, а не считать автоматически доказанными.",
+            "status": "done",
+            "statusLabel": "Проверено",
+            "evidence": "Первичный перечень сцен, уровней, файловых вызовов и импортов сохранён. Динамические зависимости помечены для ручной проверки; замкнутость групп ещё не доказана."
+          },
+          {
+            "id": "2-6",
+            "number": 6,
+            "group": "2А. Независимые модули и карта платформенных границ",
+            "text": "Сравнить расчётные fixtures Windows/Wasm для физики, TWaveField, TFluidGrid, JSON и VM с фиксированными входами/seed. Для TWater, nodes и сцен оставить проверки до этапов 6–12. Закрытие 2А означает работоспособный независимый код и известные границы, не обещание уже собранной игры.",
+            "status": "done",
+            "statusLabel": "Проверено",
+            "evidence": "Общие fixtures шести исходных модулей прошли FPC 3.2.2/Win32 и Wasm в Chrome, Firefox, WebKit; Debug/Release. Сцены и TWater отложены до backend-этапов."
+          },
+          {
+            "id": "2-b-1",
+            "number": 1,
+            "group": "2Б. Обязательный эксперимент до общего рефакторинга",
+            "text": "Сформировать машиночитаемый отчёт размеров для каждого изображения и группы: compressed bytes, w × h × 4, дополнительные маски/миниатюры, общий постоянный набор, уровень, dive, film и переход. Сохранить hash manifest и JSON, перечень файлов и формулы. Для памяти Wasm учитывать отдельно живые выделения и фактический high-water размер memory.buffer: освобождение объектов не является гарантией уменьшения линейной памяти.",
+            "status": "done",
+            "statusLabel": "Проверено",
+            "evidence": "Инвентаризированы 96 реальных WebP, размеры, hashes, маски, миниатюры и начальные группы/переходы."
+          },
+          {
+            "id": "2-b-2",
+            "number": 2,
+            "group": "2Б. Обязательный эксперимент до общего рефакторинга",
+            "text": "Начальные проектные пределы для мобильного профиля: суммарный учётный пик CPU-данных игры, JS-буферов и decoder/audio heaps — 256 МиБ; оценка GPU textures/targets — 192 МиБ. Это исходные ограничения для эксперимента, не измеренные возможности телефона; помимо них контролируется реальная стабильность браузерного процесса. Для desktop исходные пределы — 512/384 МиБ соответственно. Расчёт сценария включает 25% запаса поверх явно посчитанных ресурсов; превышение закрывается изменением группы/размеров либо обоснованным пересмотром профиля до этапа 3.",
+            "status": "partial",
+            "statusLabel": "Частично проверено",
+            "evidence": "Есть проверяемый browser harness и desktop-результаты. Бюджеты ресурсов, полная проверка телефона и окончательная приёмка A1 остаются открытыми; этап 3 не начат."
+          },
+          {
+            "id": "2-b-3",
+            "number": 3,
+            "group": "2Б. Обязательный эксперимент до общего рефакторинга",
+            "text": "Для маршрутов title → уровень, уровень → меню → другой уровень, вход в dive и film посчитать максимум одновременно живых ресурсов. Базовый переход выполняется через малую постоянную loading-сцену: остановить старые сцены, освободить их группы, затем загружать новый уровень. Общие UI/шрифты удерживаются отдельно. Одновременное удержание старого и нового уровня допускается только при доказанном бюджете объединения групп.",
+            "status": "partial",
+            "statusLabel": "Частично проверено",
+            "evidence": "Есть проверяемый browser harness и desktop-результаты. Бюджеты ресурсов, полная проверка телефона и окончательная приёмка A1 остаются открытыми; этап 3 не начат."
+          },
+          {
+            "id": "2-b-4",
+            "number": 4,
+            "group": "2Б. Обязательный эксперимент до общего рефакторинга",
+            "text": "Собрать decoder-only Wasm из того же Pascal-кода и запустить в одном dedicated worker. Протокол задачи: requestId, поколение группы, размеры/ожидаемый hash, compressed buffer; результат — pixels и нужные mask/thumb/small либо ошибка. Worker не получает указатели игрового heap. Начать с одной активной задачи и bounded queue; число workers нельзя увеличивать без пересчёта памяти. Измерить decode, подготовку результата, копию из worker heap, transfer, копию в game heap при необходимости и upload в простом JS WebGL2 harness.",
+            "status": "done",
+            "statusLabel": "Проверено",
+            "evidence": "Decoder-only Wasm работает в одном dedicated worker. Проверены pixels/mask/thumb/small, transfer, отмена поколения, reload, повреждение, остановка и падение worker."
+          },
+          {
+            "id": "2-b-5",
+            "number": 5,
+            "group": "2Б. Обязательный эксперимент до общего рефакторинга",
+            "text": "Воспроизвести крупнейшие реальные изображения, а не только маленькую тестовую текстуру. Worker может декодировать их целиком; главному потоку передаётся готовый буфер, upload разбивается на строки/порции через texSubImage2D после выделения storage. Начальная цель p95 отдельной main-thread порции — до 8 мс на мобильном устройстве; отдельно записывается worst case. Если одно выделение текстуры или одна копия нарушает бюджет, уменьшить страницы атласа/размер изображения в asset pipeline до интеграции. Таймер вокруг монолитного decode не считается решением.",
+            "status": "partial",
+            "statusLabel": "Частично проверено",
+            "evidence": "Есть проверяемый browser harness и desktop-результаты. Бюджеты ресурсов, полная проверка телефона и окончательная приёмка A1 остаются открытыми; этап 3 не начат."
+          },
+          {
+            "id": "2-b-6",
+            "number": 6,
+            "group": "2Б. Обязательный эксперимент до общего рефакторинга",
+            "text": "На отмене задачи результат старого поколения игнорируется и освобождается; heap worker не трогает живые PFrame. Проверить ошибку decoder, отмену большого изображения, повторную загрузку и падение worker. Учесть, что перенос ArrayBuffer отсоединяет его у отправителя; в результатах нельзя хранить view на живую worker WebAssembly.Memory как transferable.",
+            "status": "done",
+            "statusLabel": "Проверено",
+            "evidence": "Decoder-only Wasm работает в одном dedicated worker. Проверены pixels/mask/thumb/small, transfer, отмена поколения, reload, повреждение, остановка и падение worker."
+          },
+          {
+            "id": "2-b-7",
+            "number": 7,
+            "group": "2Б. Обязательный эксперимент до общего рефакторинга",
+            "text": "Выделить минимальный общий MixPcm с явным числом frames и командами голосов из synth.pas, сохранив Windows waveOut backend и offline-сравнение при фиксированном seed. Запустить его с AudioWorklet sink одновременно с decoder worker и синтетической нагрузкой главного потока. Проверить 44,1/48 кГц и накопление дробного шага resampling, чтобы очередь не росла или не истощалась из-за расхождения частот.",
+            "status": "done",
+            "statusLabel": "Проверено",
+            "evidence": "Общий synthpcm используется Windows waveOut и Wasm. Эталон PCM до/после извлечения совпал побайтно; проверены 44,1/48 кГц. Полная проверка устройства отдельно."
+          },
+          {
+            "id": "2-b-8",
+            "number": 8,
+            "group": "2Б. Обязательный эксперимент до общего рефакторинга",
+            "text": "Для кандидата с mixer на главном потоке зафиксировать стартовую PCM-очередь: target 40 мс, low watermark 20 мс, high watermark 80 мс, жёсткий максимум 100 мс. Worklet сообщает глубину и номер проигранного sample; производство запускается по этой обратной связи и ограниченному scheduler, независимо от частоты rAF. Цель p95 от принятого игрового события до соответствующего sample на выходе worklet — не больше 100 мс, аппаратная задержка учитывается отдельно. В 10-минутном foreground-тесте с реальным decode и короткими 50-мс нагрузками главного потока не должно быть underrun; 200-мс искусственная остановка проверяет контролируемую тишину и восстановление, не маскируется увеличением буфера.",
+            "status": "partial",
+            "statusLabel": "Частично проверено",
+            "evidence": "Есть проверяемый browser harness и desktop-результаты. Бюджеты ресурсов, полная проверка телефона и окончательная приёмка A1 остаются открытыми; этап 3 не начат."
+          },
+          {
+            "id": "2-b-9",
+            "number": 9,
+            "group": "2Б. Обязательный эксперимент до общего рефакторинга",
+            "text": "Если эти ограничения не выдержаны, обязательный исход этапа — рабочий прототип отдельного audio worker, владеющего тем же Pascal mixer. Команды передаются с sequence/time, партитуры — по ID и данным без Pascal-указателей, PCM идёт в worklet; измеряются дополнительные messaging latency и heap. До этапа 3 выбран один прошедший вариант. Отсутствие прошедшего варианта оставляет рубеж A1 незакрытым; переход к массовому рефакторингу не разрешается предположением, что «звук исправим позже».",
+            "status": "partial",
+            "statusLabel": "Частично проверено",
+            "evidence": "Есть проверяемый browser harness и desktop-результаты. Бюджеты ресурсов, полная проверка телефона и окончательная приёмка A1 остаются открытыми; этап 3 не начат."
+          },
+          {
+            "id": "2-b-10",
+            "number": 10,
+            "group": "2Б. Обязательный эксперимент до общего рефакторинга",
+            "text": "Артефакты 2Б: таблица групп/пиков памяти, журнал timings, график queue depth/underrun/latency, команды воспроизведения, устройства и принятые решения. Браузерный harness пока использует только узкие Pascal-модули и минимальные WebGL-вызовы. Полная вода и сцены подключаются после backend; рубеж C затем повторно проверяет те же бюджеты уже на настоящем renderer.",
+            "status": "partial",
+            "statusLabel": "Частично проверено",
+            "evidence": "Есть проверяемый browser harness и desktop-результаты. Бюджеты ресурсов, полная проверка телефона и окончательная приёмка A1 остаются открытыми; этап 3 не начат."
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Разделение PiGine на общую часть и backend",
+        "status": "pending",
+        "statusLabel": "Предстоит",
+        "work": "Сохранить публичные TFrame, TMaterial, TGeometry, TRenderer и API сцены. Из gfx убрать D3D9-типы и вызовы в backend D3D9, оставив общую сборку вершин и батчей. Аналогично разделить platform, textgdi и synth по фактическим границам. Прямые WinAPI-вызовы в engine, assetstore, frameflow, meshanim, scripted, film, i18n и UI заменить вызовами соответствующих provider. Windows-реализация должна сохранять поведение и не приобретать зависимости от browser host.",
+        "result": "Windows-игра и все примеры двигателя работают после рефакторинга; общий интерфейс не содержит типов D3D9, GDI и WinAPI.",
+        "steps": [
+          {
+            "id": "3-1",
+            "number": 1,
+            "group": "",
+            "text": "Начать с карты публичных типов. В gfx.pas сейчас TTexture.tex, TPixelShader.ps, TVertexShader.vs являются D3D-интерфейсами, а TVertex.color использует DWORD; в TBatch присутствует TRect. Вынести общие числовые и геометрические типы в нейтральный unit, сохранив семантику TFrame, TMaterial, TGeometry и публичных вызовов сцен. Доступ к backend-ресурсам вести через приватные handle/объекты backend, не через поля, которые видит Golub.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "3-2",
+            "number": 2,
+            "group": "",
+            "text": "Разделить CPU-сборку батчей и отправку команд: TRenderer.Push, FrameQuad, Geometry, Grab, clip остаются общими; D3D9-реализация получает уже собранные команды в прежнем порядке. Отдельно описать владение TTexture, TPixelShader, TVertexShader и render target при Free, смене сцены и reset устройства. Не менять одновременно формулы вершин и D3D state — так проще обнаружить регрессию.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "3-3",
+            "number": 3,
+            "group": "",
+            "text": "Определить платформенный контракт для времени, окна/поверхности, событий и файлов. TGameWindow сейчас содержит HWND, режимы окна, очереди событий и состояние клавиш; общая часть должна хранить очереди и состояния, а Win32 backend создавать окно и наполнять их. Эксклюзивный fullscreen, монитор и частота остаются capability Windows backend, а не фиктивными методами browser.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "3-4",
+            "number": 4,
+            "group": "",
+            "text": "Разделить textgdi.pas на общие TTextStyle, layout/cache API и конкретную растеризацию GDI; разделить synth.pas на генератор PCM и waveOut output. assetstore.pas разделить на очередь декодирования/создания текстур и источник байтов. Делать эти переносы по одному с сохранением исходного Windows-результата.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "3-5",
+            "number": 5,
+            "group": "",
+            "text": "Поменять прямые WinAPI-вызовы в зависимых units: Windows.TRect в nodes/widgets, VK_ в сценах и autoscript, списки файлов в scripted/frameflow/meshanim, настройки окна в UI. Запретить общим интерфейсам импорт Windows/d3d9api проверкой исходников и сборкой образцов PiGine без каталогов Golub в -Fu.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "3-6",
+            "number": 6,
+            "group": "",
+            "text": "После каждого изменения контракта собирать Windows Debug/Release, образцы и редакторы, выполнять короткий script и сравнивать выбранный кадр. Если поменялось время жизни ресурса, добавить сценарий «загрузка → выход → повторная загрузка» и проверить отсутствие утечки/висячих PFrame.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "3-7",
+            "number": 7,
+            "group": "",
+            "text": "После выделения общих типов включить Wasm compile-check gfx/nodes и границ engine без Windows imports. Запуск отрисовки сцены отложен до этапа 6; этот compile-check не требует полноценных временных backend-заглушек. Прямые файловые проверки заменять по семантике catalog/readiness из архитектурного контракта, не одним механическим переименованием FileExistsW.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Browser entry point и цикл кадра",
+        "status": "pending",
+        "statusLabel": "Предстоит",
+        "work": "Вынести из TEngine.Run инициализацию, один кадр и завершение. Windows Run продолжает вызывать кадры в своём цикле. Browser host загружает закреплённые Wasm/manifest, создаёт WebGL backend и минимальный engine/loading-screen, запускает загрузку групп и storage, затем создаёт игровые сцены только после готовности их зависимостей. Это позволяет создавать GPU-текстуры во время preload без зависимости «готовые текстуры нужны до создания renderer». Регистрируются те же Pascal-сцены, кадры приходят из requestAnimationFrame. Порядок ProcessOps → DispatchInput → Step → Draw → Present сохраняется.",
+        "result": "Один и тот же API сцен работает в нативном цикле и из browser callback; пауза, скрытая вкладка и выход не меняют игровое время неконтролируемо.",
+        "steps": [
+          {
+            "id": "4-1",
+            "number": 1,
+            "group": "",
+            "text": "Выделить из TEngine.Run методы Initialize, Tick(now), Shutdown либо эквивалентные, не меняя порядка: pump/параметры режима, вычисление dt, queued script input, снимок кнопок, ProcessOps, DispatchInput, OnBlur, Step, отрисовка post-сцен, GfxApplyPost, остальные сцены, snapshot, present, textCache.EndFrame. Фактический порядок из кода записать в тестовый trace до правки.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "4-2",
+            "number": 2,
+            "group": "",
+            "text": "Разнести часы: real time для браузерного callback и воспроизводимое simulation time для сцен/шейдеров. Сохранить нынешнее ограничение dt до 0,25 с и opts.fixedStep в отладочном режиме, но определить поведение после минуты скрытой вкладки: один контролируемый кадр с OnBlur, без тысячи догоняющих шагов. Измерять delta из timestamp requestAnimationFrame, не из Date.now().",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "4-3",
+            "number": 3,
+            "group": "",
+            "text": "Создать browser entry point с жизненным циклом init_runtime/backend → init_engine/loading → acquire_boot_resources/open_storage → start_game_scenes, затем on_frame, on_input, on_resize, shutdown. Bootstrap HTML может показать ошибку ещё до готовности шрифтов и Pascal UI. Названия экспортов, статусы loading и коды ошибок зафиксировать в bridge-контракте. Host не вызывает Pascal до инициализации RTL и не запускает второй кадр до завершения предыдущего.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "4-4",
+            "number": 4,
+            "group": "",
+            "text": "Сцену запуска и список RegisterScene брать из общего игрового bootstrap, чтобы Windows и browser не разошлись незаметно. Отделить разрешённые URL-параметры тестового запуска от пользовательского игрового состояния. Ошибку исключения Pascal ловить на границе кадра, логировать stage и прекращать requestAnimationFrame до решения пользователя.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "4-5",
+            "number": 5,
+            "group": "",
+            "text": "Переосмыслить quitRequested и closeQuery для закрытия вкладки: браузер не гарантирует синхронную запись при beforeunload; состояние должно быть уже сохранено на этапе 13. Windows Run продолжает управлять Sleep, timeBeginPeriod и D3D presentation, web host — rAF, CSS размером canvas и visibility.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "4-6",
+            "number": 6,
+            "group": "",
+            "text": "Проверить жизненный цикл событиями: resize во время воды, быстрые scene start/stop, скрыть/вернуть вкладку, потерять фокус с удержанной клавишей, исключение в Step, повторный boot после ошибки. У каждого сценария есть ожидаемый счётчик кадров и отсутствие повторного владения ресурсом.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Ввод, экран и браузерные ограничения",
+        "status": "pending",
+        "statusLabel": "Предстоит",
+        "work": "Отобразить KeyboardEvent.code на коды движка, совместимые с сохранёнными назначениями; отдельно доставлять текст, повтор, keyup и IME. Для pointer/touch обеспечить координаты 1920×1080 после CSS-масштаба, letterbox и DPR. Добавить в общий игровой ввод объединение клавиатуры и виртуальных action ID по архитектурному контракту, включая kick. JS-кнопки отправляют события действия/источника без правил gameplay. Проверить wheel, правую кнопку, курсор и ввод в виджеты.",
+        "result": "Управление, переназначение клавиш и касания работают во всех целевых браузерах; после потери фокуса персонаж не продолжает движение.",
+        "steps": [
+          {
+            "id": "5-1",
+            "number": 1,
+            "group": "",
+            "text": "Составить полную таблицу текущих VK_, Ord('A'...), KEY_COUNT=256, TKeyEvent, textEvents и сохраняемых key bindings. Для каждой физической клавиши указать KeyboardEvent.code, выводимый внутренний числовой код, текстовый ввод через beforeinput/input и поведение при repeat. Сохранённые Win32-настройки должны пройти round trip через браузер без перестановки действий.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "5-2",
+            "number": 2,
+            "group": "",
+            "text": "Сделать адаптер DOM-событий с очередью, а не сразу вызывать игровую сцену из keydown. В начале Tick очередь переносится в TGameWindow/общий input state: это сохраняет прежнюю семантику Pressed ровно один кадр и порядок относительно ProcessOps. preventDefault() применять к игровым клавишам только при активном canvas/экране игры, чтобы не ломать браузерный ввод вне игры.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "5-3",
+            "number": 3,
+            "group": "",
+            "text": "Для редактируемых полей проверить кириллицу, составные символы, IME composition, вставку, удаление выделения и мобильную клавиатуру. Разделить «клавиша» и «введённый текст»: key/code не всегда представляют введённый символ, а составной ввод не должен отправлять промежуточные строки в widgets.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "5-4",
+            "number": 4,
+            "group": "",
+            "text": "Координаты pointer считать из getBoundingClientRect() и фактического CSS размера canvas, затем убрать letterbox и перевести в логические 1920×1080. Отдельно учитывать devicePixelRatio при размере backing store, иначе hit testing и картинка разойдутся. Проверить края полос и касания после поворота телефона.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "5-5",
+            "number": 5,
+            "group": "",
+            "text": "Зафиксировать pointer capture и пары (actionId, pointerId). pointercancel/lostpointercapture удаляют только отменённый источник; blur и скрытая вкладка вызывают общий ReleaseAll. Отпускание одной виртуальной кнопки не изменяет физическое состояние клавиатуры и не отпускает второй палец. Для взаимодействия с browser gestures настроить touch-action на игровом canvas и необходимые listeners.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "5-6",
+            "number": 6,
+            "group": "",
+            "text": "Провести матрицу тестов: клавиатура с разными раскладками, мышь/колесо/контекстное меню, тач без мыши, тач плюс внешняя клавиатура, fullscreen и возврат, экранные кнопки при двух пальцах. Для Esc/F11 и системных жестов описать фактические ограничения браузера в UI вместо обещания Windows-поведения.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "5-7",
+            "number": 7,
+            "group": "",
+            "text": "В storage.pas/общем игровом input adapter сохранить полный TAction и mapping клавиатуры, но виртуальные источники хранить отдельно. Перевести TGameScene.ReadInput, TDiveScene и подсказки управления на единый снимок Down/Pressed(action). При смене bindings во время удержания пересчитать keyboard-held без синтетического повторного Pressed; при закрытии меню настроек очистить непредназначенные для игры накопленные события.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "5-8",
+            "number": 8,
+            "group": "",
+            "text": "Обязательные случаи: action без клавиатурного назначения работает с touch; переназначенный flap работает обоими способами; два пальца на одном действии и одновременная клавиша дают удержание до отпускания последнего источника; down/up между Tick дают одно Pressed; keyboard repeat не вызывает новые игровые нажатия; kick доступен на мобильном экране. Движок и Windows samples продолжают читать сырые key/text события для меню.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Базовый WebGL2 backend",
+        "status": "pending",
+        "statusLabel": "Предстоит",
+        "work": "Создать контекст, запросить и записать MAX_TEXTURE_SIZE, число texture units, лимиты uniforms, доступные расширения и размер framebuffer. Реализовать создание/удаление RGBA8-текстур, VBO/VAO, загрузку TVertex, drawArrays, scissor, четыре TBlend, viewport и цвет очистки. Входной BGRA собственного декодера конвертировать в RGBA; зафиксировать, где именно выполняется premultiply, чтобы не умножить альфу дважды. Сверить ориентацию Y, UV, смещение на полпикселя, фильтрацию, clamp/repeat и порядок цветов. Для динамических текстур использовать texSubImage2D; для горячего пути измерить объём передачи Wasm → JS → GPU. WebGL принимает RGBA8/UNSIGNED_BYTE как штатный формат. MDN: загрузка текстур, MDN: pixelStorei.",
+        "result": "samples/showcase или отдельная витрина PiGine рисует спрайты, фигуры, геометрию, клип и альфу; замеры CPU/GPU показывают стоимость батчей.",
+        "steps": [
+          {
+            "id": "6-1",
+            "number": 1,
+            "group": "",
+            "text": "Составить таблицу соответствий всех используемых D3D9 state: TBlend с предумноженной альфой, sampler address/filter, scissor, viewport, target, shader, текстурные слоты s0–s3, порядок примитивов. Для blMultiply и blScreen зафиксировать фактические D3D blend factors из gfx.pas и повторить их в WebGL, а не выбрать похожее имя из примера в интернете.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "6-2",
+            "number": 2,
+            "group": "",
+            "text": "Объявить wire-формат команд на границе Wasm/JS: layout TVertex/TGpuVertex, число вершин, handle текстуры/программы, blend, clip и batch order. На каждый вызов проверять границы buffer, поколение handle и lifetime указателя. JS view на memory.buffer пересоздавать после роста памяти; не сохранять Uint8Array в объекте текстуры.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "6-3",
+            "number": 3,
+            "group": "",
+            "text": "Сначала реализовать белую 1×1 текстуру, треугольник и quad без материалов; затем атлас, цвета вершин и альфу, clip, четыре blend mode, custom geometry и материалы. Проверять каждый шаг эталонной сценой с перекрывающимися прозрачностями и вложенным scissor. В WebGL2 создать VAO и зафиксировать offsets атрибутов; числовой DWORD цвета декодировать однозначно.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "6-4",
+            "number": 4,
+            "group": "",
+            "text": "Реализовать загрузку BGRA из webp.pas и динамических текстур с явной конверсией channel order. Премультипликацию (assetstore.Premultiply) оставить в одном месте; для WebGL указать UNPACK_ALIGNMENT, UNPACK_FLIP_Y_WEBGL и UNPACK_PREMULTIPLY_ALPHA_WEBGL как часть контракта, а не полагаться на defaults. Отдельно проверить строки с шириной, не кратной четырём байтам, и 1×N текстуры.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "6-5",
+            "number": 5,
+            "group": "",
+            "text": "Хранить таблицу GPU-ресурсов с логическими ID и состоянием created/deleted; разработать повторное создание заранее, хотя сам тест потери контекста выполняется на этапе 15. Удалять буферы и текстуры на освобождении Pascal-объекта, но разрешать задержанное удаление после завершения текущего batch.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "6-6",
+            "number": 6,
+            "group": "",
+            "text": "Профилировать число batch/draw calls, объём bufferSubData, количество пересечений границы Wasm/JS, время записи команд и upload на типичной сцене. Если прямой мост создаёт чрезмерное число вызовов, передавать массивы батчей за один или несколько крупных вызовов, не меняя публичный API TRenderer.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "6-7",
+            "number": 7,
+            "group": "",
+            "text": "Подключить pipeline decoder worker из 2Б, проверить upload реального крупного атласа ограниченными порциями и учёт GPU/CPU памяти. После готовности минимального text/resource backend выполнить первый запускаемый Wasm sample PiGine; до этого renderer проверяется самостоятельной витриной без требования подключить все Golub-сцены. Отдельно выполнить отложенные SizeOf/offset проверки графических записей.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "title": "Framebuffer, захват кадра и post processing",
+        "status": "pending",
+        "statusLabel": "Предстоит",
+        "work": "Рисовать игровую сцену во внутреннюю texture/FBO, применить post pass и затем вывести результат на canvas. Сохранить разделение сцен «под эффектом» и UI поверх эффекта из TEngine.Run. Реализовать GfxCreateTarget, GfxSnapshot, TRenderer.Grab, захват снимка для тестов и перераспределение render targets при resize. Для копии уже нарисованного участка использовать отдельные source/destination FBO и WebGL2 blitFramebuffer либо проверенный draw-pass; не читать текущую render target texture в шейдере, пока в неё же идёт запись. MDN: blitFramebuffer.",
+        "result": "Постобработка и снимок кадра работают в правильном порядке; UI остаётся резким и не получает эффект сцены.",
+        "steps": [
+          {
+            "id": "7-1",
+            "number": 1,
+            "group": "",
+            "text": "Нарисовать схему всех целей кадра: default framebuffer, сценовая цель под post, промежуточная цель эффекта, цели GfxCreateTarget для фото/воды и момент TRenderer.Grab. Для каждой указать размер в физических пикселях, формат, владельца и точку освобождения. Не считать, что размер CSS canvas равен размеру drawing buffer.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "7-2",
+            "number": 2,
+            "group": "",
+            "text": "Реализовать FBO с проверкой checkFramebufferStatus и явной установкой viewport/scissor при каждом переключении. Проверить минимальный размер, resize, большой DPR и размер больше MAX_RENDERBUFFER_SIZE/MAX_TEXTURE_SIZE; при превышении применять ограничение масштаба с сообщением диагностики. После resize прежние attachment и содержимое target считаются недействительными.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "7-3",
+            "number": 3,
+            "group": "",
+            "text": "Перенести порядок GfxBeginFrame → GfxDraw(post-сцены) → GfxApplyPost → TakeSnapshots → GfxDraw(UI) → TakeSnapshots → GfxPresent из TEngine.Run. Отдельными снимками доказать, что игровая фотография и вода видят именно нужный этап кадра, а HUD не окрашивается post shader.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "7-4",
+            "number": 4,
+            "group": "",
+            "text": "Для Grab описать координаты источника в физическом framebuffer и назначения в target; проверить частичные области, масштабирование, Y-inversion и clipping. Перед копированием обязательно flush ранее накопленных батчей. Тест «прозрачный объект до захвата, красный объект после» должен показать только первый объект в скопированной текстуре.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "7-5",
+            "number": 5,
+            "group": "",
+            "text": "Проверить поддержку blitFramebuffer для выбранной пары форматов и правил фильтрации; если результат отличается от D3D9, использовать единый draw-pass с контролируемым sampler. Не допускать read/write feedback loop, когда texture одновременно attachment и sampler.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "7-6",
+            "number": 6,
+            "group": "",
+            "text": "GfxCapture и снимки для тестов реализовать отдельным путём с readPixels, переворотом строк, конверсией RGBA/BGRA и сохранением по команде harness. Замерить задержку и гарантировать, что обычный кадр не вызывает этот путь. Для возвращения вкладки и context restore предусмотреть пересоздание FBO.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "title": "GLSL-версии всех шейдеров",
+        "status": "pending",
+        "statusLabel": "Предстоит",
+        "work": "Для HLSL-исходников blur, matvs, murk, particles_ps, particles_vs, post, silhouette, water, place написать соответствующие GLSL ES 3.00. Выбрать шейдер по идентификатору и backend, а не передавать HLSL в WebGL API. Составить таблицу register(cN) и register(sN) → uniforms/samplers; встроить проверку компиляции и линковки всех программ при browser smoke. Простые шейдеры переносить перед водой и частицами. Формат источников держать рядом по смыслу, generated .inc создавать только сборочным скриптом.",
+        "result": "Все девять программ компилируются и линкуются в выбранных браузерах; контрольные кадры показывают работу каждого эффекта, а ошибки шейдеров выводятся явно.",
+        "steps": [
+          {
+            "id": "8-1",
+            "number": 1,
+            "group": "",
+            "text": "Сделать инвентарную таблицу всех мест вызова GfxCompileShader/GfxCompileVertexShader и соответствующих HLSL-файлов. Для каждой программы записать vertex attributes, входные varyings, текстуры s0–s3, константы c0..., формат выходного цвета и использующие её сцены. Определить stable shader ID и пару исходников HLSL/GLSL, чтобы один backend никогда не пытался компилировать исходник другого.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "8-2",
+            "number": 2,
+            "group": "",
+            "text": "Перенести сначала базовый материал и post, затем blur, silhouette, place, частицы и murk; water оставить после проверки графической инфраструктуры. Каждый GLSL source начинается с #version 300 es, явных in/out и precision, а host сообщает compile/link log с именем программы и нумерацией строк.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "8-3",
+            "number": 3,
+            "group": "",
+            "text": "Для TMaterial.consts, extra, vsConsts, psConsts определить точную раскладку в uniforms или UBO. Не предполагать соответствия HLSL register и GLSL location: getUniformLocation/reflection вызываются после link, locations кэшируются на программу. Проверить, что массив констант не был оптимизирован и что размер не превышает проверенный лимит конкретного контекста.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "8-4",
+            "number": 4,
+            "group": "",
+            "text": "Записать математические соответствия: saturate→clamp, lerp→mix, frac→fract, различия mod/fmod, матричное умножение, знаки осей, положение половины пикселя и sampling на краю текстуры. Для каждой программы подготовить кадр с характерными входными значениями, включая нулевую/полную альфу и выход UV за границы.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "8-5",
+            "number": 5,
+            "group": "",
+            "text": "Проверять точность на мобильных GPU: highp в fragment stage там, где используются координаты мира, время и водные волны; остальные значения переводить в меньшую точность только после профиля. Сравнивать кадры не только визуально, но и по нескольким точкам цвета при фиксированном времени, допуская оговорённую погрешность.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "8-6",
+            "number": 6,
+            "group": "",
+            "text": "В web build включить компиляцию/линковку всего набора программ на реальном WebGL2-контексте браузерного smoke. Shader compile как текстовая операция в CI без браузера не доказывает наличие нужных limits, поэтому испытать минимум один слабый мобильный профиль до этапа полной игры.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "title": "Полный путь воды",
+        "status": "pending",
+        "statusLabel": "Предстоит",
+        "work": "Сохранить Pascal-симуляцию TWaveField, TFluidGrid, каверн, ила, churn и тел. Перенести только её графическую границу: FSurfTex и FGridTex обновляются каждый нужный кадр, FGrab хранит сцену до воды, water shader рисует преломление, блики, каустику, каверны и муть. Проверить согласование координат мира, камеры, слоя и UV с TWater.Draw; отдельно испытать TWaterMurk, пузырьки, пену, брызги и лучи. В профиле кадра разделить время симуляции, выгрузки текстур, копии framebuffer и fragment shader.",
+        "result": "Вода реагирует на тело, каверны, ил и ласты так же по состоянию игры; контрольные кадры и профиль подтверждают приемлемый режим на целевых устройствах.",
+        "steps": [
+          {
+            "id": "9-1",
+            "number": 1,
+            "group": "",
+            "text": "Зафиксировать числовой эталон симуляции: высоты TWaveField, скорости/давление TFluidGrid, параметры каверн, положение тел, количество частиц/ила и seed после заданных импульсов. Запускать эти проверки ещё без рендера в Wasm; падение этого теста означает проблему общего Pascal-кода, а не GLSL.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "9-2",
+            "number": 2,
+            "group": "",
+            "text": "Пройти фактическую цепочку TWater.Draw: размер и формат FSurfTex/FGridTex, смысл каждого канала, порядок обновления, FGrab, материалы, дополнительные константы и камеры. Записать диаграмму зависимостей кадров: какие данные относятся к текущему Step, какие — к ранее нарисованной сцене. Это предотвращает сдвиг эффекта на один кадр.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "9-3",
+            "number": 3,
+            "group": "",
+            "text": "В отдельной витрине включать эффекты по одному: плоская поверхность, волна, тело и каверна, ил, refraction, caustics, murk, bubbles/foam/rays. Для каждого сохранить скриншот и время GPU/CPU. Ранний тест должен включать малую область воды и почти весь экран воды — стоимость второго случая может быть иной.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "9-4",
+            "number": 4,
+            "group": "",
+            "text": "Проводить контуры воды через тот же scissor/viewport и масштаб логических координат, что обычные спрайты. Для FGrab проверять край окна и смещение камеры; для динамических texture uploads — stride и формат каждой строки. На цветных тестовых полосах быстро заметны перепутанный Y, swizzle каналов и расхождение UV.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "9-5",
+            "number": 5,
+            "group": "",
+            "text": "На мобильном устройстве измерить отдельно CPU симуляцию, упаковку pixel buffer, WebGL upload, копию framebuffer и шейдерный pass. Только после такого разложения выбирать оптимизацию: частичная загрузка текстуры, меньший resolution pass, уменьшение площади копии или обновление вспомогательных карт реже. Зафиксировать влияние каждой меры на видимые сцены и обратимость переключателем качества.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "9-6",
+            "number": 6,
+            "group": "",
+            "text": "Проверить переходы состояния: вход/выход из воды, пауза, изменение размера, поворот телефона, смерть/рестарт и смена уровня. При выгрузке сцены освободить её render targets и CPU буферы; при context restore восстановить данные из текущей симуляции, а не из уже удалённой GPU texture.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "9-7",
+            "number": 7,
+            "group": "",
+            "text": "Для закрытия рубежа C использовать реальные atlas/background группы dive, размеры targets, работающий audio candidate и pipeline загрузки, выбранные в 2Б. Повторить замеры памяти, upload-порций, PCM latency и underrun одновременно с водой. Синтетическая вода на пустом фоне не закрывает этот рубеж; при превышении бюджета менять группу, качество эффекта или подтверждённый audio backend до этапа полного игрового маршрута.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "title": "Текст и шрифты",
+        "status": "pending",
+        "statusLabel": "Предстоит",
+        "work": "Загрузить комплект Rubik и PT Serif до первого измерения текста. Browser backend получает строки и TTextStyle, измеряет через Canvas 2D, растеризует в отдельном canvas и передаёт bitmap в текстурный кэш. Алгоритм переноса строк и расчёт размеров держать общими настолько, насколько позволяют различия метрик. Сохранить обводку, фон, выравнивание, толщину, отступы, DPI scaling и ключи кэша. Проверить кириллицу, латиницу, спецсимволы, длинные кнопки и обе локали. Шрифты можно загрузить через FontFace до рисования в canvas. MDN: CSS Font Loading.",
+        "result": "Меню, HUD, диалоги, субтитры и настройки читаемы на обоих языках и проверены снимками при разных размерах экрана.",
+        "steps": [
+          {
+            "id": "10-1",
+            "number": 1,
+            "group": "",
+            "text": "Выписать поля TTextStyle, TTextBitmap, TFontFace, ключ StyleKey и места использования MeasureText/RenderText. В textgdi.pas отдельно находятся выбор face, измерение строк, перенос и алгоритм обводки; решить по каждой операции, какая часть остаётся общей, а какую выполняет браузер. Единый контракт должен возвращать метрики, baseline, RGBA/coverage и размер bitmap.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "10-2",
+            "number": 2,
+            "group": "",
+            "text": "Включить шрифты и лицензии в asset catalog. Дождаться FontFace.load()/document.fonts.ready до первого MeasureText; иначе кэш запомнит размеры fallback-шрифта, а после загрузки кнопки прыгнут. Проверить реальное имя семейства, weight и italic mapping для Rubik и PT Serif.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "10-3",
+            "number": 3,
+            "group": "",
+            "text": "Для Canvas 2D явно задать font, textBaseline, textAlign, масштаб и pixel ratio; сравнить ширины нескольких контрольных строк с GDI. Объявить допуск для layout и список экранов, где требуется точный перенос строк. При отличии браузерной метрики не подгонять каждую кнопку вручную: исправить общий layout или набор метрик.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "10-4",
+            "number": 4,
+            "group": "",
+            "text": "Сохранить текущий способ получения обводки: GDI-код применяет Dilate/EDT к покрытию текста. Если Canvas stroke не даёт нужный вид, извлечь coverage из browser canvas и применить общую Pascal-обработку, затем загрузить готовый bitmap. Проверить края, тонкие линии, полупрозрачные буквы и предумноженную альфу.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "10-5",
+            "number": 5,
+            "group": "",
+            "text": "Ключ кэша обязан учитывать текст, стиль, face, масштаб, локаль и состояние загрузки шрифта; после смены языка или DPR старые texture entries нужно инвалидировать и освободить. Проверить отсутствие роста кэша при многократном открытии меню и смене размера.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "10-6",
+            "number": 6,
+            "group": "",
+            "text": "Пройти русский/английский UI, длинные строки в диалогах, субтитры, пустые строки, emoji/неподдерживаемые символы, ввод в поля и очень длинное имя сохранения. Для неподдерживаемого glyph описать fallback; для составного ввода не расщеплять UnicodeString по байтам.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "title": "Ассеты и управление памятью",
+        "status": "pending",
+        "statusLabel": "Предстоит",
+        "work": "Интегрировать доказанные в 2Б группы, decoder worker и бюджеты в TAssets, общий catalog/provider и переходы сцен. Сборка формирует versioned catalog из generated outputs и levels, scripts, films, locales, fonts. Host закрепляет manifest одного релиза, проверяет HTTP/hash и доставляет байты асинхронно. Worker декодирует целые WebP и вычисляет CPU-производные, главный Pump ограничивает обработку результатов и upload; полного DecodeWebP на главном потоке нет. Реализовать загрузку/выгрузку групп с безопасной жизнью PFrame, как намечено в ENGINE_NEEDS.md, и повторно измерить суммарный пик.",
+        "result": "Меню появляется без загрузки ассетов всех уровней; переходы уровень → меню → другой уровень не дают устойчивого роста памяти.",
+        "steps": [
+          {
+            "id": "11-1",
+            "number": 1,
+            "group": "",
+            "text": "Сравнить windows/package.ps1, public/assets/manifest.json и фактические обращения TAssets.Frame/Image/Anim, ReadFileBytes и сценариев. Генератор каталога должен выдавать каждый логический путь, hash, размер и группу загрузки; в CI проверять отсутствие отсутствующих файлов и совпадение регистра. Не выводить список из Phaser preload: он не содержит всё нужное Windows-игре.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "11-2",
+            "number": 2,
+            "group": "",
+            "text": "Разбить группы по реальным владельцам: минимальный boot/title, общие UI/шрифты, данные выбранного уровня, dive, film/rig/flow по потребности. Для каждого перехода перечислить зависимости до вызова конструктора сцены; API Acquire(group) завершает fetch/проверку/decode/upload либо сообщает ошибку. Смена уровня отменяет лишние загрузки без освобождения группы, которую уже использует новая сцена.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "11-3",
+            "number": 3,
+            "group": "",
+            "text": "В TAssets.Start/Pump/Finish разделить fetch, decoder worker, очередь готовых pixel buffers и main-thread upload. Windows TWorker остаётся в своём backend; browser использует отдельный worker из 2Б. Лимиты активных decode и байтов готовой очереди создают обратное давление: worker не выдаёт следующие большие результаты, пока текущие не загружены/освобождены. Pump прерывается между upload-порциями, публикует texture/frame только после полного upload и не объявляет группу готовой раньше. Progress отдельно учитывает fetch, decode и GPU, отмена использует request/group generation.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "11-4",
+            "number": 4,
+            "group": "",
+            "text": "Для каждого атласа посчитать compressed size, peak decode buffer, premultiplied pixels, mask, thumb, small, GPU texture и живые PFrame. Определить lifetime CPU-пикселей: оставить только те, которые нужны для FrameOpaque, восстановления контекста или дополнительной обработки; прочие освобождать после upload, но предусмотреть повторный fetch.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "11-5",
+            "number": 5,
+            "group": "",
+            "text": "Описать правила ссылок: пока сцена хранит PFrame, группа и текстура должны оставаться живыми. Группа освобождается после Shutdown всех сцен-потребителей, уничтожения материалов/анимаций и завершения текущего кадра. На повторном Acquire создаются новые поколения handle; stale ссылка должна выявляться в Debug, а не тихо указывать на другой атлас.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "11-6",
+            "number": 6,
+            "group": "",
+            "text": "Выполнить тесты холодного/тёплого cache, медленной сети, обрыва отдельного файла, неверного hash, отмены загрузки, back/forward браузера и цикла «уровень A → B → A». Измерить высокую точку Wasm/JS/GPU памяти, время до title и до уровня; подтвердить бюджеты 2Б на том же мобильном профиле. Добавление ресурсов в группу сопровождается пересчётом её отчёта и проверкой пика, а не автоматическим увеличением лимита.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "11-7",
+            "number": 7,
+            "group": "",
+            "text": "В отчёте по каждой группе показывать compressed bytes, resident GPU, masks/thumbs, heap high water и временные копии worker/result/upload. Перед переходом проверять бюджет объединения; если он превышен, показывать постоянную loading-сцену, освобождать старые level-группы и затем загружать новые. Повторные циклы разных размеров проверяют и отсутствие утечек, и повторное использование освобождённых участков Wasm heap.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "11-8",
+            "number": 8,
+            "group": "",
+            "text": "Отдельный контрактный тест открывает level select при загруженном только boot: все опубликованные уровни видны по catalog. Выбранный уровень проходит NotRequested → Loading → Ready, и лишь после AcquireGroup.Ready создаётся сцена. После unload уровень остаётся опубликованным и его можно выбрать повторно. Отсутствующий файл, известный незагруженный файл и HTTP/hash failure дают три разных результата; ReadReady(NotReady) не запускает синхронный fetch и не выбирает другой вариант уровня.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "title": "Уровни, PigeonScript и кино",
+        "status": "pending",
+        "statusLabel": "Предстоит",
+        "work": "Подать Pascal-коду JSON уровней, словарь, rigs, flow, .pigeon и src/films из browser resource provider. Для файловых API вроде PsCompileFile и CompileFilm либо добавить CompileText с исходным логическим именем файла, либо дать синхронное чтение из уже заполненного каталога; import scripts/lib должен разрешаться тем же способом, что в Windows. Скомпилировать все сценарии в тестах web-сборки. Проверить порядок регистрации сцен, загрузку уровня _blocks.json и .win.json, cutscene lifecycle, возвращение в меню и сериализацию состояния.",
+        "result": "Сценарии, катсцены и кино идут в браузере на Pascal VM, без JavaScript-копии PigeonScript; проверки состояния совпадают с Windows в согласованных точках.",
+        "steps": [
+          {
+            "id": "12-1",
+            "number": 1,
+            "group": "",
+            "text": "Для каждого типа данных составить карту читателей: уровни и их варианты (.json, _blocks.json, .win.json, .dive.json), локали, rigs, frameflow, meshanim, скрипты уровня, scripts/lib и films. Пути в JSON и в коде нормализовать на границе resource provider; нельзя просто заменить \\ на / внутри строк сценария без проверки правил import.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "12-2",
+            "number": 2,
+            "group": "",
+            "text": "Перенести PsCompileFile, CompileFilm и перечисление файлов на логические имена из manifest, сохранив диагностику имя:строка:столбец. Стабилизировать порядок перечисления .pigeon и .json сортировкой; проверить семантику при одинаковых basename и циклических/отсутствующих imports. Файлы должны быть полностью загружены до синхронной компиляции.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "12-3",
+            "number": 3,
+            "group": "",
+            "text": "Добавить browser build check, который компилирует все игровые и библиотечные .pigeon на том же Pascal lexer/compiler, что runtime. Проверить кириллицу в строках, escape-последовательности, относительные импорты, комментарии и ошибки в намеренно испорченном файле. Тест сравнивает не только успех компиляции, но и идентификаторы/количество команд там, где это устойчиво.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "12-4",
+            "number": 4,
+            "group": "",
+            "text": "Запустить одинаковую сцепку событий Windows/Wasm: создание сцены, регистрация игровых команд из scripted.inc, первое событие NPC, пауза, перемотка/пропуск катсцены, завершение и освобождение объектов. Сравнить состояние VM и мира в контрольных точках; расхождения по времени отделить от расхождений по порядку событий.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "12-5",
+            "number": 5,
+            "group": "",
+            "text": "Проверить загрузку film без диска: каталог фильма, переходы кадров, звук, текст и выход из фильма. Отдельно испытать отсутствующий обязательный файл и испорченный JSON — пользователь должен увидеть ошибку загрузки, а не зависшее чёрное окно.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "12-6",
+            "number": 6,
+            "group": "",
+            "text": "Windows-only режимы редакторов оставить нативными, но генерация и валидация игрового пакета должны запускаться до web build. Если браузерному debug harness потребуется загрузить пользовательский файл, делать это отдельным тестовым путём через File API без изменения продакшен resource provider.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "12-7",
+            "number": 7,
+            "group": "",
+            "text": "Выбор варианта JSON и наличие .pigeon/rig/flow проверять по catalog, а готовность байтов — через provider. Группа включает транзитивные script imports до начала компиляции. При NotReady orchestration продолжает/повторяет загрузку, а parser не получает пустую строку. Один сеанс не меняет release manifest даже при публикации новой версии сайта.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "title": "Сохранения v2 и необязательный импорт из первой версии",
+        "status": "pending",
+        "statusLabel": "Предстоит",
+        "work": "Создать независимое хранилище v2 с ключами golub-play-v2. и IndexedDB golub-play-v2. Каждый полный слот имеет собственную запись и монотонную revision; операции выполняются с проверкой ожидаемой revision в одной транзакции. Общий игровой API сохранений получает явный результат commit/conflict, Windows adapter сохраняет нативное поведение. Новая игра использует свои данные; необязательный импорт копирует исторические настройки/рекорды/слоты чтением golub.. Старые слоты без state открывают начало уровня. Импорт не меняет исходные ключи и не синхронизирует две игры.",
+        "result": "V2 сохраняет собственные настройки, рекорды и полное состояние слотов; необязательный импорт читает старые данные как копию. После операций v2 историческая версия видит прежнее содержимое своих ключей.",
+        "steps": [
+          {
+            "id": "13-1",
+            "number": 1,
+            "group": "",
+            "text": "Зафиксировать схемы всех хранилищ по реальным данным: формат %APPDATA% в TFileStore, структуры ReadSettings/ReadRecords/ReadSaves в storage.pas и содержимое ключей текущего Phaser. Подготовить обезличенные fixtures: пустой браузер, все шесть слотов, частично заполненные слоты, старые поля, повреждённая запись и новый полный state. Версию формата хранить отдельно от версии приложения.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "13-2",
+            "number": 2,
+            "group": "",
+            "text": "В browser startup загрузить данные v2 до создания сцен, которые читают настройки и сохранения. TMemoryStore может обслуживать синхронные GetItem, но состояние «ещё не загружено» должно быть явным: иначе title на долю секунды покажет «нет сохранений». Единый адаптер отображает все логические ключи Pascal в пространство v2, включая mute и признак завершённого обучения; прямые записи golub. за пределами адаптера запретить проверкой. Windows provider сохраняет собственный формат и путь.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "13-3",
+            "number": 3,
+            "group": "",
+            "text": "Изменить игровой API в storage.pas: ReadSaves даёт UI подтверждённые слоты и revisions, а WriteSave/ClearSave отправляют отдельный slot ID, expectedRevision, payload и requestId, возвращая результат асинхронно. WriteAllSaves остаётся внутренним способом нативной сериализации/чтения legacy fixtures, но не операцией записи browser cache в базу. Общий engine backend работает с версионированными ключами, не знает о TSaveSlots. Windows adapter подтверждает синхронную запись через тот же callback/result-контракт и продолжает читать старые Windows-сохранения. Владелец запросов живёт на уровне приложения; scene Shutdown снимает подписку UI, но не обрывает уже начатую транзакцию и не оставляет callback на уничтоженный объект.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "13-4",
+            "number": 4,
+            "group": "",
+            "text": "До открытия транзакции сериализовать Pascal state, вычислить checksum и получить bytes. В одной IndexedDB readwrite-транзакции прочитать запись слота, сравнить persistent revision с ожидаемой, затем записать payload/новую revision и обновить catalog revision. При несовпадении завершить без записи с Conflict; не перезаписывать автоматически. Удаление записывает tombstone с новой revision. Внутри транзакции не ждать сеть, shader/decode, пользовательское решение или внешние Promise: она должна завершиться только своими IDB-запросами. Успех приходит на transaction.complete, не на put.onsuccess.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "13-5",
+            "number": 5,
+            "group": "",
+            "text": "Разделить pending и committed cache в памяти. На abort, quota, закрытой базе или checksum/JSON-ошибке убрать pending, сохранить последнюю подтверждённую запись и показать результат. Две операции одной вкладки на один слот сериализуются: следующая использует revision успешно завершившейся предыдущей либо требует повторного выбора после conflict. После commit уведомить другие вкладки через BroadcastChannel; они инвалидируют cache и перечитывают запись. Канал не является блокировкой: корректность сохраняется при потерянном уведомлении за счёт проверки revision.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "13-6",
+            "number": 6,
+            "group": "",
+            "text": "Импорт Phaser выполнять по действию пользователя как идемпотентное копирование в отсутствующие слоты v2. Создание каждого слота проверяет отсутствие записи/tombstone в той же транзакции; существующее или удалённое ранее сохранение не перезаписывается. Для шести слотов можно использовать одну транзакцию с проверкой каждого ключа и метаданными импорта. Маркер находится только в v2 и записывается вместе с результатом, исходные golub. всегда сохраняются. Продолжение исторической игры не вызывает повторный автоматический импорт.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "13-7",
+            "number": 7,
+            "group": "",
+            "text": "Реализовать db.onversionchange: запретить новые записи, закрыть соединение, дать текущей транзакции завершиться/получить результат и показать просьбу обновить вкладку. open.onblocked показывает состояние ожидания и повтор, а не вечную загрузку без объяснения. VersionError у старого build не исправляется удалением базы: разрешены обновление приложения и безопасный экспорт через совместимый код. Схема базы и formatVersion payload версионируются отдельно; rollback релиза не получает права записывать неизвестный формат. MDN: lifecycle IndexedDB и транзакции.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "13-8",
+            "number": 8,
+            "group": "",
+            "text": "Отдельно описать потерю данных вне контроля игры: private browsing, очистка storage, политика квот, новый origin. Предусмотреть экспорт/import файла сохранений с версией и проверкой схемы, а при недоступном постоянном storage — режим без сохранения с сообщением. Запрос persistent storage не гарантирует его предоставление. Для настроек описать допустимую политику последней записи ключа и обновление через storage event; полные слоты всегда используют revision.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "13-9",
+            "number": 9,
+            "group": "",
+            "text": "Автоматизировать двухвкладочные случаи: A пишет слот 0, B слот 1 — обе записи сохраняются; A и B пишут одну исходную revision — ровно одна запись успешна, другая даёт conflict; B удаляет, A пишет старое состояние — tombstone не затирается; потеря уведомления не ослабляет защиту. Проверить upgrade при старой открытой вкладке, blocked, закрытие соединения, VersionError и rollback к совместимому build.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "13-10",
+            "number": 10,
+            "group": "",
+            "text": "Проверить reload в pending/committed/failed, две последовательные записи одной вкладки, сохранение при выходе из уровня, quota и испорченный импорт. Отдельно открыть историческую игру и v2: запись/удаление/сброс/импорт v2 не меняют исторические ключи. После любой ошибки UI и ReadSaves показывают только реально подтверждённые данные; новый committed slot переживает перезагрузку с той же revision и целым state.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "title": "Звук и музыка",
+        "status": "pending",
+        "statusLabel": "Предстоит",
+        "work": "Интегрировать общий MixPcm и принятый в 2Б способ производства samples, сохранив 44,1 кГц, огибающие, группы и партитуру. Mixer работает на главном потоке либо в отдельном audio worker согласно раннему измерению; AudioWorklet читает ограниченную PCM-очередь через MessagePort. Измерить AudioContext.sampleRate, реализовать resampling и учёт audio clock. Звук запускается первым действием пользователя; AudioWorklet требует secure context. Mute меняет gain и не сбрасывает очередь/партитуру; скрытая вкладка обрабатывается отдельной suspend/resume-политикой. MDN: AudioWorklet, MDN: autoplay.",
+        "result": "Эффекты и музыка звучат после первого взаимодействия, без регулярных провалов при тяжёлой сцене воды; отключение звука и возврат вкладки работают.",
+        "steps": [
+          {
+            "id": "14-1",
+            "number": 1,
+            "group": "",
+            "text": "Завершить выделение mixer из раннего spike: голоса, TMusic, чистый MixPcm(frameCount, commands) и output waveOut/MessagePort. Закрепить владение состоянием в одном выбранном producer. Windows backend продолжает кормить waveOut; offline-тест с постоянным seed сравнивает samples до/после разделения. Если выбран audio worker, сериализовать определения инструментов/нот и команды по ID; ни один игровой указатель не пересекает границу экземпляров Wasm.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "14-2",
+            "number": 2,
+            "group": "",
+            "text": "Определить стабильный audio clock: текущий mixer строит музыку во времени samples, а игровой кадр может прийти нерегулярно. Выработать заранее несколько блоков PCM, хранить счётчик произведённых/проигранных samples, при pause/resume выбрать правило для партитуры и задержанных эффектов. Не привязывать количество сэмплов напрямую к dt последнего кадра.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "14-3",
+            "number": 3,
+            "group": "",
+            "text": "Закрепить очередь из 2Б: target/low/high 40/20/80 мс, максимум 100 мс, значения выражаются в frames фактической частоты AudioContext. Это стартовые проектные настройки, окончательные значения в пределах latency budget фиксируются ранним отчётом. Сообщения содержат stream generation, sequence number, sample position, format и payload; переносимые буферы возвращаются в ограниченный pool. Worklet сообщает потребление/low watermark; producer не зависит исключительно от rAF. При underrun выдаётся тишина и растёт счётчик, при overrun новые блоки не накапливаются бесконечно. Один restart не проигрывает сообщения прошлого поколения.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "14-4",
+            "number": 4,
+            "group": "",
+            "text": "Проверить частоту AudioContext.sampleRate и канальность вывода на каждом браузере. Если не 44,1 кГц, выбрать один ресемплер с определённой задержкой и тестом на высоту тона, длительность и отсутствие щелчков на стыке блоков. Громкость/mute применять в одном месте, не изменяя дважды уже смешанный PCM.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "14-5",
+            "number": 5,
+            "group": "",
+            "text": "Показать состояние «звук ждёт первого касания», запускать/resume AudioContext из действия пользователя. При скрытии вкладки приостановить контекст и производство PCM, сохранить положение партитуры, инвалидировать старую очередь новым stream generation. При возвращении заполнить очередь от зафиксированного sample position и возобновить контекст; если браузер требует gesture, показать это состояние. Короткие эффекты, возникшие в скрытой вкладке, не воспроизводятся пачкой после возврата. Mute применяет gain, сохраняет audio clock и не является suspend.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "14-6",
+            "number": 6,
+            "group": "",
+            "text": "Повторить ранний совместный тест на реальной воде и переходах. Зафиксировать p50/p95 queue depth, underrun, задержку события до output sample worklet и отдельно оценку device latency, decode/upload timings и resampling drift. Десятиминутный foreground-прогон не имеет underrun и укладывается в p95 producer/queue latency ≤100 мс; soak этапа 17 проверяет более длинную сессию. Если выбранный producer перестал укладываться, интеграция не проходит рубеж D: локализовать проблему и применить доказанный в 2Б worker-путь либо вернуть незакрытый audio gate, а не увеличить очередь сверх предела.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "title": "Контекст WebGL, ошибки и диагностика",
+        "status": "pending",
+        "statusLabel": "Предстоит",
+        "work": "При webglcontextlost останавливать рисование и загрузку GPU, при webglcontextrestored пересоздавать программы, буферы, render targets и текстуры из сохранённых/повторно полученных исходных данных; Pascal handle остаются логическими. Ошибки Wasm и шейдеров показывать в HTML-оболочке с коротким действием для пользователя и подробностью в консоли. Для Debug-сборки проверить доступность отладки Pascal через DWARF в целевом браузере и всегда оставлять текстовые ошибки/логи как запасной путь. Добавить overlay разработчика: время симуляции, передачу вершин, число draw calls, время воды, количество текстур, память, аудио-underrun и ошибки загрузки. В тестовом режиме принудительно вызывать потерю контекста через WEBGL_lose_context. После восстановления старые ресурсы WebGL недействительны. MDN: восстановление WebGL.",
+        "result": "Потеря и возврат контекста воспроизводимо восстанавливают игру либо сохраняют состояние и дают контролируемый перезапуск без повреждения сохранения.",
+        "steps": [
+          {
+            "id": "15-1",
+            "number": 1,
+            "group": "",
+            "text": "В реестре WebGL-ресурсов для каждого logical handle хранить тип, поколение контекста, описание создания и источник восстановления: URL/hash ассета, CPU-пиксели, рецепт генерации либо volatile target. Удалённый ресурс после восстановления не должен «ожить»; живой ресурс должен получить новый WebGL object с тем же логическим ID.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "15-2",
+            "number": 2,
+            "group": "",
+            "text": "Обработчик webglcontextlost вызывает preventDefault, ставит render backend в состояние lost, отменяет GPU uploads и перестаёт выполнять команды рисования. Pascal simulation либо ставится на паузу, либо работает по заранее заданному правилу без накопления огромного dt. Audio и сохранения продолжают жить независимо от графического контекста.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "15-3",
+            "number": 3,
+            "group": "",
+            "text": "После webglcontextrestored восстановить порядок зависимостей: базовые программы/буферы, статические текстуры, динамические texture из текущего CPU-состояния, FBO/targets и размеры viewport. GfxCreateTarget по природе volatile: его содержимое либо перерисовывается, либо помечается пустым до нового захвата. При невозможности повторного fetch перейти к контролируемому перезапуску сцены, а не показывать чёрный квадрат.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "15-4",
+            "number": 4,
+            "group": "",
+            "text": "Разделить диагностику для игрока и разработчика. Игрок видит «не удалось загрузить ресурс/графика недоступна» и действие «повторить»; developer overlay выводит shader ID, URL/hash, WebGL error, число draw calls, upload bytes, времена Step/Draw, объём текстур и underrun. Нельзя выводить гигантский stack trace поверх меню при штатной ошибке сети.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "15-5",
+            "number": 5,
+            "group": "",
+            "text": "В Debug включить принудительную потерю/возврат через WEBGL_lose_context, имитацию неуспеха fetch, исчерпания памяти и shader compile error. Для каждого отказа проверить, что сцена не выполняет Draw с устаревшими handle, а запись сохранения не прерывается. Записать минимальные действия пользователя и лог для воспроизведения.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "15-6",
+            "number": 6,
+            "group": "",
+            "text": "Обновлять Browser error boundary при каждом этапе boot, fetch, Wasm init, frame, shader, audio и storage. Проверить, что ошибка одного optional сервиса, например audio, не оставляет rAF запущенным над частично созданным renderer, а критическая ошибка завершает его ровно один раз.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "title": "Перенос полного игрового маршрута и мобильного UX",
+        "status": "pending",
+        "statusLabel": "Предстоит",
+        "work": "Подключать Pascal-сцены в порядке: splash/title → выбор уровня/настройки/сохранения → обычный уровень/HUD/пауза → погружение → PigeonScript/cutscenes/film → результаты и рекорды. Проверить Theme, i18n, уровни v2, тени, погоду и все экраны. Мобильный этап включает сенсорные кнопки, поворот/масштаб страницы, safe area, касания несколькими пальцами, потерю фокуса при системном жесте и полноэкранный режим там, где он доступен. Чисто браузерная оболочка не должна содержать игровых правил.",
+        "result": "Весь игровой маршрут проходим на клавиатуре и касаниях; нет необходимости запускать Phaser-сцены для отсутствующей механики.",
+        "steps": [
+          {
+            "id": "16-1",
+            "number": 1,
+            "group": "",
+            "text": "Составить реестр всех сцен golub.lpr и переходов между ними: имя, обязательные группы ресурсов, входные данные Start, способ завершения и использование Windows-only API. Подключать сцены небольшими вертикальными проходами, начиная с splash/title и одного уровня. После каждого прохода проверять старт, нормальный выход, повторный вход и исключение при отсутствующем ресурсе.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "16-2",
+            "number": 2,
+            "group": "",
+            "text": "Не переписывать игровые правила при «подключении» сцены: общий Pascal-код должен создавать те же NPC, выполнять те же команды PigeonScript, обновлять физику и scoring. Если сцена требует системное действие, добавить capability в platform backend и убрать прямой вызов WinAPI в конкретном месте. В журнале переноса записывать каждое преднамеренное browser-отличие.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "16-3",
+            "number": 3,
+            "group": "",
+            "text": "Для выбора уровня проверить наличие всех вариантов уровня и preview frame через manifest, а не FileExistsW; для продолжения игры — путь загрузки старого неполного слота и нового полного state. Для результатов проверить рекорды, награды, фотографию/target texture и возврат в title. Для катсцен проверить пропуск, паузу и синхронизацию звука.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "16-4",
+            "number": 4,
+            "group": "",
+            "text": "Сделать мобильную раскладку и ввод на базе существующего логического UI: safe area, области виртуальных кнопок, читаемость текста при DPR, ориентация portrait/landscape, ограничение масштаба и жесты ОС. Кнопки покрывают все Pascal action ID, включая kick, и используют объединение источников из этапа 5. Для мобильного браузера определить поведение при отказе fullscreen и при появлении виртуальной клавиатуры, не делая её условием прохождения игры.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "16-5",
+            "number": 5,
+            "group": "",
+            "text": "Пройти вручную и автоматическим скриптом весь маршрут на desktop с клавиатурой, desktop с мышью, Android touch и iOS touch. Особо проверить быстрое касание двух экранных кнопок, уход во время погружения, смену ориентации, возврат из системного меню и перезагрузку страницы после сохранения.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "16-6",
+            "number": 6,
+            "group": "",
+            "text": "В browser shell оставить только platform UX: загрузка, ошибка, запрос разрешённого fullscreen/audio, виртуальные controls и технические overlays. Условий победы, NPC, таблиц physics и сценариев там быть не должно; это проверяется поиском по коду и организацией каталогов.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "title": "Проверки, производительность и выпуск",
+        "status": "pending",
+        "statusLabel": "Предстоит",
+        "work": "В браузере создать harness, который посылает те же нажатия и шаги времени, что Windows --script, читает состояние и делает снимки через canvas/FBO; для автоматизации браузера сначала использовать уже присутствующий в проекте puppeteer-core. Для чистой логики сравнивать контрольные поля состояния и события; для изображения — утверждённые кадры, допустимые отклонения и ручную проверку воды/текста/частиц. Запускать build.ps1 -Tests, smoke.ps1, monkey.ps1, npm test, browser smoke и браузерную сборку в CI. Профилировать desktop и mobile: p50/p95 времени кадра, пики памяти, загрузку до title и до уровня, число draw calls, стабильность звука, скорость WebP и WebGL context loss. Первоначальные целевые бюджеты — 60 FPS на выбранном настольном профиле и 30 FPS на выбранном мобильном; после этапа 0 закрепить конкретные устройства и сценарии.",
+        "result": "Пакет проверок зелёный, целевые сценарии проходят на матрице устройств, известные визуальные различия записаны и приняты.",
+        "steps": [
+          {
+            "id": "17-1",
+            "number": 1,
+            "group": "",
+            "text": "Разделить проверки по назначению: compiler/RTL smoke, чистая логика Pascal, графическая витрина, сценарии игры, миграция storage, аудио, браузерные отказы и полный пользовательский маршрут. Для каждого теста указать target, входные данные, ожидаемый результат, команду запуска и артефакт при падении. Нельзя считать один screenshot тестом всего порта.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "17-2",
+            "number": 2,
+            "group": "",
+            "text": "Сохранить существующие Windows gates из CLAUDE.md: build.ps1 -Tests, samples, smoke.ps1, monkey.ps1 и script screenshots по применимости. На web запускать один и тот же gameplay trace в реальном браузере через puppeteer-core; сравнивать структурные состояния мира и VM, а не только пиксели. Отдельно тестировать browser-only ошибки через fault injection.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "17-3",
+            "number": 3,
+            "group": "",
+            "text": "Для изображения утвердить контрольные кадры спрайтов, текста, воды, частиц, post, UI и фото. Сравнивать области/метрики с зафиксированным допуском, сохранять diff и исходные кадры. Разные ОС могут растеризовать шрифт по-разному; такие отличия фиксируются отдельно от смещения layout или потерянной строки.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "17-4",
+            "number": 4,
+            "group": "",
+            "text": "Подтвердить performance budgets, зафиксированные в 2Б и проверенные в C: время до первого кадра/title/уровня, размер transfer, p50/p95 кадра, максимальная main-thread upload/copy порция, пик суммы Wasm heaps/JS buffers и оценка GPU памяти, draw calls, audio underrun и p95 event-to-worklet latency. Проверять audio latency одновременно с отсутствием underrun; предел PCM-очереди не увеличивается для получения зелёного теста. Проводить холодный и тёплый запуск. Любой пересмотр бюджета требует измеренного профиля и новой проверки затронутых рубежей.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "17-5",
+            "number": 5,
+            "group": "",
+            "text": "В CI делать clean build закреплённым toolchain, проверять hashes ассетов, отсутствие случайных D3D/Windows imports в web output, компиляцию GLSL на браузерном runner и все автоматические сценарии. Мобильные Safari/Android проверки выполнять на реальных устройствах или управляемом device lab перед релизом; desktop emulation не замещает GPU и память телефона.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "17-6",
+            "number": 6,
+            "group": "",
+            "text": "Отдельно провести soak: 30–60 минут с повторной сменой сцен, воды, сохранений и разворотом экрана. Снять график памяти и времени кадра, число контекстных потерь и аудио-underrun. При регрессии локализовать её до Step, decode, upload, draw, shader или storage, затем повторить только затронутые тесты и общий release gate.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "17-7",
+            "number": 7,
+            "group": "",
+            "text": "Обязательные регрессии по контрактам: выбор ещё не загруженного опубликованного уровня; NotReady без ложного NotFound; отмена большого decoder job и результата прошлого поколения; две вкладки v2 с разными/одинаковыми слотами и schema upgrade; виртуальное действие без key binding; смешанное физическое/touch удержание; открытая вкладка старого release ID, запрашивающая не загруженный ранее уровень после нового deploy. Эти случаи входят в автоматический gate, а не остаются только ручными пунктами проверки.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "title": "Независимая публикация golub-play-v2",
+        "status": "pending",
+        "statusLabel": "Предстоит",
+        "work": "Создать отдельный публичный репозиторий andrewsboev/golub-play-v2 и настроить GitHub Pages. Собирать самодостаточные неизменяемые каталоги releases/<releaseId>/, содержащие host, Wasm, worker/worklet, manifest и все ресурсы. Корневая небольшая страница читает current.json и запускает один закреплённый релиз. Новый deploy добавляет каталог релиза и меняет указатель, сохраняя ранее опубликованные каталоги. Подготовить отдельную команду с жёсткой проверкой destination; исторический deploy.sh не используется. Проверить MIME, cache, preview и независимость golub-play. instantiateStreaming требует application/wasm. MDN: WebAssembly.instantiateStreaming.",
+        "result": "/golub-play-v2/ запускает Pascal/Wasm игру и имеет собственный проверенный откат; /golub-play/ продолжает открывать сохранённую историческую Phaser-версию с её прежними данными.",
+        "steps": [
+          {
+            "id": "18-1",
+            "number": 1,
+            "group": "",
+            "text": "Сохранить ревизию и артефакт исторической версии по этапу 0. Создать golub-play-v2, настроить Pages и зафиксировать точные адреса репозитория и сайта. Исторический публичный репозиторий не участвует в командах и credentials workflow v2.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "18-2",
+            "number": 2,
+            "group": "",
+            "text": "Сделать build graph: pinned FPC собирает .wasm и loader artifacts, включая decoder и выбранный audio candidate; генератор создаёт manifest с hashes/группами; Vite собирает HTML/JS/worklet/GLSL и статические ресурсы в dist-v2/releases/<releaseId>/. ID включает ревизию исходников и digest toolchain/конфигурации/asset catalog; повторное использование ID с другими bytes запрещено. build:v2, preview:v2, deploy:v2 не используют dist Phaser. Файлы из Vite public копируются без автоматического hashing, поэтому упаковщик явно помещает их под release prefix и включает в manifest. Vite: public directory.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "18-3",
+            "number": 3,
+            "group": "",
+            "text": "В deploy:v2 проверить точный allowlist andrewsboev/golub-play-v2 до любых сетевых изменений. Не полагаться только на переменную DEPLOY_REPO старого скрипта. Подготовить dry run, показывающий destination, build ID и набор артефактов; при подстановке golub-play команда завершается до отправки.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "18-4",
+            "number": 4,
+            "group": "",
+            "text": "Launcher читает current.json один раз при boot с запросом актуальной версии, затем передаёт entry point полный immutable releaseBase. Все URL — Wasm, shader, worker/worklet, шрифт, JSON и import — разрешаются относительно manifest/модуля этого релиза, а не глобального корня. При смене current уже запущенная вкладка не меняет catalog и не смешивает файлы. Проверить пути под /golub-play-v2/releases/<id>/, MIME application/wasm и отсутствие обращений к /golub-play/. Кэшированный старый launcher/current тоже должен приводить к целому доступному релизу.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "18-5",
+            "number": 5,
+            "group": "",
+            "text": "deploy:v2 обновляет существующее дерево в два шага: сначала отдельный коммит добавляет immutable каталог при прежнем current; после публикации Pages команда проверяет HTTP-доступность manifest/необходимых файлов и hashes; затем второй коммит меняет только указатель на новый release ID. При ошибке первого шага или проверки сохраняется прежний указатель. Публикации сериализуются, normal push проверяет актуального родителя; конфликт ветки требует перечитать дерево, а не force push. Все прежние release directories сохраняются. В первой реализации автоматического удаления релизов нет; рост поставки и ёмкость хостинга проверяются перед выпуском. Корректность не зависит только от custom cache headers GitHub Pages.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "18-6",
+            "number": 6,
+            "group": "",
+            "text": "На preview выполнить gate этапа 17 с чистым storage v2 и импортом тестовых исторических ключей. Проверить независимость двух игр на общем origin: настройки, mute, slots и сброс v2 не меняют старые значения. Сброс v2 не использует localStorage.clear() или удаление всех баз/caches origin.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "18-7",
+            "number": 7,
+            "group": "",
+            "text": "Обязательный update-тест: открыть release R1, загрузить только title, опубликовать R2, из вкладки R1 открыть ранее не загруженный уровень и фильм. Все запросы R1 должны успешно идти в releases/R1/; новая вкладка получает целый R2. Повторить с выключенным HTTP cache и после возврата вкладки из background. Отдельно проверить schema upgrade из этапа 13: если старый build теряет совместимость записи, он показывает обновление и сохраняет возможность безопасного экспорта состояния, не продолжая писать неизвестную схему.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "18-8",
+            "number": 8,
+            "group": "",
+            "text": "Опубликовать проверенный пакет только в v2. Сравнить ревизию репозитория и контрольные файлы исторического сайта с эталоном; они остаются прежними. Проверить открытие двух игр, namespace storage, обратную загрузку manifest старого v2 и отсутствие редиректа исторического URL. Если позднее появится service worker, scope ограничивается /golub-play-v2/, cache name включает release ID, а очистка не затрагивает v1 или данные активного релиза.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "18-9",
+            "number": 9,
+            "group": "",
+            "text": "Сохранить каждый релиз v2 как артефакт и как доступный immutable каталог. Откат меняет только current.json на проверенный совместимый релиз; допустимость rollback проверяется отдельно по schema/formatVersion storage, база не удаляется. Запущенные вкладки остаются на своих каталогах и следуют versionchange-политике. Удаление старых релизов возможно лишь после отдельного решения о сроке поддержки и механизме сохранения/обновления активных сессий; обычный deploy такой операции не выполняет.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          },
+          {
+            "id": "18-10",
+            "number": 10,
+            "group": "",
+            "text": "После приёмки исключить Phaser runtime из сборки v2. Исторические исходники и артефакт остаются доступны по закреплённой ревизии; удаления или повторной публикации golub-play не требуется. README и инструкции показывают ссылки «первая версия» и «Pascal/Wasm v2», команды сборки, destination deploy и политику сохранения опубликованных релизов.",
+            "status": "pending",
+            "statusLabel": "Предстоит",
+            "evidence": ""
+          }
+        ]
+      }
+    ],
+    "milestones": [
+      {
+        "id": "A0",
+        "title": "Toolchain и независимый код",
+        "stages": "0, 1, 2А",
+        "condition": "Wasm fixtures чистых модулей работают; границы Windows известны. Можно выделить чистые pixel/PCM-операции для 2Б. Сборка сцен не требуется",
+        "status": "pending"
+      },
+      {
+        "id": "A1",
+        "title": "Память, декодирование и аудио достижимы",
+        "stages": "2Б после A0",
+        "condition": "Worker декодирует реальные изображения; группы укладываются в принятый бюджет; один audio candidate проходит underrun и latency одновременно. Только после этого начинать общий рефакторинг этапа 3",
+        "status": "pending"
+      },
+      {
+        "id": "B",
+        "title": "Общие интерфейсы выделены",
+        "stages": "3–4 после A1",
+        "condition": "Windows, samples и редакторы проходят проверки. Общие types/input/resource контракты готовы; browser renderer проверяется следующим этапом",
+        "status": "pending"
+      },
+      {
+        "id": "C",
+        "title": "Реальная вода с ресурсами и звуком",
+        "stages": "5–9 после B; после 6 выполнен минимальный срез 10–11",
+        "condition": "Native/Wasm геометрия проверена, настоящие dive-ассеты и PCM загружены, память/кадр/latency в бюджете. До переноса всех сцен исправить любое превышение",
+        "status": "pending"
+      },
+      {
+        "id": "D",
+        "title": "Полная инфраструктура игры",
+        "stages": "Полные 10–15 после C",
+        "condition": "Все группы/тексты/скрипты интегрированы, двухвкладочные сохранения и schema lifecycle проверены, audio и context restore проходят. Можно завершать маршрут этапа 16",
+        "status": "pending"
+      },
+      {
+        "id": "E",
+        "title": "Приёмка закончена",
+        "stages": "16–17",
+        "condition": "Публиковать отдельный golub-play-v2 и проверять сохранность golub-play",
+        "status": "pending"
+      },
+      {
+        "id": "F",
+        "title": "Выпуск и обновление проверены",
+        "stages": "18 после E",
+        "condition": "Старая вкладка R1 получает ленивые ресурсы после R2; rollback совместим со storage; история v1 и её ключи сохранены",
+        "status": "pending"
+      }
+    ],
+    "note": "Статус «проверено» относится к указанному результату и объёму. Порядок работ задают рубежи: 2Б до общего рефакторинга; после базового renderer нужен минимальный срез текста и ресурсов для воды. Проверка Safari остаётся открытой."
+  }
+}
