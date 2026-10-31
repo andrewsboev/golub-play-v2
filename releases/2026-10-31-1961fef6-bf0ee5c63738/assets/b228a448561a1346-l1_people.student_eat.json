@@ -1,0 +1,18 @@
+{
+  "atlas": "l1_people",
+  "frame": "student_eat",
+  "cols": 18,
+  "rows": 21,
+  "pins": [
+    {"name": "head", "x": 174.6, "y": 49.7, "r": 65.5, "look": 8.5},
+    {"name": "chest", "x": 151.3, "y": 152.8, "r": 77},
+    {"name": "hips", "x": 138.4, "y": 249.8, "r": 77},
+    {"name": "feet", "x": 237.4, "y": 362.7, "r": 123.2}
+  ],
+  "clips": [
+    {"name": "idle", "length": 3.6, "loop": true, "tracks": [
+      {"pin": "head", "keys": [[0, 0, 0], [1.8, 1.5, 1.2]], "wave": [0, 1.54, 3.6, 0.08]},
+      {"pin": "chest", "wave": [0.77, -2.69, 3.6, 0]}
+    ]}
+  ]
+}
