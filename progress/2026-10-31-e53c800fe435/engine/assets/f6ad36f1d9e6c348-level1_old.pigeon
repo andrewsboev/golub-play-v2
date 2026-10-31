@@ -1,0 +1,95 @@
+# Уровень 1 «Утро у пекарни»: что происходит на уровне помимо персонажей — гнездо на пожарной лестнице, памятник,
+# газеты с заметками, бой с бабкой во дворе пекарни. Арены запирает игра (зоны arena в уровне); здесь — что
+# начинается внутри и что после смерти.
+# С 2026-10-25 это прежний уровень 1 (src/levels/level1_old_blocks.json, --level level1_old): первый уровень
+# собирается заново с «домашней территории голубя» (level1.pigeon).
+
+level level1_old:
+    # Гнездо — зона nest уровня: веточку из бака под псом надо принести сюда (§6, переулок)
+    var zs = zones("nest")
+    if len(zs) > 0:
+        nest_zone = zs[0]
+        var s = sprite("items", "nest_nest", nest_zone.x, nest_zone.y + 6, depth=DEPTH_BACK, origin_x=0.5, origin_y=1)
+        s.scale = 1.3
+
+# Заметки в газетах на тротуаре (§9): «война с голубями» идёт в городе и без нас
+var NOTES = ["«Голуби разносят хаос». Горожане требуют сетки на памятники",
+    "«Война с голубями: день первый». Мэрия закупила тысячу пугал",
+    "«Голубь украл бутерброд у депутата». Депутат не прокомментировал",
+    "«Учёные: голуби умнее, чем кажутся». Мэрия в это не верит",
+    "«Пекари жалуются: голуби воруют батоны средь бела дня»"]
+var nest_zone = nil
+
+on paper:
+    toast NOTES[n % len(NOTES)]
+
+# Памятник великому голубю: первое попадание — дело, дальше — мелочь
+on target_hit "statue":
+    if objective("statue"): score_hit 250 hx (hy - 30)
+    else: score_hit 20 hx (hy - 30)
+
+on pickup "twig":
+    pigeon.carrying = true
+    reveal_objective "nest"
+    toast "Веточка! Неси её в гнездо"
+
+# Газета бабки — конец уровня
+on pickup "newspaper":
+    win_level
+
+# Донёс веточку: стоит на краю гнезда
+every frame:
+    if nest_zone == nil or not pigeon.carrying or not pigeon.on_ground: return
+    if abs(pigeon.x - nest_zone.x) > 120 or abs(pigeon.feet_y - nest_zone.y) > 12: return
+    pigeon.carrying = false
+    var twig = sprite("items", "nest_twigs", nest_zone.x, nest_zone.y - 20, depth=DEPTH_GROUND)
+    twig.scale = 0.9
+    tween twig 0.2 angle=12
+    sparkle nest_zone.x (nest_zone.y - 40)
+    objective "nest"
+
+# Перед боссом — без «снежного кома» (docs/LEVEL1_PLAN.md §8): всегда не меньше 3 в зобе и 3 сердец; гнездо
+# построено — полный зоб, а на входе ещё +1 сердце
+func boss_supplies(entering):
+    var nest = objective_done("nest")
+    if nest: pigeon.ammo = pigeon.ammo_max
+    else: pigeon.ammo = max(pigeon.ammo, 3)
+    pigeon.hearts = max(pigeon.hearts, 3)
+    if entering and nest: pigeon.hearts = min(pigeon.hearts_max, pigeon.hearts + 1)
+    if nest: popup pigeon.x (pigeon.feet_y - 150) "Гнездо помогает: зоб полон!" "#ffffff"
+    else: popup pigeon.x (pigeon.feet_y - 150) "Зоб пополнен" "#ffffff"
+
+# Двор бабки: со двора не уйти и после победы — дальше уровня нет
+on arena "boss":
+    # Сначала — кат-сцена (granny_intro.pigeon): двор и его хозяйка (или та, что уже идёт: --cutscene из редактора)
+    if play_cutscene("granny_intro") or cutscene_playing():
+        wait until not cutscene_playing()
+    # Как победить бабку — не подсказываем: игрок разбирается сам
+    banner "Двор пекарни. Здесь живёт ОНА."
+    boss_supplies(true)
+    wait 2.6
+    actor("granny").start()
+
+on death:
+    var granny = actor("granny")
+    if in_arena("boss") and granny != nil: granny.celebrate()
+
+# Перед боссом — без «снежного кома» (§8): запас и бабка с начала
+on respawn:
+    var granny = actor("granny")
+    if in_arena("boss") and granny != nil and not granny.is_defeated():
+        boss_supplies(false)
+        granny.reset()
+        wait 1.2
+        granny.start()
+
+# Бабка повержена: её газета — рядом, в сторону середины двора
+on granny_defeated(gx):
+    add_score 1000
+    toast "Бабка повержена! Забери её газету ({peck})"
+    var lo = arena_left() + 150
+    var hi = arena_right() - 150
+    var mid = (arena_left() + arena_right()) / 2
+    var nx = gx - 300
+    if gx < mid: nx = gx + 300
+    drop_pickup "newspaper" clamp(nx, lo, hi)

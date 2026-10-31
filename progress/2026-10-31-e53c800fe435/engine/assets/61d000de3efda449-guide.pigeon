@@ -1,0 +1,181 @@
+# Гид экскурсии (tour.pigeon создаёт её сама): представляет голубя как главную достопримечательность, водит
+# группу, показывает парк (тогда платок на зонте без присмотра), над головой раскрывает зонт.
+
+import common
+
+character guide:
+    preview "tour.guide_talk"
+    atlas = "tour"
+    tour = parent
+    facing = 1
+    hitbox -75 75 0 330
+    # Голубь сквозь неё не проходит (в полёте — бьётся и отлетает)
+    solid = true
+    say_height = 440
+
+const DIVE_TIME = 0.4
+
+var tour = nil
+var hits = 0
+var point_in = 5
+var bob = random(10)
+
+# Голубь прямо над головой — повод раскрыть зонт
+func above():
+    return abs(dx) < 190 and pigeon.feet_y < y - 300
+
+func pointing():
+    return state == point
+
+func chasing():
+    return state in [robbed, chase, dive, splash, giveup]
+
+func splash_fx():
+    var s = sprite("l1_misc", "fx_splash_big", x, y, depth=DEPTH_PROJECTILE, origin_x=0.5, origin_y=1)
+    s.scale = 0.6
+    tween s 0.5 scale=1.1 alpha=0 ease="cubic_out" kill=true
+
+state talk:
+    facing = 1
+    pose "guide_talk"
+
+state present:
+    facing = -1
+    pose "guide_present"
+    say "А вот, дамы и господа, главная достопримечательность парка… Голубь!" 2.4
+    every frame:
+        if above(): go shield
+        if time > 2.2: go watch
+
+state watch:
+    facing = -1
+    pose "guide_talk"
+    every frame:
+        face pigeon
+        if above(): go shield
+        point_in -= dt
+        if point_in <= 0 and tour.shooter == nil: go point
+
+# Отвернулась к достопримечательности, зонт с платком опущен — бери
+state point:
+    facing = 1
+    play "guide_point"
+    if random() < 0.5:
+        say pick("Посмотрите направо — дубу двести лет!", "Обратите внимание на фонарь: тысяча девятьсот третий год!", "А это — историческая урна!", "Направо — вид на небоскрёбы. Не толпимся!") 2
+    else:
+        # Машет зонтом — туристы подтягиваются за платком: подсказка, что идут они за ним
+        say pick("Группа, за мной! Ориентир — жёлтый платок!", "Не отстаём! Идём за платочком!", "Кто потерялся — ищите жёлтый платок!") 2
+    point_in = random(6, 8)
+    wait 2.6
+    go watch
+
+# Раскрытый зонт шире и выше головы: помёт ловит он
+state shield:
+    face pigeon
+    play "guide_shield"
+    hitbox -150 150 230 420
+    var not_above = 0
+    every frame:
+        face pigeon
+        if above(): not_above = 0
+        else: not_above += dt
+        if not_above > 0.5: go watch
+
+state hit:
+    pose "guide_hit"
+    say "Спокойно! Это к деньгам!"
+    wait 1.0
+    go angry
+
+state angry:
+    face pigeon
+    pose "guide_angry"
+    wait 0.8
+    go watch
+
+state despair:
+    pose "guide_despair"
+    say "Экскурсия окончена!!!" 1.6
+    if in_view(): sfx "sigh"
+    wait 1.4
+    go flee
+
+state flee:
+    play "guide_flee"
+    run_away(1, 380, 1.4)
+
+state robbed:
+    face pigeon
+    pose "guide_angry"
+    say "Мой платок!!! Группа, за ним!" 1.4
+    wait 1.0
+    go chase
+
+state chase:
+    atlas = "tour2"
+    play "guide_chase"
+
+state dive:
+    atlas = "tour2"
+    pose "guide_dive"
+    var from = x
+    every frame:
+        var k = min(1, time / DIVE_TIME)
+        x = from + (tour.fountain_x - from) * k
+        draw_dy = -sin(k * pi) * 80
+        if time >= DIVE_TIME: go splash
+
+state splash:
+    atlas = "tour2"
+    pose "guide_splash"
+    draw_dy = 0
+    splash_fx()
+    say "Экскурсия окончена… Все в воду…" 1.6 380
+    tour.splash(self)
+
+state giveup:
+    atlas = "tour2"
+    pose "guide_wet"
+    say "Всё… Платок не догнать…" 1.6
+    wait 2.0
+    go flee
+
+on leave(s):
+    atlas = "tour"
+    if s == "shield": hitbox -75 75 0 330
+
+on hit:
+    if immune or state in [hit, angry]: return
+    if chasing():
+        score_hit 40
+        return
+    if state == shield:
+        say pick("Не дождёшься!", "Зонтик — лучший друг гида!") 0.9 470
+        return
+    hits += 1
+    score_hit 100
+    hit_stop 0.06
+    if in_view(): sfx "ouch"
+    go hit
+
+# Отвернулась показывать достопримечательность — платок на зонте без присмотра. Иначе — кыш
+on peck:
+    if tour.done or chasing(): return false
+    if state == point:
+        tour.steal_scarf()
+        return true
+    say pick("Кыш! Не путайся под ногами!", "Голубь, это экскурсия, а не столовая!") 1
+    if abs(dx) < 220: shove_pigeon
+    return true
+
+every frame:
+    immune = state in [despair, flee, dive, splash]
+    if state == flee:
+        bob += dt * 14
+        draw_dy = -abs(sin(bob)) * 5
+    elif state == chase:
+        bob += dt * 9
+        draw_dy = -abs(sin(bob)) * 5
+    elif state != dive and state != splash:
+        bob += dt * 2.2
+        draw_dy = sin(bob) * 1.5

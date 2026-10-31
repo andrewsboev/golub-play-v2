@@ -1,0 +1,174 @@
+# Банда у входа на рынок (docs/LEVEL1_PLAN.md §6, арена gang): дети окружили и не пускают.
+# - Девочка — наводчица: свистит и орёт, поднимает тревогу.
+# - Шапка — рогатка: целится (телеграф: прицел), камень летит навесом и бьёт по всем — не только по голубю.
+# - Кепка — сачок: сыплет крошки, подманивает и накрывает; пойманный голубь вырывается частыми взмахами.
+#   Клюнуть кепку в ногу — сачок падает и больше не ловит.
+# Облитый ребёнок убегает, оставшиеся злее. Обычная победа — разогнать всех троих; позорная — подставить
+# кепку (или девочку) под камень из рогатки: дети ссорятся и разбегаются сами. Подсказка: в начале шапка
+# один раз мажет и чуть не попадает в своих.
+# Это невидимый «режиссёр»: детей (gang_kid) он создаёт сам, камни и сачок — его.
+
+character gang:
+    title "Банда (арена)"
+    preview "gang.girl_yell"
+    cap = spawn("gang_kid", x - 320, role="cap")
+    girl = spawn("gang_kid", x, role="girl")
+    beanie = spawn("gang_kid", x + 320, role="beanie")
+    kids = [cap, girl, beanie]
+
+# Банда замечает голубя ближе этого к середине
+const NOTICE = 900
+const STONE_G = 1500
+# Сачок: сколько взмахов, чтобы вырваться, и сколько держит самое большее
+const NET_PRESSES = 6
+const NET_MAX_TIME = 5
+
+var cap = nil
+var girl = nil
+var beanie = nil
+var kids = []
+var stones = []
+var net = nil
+var caught_time = 0
+var presses = 0
+var last_flaps = 0
+var start_time = 0
+var warned = false
+var started = false
+var done = false
+var quarrel = false
+var caught = false
+
+state watch:
+    wait until pigeon.x >= x - NOTICE
+    started = true
+    # Появился уже за бандой (отладка, --x) — её как не было
+    if pigeon.x > x + 1500:
+        done = true
+        return
+    banner "Банда!" "Дети окружили и не пускают. Разгони всех троих"
+    go fight
+
+state fight:
+    every frame:
+        start_time += dt
+        # Первый выстрел — мимо, над головой кепки: камни летят по своим
+        if not warned and start_time > 1.6 and beanie.calm():
+            warned = true
+            beanie.aim_at(cap.x, cap.y - 430, true)
+        if warned and start_time > 2.7 and start_time - dt <= 2.7 and not done:
+            say_at cap.x (cap.y - 360) "Эй! Смотри, куда стреляешь!" 1.6
+
+# Сколько детей убежало — оставшиеся злее
+func fled():
+    var n = 0
+    for k in kids:
+        if k.gone(): n += 1
+    return n
+
+func anger():
+    return 1 + 0.45 * fled()
+
+func shoot(k, tx, ty, harmless):
+    var sx = k.x + k.facing * 110
+    var sy = k.y - 250
+    var v = ballistic(sx, sy, tx, ty, 0.6 + abs(tx - sx) / 1800, STONE_G)
+    var stone = table()
+    stone.sprite = sprite("gang", "beanie_stone", sx, sy, depth=DEPTH_PROJECTILE)
+    stone.sprite.scale = 0.6
+    stone.sprite.flip = v[0] < 0
+    fly stone.sprite v[0] v[1] STONE_G spin=900
+    stone.shooter = k
+    # Предупредительный — над головами своих, никого не задевает
+    stone.harmless = harmless
+    append stones stone
+    sfx "whoosh"
+
+# Камни бьют по всем: по голубю и по своим (своих — только падающий камень: на взлёте он над головами)
+func update_stones():
+    var flying = []
+    for stone in stones:
+        var s = stone.sprite
+        var hit = false
+        if pigeon_in(s.x - 22, s.y - 22, 44, 44):
+            hurt_pigeon (s.x - s.vx * 0.05)
+            hit = true
+        if not hit and not done and not stone.harmless and s.vy >= 0:
+            for kid in kids:
+                if kid != stone.shooter and not kid.gone() and actor_in(kid, s.x - 18, s.y - 18, 36, 36):
+                    kid.stone_hit()
+                    hit = true
+                    break
+        if hit or s.landed or abs(s.x - x) > 1600:
+            if s.y > ground - 5: dust 0.5 s.x ground
+            kill s
+        else:
+            append flying stone
+    stones = flying
+
+# Накрыл сачком: голубь бьётся — частые взмахи вырывают. Пока сидит в сетке — по нему стреляют
+func catch():
+    caught = true
+    caught_time = 0
+    presses = pigeon.flaps
+    last_flaps = pigeon.flaps
+    dazzle_pigeon NET_MAX_TIME + 1
+    pigeon.visible = false
+    net = sprite("l1_misc", "", pigeon.x, pigeon.feet_y, depth=DEPTH_PIGEON, origin_x=0.5, origin_y=1)
+    anim net "l1_misc.pigeon_net"
+    net.flip = cap.facing > 0
+    say_at cap.x (cap.y - 360) "Попался!!!" 1
+    toast "Попался в сачок! Жми взмах — вырывайся"
+
+func release():
+    caught = false
+    undazzle_pigeon
+    pigeon.visible = true
+    if net != nil: kill net
+    net = nil
+    shove_pigeon cap.x
+    say_at cap.x (cap.y - 360) "Эй! Вырвался!" 0.9
+
+func update_caught():
+    caught_time += dt
+    # Каждый взмах — сетка дёргается
+    if pigeon.flaps > last_flaps:
+        last_flaps = pigeon.flaps
+        var a = -8
+        if pigeon.flaps % 2 == 1: a = 8
+        tween net 0.06 angle=a yoyo=true
+        feather pigeon.x (pigeon.feet_y - 40) 1
+    if pigeon.flaps - presses >= NET_PRESSES or caught_time > NET_MAX_TIME or pigeon.dead: release()
+
+# Убежал ребёнок: все разбежались — победа
+func kid_gone():
+    if done: return
+    for k in kids:
+        if k.alive and not k.gone(): return
+    done = true
+    award 300 "Банда разбежалась!" x (ground - 420)
+    deed "gang"
+    release_arena "gang"
+
+# Камень попал в своего: дети орут друг на друга и разбегаются сами
+func start_quarrel(victim):
+    if done or quarrel: return
+    quarrel = true
+    done = true
+    if caught: release()
+    for k in kids:
+        if k != victim and not k.gone(): k.go("yell")
+    say_at victim.x (victim.y - 360) "Ты чё, сдурел?! В меня попал!" 1.8
+    say_at beanie.x (beanie.y - 380) "Это он увернулся!" 1.8
+    award 600 "Банда перессорилась!" x (ground - 460)
+    deed "gang_quarrel"
+    deed "gang"
+    release_arena "gang"
+
+every frame:
+    update_stones()
+    if caught:
+        update_caught()
+        if net != nil:
+            net.x = pigeon.x
+            net.y = pigeon.feet_y
