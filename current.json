@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "id": "2026-10-31-f88b04f9-721bbfbff01b",
-  "manifest": "releases/2026-10-31-f88b04f9-721bbfbff01b/release.json",
-  "entry": "releases/2026-10-31-f88b04f9-721bbfbff01b/index.html",
-  "manifestHash": "cc1ca9009d530c499fcd15136f169cf5267f00b87c1d9459680074edeaa136c9",
+  "id": "2026-10-31-27aa5be8-2828183d3313",
+  "manifest": "releases/2026-10-31-27aa5be8-2828183d3313/release.json",
+  "entry": "releases/2026-10-31-27aa5be8-2828183d3313/index.html",
+  "manifestHash": "6fac00e79c6e7faa7c974388752b6d7a422bbd104de8307a9e2838d60fc50bb6",
   "storage": {
     "database": "golub-play-v2",
     "schemaVersion": 1,

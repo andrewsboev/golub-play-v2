@@ -1,7 +1,7 @@
 # Голубь · Pascal / Wasm v2
 
-[Играть](https://andrewsboev.github.io/golub-play-v2/) · [Подробный прогресс](https://andrewsboev.github.io/golub-play-v2/progress.html) · [Первая версия](https://andrewsboev.github.io/golub-play/)
+[Играть](https://andrewsboev.github.io/golub-play-v2/) · [Первая версия](https://andrewsboev.github.io/golub-play/)
 
-Desktop Chrome / Firefox, клавиатура и мышь. Оригинальные Pascal-сцены, графика и PCM-синтезатор. Звук включается после первого нажатия. Сохранения v2 отделены от первой версии; экспорт и импорт доступны над игрой.
+Desktop Chrome, клавиатура и мышь. Оригинальные Pascal-сцены, графика и PCM-синтезатор. Звук включается после первого нажатия. Сохранения v2 отделены от первой версии; экспорт и импорт доступны в настройках игры.
 
 Релизы `releases/<id>/` и снимки `progress/` неизменяемы и сохраняются при обновлении. Launcher закрепляет один manifest на вкладку; `current.json` выбирает версию для нового запуска. Репозиторий содержит только публичную поставку, без приватных исходников и логов.
