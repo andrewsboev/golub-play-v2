@@ -1,0 +1,22 @@
+<!doctype html><html lang="ru" data-root-game>
+<script type="module" crossorigin src="./index-CD9SiEIM.mjs"></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>Голубь</title>
+<style>html,body{margin:0;height:100%;background:#101722;color:#e5edf6;font:16px system-ui}body{display:flex;flex-direction:column}header{display:none}a{color:#a7d8ff}canvas{display:block;width:100%;height:100%;min-height:0;outline:none;object-fit:contain}#surface{flex:1;min-height:0;position:relative}dialog{max-width:540px;background:#182739;color:#e5edf6;border:1px solid #a7d8ff;padding:24px}dialog::backdrop{background:#0009}#notice{position:absolute;left:12px;bottom:12px;max-width:55%;padding:8px 12px;background:#182739e8;font-size:14px}#resources{position:absolute;right:12px;bottom:12px;pointer-events:none;background:#0006;padding:5px 8px;font:700 18px/1.15 Consolas,monospace;text-shadow:1px 1px 2px #000;color:#ffbc53}#resources .meter{display:flex;gap:16px;justify-content:space-between}#resources b{color:#55b8ff}#resources .gpu b{color:#55dd65}#resources .cpu b{color:#45dde6}#resources .fps b{color:white}#error{position:absolute;inset:20px;background:#182739e8;padding:30px;white-space:pre-wrap;overflow:auto}button{font:inherit;padding:8px 14px}#diagnostics:empty{display:none}#restart{position:absolute;left:40px;bottom:40px;z-index:2}#diagnostics{white-space:pre-wrap;margin:0;padding:8px 18px;font-size:12px}header details[open]{position:absolute;z-index:4;right:16px;top:12px;max-width:540px;background:#182739;padding:16px;border:1px solid #a7d8ff}#surface:fullscreen{width:100vw;height:100vh;background:#101722}</style>
+<header><strong id="brand">PiGine · Wasm</strong><span id="status">Загрузка…</span><span id="sound"></span></header><dialog id="storage-dialog"><form method="dialog"><button>Закрыть</button></form><details open><summary>Сохранения</summary><p id="storage" role="status"></p><button id="export">Экспорт копии</button><label>Импорт копии <input id="import" type="file" accept=".json,application/json"></label><button id="legacy">Скопировать из первой версии</button><p>Импорт добавляет только отсутствующие записи. Хранение зависит от профиля и адреса браузера: очистка данных удаляет сохранения.</p></details></dialog>
+<style>
+body{background:#14110f;font-family:Rubik,"Trebuchet MS",sans-serif}
+#surface,#surface *,dialog,dialog *{cursor:var(--game-cursor,auto)!important}
+#start-screen,#loading{position:absolute;inset:0;transform:none;z-index:5;background:#14110f;display:grid;place-content:center;text-align:center;padding:24px;box-sizing:border-box;border-radius:0;color:#e8dcc4}
+#start-screen{z-index:10}
+#error{z-index:11}#restart{z-index:12}
+#start-screen[hidden],#loading[hidden]{display:none}
+#start-label{display:block;font:italic 400 clamp(24px,4vh,44px)/1.4 "Golub Serif","PT Serif",Georgia,serif;color:#e8dcc4;text-shadow:0 2px 3px #2a211b;animation:await-key 2.6s ease-in-out infinite}
+#start-screen p{font:400 clamp(13px,1.7vh,18px)/1.5 Rubik,"Trebuchet MS",sans-serif;color:#bfb198;margin:22px 0 0}
+#loading-title{font:400 clamp(20px,3.333vh,36px)/1.4 "Golub Serif","PT Serif",Georgia,serif;margin:0 0 28px}
+#loading-track{height:clamp(8px,1.48vh,16px);width:min(55.56vh,75vw);background:#3a332c;margin:auto;overflow:hidden}
+#loading-bar{display:block;height:100%;width:0;background:#f2c14e;transition:width .15s linear}
+#loading-percent{font:500 clamp(13px,1.7vh,18px)/1.5 Rubik,"Trebuchet MS",sans-serif;color:#bfb198;margin-top:16px;font-variant-numeric:tabular-nums}
+@keyframes await-key{0%,100%{opacity:.45;transform:translateY(2px)}50%{opacity:1;transform:translateY(-2px)}}
+</style>
+<div id="surface"><div id="start-screen" hidden role="button" tabindex="0" aria-label="Нажмите любую клавишу"><span id="start-label">Нажмите любую клавишу</span><p>или нажмите кнопку мыши</p></div><div id="notice" role="status" hidden></div><div id="loading" role="status"><p id="loading-title">Голубь собирается с мыслями…</p><div id="loading-track" role="progressbar" aria-label="Загрузка игры" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="loading-bar"></span></div><output id="loading-percent">0%</output></div><button id="restart" hidden>Перезапустить</button><canvas id="game" tabindex="0" aria-label="Голубь"></canvas><output id="resources" aria-label="Ресурсы игры" hidden></output><div id="error" role="alert" hidden></div></div><pre id="diagnostics"></pre></html>
