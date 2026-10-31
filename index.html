@@ -246,7 +246,11 @@
         const report = await response.json();
         document.querySelector('#updated').textContent =
           `Обновлено: ${new Date(report.updatedAt).toLocaleString('ru-RU')}.`;
-        if (report.stage === 2 && report.stage2a) {
+        if (report.stage2b) {
+          document.querySelector('#stage-label').textContent = 'Этап 2Б · ресурсы, память и звук';
+          document.querySelector('#status-title').textContent = 'Decoder worker и общий PCM проверяются в браузере.';
+          document.querySelector('#stage-description').textContent = 'Большие WebP, передача pixels/mask/thumb/small, загрузка WebGL и AudioWorklet уже доступны для проверки. Пики памяти и мобильная приёмка остаются открытыми; этап 3 ещё не начат.';
+        } else if (report.stage === 2 && report.stage2a) {
           document.querySelector('#stage-label').textContent = 'Этап 2 · аудит и независимый код';
           document.querySelector('#status-title').textContent = '2А проверен: шесть модулей движка работают в Wasm.';
           document.querySelector('#stage-description').textContent =
@@ -275,6 +279,15 @@
           metrics.append(card);
         }
         content.append(metrics);
+        if (report.stage2b) {
+          const resources=text('section','','card'); resources.append(text('h2','Этап 2Б · ресурсы и звук на устройстве'));
+          const link=text('a','Открыть проверку worker, памяти и звука →');link.href=new URL(report.stage2b.page,base).href;resources.append(link);
+          resources.append(text('p',`${report.stage2b.images} реальных изображений в отчёте. Decoder worker передаёт готовые пиксели и вспомогательные данные; WebGL принимает их порциями. Общий PCM используется Windows и Wasm.`));
+          if(report.stage2b.nativePcmByteIdentical)resources.append(text('p','✓ Windows PCM до и после выделения общего модуля совпал побайтно.','ok'));
+          if(report.stage2b.tenMinuteAudioPassed)resources.append(text('p','✓ Есть прошедший 10-минутный desktop-аудиопрогон; проверка телефона учитывается отдельно.','ok'));
+          for(const check of report.stage2b.checks)resources.append(text('p',`${check.browser} ${check.version} · ${check.configuration}: ${check.status}${check.error?' · '+check.error:''}`,check.status==='passed'?'ok':'subtle'));
+          for(const item of report.stage2b.pending)resources.append(text('p',item,'subtle'));content.append(resources);
+        }
         if (report.stage2a) {
           const independent = text('section', '', 'card');
           independent.append(text('h2', 'Этап 2А · сравнить движок с Windows'));
