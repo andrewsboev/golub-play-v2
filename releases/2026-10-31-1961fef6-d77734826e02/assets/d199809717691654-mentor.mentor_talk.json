@@ -1,0 +1,22 @@
+{
+  "atlas": "mentor",
+  "frame": "mentor_talk",
+  "cols": 16,
+  "rows": 12,
+  "pins": [
+    {"name": "head", "x": 96, "y": 20, "r": 32, "look": 4},
+    {"name": "wing", "x": 150, "y": 34, "r": 30},
+    {"name": "body", "x": 52, "y": 76, "r": 46},
+    {"name": "tail", "x": 19, "y": 99, "r": 26, "spring": true, "k": 90, "d": 7},
+    {"name": "scarf", "x": 100, "y": 79, "r": 18, "spring": true, "k": 45, "d": 4},
+    {"name": "feet", "x": 66, "y": 113, "r": 40}
+  ],
+  "clips": [
+    {"name": "talk", "length": 0.9, "loop": true, "tracks": [
+      {"pin": "head", "keys": [[0, 0, 0], [0.22, 1.5, 2.2], [0.45, 0, 0], [0.67, 0.8, 1.4]]},
+      {"pin": "wing", "keys": [[0, 0, 0], [0.45, -3, -6]]},
+      {"pin": "body", "wave": [0, -0.8, 0.9, 0.1]},
+      {"pin": "tail", "wave": [0, 1.2, 0.9, 0.3]}
+    ]}
+  ]
+}
