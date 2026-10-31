@@ -1,0 +1,19 @@
+{
+  "atlas": "pigeon",
+  "frame": "pigeon_pose_03",
+  "cols": 11,
+  "rows": 12,
+  "pins": [
+    {"name": "head", "x": 100.4, "y": 33.3, "r": 38, "look": 7.3},
+    {"name": "chest", "x": 89.3, "y": 76, "r": 43.8},
+    {"name": "tail", "x": 16.6, "y": 113.3, "r": 29.2, "spring": true, "k": 90, "d": 7},
+    {"name": "feet", "x": 81.5, "y": 136.6, "r": 43.8}
+  ],
+  "clips": [
+    {"name": "idle", "length": 2.4, "loop": true, "tracks": [
+      {"pin": "head", "keys": [[0, 0, 0], [0.6, 1.2, 1.8], [1.2, 0, 0]], "wave": [0.58, 0, 2.4, 0.3]},
+      {"pin": "chest", "wave": [0.88, -1.46, 2.4, 0]},
+      {"pin": "tail", "wave": [0, 1.17, 2.4, 0.25]}
+    ]}
+  ]
+}

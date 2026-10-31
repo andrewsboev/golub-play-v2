@@ -1,0 +1,178 @@
+# Пёс: спит (mode sleep) или сторожит двор (mode guard) на участке min_x..max_x. Заметил голубя — лает,
+# бежит, прыгает и кусает; голубь высоко — не достать. Облили — скулит и сидит оглушённый.
+
+character dog:
+    title "Собака"
+    preview "dog.dog_sleep_01"
+    preview "dog.dog_stand" if level.mode == "guard"
+    param mode "Поведение" choice sleep "Спит", guard "Сторожит" "Спит — просыпается, если шуметь рядом; сторожит — гоняет голубя по участку"
+    param walk "Участок" range
+    atlas = "dog"
+    shadow = 200
+    facing = -1
+    sleep_mode = level.mode != "guard"
+    spawn_x = x
+    min_x = level.min_x
+    max_x = level.max_x
+    hitbox -120 130 0 190
+    death_line = "Голубя потрепал местный терьер. Соседи не возражают"
+
+const RUN_SPEED = 560
+const LEAP_VX = 720
+const LEAP_VY = 820
+const GRAVITY = 2600
+# Выше этого над землёй голубь для собаки недосягаем
+const REACH = 330
+
+var sleep_mode = true
+var spawn_x = 0
+var min_x = 0
+var max_x = 0
+var vx = 0
+var vy = 0
+var bark_timer = 0
+
+func in_reach(margin):
+    # Спрятался в баке — пёс его потерял
+    if pigeon.hidden: return false
+    var px = pigeon.x
+    return px > min_x - margin and px < max_x + margin and pigeon.feet_y > y - REACH
+
+func keep_inside():
+    x = clamp(x, min_x, max_x)
+
+func walk_to(target, speed):
+    face_to target
+    var st = speed * dt
+    if abs(target - x) <= st:
+        x = target
+        keep_inside()
+        return true
+    x += sign(target - x) * st
+    keep_inside()
+    return false
+
+func woof():
+    bark_timer = 0.8
+    say_at (x + facing * 90) (y - 200) "ГАВ!" 0.6
+    if in_view(): sfx "bark"
+
+func bite(f0, f1, u0, u1):
+    if touches_pigeon(f0, f1, u0, u1): hurt_pigeon
+
+# Бак-ловушка захлопнулся над ним
+func trapped():
+    vanish
+
+state rest:
+    # Спит одним кадром и дышит: два кадра сна с разных листов нарисованы по-разному и «прыгали»
+    if sleep_mode:
+        pose "dog_sleep_01"
+        hitbox -130 130 0 110
+    else:
+        pose "dog_guard_01"
+    alert false
+    var radius = 560
+    if sleep_mode: radius = 380
+    every frame:
+        if sleep_mode: scale_y = 1 + 0.025 * sin(time * 2.4)
+        if abs(dx) < radius and in_reach(0):
+            if sleep_mode: go wake
+            else: go bark
+
+on leave "rest":
+    scale = 1
+    hitbox -120 130 0 190
+
+state wake:
+    play "sniff"
+    wait 0.6
+    go bark
+
+state bark:
+    face pigeon
+    play "bark"
+    woof()
+    every frame:
+        face pigeon
+        alert true 230
+        bark_timer -= dt
+        if bark_timer <= 0: woof()
+        if time > 0.55 and in_reach(60): go run
+        if time > 2.5 and abs(dx) > 900: go back
+
+on leave "bark":
+    alert false
+
+state run:
+    play "run"
+    every frame:
+        walk_to(pigeon.x, RUN_SPEED)
+        bite(-40, 140, 0, 140)
+        if abs(dx) < 280 and pigeon.feet_y > y - REACH: go leap
+        if not in_reach(60): go bark
+        if time > 3: go pant
+
+state leap:
+    face pigeon
+    play "leap"
+    if in_view(): sfx "growl"
+    vx = facing * LEAP_VX
+    vy = -LEAP_VY
+    every frame:
+        bite(-60, 160, 0, 170)
+        vy += GRAVITY * dt
+        x += vx * dt
+        y += vy * dt
+        keep_inside()
+        if y >= ground and vy > 0:
+            y = ground
+            go skid
+
+state skid:
+    play "skid"
+    dust 1.2 x ground
+    every frame:
+        vx = lerp(vx, 0, min(1, dt * 8))
+        x += vx * dt
+        keep_inside()
+        if time > 0.35: go pant
+
+state pant:
+    play "pant"
+    wait 1.4
+    if in_reach(0) and abs(dx) < 700: go bark
+    go back
+
+state back:
+    play "walk"
+    every frame:
+        if in_reach(0) and abs(dx) < 400: go bark
+        if walk_to(spawn_x, 200): go rest
+
+state hit:
+    y = ground
+    play "hit"
+    alert false
+    say "Скуль!" 0.7 220
+    if in_view(): sfx "yelp"
+    wait 0.5
+    go dazed
+
+# Звёздочки над головой уже нарисованы в кадре
+state dazed:
+    pose "dog_dazed"
+    wait 1.8
+    go pant
+
+on hit:
+    if state == hit or state == dazed: return
+    score_hit 30
+    hit_stop 0.05
+    go hit
+
+# Курлык будит спящую собаку и поднимает сторожевую — слышно дальше, чем она замечает голубя сама
+on coo:
+    if state != rest or abs(dx) > 760: return
+    if sleep_mode: go wake
+    else: go bark

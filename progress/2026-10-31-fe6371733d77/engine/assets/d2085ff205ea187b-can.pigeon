@@ -1,0 +1,161 @@
+# Жестянка (или бутылка: level.kind = "bottle") на тротуаре (уровень 1): пнуть лапой — летит дугой, кувыркаясь,
+# звякает об асфальт, катится и ложится набок; ударить крылом — летит дальше и ниже. Клюнуть — откатывается,
+# попасть помётом — подпрыгивает. Катается между level.min_x и level.max_x, а без них — по всему собранному куску
+# уровня (до зоны edge); отскакивает от краёв.
+# В полёте крутится кадр «стоя» (can, bottle), лёжа — свой кадр (can_side — крышкой вправо, bottle_side — горлышком
+# влево: «стоя», повёрнутый на side_turn).
+
+import props
+
+character can:
+    title "Банка"
+    preview "l1_home.can"
+    preview "items.nest_cup_lid"
+    preview "l1_home.bottle" if level.kind == "bottle"
+    param kind "Что" choice can "Жестянка", bottle "Бутылка"
+    param walk "Катается" range "Без участка — по всему собранному куску уровня"
+    glass = level.kind == "bottle"
+    if glass:
+        kind_name = "bottle"
+        side_turn = -90
+    has_side = has_frame("l1_home." + kind_name + "_side")
+    stand()
+    shadow = 0
+    # Перед урной, ящиками и щитком: закатилась к ним — всё равно видна
+    depth = DEPTH_FRONT
+    if has_side:
+        if glass:
+            stand_h = 45
+            lie_h = 14
+        else:
+            stand_h = 23
+            lie_h = 15
+    y = ground - stand_h
+    hitbox -34 34 (-34) 34
+    # Без своих границ — от начала уровня до края собранного куска (зона edge), иначе — на 3000 px вокруг
+    min_x = level.min_x
+    max_x = level.max_x
+    if max_x <= min_x:
+        min_x = 60
+        max_x = x + 3000
+        var edges = zones("edge")
+        if len(edges) > 0: max_x = edges[0].x
+    # Бой на арене: банка не улетает за её стены
+    if arena_right() > arena_left():
+        min_x = max(min_x, arena_left() + 40)
+        max_x = min(max_x, arena_right() - 40)
+
+const GRAVITY = 2300
+const FRICTION = 950
+
+var glass = false
+var kind_name = "can"
+var has_side = false
+# На сколько градусов кадр «лёжа» повёрнут от «стоя»: банка лежит крышкой вправо, бутылка — горлышком влево
+var side_turn = 90
+# Половина высоты стоя и лёжа (y — середина картинки); у замены — круглая крышка
+var stand_h = 20
+var lie_h = 20
+var lying = false
+var vx = 0
+var vy = 0
+var spin = 0
+var min_x = 0
+var max_x = 0
+
+func stand():
+    show("l1_home", kind_name, "items", "nest_cup_lid")
+    # Крутится вокруг середины: y — середина картинки
+    origin_y = 0.5
+
+func half():
+    if lying: return lie_h
+    return stand_h
+
+func clink():
+    if glass: sfx "clink_glass"
+    else: sfx "clink"
+
+func launch(nvx, nvy, nspin):
+    # Лежал своим кадром — тот же поворот кадром «стоя» (лёжа = стоя, повёрнутый на 90°)
+    if lying and has_side:
+        angle = angle + side_turn
+        stand()
+    vx = nvx
+    vy = nvy
+    spin = nspin
+    lying = true
+    go fly
+
+state rest:
+    pass
+
+state fly:
+    every frame:
+        vy += GRAVITY * dt
+        x += vx * dt
+        y += vy * dt
+        angle += spin * dt
+        if x < min_x:
+            x = min_x
+            vx = abs(vx) * 0.5
+            clink()
+        if x > max_x:
+            x = max_x
+            vx = -abs(vx) * 0.5
+            clink()
+        if y >= ground - half():
+            y = ground - half()
+            if vy > 280:
+                vy = -vy * 0.42
+                vx *= 0.7
+                spin *= 0.6
+                clink()
+                dust 0.35 x ground
+            else:
+                vy = 0
+                go roll
+
+# Докатывается по тротуару и ложится набок
+state roll:
+    var target = 90
+    if vx < 0: target = -90
+    angle = angle % 360
+    if angle > 180: angle -= 360
+    if angle < -180: angle += 360
+    if has_side:
+        # Дальше — кадр «лёжа»: он и есть «стоя», повёрнутый на side_turn; на другой бок — он же ещё на 180°
+        pose "l1_home." + kind_name + "_side"
+        origin_y = 0.5
+        angle -= side_turn
+        target -= side_turn
+    y = ground - half()
+    every frame:
+        if vx > 0: vx = max(0, vx - FRICTION * dt)
+        else: vx = min(0, vx + FRICTION * dt)
+        x = clamp(x + vx * dt, min_x, max_x)
+        angle = lerp(angle, target, min(1, dt * 12))
+        if abs(vx) < 8 and abs(angle - target) < 2:
+            angle = target
+            go rest
+
+every frame:
+    reveal_near("home_kick", 450)
+    # Во время боя с жирдяем — не мишень для помёта (помёт летит к нему)
+    immune = in_arena("park")
+
+on kick:
+    clink()
+    if wing: launch(dir * random(700, 850), -random(350, 430), dir * random(900, 1300))
+    else: launch(dir * random(420, 560), -random(700, 820), dir * random(600, 1000))
+    if objective("home_kick"): award 50 "Гол!" x (ground - 160)
+    return true
+
+on peck:
+    clink()
+    launch(away() * 260, -200, away() * 300)
+    return true
+
+on hit:
+    clink()
+    launch(random(-120, 120), -420, random(-500, 500))

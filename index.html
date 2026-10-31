@@ -294,6 +294,12 @@
           for(const item of report.engine.results)section.append(text('p',item,'ok'));
           for(const item of report.engine.pending)section.append(text('p',item,'subtle'));
           content.append(section);
+            if(report.engine.images?.length){
+              content.append(text('h2','Новые кадры работающей Wasm-игры'));
+              const gallery=text('div','','gallery');
+              for(const file of report.engine.images){const figure=document.createElement('figure'),link=document.createElement('a'),img=document.createElement('img');link.href=new URL('engine/'+file,base).href;img.src=link.href;img.alt=report.engine.imageCaptions?.[file]||file;img.loading='lazy';link.append(img);figure.append(link,text('figcaption',(report.engine.imageCaptions?.[file]||file)+' · Wasm / WebGL2'));gallery.append(figure);}
+              content.append(gallery);
+            }
         }
         if(report.stage3){
           const section=text('section','','card');section.append(text('h2','Этап 3 · разделение backend проверено'));
@@ -399,7 +405,7 @@
             item.append(text('strong', `${milestone.id}. ${milestone.title}`), text('p', milestone.stages, 'subtle'), text('p', milestone.condition));
             if (milestone.id === 'A0') item.append(text('p', 'Desktop toolchain и независимый код проверены. Safari/macOS учитывается отдельно.', 'ok'));
             else if(milestone.id==='A1'&&report.stage2b?.completeDesktop)item.append(text('p','Desktop-проверки A1 пройдены.','ok'));
-            else item.append(text('p', 'Предстоит', 'pending'));
+            else item.append(text('p', milestone.status==='done'?'Проверено':'Предстоит', milestone.status==='done'?'ok':'pending'));
             body.append(item);
           }
           milestones.append(body); plan.append(milestones); content.append(plan);

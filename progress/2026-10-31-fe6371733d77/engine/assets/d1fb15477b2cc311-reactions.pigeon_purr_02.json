@@ -1,0 +1,19 @@
+{
+  "atlas": "reactions",
+  "frame": "pigeon_purr_02",
+  "cols": 11,
+  "rows": 10,
+  "pins": [
+    {"name": "head", "x": 97.6, "y": 23.1, "r": 29.6, "look": 5.7},
+    {"name": "chest", "x": 89.7, "y": 59.6, "r": 34.2},
+    {"name": "tail", "x": 15.8, "y": 78.2, "r": 22.8, "spring": true, "k": 90, "d": 7},
+    {"name": "feet", "x": 83.9, "y": 104, "r": 34.2}
+  ],
+  "clips": [
+    {"name": "idle", "length": 2.4, "loop": true, "tracks": [
+      {"pin": "head", "keys": [[0, 0, 0], [0.6, 0.9, 1.4], [1.2, 0, 0]], "wave": [0.46, 0, 2.4, 0.3]},
+      {"pin": "chest", "wave": [0.68, -1.14, 2.4, 0]},
+      {"pin": "tail", "wave": [0, 0.91, 2.4, 0.25]}
+    ]}
+  ]
+}
