@@ -1,0 +1,18 @@
+{
+  "atlas": "l1_people",
+  "frame": "reader_read_02",
+  "cols": 15,
+  "rows": 17,
+  "pins": [
+    {"name": "head", "x": 122.3, "y": 39.9, "r": 53.2, "look": 6.9},
+    {"name": "chest", "x": 132.7, "y": 121.4, "r": 62.6},
+    {"name": "hips", "x": 114.8, "y": 203.4, "r": 62.6},
+    {"name": "feet", "x": 197.2, "y": 294.7, "r": 100.2}
+  ],
+  "clips": [
+    {"name": "idle", "length": 3.6, "loop": true, "tracks": [
+      {"pin": "head", "keys": [[0, 0, 0], [1.8, 1.3, 0.9]], "wave": [0, 1.25, 3.6, 0.08]},
+      {"pin": "chest", "wave": [0.63, -2.19, 3.6, 0]}
+    ]}
+  ]
+}

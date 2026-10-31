@@ -1,0 +1,47 @@
+# Свадьба у памятника (старый уровень 1 на лентах фона): невеста и жених позируют (+250 каждому), фотограф —
+# декорация. Досталось обоим — дело «Испортить свадьбу».
+
+character wedding:
+    title "Свадьба"
+    preview "people.bride_idle"
+    preview "people.groom_idle" if level.role == "groom"
+    preview "people.photographer_aim" if level.role == "photographer"
+    param role "Кто" choice bride "Невеста", groom "Жених", photographer "Фотограф"
+    atlas = "people"
+    role = level.role
+    if role == "bride": hitbox -110 110 0 390
+    else: hitbox -70 70 0 430
+    say_height = 440
+    if role == "photographer": play "photographer" progress=random()
+    else: play role + "_idle" progress=random()
+    # Фотограф — не мишень; после попадания пара больше не считается
+    immune = role == "photographer"
+
+var role = ""
+var spoiled = false
+
+state stand:
+    every frame:
+        if spoiled: face pigeon
+
+on hit:
+    if immune: return
+    immune = true
+    spoiled = true
+    score_hit 250
+    hit_stop 0.06
+    pose role + "_hit"
+    if in_view():
+        if role == "bride": sfx "eww"
+        else: sfx "ouch"
+    if role == "bride": say pick("А-А-А-А! ПЛАТЬЕ!!!", "Это худший день в моей жизни!")
+    else: say pick("Ты испортил нам свадьбу!", "Ну всё, голубь, ты попал!")
+    # Свадьба испорчена, когда досталось и невесте, и жениху
+    var g = group("wedding")
+    if role == "bride": g.bride = true
+    if role == "groom": g.groom = true
+    if g.bride and g.groom: objective "wedding"
+    wait 1.3
+    if alive:
+        face pigeon
+        pose role + "_angry"

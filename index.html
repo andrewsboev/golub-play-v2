@@ -289,7 +289,8 @@
         content.append(metrics);
         if(report.engine){
           const section=text('section','','card');section.append(text('h2','Запустить текущий браузерный срез'));
-          const link=text('a','Открыть работающую витрину PiGine →');link.href=new URL(report.engine.page,base).href;section.append(link);
+          const link=text('a',report.engine.linkLabel||'Открыть работающую витрину PiGine →');link.href=new URL(report.engine.page,base).href;section.append(link);
+          for(const item of report.engine.routes||[]){const p=text('p'),a=text('a',item.label);a.href=new URL(item.page,base).href;p.append(a);section.append(p);}
           for(const item of report.engine.results)section.append(text('p',item,'ok'));
           for(const item of report.engine.pending)section.append(text('p',item,'subtle'));
           content.append(section);

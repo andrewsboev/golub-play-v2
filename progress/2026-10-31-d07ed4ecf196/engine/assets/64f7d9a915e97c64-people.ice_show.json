@@ -1,0 +1,18 @@
+{
+  "atlas": "people",
+  "frame": "ice_show",
+  "cols": 17,
+  "rows": 22,
+  "pins": [
+    {"name": "head", "x": 169.7, "y": 52.1, "r": 68.2, "look": 8.8},
+    {"name": "chest", "x": 132.9, "y": 126.7, "r": 80.2},
+    {"name": "hips", "x": 126.7, "y": 218.2, "r": 80.2},
+    {"name": "feet", "x": 156.3, "y": 377.8, "r": 128.3}
+  ],
+  "clips": [
+    {"name": "idle", "length": 3.6, "loop": true, "tracks": [
+      {"pin": "head", "keys": [[0, 0, 0], [1.8, 1.6, 1.2]], "wave": [0, 1.6, 3.6, 0.08]},
+      {"pin": "chest", "wave": [0.8, -2.81, 3.6, 0]}
+    ]}
+  ]
+}

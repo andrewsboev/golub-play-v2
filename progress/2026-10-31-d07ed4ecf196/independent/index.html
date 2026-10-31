@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ru">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Голубь v2 · Независимые модули</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font: 17px/1.6 system-ui;
+      background: #101722;
+      color: #e8eef6;
+    }
+    body {
+      max-width: 850px;
+      margin: 50px auto;
+      padding: 0 22px;
+    }
+    a {
+      color: #8ccaff;
+    }
+    button,
+    select {
+      font: inherit;
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 1px solid #576c85;
+      background: #22334a;
+      color: inherit;
+    }
+    button {
+      cursor: pointer;
+    }
+    article {
+      background: #1a2738;
+      padding: 18px 24px;
+      border-radius: 12px;
+      margin: 16px 0;
+    }
+    h1 {
+      line-height: 1.2;
+    }
+    h2 {
+      font-size: 21px;
+    }
+    .subtle {
+      color: #afbed0;
+    }
+    .ok {
+      color: #9be1ae;
+    }
+    .error {
+      color: #ffb5aa;
+    }
+  </style>
+  <body>
+    <p class="subtle">ГОЛУБЬ V2 · ЭТАП 2А</p>
+    <h1>Код движка: Windows и WebAssembly</h1>
+    <p>
+      Шесть исходных модулей движка проверяются на тех же входах, что и Windows: JSON, WebP, физика, волны,
+      течение и PigeonScript. Результаты сравниваются с эталоном FPC 3.2.2. Игровые сцены ещё не перенесены.
+    </p>
+    <label
+      >Сборка
+      <select id="configuration">
+        <option>Release</option>
+        <option>Debug</option>
+      </select></label
+    >
+    <button id="run">Запустить проверку</button>
+    <p id="status" aria-live="polite">Загрузка…</p>
+    <section id="results"></section>
+    <p class="subtle">Проверка работает на этом устройстве. Данные никуда не отправляются.</p>
+    <p><a href="./third-party-notices.txt">Библиотеки и лицензии</a></p>
+    <script type="module">
+      import { runSuite } from './suite.mjs';
+      const labels = {
+        independent: 'JSON · WebP · физика · волны · течение · PigeonScript',
+        runtime: 'Unicode, исключения и библиотеки Pascal',
+        callbacks: 'Отложенный вызов из браузера в Pascal',
+      };
+      const button = document.querySelector('#run'),
+        status = document.querySelector('#status'),
+        results = document.querySelector('#results');
+      async function run() {
+        button.disabled = true;
+        results.replaceChildren();
+        status.textContent = 'Выполняются модули WebAssembly…';
+        window.spikeResult = { status: 'running' };
+        try {
+          const checks = await runSuite(document.querySelector('#configuration').value);
+          for (const check of checks) {
+            const card = document.createElement('article'),
+              title = document.createElement('h2'),
+              detail = document.createElement('p');
+            title.textContent = '✓ ' + labels[check.name];
+            title.className = 'ok';
+            detail.textContent = `Wasm: ${(check.bytes / 1024).toFixed(1)} КБ · начальная память: ${(check.initialMemory / 1048576).toFixed(2)} МБ`;
+            card.append(title, detail);
+            if (check.text) {
+              const text = document.createElement('p');
+              text.textContent = check.text;
+              card.append(text);
+            }
+            results.append(card);
+          }
+          status.className = 'ok';
+          status.textContent = 'Шесть модулей прошли проверки и сравнение с Windows.';
+          window.spikeResult = { status: 'passed', checks };
+        } catch (error) {
+          status.className = 'error';
+          status.textContent = error.message;
+          window.spikeResult = { status: 'failed', error: error.message };
+          console.error(error);
+        } finally {
+          button.disabled = false;
+        }
+      }
+      button.addEventListener('click', run);
+      if (document.readyState === 'loading')
+        await new Promise((resolve) => document.addEventListener('DOMContentLoaded', resolve, { once: true }));
+      const config = new URLSearchParams(location.search).get('configuration');
+      if (config === 'Debug') document.querySelector('#configuration').value = config;
+      await run();
+    </script>
+  </body>
+</html>
