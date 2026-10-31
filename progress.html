@@ -294,14 +294,14 @@
           for(const item of report.engine.results)section.append(text('p',item,'ok'));
           for(const item of report.engine.pending)section.append(text('p',item,'subtle'));
           content.append(section);
-            if(report.engine.images?.length){
-              content.append(text('h2','Новые кадры работающей Wasm-игры'));
+            if(report.engine.images?.length||report.engine.referenceImages?.length){
+              content.append(text('h2','Кадры работающей Wasm-игры'));
               const gallery=text('div','','gallery');
-              for(const file of report.engine.images){const figure=document.createElement('figure'),link=document.createElement('a'),img=document.createElement('img');link.href=new URL('engine/'+file,base).href;img.src=link.href;img.alt=report.engine.imageCaptions?.[file]||file;img.loading='lazy';link.append(img);figure.append(link,text('figcaption',(report.engine.imageCaptions?.[file]||file)+' · Wasm / WebGL2'));gallery.append(figure);}
+              for(const shot of [...(report.engine.images||[]).map(file=>({file:'engine/'+file,caption:report.engine.imageCaptions?.[file]||file})),...(report.engine.referenceImages||[])]){const figure=document.createElement('figure'),link=document.createElement('a'),img=document.createElement('img');link.href=new URL(shot.file,base).href;img.src=link.href;img.alt=shot.caption;img.loading='lazy';link.append(img);figure.append(link,text('figcaption',shot.caption+' · Wasm / WebGL2'));gallery.append(figure);}
               content.append(gallery);
             }
             if(report.engine.measurements){
-              const m=report.engine.measurements,card=text('section','','card');card.append(text('h2','Измерения на настоящем desktop'));
+              const m=report.engine.measurements,card=text('section','','card');card.append(text('h2','Измерения на настоящем desktop'));if(m.caption)card.append(text('p',m.caption,'subtle'));
               card.append(text('p',m.device),text('p',`30 минут: ${m.soak.transitions} переходов, ${m.soak.saves} сохранений, ${m.soak.restores} восстановлений WebGL; underrun/overflow ${m.soak.underrun}/${m.soak.overflow}. CPU кадра p50/p95: ${m.soak.cpuP50.toFixed(1)}/${m.soak.cpuP95.toFixed(1)} мс. Задержка до AudioWorklet p95: ${m.soak.audioP95.toFixed(1)} мс.`));
               card.append(text('p',`Готовый пакет, 10 минут с нагрузкой: ${m.audio.loads} импульс по 50 мс; underrun/overflow ${m.audio.underrun}/${m.audio.overflow}; задержка p95 ${m.audio.p95.toFixed(1)} мс.`));
               card.append(text('p','Память показана как наблюдение, без лимитов. Wasm — ёмкость linear memory; GPU — оценка текстур, JS — наблюдение browser heap. Эти числа не складываются в точную память процесса.','subtle'));

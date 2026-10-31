@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-10-31T10:23:38.166Z",
+  "buildDigest": "116da457f3bb42e8a7f818f459d346d351af74c2ee9a1d7416da6f5cefb712b5",
+  "browser": "firefox",
+  "configuration": "Release",
+  "status": "passed",
+  "pageErrors": [],
+  "reportKind": "summary",
+  "fullReportSHA256": "404cc7e58be260f65754829986f4481724ce974d621de74d10e13c1fe3080715",
+  "transitions": 9,
+  "recovery": 2
+}
