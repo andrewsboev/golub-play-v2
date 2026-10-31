@@ -246,15 +246,19 @@
         const report = await response.json();
         document.querySelector('#updated').textContent =
           `Обновлено: ${new Date(report.updatedAt).toLocaleString('ru-RU')}.`;
-        if (report.stage2b) {
+        if(report.stage3){
+          document.querySelector('#stage-label').textContent='Этап 3 · завершён';
+          document.querySelector('#status-title').textContent='Общая часть PiGine отделена от Windows backend.';
+          document.querySelector('#stage-description').textContent='Игра, примеры и редакторы собираются на Windows. Общие контракты проверены в Wasm. Следующий этап — browser entry point и один кадр движка. Текущий объём: desktop, оригинальная графика, без лимитов CPU/GPU.';
+        } else if (report.stage2b) {
           document.querySelector('#stage-label').textContent = 'Этап 2Б · ресурсы, память и звук';
           document.querySelector('#status-title').textContent = 'Decoder worker и общий PCM проверяются в браузере.';
-          document.querySelector('#stage-description').textContent = 'Большие WebP, передача pixels/mask/thumb/small, загрузка WebGL и AudioWorklet уже доступны для проверки. Пики памяти и мобильная приёмка остаются открытыми; этап 3 ещё не начат.';
+          document.querySelector('#stage-description').textContent = report.stage2b.completeDesktop?'Desktop A1 пройден: оригинальные изображения, память групп и выделенный audio worker проверены. Следующий этап — разделение общей части и backend.':'Проверяем оригинальные WebP, память групп и AudioWorklet на desktop. Поддержка телефонов исключена из текущего плана; этап 3 выполняется параллельно длительной проверке звука.';
         } else if (report.stage === 2 && report.stage2a) {
           document.querySelector('#stage-label').textContent = 'Этап 2 · аудит и независимый код';
           document.querySelector('#status-title').textContent = '2А проверен: шесть модулей движка работают в Wasm.';
           document.querySelector('#stage-description').textContent =
-            'Windows и Wasm проходят общие расчётные тесты. Карта платформенных зависимостей подготовлена. Следующий шаг — worker, память и звук (2Б); проверка настоящего Safari остаётся открытой.';
+            'Windows и Wasm проходят общие расчётные тесты. Карта зависимостей подготовлена. Текущий объём — desktop Chrome/Firefox; далее worker, память и звук (2Б).';
         } else if (report.stage === 1 && report.stage1) {
           document.querySelector('#stage-label').textContent = 'Этап 1';
           document.querySelector('#status-title').textContent = 'Первые модули Pascal Wasm работают в браузере.';
@@ -279,15 +283,31 @@
           metrics.append(card);
         }
         content.append(metrics);
+        if(report.stage3){
+          const section=text('section','','card');section.append(text('h2','Этап 3 · разделение backend проверено'));
+          const link=text('a','Запустить Wasm-проверку общих контрактов →');link.href=new URL(report.stage3.page,base).href;section.append(link);
+          for(const item of report.stage3.summary)section.append(text('p',item));
+          section.append(text('p','✓ Windows Debug/Release: 519 проверок движка и 1650 игровых. Smoke: 22/22. Контракты: Chrome, Firefox, WebKit × Debug/Release.','ok'));
+          for(const item of report.stage3.limitations)section.append(text('p',item,'subtle'));
+          section.append(text('h3','Новые кадры Windows после разделения backend'));
+          const gallery=text('div','','gallery');
+          for(const shot of report.stage3.screenshots){
+            const figure=document.createElement('figure'),link=document.createElement('a'),img=document.createElement('img');
+            link.href=new URL(shot.file,base).href;img.src=link.href;img.alt=shot.title+' · Windows';img.loading='lazy';link.append(img);
+            figure.append(link,text('figcaption',shot.title+' · Windows'+(shot.byteIdenticalToBaseline?' · PNG совпал с эталоном':'')));gallery.append(figure);
+          }
+          section.append(gallery);content.append(section);
+        }
         if (report.stage2b) {
           const resources=text('section','','card'); resources.append(text('h2','Этап 2Б · ресурсы и звук на устройстве'));
           const link=text('a','Открыть проверку worker, памяти и звука →');link.href=new URL(report.stage2b.page,base).href;resources.append(link);
           resources.append(text('p',`${report.stage2b.images} реальных изображений в отчёте. Decoder worker передаёт готовые пиксели и вспомогательные данные; WebGL принимает их порциями. Общий PCM используется Windows и Wasm.`));
           if(report.stage2b.nativePcmByteIdentical)resources.append(text('p','✓ Windows PCM до и после выделения общего модуля совпал побайтно.','ok'));
-          if(report.stage2b.tenMinuteAudioPassed)resources.append(text('p','✓ Есть прошедший 10-минутный desktop-аудиопрогон; проверка телефона учитывается отдельно.','ok'));
+          if(report.stage2b.tenMinuteAudioPassed)resources.append(text('p','✓ Выделенный audio worker прошёл 10 минут foreground с decode и нагрузками главного потока.','ok'));
+          if(report.stage2b.audioPlot){const link=text('a','График очереди и результат длительной аудиопроверки →');link.href=new URL(report.stage2b.audioPlot,base).href;resources.append(link);}
           if(report.stage2b.candidate){
-            resources.append(text('p','Кандидат мобильного профиля: уменьшенные наземные текстуры; UI/курсор/dive сохранены. Физические targets 1440×810, логическое поле 1920×1080. Полная игровая сцена ещё не перенесена.'));
-            for(const group of report.stage2b.candidate.groups||[])resources.append(text('p',`${group.id}: CPU ${(group.cpuBytesWithReserve/1048576).toFixed(1)} МиБ · GPU ${(group.gpuBytesWithReserve/1048576).toFixed(1)} МиБ с резервом 25%`,group.mobileAccountingPassed?'ok':'notice'));
+            resources.append(text('p','Desktop: оригинальные текстуры и targets 1920×1080. Ограничений CPU/GPU и обязательного резерва нет. Game heap пока оценивается; полная игровая сцена ещё не перенесена.'));
+            for(const group of report.stage2b.candidate.groups||[])resources.append(text('p',`${group.id}: CPU ${(group.cpuBytesEstimate/1048576).toFixed(1)} МиБ (оценка с измеренным decoder heap) · GPU ${(group.gpuBytesEstimate/1048576).toFixed(1)} МиБ (расчёт текстур)`));
           }
           for(const check of report.stage2b.checks)resources.append(text('p',`${check.browser} ${check.version} · ${check.configuration}: ${check.status}${check.error?' · '+check.error:''}`,check.status==='passed'?'ok':'subtle'));
           for(const item of report.stage2b.pending)resources.append(text('p',item,'subtle'));content.append(resources);
@@ -365,7 +385,8 @@
           for (const milestone of report.plan.milestones) {
             const item = text('div', '', 'milestone');
             item.append(text('strong', `${milestone.id}. ${milestone.title}`), text('p', milestone.stages, 'subtle'), text('p', milestone.condition));
-            if (milestone.id === 'A0') item.append(text('p', 'Независимый код проверен; для полной приёмки остаётся настоящий Safari.', 'notice'));
+            if (milestone.id === 'A0') item.append(text('p', 'Desktop toolchain и независимый код проверены. Safari/macOS учитывается отдельно.', 'ok'));
+            else if(milestone.id==='A1'&&report.stage2b?.completeDesktop)item.append(text('p','Desktop-проверки A1 пройдены.','ok'));
             else item.append(text('p', 'Предстоит', 'pending'));
             body.append(item);
           }
