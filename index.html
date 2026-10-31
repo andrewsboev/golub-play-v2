@@ -150,6 +150,30 @@
       .loading {
         min-height: 100px;
       }
+      #plan { margin: 40px 0; scroll-margin-top: 24px; }
+      .plan-tools { display: flex; flex-wrap: wrap; gap: 12px; margin: 20px 0; }
+      .plan-tools input { flex: 1; min-width: 180px; }
+      button, input { font: inherit; color: inherit; background: #18212c; border: 1px solid #65788e; border-radius: 8px; padding: 10px 14px; }
+      button, summary { cursor: pointer; }
+      button:focus-visible, input:focus-visible, summary:focus-visible { outline: 3px solid #a6cafa; outline-offset: 3px; }
+      .plan-index { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+      .plan-index a { padding: 4px 10px; border: 1px solid #354252; border-radius: 6px; }
+      .plan-stage { border: 1px solid #354252; border-radius: 12px; margin: 14px 0; background: #18212c; scroll-margin-top: 20px; }
+      .plan-stage summary { padding: 18px 22px; font-weight: 650; }
+      .stage-title { margin-right: 12px; }
+      .badge { display: inline-block; font-size: 0.8rem; padding: 2px 9px; border: 1px solid #65788e; border-radius: 6px; font-weight: 400; }
+      .partial, .excluded { color: #e4b965; }
+      .done { color: #94d6b0; }
+      .pending { color: #b7c5d5; }
+      .plan-body { padding: 0 22px 22px; overflow-wrap: anywhere; }
+      .plan-body h3 { margin: 22px 0 10px; font-size: 1.15rem; }
+      .plan-body ol { padding-left: 28px; }
+      .plan-body li { padding: 8px 0 12px; border-bottom: 1px solid #354252; }
+      .plan-body li:last-child { border-bottom: 0; }
+      .step-evidence { margin: 8px 0 0; font-size: 0.9rem; color: #b7c5d5; }
+      .stage-count { display: block; margin: 6px 0 0 18px; font-size: 0.85rem; font-weight: 400; color: #9dabbc; }
+      .milestone { margin-top: 16px; }
+      [hidden] { display: none !important; }
       @media (max-width: 650px) {
         main {
           padding: 34px 18px 60px;
@@ -182,6 +206,7 @@
         кадры и затем сама игра.
       </p>
       <nav aria-label="Ссылки проекта">
+        <a href="#plan">Подробный план: этапы и шаги ↓</a>
         <a href="https://github.com/andrewsboev/golub-play-v2">Репозиторий v2 ↗</a>
         <a href="https://andrewsboev.github.io/golub-play/">Играть в первую версию ↗</a>
       </nav>
@@ -198,15 +223,6 @@
         <p class="subtle" id="updated">Загружаем последний отчёт…</p>
       </section>
       <div id="content" class="loading" aria-live="polite"></div>
-      <h2>Что дальше</h2>
-      <ol>
-        <li>
-          <strong>Компилятор и независимые модули.</strong> Закрепить FPC для браузера и проверить Pascal-код в Wasm.
-        </li>
-        <li><strong>Ресурсы, память и звук.</strong> Проверить декодирование в worker и аудио до разделения движка.</li>
-        <li><strong>Графика и вода.</strong> Добавить WebGL2, шейдеры и настоящую водную сцену.</li>
-        <li><strong>Вся игра.</strong> Подключить сцены, сохранения, управление и мобильный интерфейс.</li>
-      </ol>
       <footer>
         Первая версия остаётся доступна по прежнему адресу. Снимки этой страницы — промежуточные результаты разработки,
         а не готовая браузерная игра.
@@ -230,7 +246,12 @@
         const report = await response.json();
         document.querySelector('#updated').textContent =
           `Обновлено: ${new Date(report.updatedAt).toLocaleString('ru-RU')}.`;
-        if (report.stage === 1 && report.stage1) {
+        if (report.stage === 2 && report.stage2a) {
+          document.querySelector('#stage-label').textContent = 'Этап 2 · аудит и независимый код';
+          document.querySelector('#status-title').textContent = '2А проверен: шесть модулей движка работают в Wasm.';
+          document.querySelector('#stage-description').textContent =
+            'Windows и Wasm проходят общие расчётные тесты. Карта платформенных зависимостей подготовлена. Следующий шаг — worker, память и звук (2Б); проверка настоящего Safari остаётся открытой.';
+        } else if (report.stage === 1 && report.stage1) {
           document.querySelector('#stage-label').textContent = 'Этап 1';
           document.querySelector('#status-title').textContent = 'Первые модули Pascal Wasm работают в браузере.';
           document.querySelector('#stage-description').textContent =
@@ -254,6 +275,89 @@
           metrics.append(card);
         }
         content.append(metrics);
+        if (report.stage2a) {
+          const independent = text('section', '', 'card');
+          independent.append(text('h2', 'Этап 2А · сравнить движок с Windows'));
+          const link = text('a', 'Запустить проверки шести модулей →');
+          link.href = new URL(report.stage2a.page, base).href;
+          independent.append(link, text('p', 'JSON, WebP, физика, волны, течение и PigeonScript: одни входы, проверка ABI, Unicode и ошибок; три повтора в каждой конфигурации.'));
+          const c = report.stage2a.counts;
+          independent.append(text('p', `Карта зависимостей: ${c.units} модулей, ${c.includes} включений, ${c.platformBound} модулей связаны с платформой. Первичная инвентаризация: ${c.scenes} сцен и ${c.scripts} сценария.`));
+          if (report.stage2a.nativeFullBuild?.status === 'passed') {
+            const native = report.stage2a.nativeFullBuild;
+            independent.append(text('p', `✓ Полная Windows-сборка: ${native.engineChecks} проверок движка и ${native.gameChecks} игровых прошли повторно.`, 'ok'));
+          }
+          for (const check of report.stage2a.checks)
+            independent.append(text('p', `✓ ${check.browser} ${check.version} · ${check.configuration}`, 'ok'));
+          for (const item of report.stage2a.pending) independent.append(text('p', item, 'subtle'));
+          content.append(independent);
+        }
+        if (report.plan) {
+          const plan = text('section', ''); plan.id = 'plan';
+          plan.append(text('h2', 'Подробный план переноса · 19 этапов'), text('p', report.plan.note, 'subtle'));
+          plan.append(text('p', '«Проверено» — есть результат проверки; «частично» — остаётся приёмка; «предстоит» — шаг ещё не выполнен; «исключено» — решение о границах работы.'));
+          const tools = text('div', '', 'plan-tools');
+          const search = document.createElement('input');
+          search.type = 'search'; search.placeholder = 'Найти этап или шаг'; search.setAttribute('aria-label', 'Поиск по этапам и шагам');
+          const expand = text('button', 'Раскрыть все этапы'), collapse = text('button', 'Свернуть все');
+          tools.append(search, expand, collapse); plan.append(tools);
+          const index = text('nav', '', 'plan-index'); index.setAttribute('aria-label', 'Этапы переноса');
+          const stages = [];
+          for (const stage of report.plan.stages) {
+            const jump = text('a', String(stage.id)); jump.href = `#stage-${stage.id}`;
+            jump.setAttribute('aria-label', `Этап ${stage.id}. ${stage.title}`); index.append(jump);
+            const details = document.createElement('details'); details.className = 'plan-stage'; details.id = `stage-${stage.id}`;
+            details.open = stage.id === report.stage;
+            const summary = document.createElement('summary');
+            summary.append(text('span', `Этап ${stage.id}. ${stage.title}`, 'stage-title'), text('span', stage.statusLabel, `badge ${stage.status}`));
+            const done = stage.steps.filter(s => s.status === 'done').length;
+            summary.append(text('span', `${done} из ${stage.steps.length} шагов проверено${stage.steps.some(s => s.status === 'excluded') ? ' · есть исключённые пункты' : ''}`, 'stage-count'));
+            const body = text('div', '', 'plan-body');
+            if (stage.work) body.append(text('p', stage.work));
+            let group = null, list;
+            for (const step of stage.steps) {
+              if (group !== step.group || !list) {
+                group = step.group;
+                if (group) body.append(text('h3', group));
+                list = document.createElement('ol'); body.append(list);
+              }
+              const item = document.createElement('li'); item.value = step.number;
+              item.append(text('span', step.statusLabel, `badge ${step.status}`), text('p', step.text));
+              if (step.evidence) item.append(text('p', step.evidence, 'step-evidence'));
+              list.append(item);
+            }
+            if (stage.result) body.append(text('h3', 'Результат этапа'), text('p', stage.result, 'subtle'));
+            details.append(summary, body); stages.push(details);
+            jump.addEventListener('click', () => { search.value = ''; stages.forEach(s => s.hidden = false); details.open = true; });
+          }
+          plan.append(index, ...stages);
+          expand.addEventListener('click', () => stages.filter(s => !s.hidden).forEach(s => s.open = true));
+          collapse.addEventListener('click', () => stages.forEach(s => s.open = false));
+          const noMatch = text('p', 'По запросу ничего не найдено.', 'subtle'); noMatch.hidden = true; plan.append(noMatch);
+          search.addEventListener('input', () => {
+            const query = search.value.trim().toLocaleLowerCase('ru');
+            for (const stage of stages) {
+              stage.hidden = query !== '' && !stage.textContent.toLocaleLowerCase('ru').includes(query);
+              if (query && !stage.hidden) stage.open = true;
+            }
+            noMatch.hidden = stages.some(s => !s.hidden);
+          });
+          const milestones = text('details', '', 'plan-stage');
+          milestones.append(text('summary', 'Контрольные рубежи A0–F: когда можно двигаться дальше'));
+          const body = text('div', '', 'plan-body');
+          for (const milestone of report.plan.milestones) {
+            const item = text('div', '', 'milestone');
+            item.append(text('strong', `${milestone.id}. ${milestone.title}`), text('p', milestone.stages, 'subtle'), text('p', milestone.condition));
+            if (milestone.id === 'A0') item.append(text('p', 'Независимый код проверен; для полной приёмки остаётся настоящий Safari.', 'notice'));
+            else item.append(text('p', 'Предстоит', 'pending'));
+            body.append(item);
+          }
+          milestones.append(body); plan.append(milestones); content.append(plan);
+          if (/^#stage-\d+$/.test(location.hash)) {
+            const target = stages.find(s => '#' + s.id === location.hash);
+            if (target) { target.open = true; target.scrollIntoView(); }
+          }
+        }
         if (report.stage1) {
           const spikes = text('section', '', 'card');
           spikes.append(text('h2', 'Запустить WebAssembly на своём устройстве'));
