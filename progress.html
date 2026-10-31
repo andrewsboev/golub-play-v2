@@ -247,7 +247,7 @@
         document.querySelector('#updated').textContent =
           `Обновлено: ${new Date(report.updatedAt).toLocaleString('ru-RU')}.`;
         if(report.engine){
-          document.querySelector('#stage-label').textContent='Этап '+report.engine.stage+' · browser runtime';
+          document.querySelector('#stage-label').textContent=report.engine.complete?'План выполнен · desktop':'Этап '+report.engine.stage+' · browser runtime';
           document.querySelector('#status-title').textContent=report.engine.title;
           document.querySelector('#stage-description').textContent=report.engine.description;
         } else if(report.stage3){
@@ -299,6 +299,17 @@
               const gallery=text('div','','gallery');
               for(const file of report.engine.images){const figure=document.createElement('figure'),link=document.createElement('a'),img=document.createElement('img');link.href=new URL('engine/'+file,base).href;img.src=link.href;img.alt=report.engine.imageCaptions?.[file]||file;img.loading='lazy';link.append(img);figure.append(link,text('figcaption',(report.engine.imageCaptions?.[file]||file)+' · Wasm / WebGL2'));gallery.append(figure);}
               content.append(gallery);
+            }
+            if(report.engine.measurements){
+              const m=report.engine.measurements,card=text('section','','card');card.append(text('h2','Измерения на настоящем desktop'));
+              card.append(text('p',m.device),text('p',`30 минут: ${m.soak.transitions} переходов, ${m.soak.saves} сохранений, ${m.soak.restores} восстановлений WebGL; underrun/overflow ${m.soak.underrun}/${m.soak.overflow}. CPU кадра p50/p95: ${m.soak.cpuP50.toFixed(1)}/${m.soak.cpuP95.toFixed(1)} мс. Задержка до AudioWorklet p95: ${m.soak.audioP95.toFixed(1)} мс.`));
+              card.append(text('p',`Готовый пакет, 10 минут с нагрузкой: ${m.audio.loads} импульс по 50 мс; underrun/overflow ${m.audio.underrun}/${m.audio.overflow}; задержка p95 ${m.audio.p95.toFixed(1)} мс.`));
+              card.append(text('p','Память показана как наблюдение, без лимитов. Wasm — ёмкость linear memory; GPU — оценка текстур, JS — наблюдение browser heap. Эти числа не складываются в точную память процесса.','subtle'));
+              const select=document.createElement('select');select.setAttribute('aria-label','Показатель памяти');for(const [key,label]of [['gpu','GPU-текстуры'],['mainWasm','Ёмкость Wasm'],['js','Наблюдение JS heap']]){const option=text('option',label);option.value=key;select.append(option);}card.append(select);
+              const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 900 250');svg.style.width='100%';svg.style.display='block';svg.setAttribute('role','img');svg.setAttribute('aria-label','Память при смене сцен за 30 минут');const detail=text('p','Наведите на график для состояния сцены.','subtle');card.append(svg,detail);
+              const node=(tag,attrs,label)=>{const n=document.createElementNS(svg.namespaceURI,tag);for(const [k,v]of Object.entries(attrs))n.setAttribute(k,v);if(label!==undefined)n.textContent=label;svg.append(n);return n;};
+              function draw(){svg.replaceChildren();const key=select.value,rows=m.rows.filter(r=>Number.isFinite(r[key])),max=Math.max(1,...rows.map(r=>r[key]/1048576)),end=Math.max(...rows.map(r=>r.at));for(let i=0;i<=4;i++){const y=210-i*45;node('line',{x1:60,y1:y,x2:880,y2:y,stroke:'#536371','stroke-opacity':.4});node('text',{x:4,y:y+4,fill:'#b9c4cc','font-size':12},(max*i/4).toFixed(0));}for(let i=0;i<=6;i++)node('text',{x:60+i*820/6,y:238,fill:'#b9c4cc','font-size':12},(end/60000*i/6).toFixed(0));node('text',{x:4,y:14,fill:'#b9c4cc','font-size':12},'МиБ');node('text',{x:830,y:250,fill:'#b9c4cc','font-size':12},'минуты');node('polyline',{points:rows.map(r=>[60+r.at/end*820,210-r[key]/1048576/max*180].join(',')).join(' '),fill:'none',stroke:'#efbd59','stroke-width':2});svg.onpointermove=event=>{const x=(event.clientX-svg.getBoundingClientRect().left)/svg.getBoundingClientRect().width*900,at=(x-60)/820*end,row=rows.reduce((a,b)=>Math.abs(a.at-at)<Math.abs(b.at-at)?a:b);detail.textContent=`${(row.at/60000).toFixed(1)} мин · ${row.scenes.join(', ')||'загрузка'} · ${(row[key]/1048576).toFixed(1)} МиБ · CPU sample ${row.frameMs.toFixed(1)} мс · underrun ${row.underrun}`;};}
+              select.addEventListener('change',draw);draw();content.append(card);
             }
         }
         if(report.stage3){
@@ -478,7 +489,7 @@
           content.append(gates);
         }
         const pending = text('section', '', 'card');
-        pending.append(text('h2', report.stage0Complete ? 'Следующий этап' : 'До завершения этапа'));
+        pending.append(text('h2', report.completedStages===19?'План выполнен':report.stage0Complete ? 'Следующий этап' : 'До завершения этапа'));
         for (const item of report.pending) pending.append(text('p', item, 'subtle'));
         if (report.stage0Complete) pending.append(text('p', report.nextStep));
         if (report.scopeNote) pending.append(text('p', report.scopeNote, 'subtle'));
