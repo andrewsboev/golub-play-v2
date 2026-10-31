@@ -1,0 +1,29 @@
+# Кат-сцена перед боем с бабкой (уровень 1, двор пекарни). Голубь влетел во двор, камера показывает хозяйку
+# двора — она ещё не знает, кто к ней пожаловал. Зовёт сценарий уровня (level1_old.pigeon) при входе на арену;
+# Esc или Enter — промотать. После неё — плашка двора и бой (бабка сама замечает голубя: state intro).
+# editor: level=level1_old pigeon_x=33740
+
+cutscene granny_intro
+
+actor granny
+
+at 0:
+    letterbox true
+    pigeon.walk_to pigeon.x + 140
+
+at 0.7:
+    camera.pan_to granny.x 1.8
+
+at 2.7:
+    granny.pose "granny_idle_01"
+    granny.say "Ни одного голубя во дворе. Красота…" 2.4 450
+
+at 5.3:
+    camera.pan_to pigeon.x 1.3
+
+at 6:
+    pigeon.face granny
+    pigeon.say "Курлык." 1.4
+
+at 7.6:
+    end_cutscene

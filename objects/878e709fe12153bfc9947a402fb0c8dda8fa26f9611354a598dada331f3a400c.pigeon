@@ -1,0 +1,32 @@
+# Трёхъярусный торт на тележке свадебной процессии — мишень: три попадания (procession.pigeon двигает
+# тележку и решает, что дальше). Сама тележка — не персонаж: без тени, без реплик.
+
+character wed_cake:
+    preview "wedding.cake_full"
+    atlas = "wedding"
+    wed = parent
+    pose "cake_full"
+    # Тележку официант толкает перед собой — она перед ним
+    depth = DEPTH_FRONT
+    alpha = 0
+    shadow = 0
+    # Сам торт — верх кадра над тележкой
+    hitbox -80 80 85 235
+
+var wed = nil
+var hits = 0
+
+func show(frame):
+    pose frame
+
+state roll:
+    pass
+
+on hit:
+    if not wed.active() or hits >= 3: return
+    hits += 1
+    score_hit 150
+    wed.cake_hit(hits)
+
+every frame:
+    immune = not wed.active() or hits >= 3

@@ -1,0 +1,86 @@
+# Свои голуби на «домашней территории» (уровень 1): клюют крошки и бродят между level.min_x и level.max_x, от
+# нашего голубя не улетают — свои. Курлыкнешь — откликаются; пнёшь, клюнешь или обгадишь — возмущаются и
+# отпрыгивают. Окраска — level.kind (grey, pale, brown), иначе случайная.
+
+character homie:
+    title "Свой голубь"
+    preview "ambient.flock_grey_idle"
+    preview "ambient.flock_pale_idle" if level.kind == "pale"
+    preview "ambient.flock_brown_idle" if level.kind == "brown"
+    param kind "Окраска" choice "" "Случайная", grey "Сизый", pale "Светлый", brown "Бурый"
+    param walk "Бродит" range "Без участка — на 150 px в стороны"
+    atlas = "ambient"
+    v = level.kind
+    if v == "": v = pick("grey", "pale", "brown")
+    pose "flock_" + v + "_idle"
+    hitbox -45 45 0 95
+    shadow = 70
+    if chance(0.5): face -1
+    if level.max_x <= level.min_x:
+        min_x = x - 150
+        max_x = x + 150
+    else:
+        min_x = level.min_x
+        max_x = level.max_x
+
+var v = "grey"
+var min_x = 0
+var max_x = 0
+
+state idle:
+    pose "flock_" + v + "_idle"
+    repeat:
+        wait random(0.6, 2.2)
+        if chance(0.6): play v + "_peck"
+        elif chance(0.6): go stroll
+
+state stroll:
+    if x <= min_x: face 1
+    elif x >= max_x: face -1
+    elif chance(0.4): face -facing
+    play v + "_walk"
+    var t = random(0.4, 1.1)
+    every frame:
+        x = clamp(x + facing * 45 * dt, min_x, max_x)
+        if time > t: break
+    go idle
+
+# Отпрыгнуть от голубя, хлопая крыльями
+state hop_away:
+    var d = sign(x - pigeon.x)
+    if d == 0: d = 1
+    face d
+    play v + "_fly"
+    every frame:
+        x = clamp(x + d * 320 * dt, min_x - 120, max_x + 120)
+        draw_dy = -sin(min(1, time / 0.5) * pi) * 70
+        if time >= 0.5: break
+    draw_dy = 0
+    go idle
+
+on coo:
+    if state == hop_away: return
+    wait random(0.3, 0.8)
+    face pigeon
+    sfx "coo_reply"
+    draw_dy = -10
+    wait 0.12
+    draw_dy = 0
+
+on kick:
+    say pick("Эй!", "Ты чего?!", "Курлык?!") 0.9
+    go hop_away
+    return true
+
+on peck:
+    say pick("Ай!", "Своих не клюют!") 0.9
+    go hop_away
+    return true
+
+on hit:
+    say pick("Фу-у!", "Ну спасибо…") 0.9
+    go hop_away
+
+# Во время боя с жирдяем — не мишень для помёта (помёт летит к нему)
+every frame:
+    immune = in_arena("park")
