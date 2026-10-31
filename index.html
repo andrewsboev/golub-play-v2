@@ -246,7 +246,11 @@
         const report = await response.json();
         document.querySelector('#updated').textContent =
           `Обновлено: ${new Date(report.updatedAt).toLocaleString('ru-RU')}.`;
-        if(report.stage3){
+        if(report.engine){
+          document.querySelector('#stage-label').textContent='Этап '+report.engine.stage+' · browser runtime';
+          document.querySelector('#status-title').textContent=report.engine.title;
+          document.querySelector('#stage-description').textContent=report.engine.description;
+        } else if(report.stage3){
           document.querySelector('#stage-label').textContent='Этап 3 · завершён';
           document.querySelector('#status-title').textContent='Общая часть PiGine отделена от Windows backend.';
           document.querySelector('#stage-description').textContent='Игра, примеры и редакторы собираются на Windows. Общие контракты проверены в Wasm. Следующий этап — browser entry point и один кадр движка. Текущий объём: desktop, оригинальная графика, без лимитов CPU/GPU.';
@@ -283,6 +287,13 @@
           metrics.append(card);
         }
         content.append(metrics);
+        if(report.engine){
+          const section=text('section','','card');section.append(text('h2','Запустить текущий браузерный срез'));
+          const link=text('a','Открыть работающую витрину PiGine →');link.href=new URL(report.engine.page,base).href;section.append(link);
+          for(const item of report.engine.results)section.append(text('p',item,'ok'));
+          for(const item of report.engine.pending)section.append(text('p',item,'subtle'));
+          content.append(section);
+        }
         if(report.stage3){
           const section=text('section','','card');section.append(text('h2','Этап 3 · разделение backend проверено'));
           const link=text('a','Запустить Wasm-проверку общих контрактов →');link.href=new URL(report.stage3.page,base).href;section.append(link);
