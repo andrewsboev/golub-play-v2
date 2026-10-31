@@ -297,7 +297,7 @@
             if(report.engine.images?.length||report.engine.referenceImages?.length){
               content.append(text('h2','Кадры работающей Wasm-игры'));
               const gallery=text('div','','gallery');
-              for(const shot of [...(report.engine.images||[]).map(file=>({file:'engine/'+file,caption:report.engine.imageCaptions?.[file]||file})),...(report.engine.referenceImages||[])]){const figure=document.createElement('figure'),link=document.createElement('a'),img=document.createElement('img');link.href=new URL(shot.file,base).href;img.src=link.href;img.alt=shot.caption;img.loading='lazy';link.append(img);figure.append(link,text('figcaption',shot.caption+' · Wasm / WebGL2'));gallery.append(figure);}
+              for(const shot of [...(report.engine.images||[]).map(file=>({file:'engine/'+file,caption:report.engine.imageCaptions?.[file]||file})),...(report.engine.referenceImages||[])]){const figure=document.createElement('figure'),link=document.createElement('a'),img=document.createElement('img');link.href=new URL(shot.file,base).href;img.src=link.href;img.alt=shot.caption;img.loading='lazy';link.append(img);figure.append(link,text('figcaption',shot.caption+(shot.file.includes('windows-')?' · Windows / Direct3D 9':' · Wasm / WebGL2')));gallery.append(figure);}
               content.append(gallery);
             }
             if(report.engine.measurements){
