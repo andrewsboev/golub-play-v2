@@ -1,0 +1,10 @@
+# Техническая комната: награда и ожидание должны пережить выгрузку помещения.
+level test_location_room:
+    run_flag "room_initialized" true
+
+on location_enter(id):
+    if not run_flag("room_timer_started"):
+        run_flag "room_timer_started" true
+        wait 1.0
+        add_score 100
+        run_flag "room_timer_done" true

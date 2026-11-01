@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "kind": "level",
+  "name": "test_routes",
+  "entry": {
+    "location": "street",
+    "spawn": "start"
+  },
+  "locations": [
+    {
+      "id": "street",
+      "map": "locations/test_routes/street.json"
+    },
+    {
+      "id": "room",
+      "map": "locations/test_routes/room.json"
+    }
+  ],
+  "objectives": []
+}

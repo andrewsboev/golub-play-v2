@@ -1,0 +1,83 @@
+{
+  "version": 3,
+  "kind": "location",
+  "width": 1400,
+  "height": 900,
+  "spawnPoints": [
+    {
+      "id": "from_street",
+      "x": 300,
+      "y": 760,
+      "facing": 1
+    }
+  ],
+  "solids": [
+    {
+      "id": "floor",
+      "x": 0,
+      "y": 760,
+      "w": 1400,
+      "h": 140,
+      "oneWay": false
+    },
+    {
+      "id": "left",
+      "x": 0,
+      "y": 0,
+      "w": 50,
+      "h": 900,
+      "oneWay": false
+    },
+    {
+      "id": "right",
+      "x": 1350,
+      "y": 0,
+      "w": 50,
+      "h": 900,
+      "oneWay": false
+    },
+    {
+      "id": "ceiling",
+      "x": 0,
+      "y": 0,
+      "w": 1400,
+      "h": 50,
+      "oneWay": false
+    }
+  ],
+  "food": [
+    {
+      "id": "room_food",
+      "type": "bread",
+      "x": 850,
+      "y": 760
+    }
+  ],
+  "blocks": [
+    {
+      "id": "prop_service_door",
+      "x": 300,
+      "y": 760,
+      "scale": 0.7,
+      "noPlatforms": true
+    }
+  ],
+  "ground": [],
+  "npcs": [],
+  "zones": [],
+  "doors": [
+    {
+      "id": "street_door",
+      "x": 170,
+      "y": 480,
+      "w": 260,
+      "h": 280,
+      "target": {
+        "location": "street",
+        "spawn": "from_room"
+      }
+    }
+  ],
+  "script": "test_location_room",
+  "diagnostic": true
+}

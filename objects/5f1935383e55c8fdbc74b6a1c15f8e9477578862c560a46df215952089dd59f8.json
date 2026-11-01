@@ -1,0 +1,206 @@
+{
+  "version": 3,
+  "kind": "location",
+  "width": 4800,
+  "height": 3240,
+  "spawnPoints": [
+    {
+      "id": "start",
+      "x": 350,
+      "y": 3000,
+      "facing": 1
+    },
+    {
+      "id": "from_room",
+      "x": 4100,
+      "y": 1000,
+      "facing": -1
+    }
+  ],
+  "solids": [
+    {
+      "id": "floor",
+      "x": 0,
+      "y": 3000,
+      "w": 4800,
+      "h": 240,
+      "oneWay": false
+    },
+    {
+      "id": "ceiling",
+      "x": 0,
+      "y": 0,
+      "w": 4800,
+      "h": 80,
+      "oneWay": false
+    },
+    {
+      "id": "left",
+      "x": 0,
+      "y": 0,
+      "w": 80,
+      "h": 3240,
+      "oneWay": false
+    },
+    {
+      "id": "right",
+      "x": 4720,
+      "y": 0,
+      "w": 80,
+      "h": 3240,
+      "oneWay": false
+    },
+    {
+      "id": "upper_left",
+      "x": 80,
+      "y": 1000,
+      "w": 1900,
+      "h": 180,
+      "oneWay": false
+    },
+    {
+      "id": "upper_right",
+      "x": 2800,
+      "y": 1000,
+      "w": 1920,
+      "h": 180,
+      "oneWay": false
+    },
+    {
+      "id": "rest1",
+      "x": 1980,
+      "y": 2600,
+      "w": 240,
+      "h": 30,
+      "oneWay": true
+    },
+    {
+      "id": "rest2",
+      "x": 2400,
+      "y": 2200,
+      "w": 240,
+      "h": 30,
+      "oneWay": true
+    },
+    {
+      "id": "rest3",
+      "x": 1980,
+      "y": 1800,
+      "w": 240,
+      "h": 30,
+      "oneWay": true
+    },
+    {
+      "id": "rest4",
+      "x": 2400,
+      "y": 1400,
+      "w": 240,
+      "h": 30,
+      "oneWay": true
+    },
+    {
+      "id": "rest5",
+      "x": 2620,
+      "y": 1150,
+      "w": 160,
+      "h": 20,
+      "oneWay": true
+    }
+  ],
+  "food": [
+    {
+      "id": "lower_food",
+      "type": "bread",
+      "x": 800,
+      "y": 3000
+    },
+    {
+      "id": "upper_food",
+      "type": "bread",
+      "x": 3600,
+      "y": 1000
+    }
+  ],
+  "blocks": [
+    {
+      "id": "prop_service_door",
+      "x": 4090,
+      "y": 1000,
+      "scale": 0.7,
+      "noPlatforms": true
+    }
+  ],
+  "ground": [],
+  "npcs": [],
+  "zones": [
+    {
+      "id": "upper_checkpoint",
+      "kind": "checkpoint",
+      "x": 3200,
+      "y": 800,
+      "w": 300,
+      "h": 200,
+      "spawnX": 3350,
+      "spawnY": 1000
+    }
+  ],
+  "cameraZones": [
+    {
+      "id": "lower",
+      "mode": "horizontal",
+      "x": 80,
+      "y": 2700,
+      "w": 4640,
+      "h": 540,
+      "bounds": {
+        "x": 0,
+        "y": 2160,
+        "w": 4800,
+        "h": 1080
+      }
+    },
+    {
+      "id": "shaft",
+      "mode": "vertical",
+      "priority": 1,
+      "x": 1900,
+      "y": 800,
+      "w": 1000,
+      "h": 1950,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 4800,
+        "h": 3240
+      }
+    },
+    {
+      "id": "upper",
+      "mode": "horizontal",
+      "x": 80,
+      "y": 80,
+      "w": 4640,
+      "h": 1100,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 4800,
+        "h": 2160
+      }
+    }
+  ],
+  "doors": [
+    {
+      "id": "room_door",
+      "x": 3950,
+      "y": 720,
+      "w": 280,
+      "h": 280,
+      "target": {
+        "location": "room",
+        "spawn": "from_street"
+      }
+    }
+  ],
+  "diagnostic": true
+}
