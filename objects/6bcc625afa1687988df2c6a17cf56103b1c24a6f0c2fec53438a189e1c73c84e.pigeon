@@ -1,0 +1,138 @@
+# Участник ремонтной встречи. Директор хранит рабочую фазу, рабочий — свою атаку и движение.
+
+character road_worker:
+    title "Дорожный рабочий"
+    preview "l1_worker.idle"
+    atlas = "l1_worker"
+    pose "idle"
+    hitbox -95 95 0 435
+    body -85 85 0 420
+    solid = true
+    home_x = x
+    team = group("roadworks")
+    death_line = "Голубь помешал ремонту асфальта"
+
+var home_x = 0
+var team = nil
+var last_phase = ""
+var attack_in = 1
+var air_attack = false
+var returning = false
+
+func is_drilling():
+    return level.role == "drill" and state == work
+
+func walk_to(target, speed):
+    face_to target
+    x += sign(target - x) * min(abs(target - x), speed * dt)
+
+state idle:
+    pose "idle"
+
+state work:
+    solid = true
+    face -1
+    if level.role == "drill": play "drill"
+    else: pose "idle"
+
+state rest:
+    solid = true
+    face -1
+    pose "break"
+
+state repair:
+    solid = false
+    returning = false
+    if level.role == "guard": play "l1_worker_run.fast"
+    else: pose "break"
+    every frame:
+        if level.role == "guard":
+            if time < 2:
+                walk_to(level.x2 + 130, 520)
+            elif time < 4.5:
+                face -1
+                pose "repair"
+            else:
+                if not returning:
+                    returning = true
+                    play "l1_worker_run.fast"
+                walk_to(home_x, 520)
+                if abs(x - home_x) < 1: pose "idle"
+
+state warning:
+    face pigeon
+    pose "warn"
+    alert true 470
+    air_attack = not pigeon.on_ground or abs(dx) > 250
+    wait 0.35
+    if air_attack: go throw_up
+    go kick_up
+
+state kick_up:
+    pose "kick_up"
+    wait 0.25
+    go kick
+
+state kick:
+    pose "kick"
+    sfx "swing"
+    if touches_pigeon(0, 290, 0, 180): hurt_pigeon x
+    wait 0.35
+    last_phase = ""
+    go idle
+
+state throw_up:
+    pose "throw_up"
+    wait 0.4
+    go throw
+
+state throw:
+    pose "throw"
+    sfx "whoosh"
+    throw_stone (x + facing * 100) (y - 310) (pigeon.x + pigeon.walk_vx * 0.2) (pigeon.feet_y - 40)
+    wait 0.4
+    last_phase = ""
+    go idle
+
+state shocked:
+    solid = false
+    alert false
+    pose "shock"
+
+state flee:
+    solid = false
+    alert false
+    face 1
+    play "l1_worker_run.run"
+    every frame:
+        x += 380 * dt
+        if time >= 3: vanish
+
+on leave(s):
+    if s == warning: alert false
+
+every frame:
+    attack_in = max(0, attack_in - dt)
+    var phase = team.phase
+    var attacking = state in [warning, kick_up, kick, throw_up, throw]
+    if phase != last_phase and (not attacking or phase in ["shocked", "fleeing", "completed", "repairing"]):
+        last_phase = phase
+        if phase == "working": go work
+        elif phase == "resting": go rest
+        elif phase == "repairing": go repair
+        elif phase == "shocked": go shocked
+        elif phase == "fleeing": go flee
+        elif phase == "completed": vanish
+    if state in [work, rest] and attack_in <= 0 and pigeon_visible() and abs(dx) < 480:
+        attack_in = 1.8
+        go warning
+
+on hit:
+    if state in [shocked, flee]: return
+    say "Кыш с дороги!" 1 440
+
+on bump(flying, speed):
+    if state in [work, rest] and attack_in <= 0:
+        attack_in = 1.8
+        go warning
+    return true

@@ -1,0 +1,16 @@
+# Переход на улицу ждёт открывания со стороны комнаты целиком.
+cutscene hut_exit
+
+actor hut_exit_door
+
+at 0:
+    var walk_time = pigeon.walk_to(hut_exit_door.x - 150)
+    wait walk_time + 0.15
+    pigeon.face -1
+    pigeon.kick()
+    wait 0.12
+    var opening_time = hut_exit_door.play("opening")
+    sfx "clink"
+    wait opening_time
+    hut_exit_door.finish_open()
+    end_cutscene

@@ -1,0 +1,11 @@
+{
+  "author": "rubberduck",
+  "title": "100 CC0 metal and wood SFX",
+  "sourcePage": "https://opengameart.org/content/100-cc0-metal-and-wood-sfx",
+  "archiveUrl": "https://opengameart.org/sites/default/files/100-CC0-wood-metal-SFX.zip",
+  "archiveSha256": "be6eba63b03409ac0c77787a956b1503a7c186403d04aef9725c52644a4b7878",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "originalFormat": "OGG Vorbis; no lossless master supplied in this pack",
+  "files": ["metal_open_01.ogg", "lock_open_01.ogg", "door_open_01.ogg", "metal_close_01.ogg"]
+}

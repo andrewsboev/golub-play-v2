@@ -1,0 +1,100 @@
+# Режиссёр ремонтной встречи: щиток, рабочие фазы, общий проход и два рабочих.
+# manual оставляет проверочный стенд без дочерних персонажей.
+
+character roadworks:
+    title "Ремонтная встреча"
+    param x2 "Щиток" number step 10 "x связанного щитка"
+    param walk "Проход" range
+    param mode "Режим встречи" choice "" "Обычный", manual "Техническая проверка"
+    group_data = group("roadworks")
+    if group_data.done == nil: group_data.done = run_flag("roadworks_done")
+
+const WORK_TIME = 8
+const BREAK_TIME = 4
+const REPAIR_TIME = 7
+
+var group_data = nil
+var hit_x = 0
+var drill_in = 0
+var driller = nil
+var guard = nil
+var fence = nil
+
+func is_done():
+    return group_data.done
+
+func set_passage(closed):
+    # Преграда от тротуара до верхнего настила. Геометрия самих лесов задаётся картой.
+    barrier "roadworks_passage" (x - 50) (y - 460) 100 460 closed
+
+func test_start():
+    if group_data.done: go completed
+    set_passage(true)
+    go working
+
+func short_circuit():
+    if group_data.done: return
+    if state == working:
+        if driller != nil and not driller.is_drilling(): go repairing
+        group_data.done = true
+        run_flag "roadworks_done" true
+        objective "roadworks"
+        go shocked
+    elif state == resting: go repairing
+
+state awaiting_art:
+    if level.mode != "manual" and has_frame("l1_worker.idle") and has_frame("l1_roadworks.barrier_closed"):
+        driller = spawn("road_worker", x, role="drill", x2=level.x2, facing=-1, name="road_driller", y=y)
+        guard = spawn("road_worker", x + 260, role="guard", x2=level.x2, facing=-1, name="road_guard", y=y)
+        fence = sprite("l1_roadworks", "barrier_closed", x - 50, y, depth=DEPTH_BACK)
+        fence.scale = 0.65
+        test_start()
+
+state working:
+    group_data.phase = "working"
+    every frame:
+        if time >= WORK_TIME: go resting
+
+state resting:
+    group_data.phase = "resting"
+    every frame:
+        if time >= BREAK_TIME: go working
+
+state repairing:
+    group_data.phase = "repairing"
+    say_at x=level.x2 y=(y - 400) text="Опять выбило. Сейчас починим" seconds=2
+    wait REPAIR_TIME
+    go working
+
+state shocked:
+    group_data.phase = "shocked"
+    sfx "zap"
+    shake 0.2 0.006
+    wait 0.8
+    go fleeing
+
+state fleeing:
+    group_data.phase = "fleeing"
+    set_passage(false)
+    if fence != nil: fence.frame = "l1_roadworks.barrier_open"
+    wait 3
+    go completed
+
+state completed:
+    group_data.phase = "completed"
+    set_passage(false)
+    if fence != nil: fence.frame = "l1_roadworks.barrier_open"
+
+on power_short(box_x):
+    if abs(box_x - level.x2) > 10 or group_data.done: return
+    short_circuit()
+
+every frame:
+    if state == working:
+        drill_in -= dt
+        if drill_in <= 0:
+            drill_in = 0.2
+            if abs(pigeon.x - x) < 1300 and (driller == nil or driller.is_drilling()): sfx "drill"
+
+on death:
+    if group_data.done: go completed

@@ -1,0 +1,19 @@
+# Служебный участник технического стенда: проверка реального API и save/load без графики предметов.
+
+character test_level1_probe:
+    pass
+
+state idle:
+    pass
+
+func collect():
+    quest_collect "bin_key" "key"
+    quest_collect "roof_key" "key"
+    quest_collect "bone_one" "bone"
+    quest_collect "bone_two" "bone"
+
+func feed():
+    feed_dog "dog_one"
+
+func coffee():
+    spawn_food "coffee" (pigeon.x + 50) pigeon.feet_y

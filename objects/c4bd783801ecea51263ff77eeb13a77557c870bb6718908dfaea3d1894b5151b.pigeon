@@ -1,0 +1,36 @@
+# Первый игровой отрезок: старт → ремонт → еда и конкурент → бабка.
+
+level level1:
+    reveal_objective "meal"
+    toast "Что-то странное происходит в городе… Но сначала надо поесть"
+
+var edge_said = false
+
+on rival_finished(result):
+    objective "meal"
+
+on arena "boss":
+    if play_cutscene("level1_granny_intro"):
+        wait until not cutscene_playing()
+    actor("granny").start()
+
+on death:
+    var granny = actor("granny")
+    if granny != nil and in_arena("boss") and not granny.is_defeated(): granny.celebrate()
+
+on respawn:
+    var granny = actor("granny")
+    if granny != nil and in_arena("boss") and not granny.is_defeated():
+        granny.reset()
+        wait 0.7
+        granny.start()
+
+on granny_defeated(gx):
+    objective "granny"
+    release_arena "boss"
+    toast "Бабка сдаётся. Теперь можно идти дальше"
+
+every frame:
+    if not edge_said and pigeon.x > 8350:
+        edge_said = true
+        toast "За углом — кафе. Продолжение следует."

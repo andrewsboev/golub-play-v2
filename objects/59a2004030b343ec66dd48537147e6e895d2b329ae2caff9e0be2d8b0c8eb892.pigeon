@@ -1,0 +1,10 @@
+cutscene hut_service
+
+actor control_lever
+
+at 0:
+    sfx "clink"
+    wait control_lever.play("switch")
+    control_lever.unlock()
+    play_film "powerbox_service"
+    end_cutscene

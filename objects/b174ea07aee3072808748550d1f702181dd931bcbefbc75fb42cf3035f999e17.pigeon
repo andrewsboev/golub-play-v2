@@ -1,0 +1,15 @@
+# Короткий приход бабки после зоны кормёжки. Пропуск приводит к тому же началу боя.
+
+cutscene level1_granny_intro
+
+actor granny
+
+at 0:
+    letterbox true
+    camera.pan_to granny.x 0.7
+
+at 0.5:
+    granny.say "Кто тут опять мусор раскидал?!" 1.5 450
+
+at 2.1:
+    end_cutscene

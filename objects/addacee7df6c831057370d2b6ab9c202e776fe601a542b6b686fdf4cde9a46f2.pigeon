@@ -1,0 +1,53 @@
+# Забытый обед доступен только после завершения побега. Награда выдаётся атомарно,
+# до короткой анимации открывания: сохранение не может выдать её повторно.
+character worker_bag:
+    title "Сумка рабочего"
+    preview "l1_worker_bag.closed"
+    atlas = "l1_worker_bag"
+    hitbox -90 90 0 115
+    immune = true
+    shadow = 160
+    team = group("roadworks")
+
+var team = nil
+
+func search():
+    if run_flag("road_tools_looted"):
+        popup x (y - 170) "Пусто…" "#e8dcc4"
+        return
+    if team.phase != "completed":
+        popup x (y - 170) "Хозяева ещё рядом" "#e8dcc4"
+        return
+    run_flag "road_tools_looted" true
+    sfx "rip"
+    var side = sign(pigeon.x - x)
+    if side == 0: side = pigeon.facing
+    toss_food "sandwich" (x + side * 150) x (y - 85)
+    toss_food "crumbs_pile" (x - side * 100) x (y - 85)
+    award 50 "Обед бригады!" x (y - 190)
+    go opening
+
+state closed:
+    pose "closed"
+    if run_flag("road_tools_looted"): go empty
+
+state opening:
+    pose "open"
+    wait 0.45
+    go empty
+
+state empty:
+    pose "empty"
+
+every frame:
+    if team.phase == "completed" and not run_flag("road_tools_looted") and abs(dx) < 300 and abs(pigeon.feet_y - y) < 160:
+        hint_once "worker_bag" "Рабочие забыли сумку. {peck} — обыскать, {kick} — пнуть"
+
+on peck:
+    if run_flag("road_tools_looted"): return false
+    search()
+    return true
+
+on kick:
+    search()
+    return true

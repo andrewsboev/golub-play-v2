@@ -1,0 +1,1466 @@
+{
+  "schemaVersion": 1,
+  "namespace": "golub.sfx.level1.v1",
+  "sampleRate": 44100,
+  "format": "PCM16 WAV",
+  "channels": 1,
+  "processing": {
+    "dcHighpassHz": 22,
+    "normalization": "active RMS target with static peak ceiling; no compressor/limiter",
+    "groups": {
+      "ambient": {
+        "activeRmsDb": -30,
+        "peakCeilingDb": -14
+      },
+      "gameplay": {
+        "activeRmsDb": -24,
+        "peakCeilingDb": -9
+      },
+      "important": {
+        "activeRmsDb": -21,
+        "peakCeilingDb": -7
+      },
+      "major": {
+        "activeRmsDb": -19,
+        "peakCeilingDb": -6
+      }
+    }
+  },
+  "source": {
+    "renderer": "PiGine synthpcm / Tone / Noise / SoundFont percussion",
+    "rawFormat": "IEEE float32 WAV with fact chunk",
+    "soundFont": "GeneralUser GS 2.0.3",
+    "soundFontSha256": "9575028c7a1f589f5770fccc8cff2734566af40cd26ed836944e9a5152688cfe",
+    "sourceLicense": "LICENSE-GeneralUser-GS.txt"
+  },
+  "randomizationUnits": {
+    "pitchRandom": "maximum fractional playback-rate deviation, e.g. 0.018 means +/-1.8%",
+    "volumeRandom": "maximum linear gain deviation",
+    "timingRandomMs": "primary event onset jitter; zero keeps input/contact sync"
+  },
+  "events": {
+    "pigeon.peck": {
+      "files": [
+        "pigeon_peck_01.wav",
+        "pigeon_peck_02.wav",
+        "pigeon_peck_03.wav",
+        "pigeon_peck_04.wav",
+        "pigeon_peck_05.wav"
+      ],
+      "group": "gameplay",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "pigeon.fast_peck": {
+      "files": [
+        "pigeon_fast_peck_01.wav",
+        "pigeon_fast_peck_02.wav",
+        "pigeon_fast_peck_03.wav",
+        "pigeon_fast_peck_04.wav",
+        "pigeon_fast_peck_05.wav"
+      ],
+      "group": "gameplay",
+      "loop": false,
+      "pitchRandom": 0.025,
+      "volumeRandom": 0.1,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 28,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "pigeon.eat": {
+      "files": [
+        "pigeon_eat_01.wav",
+        "pigeon_eat_02.wav",
+        "pigeon_eat_03.wav"
+      ],
+      "group": "gameplay",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "pigeon.crop_fill": {
+      "files": [
+        "pigeon_crop_fill.wav"
+      ],
+      "group": "important",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 0,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 800,
+      "completeness": "nonverbal_event"
+    },
+    "pigeon.empty_crop": {
+      "files": [
+        "pigeon_empty_crop.wav"
+      ],
+      "group": "important",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 0,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 300,
+      "completeness": "nonverbal_event"
+    },
+    "pigeon.poop": {
+      "files": [
+        "pigeon_poop_01.wav",
+        "pigeon_poop_02.wav",
+        "pigeon_poop_03.wav",
+        "pigeon_poop_04.wav"
+      ],
+      "group": "gameplay",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "poop.human_impact": {
+      "files": [
+        "poop_human_impact_01.wav",
+        "poop_human_impact_02.wav",
+        "poop_human_impact_03.wav",
+        "poop_human_impact_04.wav"
+      ],
+      "group": "gameplay",
+      "loop": false,
+      "pitchRandom": 0.025,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "poop.electric_impact": {
+      "files": [
+        "poop_electric_impact_01.wav",
+        "poop_electric_impact_02.wav",
+        "poop_electric_impact_03.wav"
+      ],
+      "group": "gameplay",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "pigeon.pickup": {
+      "files": [
+        "pigeon_pickup_01.wav",
+        "pigeon_pickup_02.wav",
+        "pigeon_pickup_03.wav"
+      ],
+      "group": "gameplay",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "baguette.pickup": {
+      "files": [
+        "baguette_pickup.wav"
+      ],
+      "group": "gameplay",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 0,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "baguette.hit": {
+      "files": [
+        "baguette_hit_01.wav",
+        "baguette_hit_02.wav",
+        "baguette_hit_03.wav",
+        "baguette_hit_04.wav"
+      ],
+      "group": "gameplay",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "bone.throw": {
+      "files": [
+        "bone_throw_01.wav",
+        "bone_throw_02.wav",
+        "bone_throw_03.wav"
+      ],
+      "group": "gameplay",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "bone.land": {
+      "files": [
+        "bone_land_01.wav",
+        "bone_land_02.wav",
+        "bone_land_03.wav"
+      ],
+      "group": "gameplay",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "pigeon.food_clicker_win": {
+      "files": [
+        "pigeon_clicker_win.wav"
+      ],
+      "group": "important",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 0,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "pigeon.food_clicker_lose": {
+      "files": [
+        "pigeon_clicker_lose.wav"
+      ],
+      "group": "important",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 0,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "jackhammer.loop": {
+      "files": [
+        "jackhammer_loop_01.wav",
+        "jackhammer_loop_02.wav",
+        "jackhammer_loop_03.wav",
+        "jackhammer_loop_04.wav"
+      ],
+      "group": "ambient",
+      "loop": true,
+      "pitchRandom": 0.002,
+      "volumeRandom": 0.035,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 1,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event",
+      "recommendedTransitionCrossfadeMs": 20,
+      "loopStartFrame": 0,
+      "loopEndFrames": {
+        "jackhammer_loop_01.wav": 104958,
+        "jackhammer_loop_02.wav": 104958,
+        "jackhammer_loop_03.wav": 104958,
+        "jackhammer_loop_04.wav": 104958
+      }
+    },
+    "jackhammer.start": {
+      "files": [
+        "jackhammer_start.wav"
+      ],
+      "group": "gameplay",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 0,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "jackhammer.stop": {
+      "files": [
+        "jackhammer_stop.wav"
+      ],
+      "group": "gameplay",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 0,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "worker.kick": {
+      "files": [
+        "worker_kick_01.wav",
+        "worker_kick_02.wav",
+        "worker_kick_03.wav",
+        "worker_kick_04.wav"
+      ],
+      "group": "gameplay",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "worker.throw": {
+      "files": [
+        "worker_throw_01.wav",
+        "worker_throw_02.wav",
+        "worker_throw_03.wav"
+      ],
+      "group": "gameplay",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "worker.throw_impact": {
+      "files": [
+        "worker_throw_impact_01.wav",
+        "worker_throw_impact_02.wav",
+        "worker_throw_impact_03.wav"
+      ],
+      "group": "gameplay",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "electrical.short_initial": {
+      "files": [
+        "electrical_short_initial.wav"
+      ],
+      "group": "important",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 0,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "electrical.arc": {
+      "files": [
+        "electrical_arc.wav"
+      ],
+      "group": "important",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 0,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "electrical.pop": {
+      "files": [
+        "electrical_pop.wav"
+      ],
+      "group": "important",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 0,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "electrical.shutdown": {
+      "files": [
+        "electrical_shutdown.wav"
+      ],
+      "group": "important",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 0,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "worker.transformer_short": {
+      "files": [
+        "worker_transformer_short.wav"
+      ],
+      "group": "major",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 0,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 2000,
+      "completeness": "nonverbal_event",
+      "exclusiveWith": [
+        "electrical.short_initial",
+        "electrical.arc",
+        "electrical.pop",
+        "electrical.shutdown"
+      ]
+    },
+    "worker.shock_electric_layer": {
+      "files": [
+        "worker_shock_electric_01.wav",
+        "worker_shock_electric_02.wav",
+        "worker_shock_electric_03.wav"
+      ],
+      "group": "important",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "physical_layer_only",
+      "pendingLayer": "human_voice"
+    },
+    "worker.flee_steps": {
+      "files": [
+        "worker_flee_steps_01.wav",
+        "worker_flee_steps_02.wav",
+        "worker_flee_steps_03.wav"
+      ],
+      "group": "gameplay",
+      "loop": false,
+      "pitchRandom": 0.01,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "rival.land": {
+      "files": [
+        "rival_pigeon_land_01.wav",
+        "rival_pigeon_land_02.wav",
+        "rival_pigeon_land_03.wav"
+      ],
+      "group": "gameplay",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "rival.challenge": {
+      "files": [
+        "rival_pigeon_challenge_01.wav",
+        "rival_pigeon_challenge_02.wav",
+        "rival_pigeon_challenge_03.wav",
+        "rival_pigeon_challenge_04.wav"
+      ],
+      "group": "important",
+      "loop": false,
+      "pitchRandom": 0.008,
+      "volumeRandom": 0.06,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 1400,
+      "completeness": "nonverbal_event",
+      "sourceCharacter": "procedural_pigeon"
+    },
+    "rival.fast_peck": {
+      "files": [
+        "rival_fast_peck_01.wav",
+        "rival_fast_peck_02.wav",
+        "rival_fast_peck_03.wav",
+        "rival_fast_peck_04.wav"
+      ],
+      "group": "gameplay",
+      "loop": false,
+      "pitchRandom": 0.02,
+      "volumeRandom": 0.1,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 30,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "rival.win": {
+      "files": [
+        "rival_win_01.wav",
+        "rival_win_02.wav"
+      ],
+      "group": "important",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 1,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event",
+      "sourceCharacter": "procedural_pigeon"
+    },
+    "rival.lose": {
+      "files": [
+        "rival_lose_01.wav",
+        "rival_lose_02.wav"
+      ],
+      "group": "important",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 1,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event",
+      "sourceCharacter": "procedural_pigeon"
+    },
+    "grandma.attack_swing_layer": {
+      "files": [
+        "grandma_swing_01.wav",
+        "grandma_swing_02.wav",
+        "grandma_swing_03.wav"
+      ],
+      "group": "gameplay",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "physical_layer_only",
+      "pendingLayer": "human_voice"
+    },
+    "grandma.fall": {
+      "files": [
+        "grandma_fall_01.wav",
+        "grandma_fall_02.wav",
+        "grandma_fall_03.wav"
+      ],
+      "group": "important",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "grandma.bag_open": {
+      "files": [
+        "grandma_bag_open.wav"
+      ],
+      "group": "gameplay",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 0,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "baguette.drop": {
+      "files": [
+        "baguette_drop_01.wav",
+        "baguette_drop_02.wav"
+      ],
+      "group": "gameplay",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 1,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "grandma.baguette_hit_layer": {
+      "files": [
+        "grandma_baguette_hit_body_01.wav",
+        "grandma_baguette_hit_body_02.wav",
+        "grandma_baguette_hit_body_03.wav",
+        "grandma_baguette_hit_body_04.wav"
+      ],
+      "group": "important",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "physical_layer_only",
+      "pendingLayer": "human_voice"
+    },
+    "grandma.defeat_layer": {
+      "files": [
+        "grandma_defeat_body_01.wav",
+        "grandma_defeat_body_02.wav",
+        "grandma_defeat_body_03.wav"
+      ],
+      "group": "major",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "physical_layer_only",
+      "pendingLayer": "human_voice"
+    },
+    "clerk.kick": {
+      "files": [
+        "clerk_kick_01.wav",
+        "clerk_kick_02.wav",
+        "clerk_kick_03.wav"
+      ],
+      "group": "gameplay",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "clerk.air_hit": {
+      "files": [
+        "clerk_air_hit_01.wav",
+        "clerk_air_hit_02.wav",
+        "clerk_air_hit_03.wav"
+      ],
+      "group": "gameplay",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "coffee.cup_drop": {
+      "files": [
+        "coffee_cup_drop.wav"
+      ],
+      "group": "gameplay",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 0,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "coffee.splash": {
+      "files": [
+        "coffee_splash.wav"
+      ],
+      "group": "gameplay",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 0,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "coffee.drop_full": {
+      "files": [
+        "coffee_drop_full.wav"
+      ],
+      "group": "important",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 0,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event",
+      "exclusiveWith": [
+        "coffee.cup_drop",
+        "coffee.splash"
+      ]
+    },
+    "pigeon.coffee_drink": {
+      "files": [
+        "pigeon_coffee_drink.wav"
+      ],
+      "group": "gameplay",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 0,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "coffee.powerup_start": {
+      "files": [
+        "coffee_powerup_start.wav"
+      ],
+      "group": "important",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 0,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "coffee.powerup_warning": {
+      "files": [
+        "coffee_powerup_warning.wav"
+      ],
+      "group": "important",
+      "loop": false,
+      "pitchRandom": 0,
+      "volumeRandom": 0,
+      "timingRandomMs": 0,
+      "noRepeatLast": 0,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 1500,
+      "completeness": "nonverbal_event"
+    },
+    "coffee.powerup_end": {
+      "files": [
+        "coffee_powerup_end.wav"
+      ],
+      "group": "important",
+      "loop": false,
+      "pitchRandom": 0,
+      "volumeRandom": 0,
+      "timingRandomMs": 0,
+      "noRepeatLast": 0,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "kid.throw": {
+      "files": [
+        "kid_throw_01.wav",
+        "kid_throw_02.wav",
+        "kid_throw_03.wav",
+        "kid_throw_04.wav",
+        "kid_throw_05.wav"
+      ],
+      "group": "gameplay",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "projectile.flyby": {
+      "files": [
+        "projectile_flyby_01.wav",
+        "projectile_flyby_02.wav",
+        "projectile_flyby_03.wav",
+        "projectile_flyby_04.wav"
+      ],
+      "group": "gameplay",
+      "loop": false,
+      "pitchRandom": 0.03,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 2,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "projectile.hit_pigeon": {
+      "files": [
+        "projectile_hit_pigeon_01.wav",
+        "projectile_hit_pigeon_02.wav",
+        "projectile_hit_pigeon_03.wav",
+        "projectile_hit_pigeon_04.wav"
+      ],
+      "group": "important",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "kid.poop_hit": {
+      "files": [
+        "kid_poop_hit_01.wav",
+        "kid_poop_hit_02.wav",
+        "kid_poop_hit_03.wav",
+        "kid_poop_hit_04.wav"
+      ],
+      "group": "gameplay",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "kid.fall": {
+      "files": [
+        "kid_fall_01.wav",
+        "kid_fall_02.wav",
+        "kid_fall_03.wav",
+        "kid_fall_04.wav"
+      ],
+      "group": "gameplay",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "kid.standup": {
+      "files": [
+        "kid_standup_01.wav",
+        "kid_standup_02.wav",
+        "kid_standup_03.wav"
+      ],
+      "group": "gameplay",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "kid.final_fall": {
+      "files": [
+        "kid_final_fall_01.wav",
+        "kid_final_fall_02.wav",
+        "kid_final_fall_03.wav"
+      ],
+      "group": "important",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 1200,
+      "completeness": "nonverbal_event"
+    },
+    "key.pickup": {
+      "files": [
+        "key_pickup_01.wav",
+        "key_pickup_02.wav"
+      ],
+      "group": "important",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 1,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "gate.locked": {
+      "files": [
+        "gate_locked.wav"
+      ],
+      "group": "important",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 0,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 450,
+      "completeness": "nonverbal_event"
+    },
+    "gate.lock_01_open": {
+      "files": [
+        "gate_lock_01_open.wav"
+      ],
+      "group": "important",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 0,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "gate.lock_02_open": {
+      "files": [
+        "gate_lock_02_open.wav"
+      ],
+      "group": "important",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 0,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "gate.open_start": {
+      "files": [
+        "gate_open_start.wav"
+      ],
+      "group": "major",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 0,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "gate.open_loop": {
+      "files": [
+        "gate_open_loop.wav"
+      ],
+      "group": "ambient",
+      "loop": true,
+      "pitchRandom": 0,
+      "volumeRandom": 0.025,
+      "timingRandomMs": 0,
+      "noRepeatLast": 0,
+      "maxVoices": 1,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event",
+      "recommendedTransitionCrossfadeMs": 20,
+      "loopStartFrame": 0,
+      "loopEndFrames": {
+        "gate_open_loop.wav": 104958
+      }
+    },
+    "gate.open_end": {
+      "files": [
+        "gate_open_end.wav"
+      ],
+      "group": "major",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 0,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "dog.idle": {
+      "files": [
+        "dog_idle_01.wav",
+        "dog_idle_02.wav",
+        "dog_idle_03.wav",
+        "dog_idle_04.wav"
+      ],
+      "group": "ambient",
+      "loop": false,
+      "pitchRandom": 0.006,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 1800,
+      "completeness": "nonverbal_event",
+      "sourceCharacter": "procedural_dog"
+    },
+    "dog.notice": {
+      "files": [
+        "dog_notice_01.wav",
+        "dog_notice_02.wav",
+        "dog_notice_03.wav"
+      ],
+      "group": "important",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event",
+      "sourceCharacter": "procedural_dog"
+    },
+    "dog.bark": {
+      "files": [
+        "dog_bark_01.wav",
+        "dog_bark_02.wav",
+        "dog_bark_03.wav",
+        "dog_bark_04.wav",
+        "dog_bark_05.wav"
+      ],
+      "group": "important",
+      "loop": false,
+      "pitchRandom": 0.008,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 2,
+      "minGapMs": 0,
+      "cooldownMs": 320,
+      "completeness": "nonverbal_event",
+      "sourceCharacter": "procedural_dog"
+    },
+    "dog.attack": {
+      "files": [
+        "dog_attack_01.wav",
+        "dog_attack_02.wav",
+        "dog_attack_03.wav"
+      ],
+      "group": "important",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event",
+      "sourceCharacter": "procedural_dog"
+    },
+    "dog.bone_notice": {
+      "files": [
+        "dog_bone_notice_01.wav",
+        "dog_bone_notice_02.wav",
+        "dog_bone_notice_03.wav"
+      ],
+      "group": "gameplay",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "dog.bone_grab": {
+      "files": [
+        "dog_bone_grab_01.wav",
+        "dog_bone_grab_02.wav",
+        "dog_bone_grab_03.wav"
+      ],
+      "group": "gameplay",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "dog.chew": {
+      "files": [
+        "dog_chew_01.wav",
+        "dog_chew_02.wav",
+        "dog_chew_03.wav",
+        "dog_chew_04.wav"
+      ],
+      "group": "ambient",
+      "loop": false,
+      "pitchRandom": 0.01,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 1400,
+      "completeness": "nonverbal_event"
+    },
+    "police.arrival": {
+      "files": [
+        "police_arrival.wav"
+      ],
+      "group": "major",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 0,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "pigeon.capture": {
+      "files": [
+        "pigeon_capture.wav"
+      ],
+      "group": "major",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 0,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "pigeon.struggle": {
+      "files": [
+        "pigeon_struggle_01.wav",
+        "pigeon_struggle_02.wav",
+        "pigeon_struggle_03.wav"
+      ],
+      "group": "important",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 2,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "police.door_close": {
+      "files": [
+        "police_door_close.wav"
+      ],
+      "group": "major",
+      "loop": false,
+      "pitchRandom": 0.018,
+      "volumeRandom": 0.08,
+      "timingRandomMs": 0,
+      "noRepeatLast": 0,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    },
+    "police.departure": {
+      "files": [
+        "police_departure.wav"
+      ],
+      "group": "major",
+      "loop": false,
+      "pitchRandom": 0,
+      "volumeRandom": 0.025,
+      "timingRandomMs": 0,
+      "noRepeatLast": 0,
+      "maxVoices": 3,
+      "minGapMs": 0,
+      "cooldownMs": 0,
+      "completeness": "nonverbal_event"
+    }
+  },
+  "deferred": [
+    {
+      "id": "worker.notice",
+      "requested": "worker_notice_01..03",
+      "status": "deferred",
+      "reason": "Human character voices deferred by the user; no synthetic placeholder speech."
+    },
+    {
+      "id": "worker.shock_voice",
+      "requested": "worker_shock_01..03",
+      "status": "deferred",
+      "reason": "Human character voices deferred by the user; no synthetic placeholder speech."
+    },
+    {
+      "id": "worker.flee_voice",
+      "requested": "worker_flee_voice_01..03",
+      "status": "deferred",
+      "reason": "Human character voices deferred by the user; no synthetic placeholder speech."
+    },
+    {
+      "id": "grandma.spot",
+      "requested": "grandma_spot (phrases/takes)",
+      "status": "deferred",
+      "reason": "Human character voices deferred by the user; no synthetic placeholder speech."
+    },
+    {
+      "id": "grandma.attack_voice",
+      "requested": "grandma_attack (phrases/takes)",
+      "status": "deferred",
+      "reason": "Human character voices deferred by the user; no synthetic placeholder speech."
+    },
+    {
+      "id": "grandma.poop_voice",
+      "requested": "grandma_poop_hit (phrases/takes)",
+      "status": "deferred",
+      "reason": "Human character voices deferred by the user; no synthetic placeholder speech."
+    },
+    {
+      "id": "grandma.down_voice",
+      "requested": "grandma_down (phrases/takes)",
+      "status": "deferred",
+      "reason": "Human character voices deferred by the user; no synthetic placeholder speech."
+    },
+    {
+      "id": "grandma.baguette_stolen",
+      "requested": "БАТОН ПОЛОЖИ! (takes)",
+      "status": "deferred",
+      "reason": "Human character voices deferred by the user; no synthetic placeholder speech."
+    },
+    {
+      "id": "grandma.baguette_hit_voice",
+      "requested": "grandma_baguette_hit_01..04",
+      "status": "deferred",
+      "reason": "Human character voices deferred by the user; no synthetic placeholder speech."
+    },
+    {
+      "id": "grandma.defeat_voice",
+      "requested": "grandma_defeat_01..03",
+      "status": "deferred",
+      "reason": "Human character voices deferred by the user; no synthetic placeholder speech."
+    },
+    {
+      "id": "clerk.poop_voice",
+      "requested": "clerk_poop_voice_01..04",
+      "status": "deferred",
+      "reason": "Human character voices deferred by the user; no synthetic placeholder speech."
+    }
+  ],
+  "notes": [
+    "No human speech and no music. Animal sounds are explicitly procedural, not recordings.",
+    "Distinct variations are independently synthesized/layered, not pitch-shifted copies.",
+    "Texture microtiming is baked into independent variants; flattened WAV layers cannot be randomized separately.",
+    "Bone landing is one shared event/bank for throws and dogs.",
+    "Composite and component events are alternatives; do not play both.",
+    "No OGG: current game SFX path does not use OGG assets. Runtime WAV playback integration is separate."
+  ],
+  "quality": {
+    "technical": "passed",
+    "listening": "rejected_by_user",
+    "listeningReview": {
+      "status": "rejected_by_user",
+      "scope": "level1 procedural SFX pass v1",
+      "feedback": "Почти все звуки не попали в ожидания; звуки очень похожи между собой.",
+      "reason": "Repeated Tone/Noise recipes and the same kick layer do not provide distinct physical sound identities.",
+      "replacementPolicy": "Freeze the accepted lock, cabinet B and door closing B. Keep the procedural contact/soft hit and preferred door opening as references; footsteps and door opening may need polish. Do not change approved files or approve unreviewed candidates.",
+      "mechanismsReview": {
+        "status": "three_events_approved_opening_needs_polish",
+        "feedback": "Закрывание двери: вариант B годится. Шкаф B и замок уже приняты.",
+        "characterApprovedFiles": [
+          "cabinet_open_01.wav",
+          "lock_unlock_01.wav",
+          "door_open_01.wav",
+          "door_close_01.wav"
+        ],
+        "revision2Feedback": "Low-rumble highpass/tail cleanup did not solve the perceived hollow tin-can coloration.",
+        "requestedChange": "Preserve the accepted lock, cabinet B and closing B without further processing. Door opening remains the preferred reference with polish still possible; no new closing candidates requested.",
+        "events": {
+          "lock.unlock": {
+            "status": "approved_by_user",
+            "file": "lock_unlock_dry_01.wav",
+            "sha256": "2a52636e0a61be60407c2fb3a66b60706ae7022ad96daef3c6235d985d9203e7",
+            "feedback": "Стало лучше, годится."
+          },
+          "door.open": {
+            "status": "preferred_needs_polish",
+            "file": "door_open_dry_01.wav",
+            "sha256": "ff572d0d100ad938a5a50bb589c0ba72048f6e6195b8077b5b5df5f39ab51355",
+            "feedback": "Стало лучше, хоть и неидеально. Ориентир для закрывания."
+          },
+          "door.close": {
+            "status": "approved_by_user",
+            "file": "door_close_family_b_01.wav",
+            "sha256": "4c7d6867d46386247eab1ca9ebac2735e2003746c4072f1264aecbe865b88052",
+            "referenceFile": "door_open_dry_01.wav",
+            "rejectedFiles": [
+              "door_close_dry_01.wav",
+              "door_close_frame_a_01.wav",
+              "door_close_frame_b_01.wav"
+            ],
+            "feedback": "Вариант B годится."
+          },
+          "cabinet.open": {
+            "status": "approved_by_user",
+            "file": "cabinet_open_motion_b_01.wav",
+            "sha256": "a2913363a512f0ffea0f645a979103ecb40464feb886cb58cf3451cd5e025b24",
+            "feedback": "Вариант B годится."
+          }
+        }
+      },
+      "referenceComparisonStatus": "reviewed_needs_revision",
+      "comparisons": {
+        "small_contact": {
+          "feedback": "Мелкий контакт — процедурный вариант лучше.",
+          "preferred": "procedural",
+          "baselineFile": "pigeon_peck_01.wav",
+          "productionApproved": false,
+          "nextAction": "Preserve this baseline; do not replace it with the tested generic impacts. Other peck variants remain unreviewed."
+        },
+        "soft_impact": {
+          "feedback": "Мягкий удар — процедурный вариант лучше.",
+          "preferred": "procedural",
+          "baselineFile": "baguette_hit_01.wav",
+          "productionApproved": false,
+          "nextAction": "Preserve this baseline; do not replace it with the tested soft impacts. Other baguette variants remain unreviewed."
+        },
+        "metal_impact": {
+          "feedback": "Металлический отклик — все так себе.",
+          "detail": "Мешают искусственный звон и слишком тонкий/лёгкий удар.",
+          "requiredSeparation": [
+            "cabinet.open",
+            "lock.unlock",
+            "door.open",
+            "door.close"
+          ],
+          "preferred": "none",
+          "productionApproved": false,
+          "nextAction": "Use heavier, damped metal with distinct cabinet, lock and door actions. No generic metallic hit shared between these events; neither the procedural lock nor the three light metal samples is an accepted baseline."
+        },
+        "concrete_step": {
+          "feedback": "Шаг по бетону — процедурный лучше всех, но тоже так себе.",
+          "preferred": "procedural_needs_revision",
+          "baselineFile": "worker_flee_steps_01.wav",
+          "productionApproved": false,
+          "nextAction": "Use the procedural version only as a comparison baseline; footsteps still need improvement. The tested concrete samples are not the direction."
+        }
+      },
+      "date": "2026-11-01"
+    },
+    "claim": "V1 rejected by the user: sounds miss their targets and are too similar. Keep for comparison, not gameplay delivery.",
+    "files": 180,
+    "events": 74,
+    "clippedSamples": 0
+  }
+}

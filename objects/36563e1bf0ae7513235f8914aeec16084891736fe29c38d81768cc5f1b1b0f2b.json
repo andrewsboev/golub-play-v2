@@ -1,0 +1,193 @@
+{
+  "version": 2,
+  "name": "Проверка механик первого уровня",
+  "width": 5200,
+  "spawn": {
+    "x": 150,
+    "y": 868
+  },
+  "ground": [
+    {
+      "x0": 0,
+      "x1": 5200,
+      "kind": "city"
+    }
+  ],
+  "blocks": [
+    {
+      "id": "tile_fence_b",
+      "x": 48,
+      "noPlatforms": true
+    },
+    {
+      "id": "tile_fence_b",
+      "x": 485,
+      "noPlatforms": true
+    },
+    {
+      "id": "tile_fence_b",
+      "x": 1880,
+      "noPlatforms": true
+    },
+    {
+      "id": "tile_fence_b",
+      "x": 2317,
+      "noPlatforms": true
+    },
+    {
+      "id": "tile_fence_b",
+      "x": 2754,
+      "noPlatforms": true
+    },
+    {
+      "id": "park_tree_wide",
+      "x": 300
+    },
+    {
+      "id": "park_tree",
+      "x": 2480
+    },
+    {
+      "id": "home_hut",
+      "x": 1300
+    },
+    {
+      "id": "prop_lamp_post",
+      "x": 215
+    },
+    {
+      "id": "prop_lamp_post",
+      "x": 2160
+    },
+    {
+      "id": "home_crate_blue",
+      "x": 1150
+    },
+    {
+      "id": "home_crate_wood",
+      "x": 1280
+    },
+    {
+      "id": "home_bag_small",
+      "x": 700
+    },
+    {
+      "id": "fg_grass",
+      "x": 640
+    },
+    {
+      "id": "fg_grass",
+      "x": 1950
+    },
+    {
+      "id": "tile_fence_b",
+      "x": 3191,
+      "noPlatforms": true
+    },
+    {
+      "id": "tile_fence_b",
+      "x": 3628,
+      "noPlatforms": true
+    },
+    {
+      "id": "tile_fence_b",
+      "x": 4065,
+      "noPlatforms": true
+    },
+    {
+      "id": "tile_fence_b",
+      "x": 4502,
+      "noPlatforms": true
+    },
+    {
+      "id": "tile_fence_b",
+      "x": 4939,
+      "noPlatforms": true
+    },
+    {
+      "id": "tile_fence_b",
+      "x": 5376,
+      "noPlatforms": true
+    },
+    {
+      "id": "park_tree_wide",
+      "x": 3150
+    },
+    {
+      "id": "prop_lamp_post",
+      "x": 2960
+    },
+    {
+      "id": "prop_bench",
+      "x": 3350
+    },
+    {
+      "id": "tile_flowers_a",
+      "x": 4080
+    },
+    {
+      "id": "tile_flowers_b",
+      "x": 4620
+    },
+    {
+      "id": "prop_lamp_post",
+      "x": 4900
+    },
+    {
+      "id": "fg_grass",
+      "x": 3700
+    }
+  ],
+  "npcs": [
+    {
+      "type": "power_box",
+      "x": 1530,
+      "x2": 965,
+      "mode": "roadworks",
+      "name": "repair_box"
+    },
+    {
+      "type": "roadworks",
+      "x": 2400,
+      "x2": 1530,
+      "minX": 2200,
+      "maxX": 2600,
+      "name": "roadworks",
+      "mode": "manual"
+    },
+    {
+      "type": "trash_can",
+      "x": 3900
+    },
+    {
+      "type": "food_rival",
+      "x": 3820,
+      "minX": 3300,
+      "maxX": 4400,
+      "name": "food_rival"
+    },
+    {
+      "type": "test_level1_probe",
+      "x": 300,
+      "name": "probe"
+    }
+  ],
+  "food": [
+    {
+      "type": "crumbs_pile",
+      "x": 3600,
+      "y": 868
+    }
+  ],
+  "zones": [],
+  "pickups": [],
+  "flocks": [],
+  "secrets": [],
+  "objectives": [
+    {
+      "id": "roadworks",
+      "text": "Прогнать рабочих"
+    }
+  ],
+  "diagnostic": true
+}

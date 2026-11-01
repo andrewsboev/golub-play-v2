@@ -1,0 +1,12 @@
+# После выхода наружу видно закрывание за голубем; кадры идут в обратном порядке.
+cutscene hut_close
+
+actor hut_door
+
+at 0:
+    wait 0.3
+    var closing_time = hut_door.play("closing")
+    wait closing_time
+    hut_door.finish_closed()
+    sfx "clink"
+    end_cutscene

@@ -1,0 +1,27 @@
+{
+  "sources": {
+    "qubodup": {
+      "author": "Iwan Gabovitch / qubodup",
+      "title": "Door Open, Door Close Set",
+      "sourcePage": "https://opengameart.org/content/door-open-door-close-set",
+      "archiveUrl": "https://opengameart.org/sites/default/files/qubodup-DoorSet.7z",
+      "archiveSha256": "88502c82451a646fa4bc1b9021a26bbd3441b2850a613784a05336067b11a25d",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "format": "Original FLAC files from the author's archive, preserved losslessly",
+      "files": ["qubodup-DoorClose01.flac", "qubodup-DoorClose02.flac"]
+    },
+    "freesound": {
+      "author": "deleted_user_7146007",
+      "title": "Opening Closing Cabinet Door",
+      "sourcePage": "https://freesound.org/s/383836/",
+      "previewUrl": "https://cdn.freesound.org/previews/383/383836_7146007-hq.mp3",
+      "sourceSha256": "57ab23d5131835072440160aea84f23c78cdad8ba030bef3f2f2f8abd7c85db9",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "format": "Unmodified public HQ MP3 preview; original WAV requires an account and was not downloaded. Decoded WAV does not restore lossless quality.",
+      "files": ["383836_7146007-hq.mp3"],
+      "selection": "Opening portion at 2.2..3.15 seconds; closing near 7 seconds is excluded. Material not specified by the author."
+    }
+  }
+}

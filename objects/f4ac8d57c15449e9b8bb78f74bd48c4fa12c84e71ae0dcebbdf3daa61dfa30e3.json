@@ -1,0 +1,307 @@
+{
+  "status": "selected_by_user",
+  "revision": 5,
+  "sampleRate": 44100,
+  "channels": 1,
+  "bits": 16,
+  "selectedFiles": [
+    "door_close_family_b_01.wav"
+  ],
+  "currentDecisions": {
+    "lock.unlock": {
+      "status": "approved_by_user",
+      "file": "lock_unlock_dry_01.wav",
+      "sha256": "2a52636e0a61be60407c2fb3a66b60706ae7022ad96daef3c6235d985d9203e7",
+      "feedback": "Стало лучше, годится."
+    },
+    "door.open": {
+      "status": "preferred_needs_polish",
+      "file": "door_open_dry_01.wav",
+      "sha256": "ff572d0d100ad938a5a50bb589c0ba72048f6e6195b8077b5b5df5f39ab51355",
+      "feedback": "Стало лучше, хоть и неидеально. Ориентир для закрывания."
+    },
+    "door.close": {
+      "status": "approved_by_user",
+      "file": "door_close_family_b_01.wav",
+      "sha256": "4c7d6867d46386247eab1ca9ebac2735e2003746c4072f1264aecbe865b88052",
+      "referenceFile": "door_open_dry_01.wav",
+      "rejectedFiles": [
+        "door_close_dry_01.wav",
+        "door_close_frame_a_01.wav",
+        "door_close_frame_b_01.wav"
+      ],
+      "feedback": "Вариант B годится."
+    },
+    "cabinet.open": {
+      "status": "approved_by_user",
+      "file": "cabinet_open_motion_b_01.wav",
+      "sha256": "a2913363a512f0ffea0f645a979103ecb40464feb886cb58cf3451cd5e025b24",
+      "feedback": "Вариант B годится."
+    }
+  },
+  "history": [
+    {
+      "event": "door.close",
+      "file": "door_close_frame_a_01.wav",
+      "title": "A — закрывание, первый дубль",
+      "source": "qubodup",
+      "original": "qubodup-DoorClose01.flac",
+      "sourceSha256": "2959db3fddc39a3b6141e9d987e589393989a107473559e03733b3e0b4aaed94",
+      "sourceStartFrame": 0,
+      "sourceEndFrame": 44100,
+      "sha256": "0f5a257e921b9cadf1f76f892223b941d3f6c13f6fb531a7d892558db3194ada",
+      "seconds": 0.77,
+      "peakDbfs": -7.999851954109188,
+      "clippedSamples": 0,
+      "lowpassHz": 7500,
+      "status": "not_selected",
+      "gainDb": -3.2206692818629534,
+      "trimStartFrame": 0,
+      "trimEndFrame": 33957,
+      "rumbleCutHz": 85,
+      "highpassOrder": 2,
+      "tailFloorDb": -34,
+      "tailHoldMs": 50,
+      "tailTrimFrames": 3523,
+      "releaseMs": 12.01814058956916
+    },
+    {
+      "event": "door.close",
+      "file": "door_close_frame_b_01.wav",
+      "title": "B — закрывание, второй дубль",
+      "source": "qubodup",
+      "original": "qubodup-DoorClose02.flac",
+      "sourceSha256": "29dd1e636ad932211dde35741f975e588d35f3995b255f872df1caf3caa5b92b",
+      "sourceStartFrame": 0,
+      "sourceEndFrame": 44100,
+      "sha256": "b0bf58ad99c972ad0922caeae0050f145427d0805f79883fb00e087981f681cf",
+      "seconds": 0.2891156462585034,
+      "peakDbfs": -7.999851954109188,
+      "clippedSamples": 0,
+      "lowpassHz": 7500,
+      "status": "not_selected",
+      "gainDb": -3.6638916264252446,
+      "trimStartFrame": 39,
+      "trimEndFrame": 12789,
+      "rumbleCutHz": 85,
+      "highpassOrder": 2,
+      "tailFloorDb": -34,
+      "tailHoldMs": 50,
+      "tailTrimFrames": 6435,
+      "releaseMs": 12.01814058956916
+    },
+    {
+      "event": "cabinet.open",
+      "file": "cabinet_open_motion_a_01.wav",
+      "title": "A — новая створка, естественное движение",
+      "source": "freesound",
+      "original": "383836_7146007-hq.mp3",
+      "sourceSha256": "57ab23d5131835072440160aea84f23c78cdad8ba030bef3f2f2f8abd7c85db9",
+      "sourceStartFrame": 97020,
+      "sourceEndFrame": 138915,
+      "sha256": "b80b834b8fb8a98ed21226da27830f016da4f062b74957cc8ec47a67a351477a",
+      "seconds": 0.7696371882086168,
+      "peakDbfs": -9.000127250426592,
+      "clippedSamples": 0,
+      "lowpassHz": 7500,
+      "status": "not_selected",
+      "gainDb": 5.7428247143712845,
+      "trimStartFrame": 16,
+      "trimEndFrame": 33957,
+      "rumbleCutHz": 100,
+      "highpassOrder": 2,
+      "tailFloorDb": -34,
+      "tailHoldMs": 50,
+      "tailTrimFrames": 7938,
+      "releaseMs": 12.01814058956916
+    },
+    {
+      "event": "cabinet.open",
+      "file": "cabinet_open_motion_b_01.wav",
+      "title": "B — та же новая створка, суше",
+      "source": "freesound",
+      "original": "383836_7146007-hq.mp3",
+      "sourceSha256": "57ab23d5131835072440160aea84f23c78cdad8ba030bef3f2f2f8abd7c85db9",
+      "sourceStartFrame": 97020,
+      "sourceEndFrame": 138915,
+      "sha256": "a2913363a512f0ffea0f645a979103ecb40464feb886cb58cf3451cd5e025b24",
+      "seconds": 0.629750566893424,
+      "peakDbfs": -9.000127250426592,
+      "clippedSamples": 0,
+      "lowpassHz": 6500,
+      "status": "approved_by_user",
+      "gainDb": 6.618489857616494,
+      "trimStartFrame": 11,
+      "trimEndFrame": 27783,
+      "rumbleCutHz": 100,
+      "highpassOrder": 2,
+      "tailFloorDb": -34,
+      "tailHoldMs": 50,
+      "tailTrimFrames": 13340,
+      "releaseMs": 12.01814058956916,
+      "subtractiveEq": [
+        {
+          "hz": 500,
+          "q": 1.2,
+          "db": -4
+        }
+      ],
+      "sustainReductionMaxDb": 7,
+      "envelopeMs": {
+        "fastAttack": 0.4,
+        "fastRelease": 8,
+        "slowAttack": 12,
+        "slowRelease": 65,
+        "gainSmooth": 3
+      }
+    }
+  ],
+  "source": {
+    "file": "door_open_dry_01.wav",
+    "sha256": "ff572d0d100ad938a5a50bb589c0ba72048f6e6195b8077b5b5df5f39ab51355",
+    "underlyingSource": {
+      "author": "rubberduck",
+      "title": "100 CC0 metal and wood SFX",
+      "sourcePage": "https://opengameart.org/content/100-cc0-metal-and-wood-sfx",
+      "archiveUrl": "https://opengameart.org/sites/default/files/100-CC0-wood-metal-SFX.zip",
+      "archiveSha256": "be6eba63b03409ac0c77787a956b1503a7c186403d04aef9725c52644a4b7878",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "originalFormat": "OGG Vorbis; no lossless master supplied in this pack",
+      "files": [
+        "metal_open_01.ogg",
+        "lock_open_01.ogg",
+        "door_open_01.ogg",
+        "metal_close_01.ogg"
+      ]
+    },
+    "underlyingOriginal": "rubberduck/door_open_01.ogg",
+    "referenceProcessing": "revision 3",
+    "method": "Forward fragment montage of the reviewed processed opening; same material, different action timeline."
+  },
+  "notes": [
+    "Montage candidates, not recordings of a closing door and not independent natural takes.",
+    "No PCM reversal, pitch change, added thud, new reverb or peak limiter. Approved lock/cabinet and reference opening are read only."
+  ],
+  "candidates": [
+    {
+      "event": "door.close",
+      "file": "door_close_family_a_01.wav",
+      "title": "A — короткая посадка створки",
+      "sourceFile": "door_open_dry_01.wav",
+      "sourceSha256": "ff572d0d100ad938a5a50bb589c0ba72048f6e6195b8077b5b5df5f39ab51355",
+      "layers": [
+        {
+          "role": "movement",
+          "sourceStartFrame": 4234,
+          "sourceEndFrame": 6615,
+          "atFrame": 0,
+          "gain": 1.3,
+          "edgeFadeFrames": 66
+        },
+        {
+          "role": "mechanism",
+          "sourceStartFrame": 794,
+          "sourceEndFrame": 1852,
+          "atFrame": 1014,
+          "gain": 0.8,
+          "edgeFadeFrames": 66
+        },
+        {
+          "role": "catch",
+          "sourceStartFrame": 1896,
+          "sourceEndFrame": 4763,
+          "atFrame": 2293,
+          "gain": 0.8,
+          "edgeFadeFrames": 66
+        },
+        {
+          "role": "decay",
+          "sourceStartFrame": 4763,
+          "sourceEndFrame": 7717,
+          "atFrame": 5160,
+          "gain": 0.6,
+          "edgeFadeFrames": 66
+        }
+      ],
+      "gainDb": 1.938052214270313,
+      "sha256": "0c257c3613c3aabdf2bb577718fac15ff092121ca752580afe3d1738b88de498",
+      "seconds": 0.1839909297052154,
+      "peakDbfs": -7.999851954109188,
+      "clippedSamples": 0,
+      "status": "not_selected"
+    },
+    {
+      "event": "door.close",
+      "file": "door_close_family_b_01.wav",
+      "title": "B — движение длиннее, защёлка в конце",
+      "sourceFile": "door_open_dry_01.wav",
+      "sourceSha256": "ff572d0d100ad938a5a50bb589c0ba72048f6e6195b8077b5b5df5f39ab51355",
+      "layers": [
+        {
+          "role": "mechanism",
+          "sourceStartFrame": 221,
+          "sourceEndFrame": 1852,
+          "atFrame": 0,
+          "gain": 1,
+          "edgeFadeFrames": 66
+        },
+        {
+          "role": "movement",
+          "sourceStartFrame": 4234,
+          "sourceEndFrame": 7277,
+          "atFrame": 882,
+          "gain": 1.4,
+          "edgeFadeFrames": 66
+        },
+        {
+          "role": "catch",
+          "sourceStartFrame": 1896,
+          "sourceEndFrame": 4851,
+          "atFrame": 3749,
+          "gain": 0.95,
+          "edgeFadeFrames": 66
+        },
+        {
+          "role": "decay",
+          "sourceStartFrame": 4851,
+          "sourceEndFrame": 8159,
+          "atFrame": 6703,
+          "gain": 0.6,
+          "edgeFadeFrames": 66
+        }
+      ],
+      "gainDb": 0.4453798483322321,
+      "sha256": "4c7d6867d46386247eab1ca9ebac2735e2003746c4072f1264aecbe865b88052",
+      "seconds": 0.22700680272108845,
+      "peakDbfs": -7.999851954109188,
+      "clippedSamples": 0,
+      "status": "approved_by_user"
+    }
+  ],
+  "audition": [
+    {
+      "event": "door.close",
+      "controls": [
+        {
+          "file": "door_open_dry_01_family_review.wav",
+          "title": "Выбранное открывание — ориентир",
+          "gainDb": -0.5199601987166838
+        },
+        {
+          "file": "door_close_family_a_01_family_review.wav",
+          "title": "A — короткая посадка створки",
+          "gainDb": -0.8747034477596659,
+          "sequenceFile": "door_close_family_a_01_open-close.wav"
+        },
+        {
+          "file": "door_close_family_b_01_family_review.wav",
+          "title": "B — движение длиннее, защёлка в конце",
+          "gainDb": 0,
+          "sequenceFile": "door_close_family_b_01_open-close.wav"
+        }
+      ],
+      "targetActiveRmsDb": -28.573231744218543
+    }
+  ]
+}

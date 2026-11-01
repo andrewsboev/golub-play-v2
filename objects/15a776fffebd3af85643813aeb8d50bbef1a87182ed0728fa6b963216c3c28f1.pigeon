@@ -1,0 +1,33 @@
+# Внутренняя сторона двери: отдельная створка перед проёмом в фоне комнаты.
+character hut_exit_door:
+    title "Дверь будки"
+    preview "l1_hut_inside_away.leaf_closed"
+    atlas = "l1_hut_inside_away"
+    pose "leaf_closed"
+    facing = 1
+    depth = -8.95
+    hitbox -330 24 0 570
+    immune = true
+    shadow = 0
+    view = sprite("l1_hut_exit_view", "street", 285, 338, depth=-9.5)
+
+var view = nil
+
+state closed:
+    pose "leaf_closed"
+
+state open:
+    pose "leaf_open"
+
+func finish_open():
+    go open
+
+on location_enter(id):
+    if id == "hut": go closed
+
+on location_loaded(id):
+    if id == "hut": go closed
+
+on kick:
+    sfx "clink"
+    return true

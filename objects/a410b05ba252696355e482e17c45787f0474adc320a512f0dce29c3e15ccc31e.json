@@ -1,0 +1,357 @@
+{
+  "status": "partially_approved",
+  "revision": 3,
+  "listeningReview": {
+    "status": "three_events_approved_opening_needs_polish",
+    "feedback": "Закрывание двери: вариант B годится. Шкаф B и замок уже приняты.",
+    "characterApprovedFiles": [
+      "cabinet_open_01.wav",
+      "lock_unlock_01.wav",
+      "door_open_01.wav",
+      "door_close_01.wav"
+    ],
+    "revision2Feedback": "Low-rumble highpass/tail cleanup did not solve the perceived hollow tin-can coloration.",
+    "requestedChange": "Preserve the accepted lock, cabinet B and closing B without further processing. Door opening remains the preferred reference with polish still possible; no new closing candidates requested.",
+    "events": {
+      "lock.unlock": {
+        "status": "approved_by_user",
+        "file": "lock_unlock_dry_01.wav",
+        "sha256": "2a52636e0a61be60407c2fb3a66b60706ae7022ad96daef3c6235d985d9203e7",
+        "feedback": "Стало лучше, годится."
+      },
+      "door.open": {
+        "status": "preferred_needs_polish",
+        "file": "door_open_dry_01.wav",
+        "sha256": "ff572d0d100ad938a5a50bb589c0ba72048f6e6195b8077b5b5df5f39ab51355",
+        "feedback": "Стало лучше, хоть и неидеально. Ориентир для закрывания."
+      },
+      "door.close": {
+        "status": "approved_by_user",
+        "file": "door_close_family_b_01.wav",
+        "sha256": "4c7d6867d46386247eab1ca9ebac2735e2003746c4072f1264aecbe865b88052",
+        "referenceFile": "door_open_dry_01.wav",
+        "rejectedFiles": [
+          "door_close_dry_01.wav",
+          "door_close_frame_a_01.wav",
+          "door_close_frame_b_01.wav"
+        ],
+        "feedback": "Вариант B годится."
+      },
+      "cabinet.open": {
+        "status": "approved_by_user",
+        "file": "cabinet_open_motion_b_01.wav",
+        "sha256": "a2913363a512f0ffea0f645a979103ecb40464feb886cb58cf3451cd5e025b24",
+        "feedback": "Вариант B годится."
+      }
+    }
+  },
+  "requirements": {
+    "feedback": "Металлический отклик — все так себе.",
+    "detail": "Мешают искусственный звон и слишком тонкий/лёгкий удар.",
+    "requiredSeparation": [
+      "cabinet.open",
+      "lock.unlock",
+      "door.open",
+      "door.close"
+    ],
+    "preferred": "none",
+    "productionApproved": false,
+    "nextAction": "Use heavier, damped metal with distinct cabinet, lock and door actions. No generic metallic hit shared between these events; neither the procedural lock nor the three light metal samples is an accepted baseline."
+  },
+  "events": {
+    "cabinet.open": {
+      "files": [
+        "cabinet_open_motion_b_01.wav"
+      ],
+      "loop": false,
+      "pitchRandom": 0,
+      "volumeRandom": 0,
+      "status": "approved_by_user",
+      "candidates": []
+    },
+    "lock.unlock": {
+      "files": [
+        "lock_unlock_dry_01.wav"
+      ],
+      "loop": false,
+      "pitchRandom": 0,
+      "volumeRandom": 0,
+      "status": "approved_by_user",
+      "candidates": []
+    },
+    "door.open": {
+      "files": [
+        "door_open_dry_01.wav"
+      ],
+      "loop": false,
+      "pitchRandom": 0,
+      "volumeRandom": 0,
+      "status": "preferred_needs_polish",
+      "candidates": []
+    },
+    "door.close": {
+      "files": [
+        "door_close_family_b_01.wav"
+      ],
+      "loop": false,
+      "pitchRandom": 0,
+      "volumeRandom": 0,
+      "status": "approved_by_user",
+      "rejectedFiles": [
+        "door_close_dry_01.wav",
+        "door_close_frame_a_01.wav",
+        "door_close_frame_b_01.wav"
+      ],
+      "candidates": [
+        "door_close_family_a_01.wav",
+        "door_close_family_b_01.wav"
+      ]
+    }
+  },
+  "sampleRate": 44100,
+  "channels": 1,
+  "bits": 16,
+  "sourcePage": "https://opengameart.org/content/100-cc0-metal-and-wood-sfx",
+  "license": "CC0",
+  "originalEncoding": "lossy OGG; WAV export does not restore lossless masters",
+  "recipe": "Mono downmix; DC highpass; wider lowpass; per-source subtractive midrange EQ; transient-preserving sustain reduction up to 7 dB; Butterworth highpass 100..130 Hz and background tail trim; edge fades; static gain with peak ceiling. No new layers or peak limiter.",
+  "files": [
+    {
+      "file": "cabinet_open_dry_01.wav",
+      "bank": "cabinet_open",
+      "event": "cabinet.open",
+      "lowpassHz": 6500,
+      "original": "metal_open_01.ogg",
+      "sourceSha256": "b68844e779fd0d4234bd2511d91db1c72cbf10fa9bc0bbd49f3be6bdb311eb6d",
+      "sha256": "24c8712d03a145c7bc30dab8fa1572fe1bc8c7ee55eb2dab466431e137afc880",
+      "seconds": 0.37,
+      "peakDbfs": -7.999851954109188,
+      "clippedSamples": 0,
+      "baseline": {
+        "file": "cabinet_open_01.wav",
+        "sha256": "2ac070f0bb8bfe57bb88aac5999e3bc8e80bbc5d63a859da2fca7543a5e5c90f",
+        "seconds": 0.7379365079365079,
+        "lowpass80HzEnergyRatio": 0.06956395501214284
+      },
+      "lowpass80HzEnergyRatio": 0.011145228998806994,
+      "gainDb": -3.7782754580504987,
+      "trimStartFrame": 0,
+      "trimEndFrame": 16317,
+      "rumbleCutHz": 130,
+      "highpassOrder": 2,
+      "tailFloorDb": -34,
+      "tailHoldMs": 50,
+      "tailTrimFrames": 4935,
+      "releaseMs": 12.01814058956916,
+      "subtractiveEq": [
+        {
+          "hz": 240,
+          "q": 1.5,
+          "db": -7
+        },
+        {
+          "hz": 325,
+          "q": 2.2,
+          "db": -7
+        },
+        {
+          "hz": 950,
+          "q": 2.5,
+          "db": -5
+        }
+      ],
+      "sustainReductionMaxDb": 7,
+      "envelopeMs": {
+        "fastAttack": 0.4,
+        "fastRelease": 8,
+        "slowAttack": 12,
+        "slowRelease": 65,
+        "gainSmooth": 3
+      }
+    },
+    {
+      "file": "lock_unlock_dry_01.wav",
+      "bank": "lock_unlock",
+      "event": "lock.unlock",
+      "lowpassHz": 6000,
+      "original": "lock_open_01.ogg",
+      "sourceSha256": "f37728690c9559d32527b55e25102a1acb7beafdfab7ad12e099285d13d29e01",
+      "sha256": "2a52636e0a61be60407c2fb3a66b60706ae7022ad96daef3c6235d985d9203e7",
+      "seconds": 0.638095238095238,
+      "peakDbfs": -9.000127250426592,
+      "clippedSamples": 0,
+      "baseline": {
+        "file": "lock_unlock_01.wav",
+        "sha256": "3a36a292933fa4b1cbdd417bc8eebc07778078873562c1b1e3728107403087fe",
+        "seconds": 0.6935827664399093,
+        "lowpass80HzEnergyRatio": 0.014749147133100458
+      },
+      "lowpass80HzEnergyRatio": 0.003913002141801819,
+      "gainDb": -2.549398068228752,
+      "trimStartFrame": 525,
+      "trimEndFrame": 28665,
+      "rumbleCutHz": 110,
+      "highpassOrder": 2,
+      "tailFloorDb": -34,
+      "tailHoldMs": 50,
+      "tailTrimFrames": 959,
+      "releaseMs": 12.01814058956916,
+      "subtractiveEq": [
+        {
+          "hz": 325,
+          "q": 2,
+          "db": -6
+        },
+        {
+          "hz": 850,
+          "q": 0.8,
+          "db": -8
+        }
+      ],
+      "sustainReductionMaxDb": 7,
+      "envelopeMs": {
+        "fastAttack": 0.4,
+        "fastRelease": 8,
+        "slowAttack": 12,
+        "slowRelease": 65,
+        "gainSmooth": 3
+      }
+    },
+    {
+      "file": "door_open_dry_01.wav",
+      "bank": "door_open",
+      "event": "door.open",
+      "lowpassHz": 6500,
+      "original": "door_open_01.ogg",
+      "sourceSha256": "58455b99af8f62b10559607435de0f72b9c798ebe085f49101df3c3d9ec043c7",
+      "sha256": "ff572d0d100ad938a5a50bb589c0ba72048f6e6195b8077b5b5df5f39ab51355",
+      "seconds": 0.22365079365079366,
+      "peakDbfs": -7.999851954109188,
+      "clippedSamples": 0,
+      "baseline": {
+        "file": "door_open_01.wav",
+        "sha256": "76013b23234d14d6a187fbd7eeb7d9d041a804238c4d41ee3c3c3a75ab6d6c55",
+        "seconds": 0.32160997732426305,
+        "lowpass80HzEnergyRatio": 0.02306257159911732
+      },
+      "lowpass80HzEnergyRatio": 0.011460734266272662,
+      "gainDb": -4.062846486105524,
+      "trimStartFrame": 1162,
+      "trimEndFrame": 11025,
+      "rumbleCutHz": 100,
+      "highpassOrder": 2,
+      "tailFloorDb": -34,
+      "tailHoldMs": 50,
+      "tailTrimFrames": 2859,
+      "releaseMs": 12.01814058956916,
+      "subtractiveEq": [
+        {
+          "hz": 325,
+          "q": 2,
+          "db": -9
+        },
+        {
+          "hz": 1140,
+          "q": 1.2,
+          "db": -6
+        }
+      ],
+      "sustainReductionMaxDb": 7,
+      "envelopeMs": {
+        "fastAttack": 0.4,
+        "fastRelease": 8,
+        "slowAttack": 12,
+        "slowRelease": 65,
+        "gainSmooth": 3
+      }
+    },
+    {
+      "file": "door_close_dry_01.wav",
+      "bank": "door_close",
+      "event": "door.close",
+      "lowpassHz": 6500,
+      "original": "metal_close_01.ogg",
+      "sourceSha256": "f504b912782760ff3ec25814db6c27bd2d884a94cda2a94d0ffbec921ab478b6",
+      "sha256": "27cc536ce60209f1ce03eb2ea6a53a6d56e341b679668114fc53dcc1f696925e",
+      "seconds": 0.31170068027210884,
+      "peakDbfs": -7.000285606542581,
+      "clippedSamples": 0,
+      "baseline": {
+        "file": "door_close_01.wav",
+        "sha256": "5f84e220722b85c39a05caf0262c1947e7b8ac4bd3640fca90b147f873036676",
+        "seconds": 0.6089795918367347,
+        "lowpass80HzEnergyRatio": 0.0860930511965269
+      },
+      "lowpass80HzEnergyRatio": 0.015471534537664948,
+      "gainDb": -3.276126320088485,
+      "trimStartFrame": 1248,
+      "trimEndFrame": 14994,
+      "rumbleCutHz": 120,
+      "highpassOrder": 2,
+      "tailFloorDb": -34,
+      "tailHoldMs": 50,
+      "tailTrimFrames": 5927,
+      "releaseMs": 12.01814058956916,
+      "subtractiveEq": [
+        {
+          "hz": 280,
+          "q": 1.4,
+          "db": -9
+        },
+        {
+          "hz": 480,
+          "q": 2.2,
+          "db": -5
+        }
+      ],
+      "sustainReductionMaxDb": 7,
+      "envelopeMs": {
+        "fastAttack": 0.4,
+        "fastRelease": 8,
+        "slowAttack": 12,
+        "slowRelease": 65,
+        "gainSmooth": 3
+      }
+    }
+  ],
+  "decoder": "Chrome/156.0.8078.76",
+  "audition": {
+    "directory": "windows/build/sfx-review",
+    "filesAreGameAssets": false,
+    "levelMatch": "10 ms active RMS, windows above 5% of maximum; static attenuation only, not perceptual loudness certification",
+    "pairs": [
+      {
+        "event": "cabinet.open",
+        "beforeFile": "cabinet_open_ab_before.wav",
+        "afterFile": "cabinet_open_ab_dry.wav",
+        "beforeGainDb": -0.7799165405996484,
+        "afterGainDb": 0,
+        "targetActiveRmsDb": -27.933854761428965
+      },
+      {
+        "event": "lock.unlock",
+        "beforeFile": "lock_unlock_ab_before.wav",
+        "afterFile": "lock_unlock_ab_dry.wav",
+        "beforeGainDb": -0.18534757792986967,
+        "afterGainDb": 0,
+        "targetActiveRmsDb": -27.993729392834695
+      },
+      {
+        "event": "door.open",
+        "beforeFile": "door_open_ab_before.wav",
+        "afterFile": "door_open_ab_dry.wav",
+        "beforeGainDb": -1.5280422939791494,
+        "afterGainDb": 0,
+        "targetActiveRmsDb": -28.053256812344742
+      },
+      {
+        "event": "door.close",
+        "beforeFile": "door_close_ab_before.wav",
+        "afterFile": "door_close_ab_dry.wav",
+        "beforeGainDb": 0,
+        "afterGainDb": -0.48024681869006164,
+        "targetActiveRmsDb": -25.12086865733159
+      }
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+# Короткая перебивка с пульта на наружный щиток, затем возврат в ту же комнату.
+film powerbox_service
+
+var cabinet
+
+at 0:
+    shot "service"
+    letterbox true 0
+    layer "l1_service_backdrop.park" 12 scale=1.6 origin_x=0.5 origin_y=0.5
+    layer "l1_hut.shell" 10 x=-300 y=390 scale=1.5 origin_x=0.5 origin_y=1
+    cabinet = layer("l1_cabinet_service.closed", 9, x=350, y=390, scale=1.7, origin_x=0.5, origin_y=1)
+    camera.key 0 x=250
+    camera.key 1.5 x=285
+    fade_in 0.12
+
+at 0.2:
+    sfx "tick"
+    cabinet.frame "l1_cabinet_service.opening_1"
+
+at 0.35:
+    cabinet.frame "l1_cabinet_service.opening_2"
+
+at 0.5:
+    cabinet.frame "l1_cabinet_service.opening_3"
+
+at 0.65:
+    cabinet.frame "l1_cabinet_service.open"
+
+at 1.15:
+    cabinet.frame "l1_cabinet_service.open"
+    fade_out 0.2
+
+at 1.4:
+    end_film

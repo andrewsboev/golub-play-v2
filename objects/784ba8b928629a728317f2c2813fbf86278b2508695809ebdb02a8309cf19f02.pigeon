@@ -1,0 +1,31 @@
+# Фонарь на тротуаре: площадка, свет и безобидный звон от пинка.
+character street_lamp:
+    title "Уличный фонарь"
+    preview "props.prop_lamp_post"
+    atlas = "props"
+    pose "prop_lamp_post"
+    hitbox -34 34 0 510
+    immune = true
+    shadow = 65
+    add_perch (x - 33) (y - 469) 66
+    lamp = glow(x, y - 425, 70, "#ffd98a", 0.5, depth=DEPTH_BACK)
+    lamp.flicker = 0.1
+
+var lamp = nil
+var kick_dir = 1
+
+state stand:
+    angle = 0
+
+state kicked:
+    stop_tweens self
+    angle = kick_dir * 0.65
+    tween self 0.25 angle=0
+    sfx "clink"
+    wait 0.26
+    go stand
+
+on kick(dir, wing):
+    kick_dir = dir
+    go kicked
+    return true

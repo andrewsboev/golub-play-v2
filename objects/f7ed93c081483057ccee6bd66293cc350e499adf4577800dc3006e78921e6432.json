@@ -1,0 +1,1297 @@
+{
+ "version": 1,
+ "grounds": {
+  "city": {
+   "frame": "style_ground.ground_sidewalk",
+   "top": 818
+  }
+ },
+ "blocks": {
+  "bakery_front": {
+   "frame": "style_house.bakery_front",
+   "layer": "back",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -603, "x1": 118, "y": -691, "kind": "perch" },
+    { "x0": 328, "x1": 616, "y": -648, "kind": "perch" },
+    { "x0": -655, "x1": 656, "y": -752, "kind": "perch" }
+   ]
+  },
+  "citybread_front": {
+   "frame": "style_house.citybread_front",
+   "layer": "back",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -568, "x1": 610, "y": -702, "kind": "perch" },
+    { "x0": -710, "x1": 710, "y": -785, "kind": "perch" }
+   ]
+  },
+  "cafe_front": {
+   "frame": "style_house.cafe_front",
+   "layer": "back",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -429, "x1": 595, "y": -817, "kind": "perch" },
+    { "x0": -692, "x1": 692, "y": -905, "kind": "perch" }
+   ]
+  },
+  "brick_house": {
+   "frame": "style_house.brick_house",
+   "layer": "back",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -138, "x1": 230, "y": -745, "kind": "perch" },
+    { "x0": -459, "x1": -153, "y": -280, "kind": "perch" },
+    { "x0": 352, "x1": 627, "y": -280, "kind": "perch" },
+    { "x0": -765, "x1": 765, "y": -803, "kind": "perch" }
+   ]
+  },
+  "alley_backdoor": {
+   "frame": "style_yard.alley_backdoor",
+   "layer": "back",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -388, "x1": -126, "y": -243, "kind": "perch" },
+    { "x0": 34, "x1": 320, "y": -556, "kind": "perch" }
+   ]
+  },
+  "alley_escape": {
+   "frame": "style_yard.alley_escape",
+   "layer": "back",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -31, "x1": 521, "y": -710, "kind": "perch" },
+    { "x0": 153, "x1": 475, "y": -589, "kind": "perch" }
+   ]
+  },
+  "yard_bakery": {
+   "frame": "style_yard.yard_bakery",
+   "layer": "back",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -552, "x1": -110, "y": -794, "kind": "perch" },
+    { "x0": 409, "x1": 519, "y": -516, "kind": "perch" }
+   ]
+  },
+  "yard_wall": {
+   "frame": "style_yard.yard_wall",
+   "layer": "back",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -1120, "x1": -358, "y": -439, "kind": "perch" },
+    { "x0": 520, "x1": 1105, "y": -439, "kind": "perch" },
+    { "x0": -1233, "x1": -1120, "y": -573, "kind": "perch" },
+    { "x0": -358, "x1": -215, "y": -573, "kind": "perch" },
+    { "x0": 350, "x1": 520, "y": -573, "kind": "perch" },
+    { "x0": 1105, "x1": 1237, "y": -573, "kind": "perch" }
+   ]
+  },
+  "park_wall_start": {
+   "frame": "park_brick.park_wall_brick",
+   "layer": "back",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -240, "x1": 410, "y": -440, "kind": "perch" },
+    { "x0": -409, "x1": -219, "y": -543, "kind": "perch" }
+   ]
+  },
+  "yard_neighbour": {
+   "frame": "style_yard.yard_neighbour",
+   "layer": "back",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -128, "x1": 287, "y": -834, "kind": "perch" },
+    { "x0": -207, "x1": 0, "y": -224, "kind": "perch" }
+   ]
+  },
+  "park_monument": {
+   "frame": "style_park.park_monument",
+   "layer": "mid",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -175, "x1": 175, "y": -549, "kind": "perch" },
+    { "x0": -40, "x1": 40, "y": -680, "kind": "perch" }
+   ]
+  },
+  "park_lamp_double": {
+   "frame": "style_park.park_lamp_double",
+   "layer": "mid",
+   "anchor": "walk",
+   "platforms": [
+    { "x0": -105, "x1": -35, "y": -509, "kind": "perch" },
+    { "x0": 35, "x1": 105, "y": -509, "kind": "perch" }
+   ],
+   "shadow": 140,
+   "lights": [
+    { "x": -70, "y": -461, "r": 60 },
+    { "x": 70, "y": -461, "r": 60 }
+   ]
+  },
+  "park_signpost": {
+   "frame": "style_park.park_signpost",
+   "layer": "mid",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -109, "x1": 109, "y": -334, "kind": "perch" }
+   ]
+  },
+  "park_tree": {
+   "frame": "style_park.park_tree",
+   "layer": "back",
+   "anchor": "back",
+   "tags": ["sway"]
+  },
+  "park_tree_wide": {
+   "frame": "park_tree_wide.park_tree_wide",
+   "layer": "back",
+   "anchor": "back",
+   "tags": ["sway"]
+  },
+  "park_tree_slim": {
+   "frame": "style_park.park_tree_slim",
+   "layer": "back",
+   "anchor": "back",
+   "tags": ["sway"]
+  },
+  "park_bush": {
+   "frame": "style_park.park_bush",
+   "layer": "mid",
+   "anchor": "back",
+   "tags": ["sway"]
+  },
+  "park_planter": {
+   "frame": "style_park.park_planter",
+   "layer": "mid",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -283, "x1": 283, "y": -131, "kind": "perch" }
+   ]
+  },
+  "street_kiosk": {
+   "frame": "style_street.street_kiosk",
+   "layer": "mid",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -355, "x1": 355, "y": -455, "kind": "perch" }
+   ]
+  },
+  "street_busstop": {
+   "frame": "style_street.street_busstop",
+   "layer": "mid",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -352, "x1": 352, "y": -440, "kind": "perch" },
+    { "x0": -183, "x1": 183, "y": -75, "kind": "perch" }
+   ],
+   "tags": ["seat"]
+  },
+  "street_mailbox": {
+   "frame": "style_street.street_mailbox",
+   "layer": "mid",
+   "anchor": "walk",
+   "platforms": [
+    { "x0": -52, "x1": 52, "y": -286, "kind": "perch" }
+   ],
+   "shadow": 105
+  },
+  "street_hydrant": {
+   "frame": "style_street.street_hydrant",
+   "layer": "mid",
+   "anchor": "walk",
+   "platforms": [
+    { "x0": -33, "x1": 33, "y": -176, "kind": "perch" }
+   ],
+   "shadow": 87
+  },
+  "street_bollard": {
+   "frame": "style_street.street_bollard",
+   "layer": "mid",
+   "anchor": "walk",
+   "platforms": [
+    { "x0": -20, "x1": 20, "y": -145, "kind": "perch" }
+   ],
+   "shadow": 40
+  },
+  "street_lamp_basket": {
+   "frame": "style_street.street_lamp_basket",
+   "layer": "mid",
+   "anchor": "walk",
+   "platforms": [
+    { "x0": -94, "x1": 0, "y": -517, "kind": "perch" }
+   ],
+   "shadow": 161,
+   "lights": [
+    { "x": -81, "y": -469, "r": 55 }
+   ]
+  },
+  "street_tree_box": {
+   "frame": "style_street.street_tree_box",
+   "layer": "mid",
+   "anchor": "walk",
+   "platforms": [
+    { "x0": -180, "x1": 180, "y": -157, "kind": "perch" }
+   ],
+   "tags": ["sway"],
+   "shadow": 320
+  },
+  "street_bike_rack": {
+   "frame": "style_street.street_bike_rack",
+   "layer": "mid",
+   "anchor": "back"
+  },
+  "street_bench": {
+   "frame": "style_street.street_bench",
+   "layer": "mid",
+   "anchor": "walk",
+   "platforms": [
+    { "x0": -183, "x1": 183, "y": -85, "kind": "perch" },
+    { "x0": -175, "x1": 175, "y": -192, "kind": "perch" }
+   ],
+   "tags": ["seat"],
+   "shadow": 350
+  },
+  "market_stall_red": {
+   "frame": "style_market.market_stall_red",
+   "layer": "mid",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -254, "x1": 254, "y": -514, "kind": "perch" }
+   ]
+  },
+  "market_stall_green": {
+   "frame": "style_market.market_stall_green",
+   "layer": "mid",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -243, "x1": 243, "y": -513, "kind": "perch" }
+   ]
+  },
+  "market_stall_deli": {
+   "frame": "style_market.market_stall_deli",
+   "layer": "mid",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -239, "x1": 239, "y": -507, "kind": "perch" },
+    { "x0": -199, "x1": 246, "y": -150, "kind": "perch" }
+   ]
+  },
+  "market_stall_flowers": {
+   "frame": "style_market.market_stall_flowers",
+   "layer": "mid",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -221, "x1": 221, "y": -509, "kind": "perch" }
+   ]
+  },
+  "market_cart": {
+   "frame": "style_market.market_cart",
+   "layer": "mid",
+   "anchor": "walk",
+   "platforms": [
+    { "x0": -224, "x1": 149, "y": -218, "kind": "perch" }
+   ],
+   "shadow": 398
+  },
+  "market_crates_tall": {
+   "frame": "style_market.market_crates_tall",
+   "layer": "mid",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -128, "x1": 128, "y": -380, "kind": "perch" }
+   ]
+  },
+  "market_crates_low": {
+   "frame": "style_market.market_crates_low",
+   "layer": "mid",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -192, "x1": 192, "y": -182, "kind": "perch" }
+   ]
+  },
+  "market_lights": {
+   "frame": "style_market.market_lights",
+   "layer": "mid",
+   "anchor": "back",
+   "lights": [
+    { "x": -214, "y": -360, "r": 40 },
+    { "x": 0, "y": -346, "r": 40 },
+    { "x": 215, "y": -360, "r": 40 }
+   ]
+  },
+  "alley_tires": {
+   "frame": "style_alley.alley_tires",
+   "layer": "mid",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -93, "x1": 93, "y": -281, "kind": "perch" }
+   ]
+  },
+  "alley_ladder": {
+   "frame": "style_alley.alley_ladder",
+   "layer": "mid",
+   "anchor": "back"
+  },
+  "alley_can": {
+   "frame": "style_alley.alley_can",
+   "layer": "mid",
+   "anchor": "walk",
+   "platforms": [
+    { "x0": -64, "x1": 64, "y": -217, "kind": "perch" }
+   ],
+   "tags": ["bin"],
+   "shadow": 127
+  },
+  "alley_crates": {
+   "frame": "style_alley.alley_crates",
+   "layer": "mid",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -103, "x1": 103, "y": -243, "kind": "perch" }
+   ]
+  },
+  "alley_barrel": {
+   "frame": "style_alley.alley_barrel",
+   "layer": "mid",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -77, "x1": 77, "y": -275, "kind": "perch" }
+   ]
+  },
+  "alley_pallets": {
+   "frame": "style_alley.alley_pallets",
+   "layer": "mid",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -186, "x1": 186, "y": -186, "kind": "perch" }
+   ]
+  },
+  "alley_cardboard": {
+   "frame": "style_alley.alley_cardboard",
+   "layer": "mid",
+   "anchor": "back"
+  },
+  "alley_fence": {
+   "frame": "style_alley.alley_fence",
+   "layer": "back",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -631, "x1": 631, "y": -444, "kind": "perch" }
+   ]
+  },
+  "alley_pipe": {
+   "frame": "style_alley.alley_pipe",
+   "layer": "wall",
+   "anchor": "wall",
+   "platforms": [
+    { "x0": -393, "x1": 393, "y": -27, "kind": "solid" }
+   ]
+  },
+  "alley_laundry": {
+   "frame": "style_alley.alley_laundry",
+   "layer": "wall",
+   "anchor": "wall",
+   "tags": ["sway"]
+  },
+  "fg_branch_left": {
+   "frame": "style_front.fg_branch_left",
+   "layer": "front",
+   "anchor": "top",
+   "tags": ["hide", "sway"]
+  },
+  "fg_branch_right": {
+   "frame": "style_front.fg_branch_right",
+   "layer": "front",
+   "anchor": "top",
+   "tags": ["hide", "sway"]
+  },
+  "fg_ivy": {
+   "frame": "style_front.fg_ivy",
+   "layer": "front",
+   "anchor": "top",
+   "tags": ["hide", "sway"]
+  },
+  "fg_bush_big": {
+   "frame": "style_front.fg_bush_big",
+   "layer": "front",
+   "anchor": "front",
+   "tags": ["hide", "sway"]
+  },
+  "fg_bush_small": {
+   "frame": "style_front.fg_bush_small",
+   "layer": "front",
+   "anchor": "front",
+   "tags": ["hide", "sway"]
+  },
+  "fg_grass": {
+   "frame": "style_front.fg_grass",
+   "layer": "front",
+   "anchor": "front",
+   "tags": ["hide", "sway"]
+  },
+  "prop_bench": {
+   "frame": "props.prop_bench",
+   "layer": "mid",
+   "anchor": "walk",
+   "platforms": [
+    { "x0": -199, "x1": 199, "y": -113, "kind": "perch" },
+    { "x0": -190, "x1": 190, "y": -243, "kind": "perch" }
+   ],
+   "tags": ["seat"],
+   "shadow": 380
+  },
+  "prop_lamp_post": {
+   "frame": "props.prop_lamp_post",
+   "layer": "mid",
+   "anchor": "walk",
+   "platforms": [
+    { "x0": -33, "x1": 33, "y": -469, "kind": "perch" }
+   ],
+   "shadow": 65,
+   "lights": [
+    { "x": 0, "y": -425, "r": 70 }
+   ]
+  },
+  "prop_trash_can": {
+   "frame": "bin.trash_can",
+   "layer": "mid",
+   "anchor": "walk",
+   "platforms": [
+    { "x0": -82, "x1": 82, "y": -245, "kind": "perch" }
+   ],
+   "tags": ["bin"],
+   "shadow": 175
+  },
+  "prop_birdbath": {
+   "frame": "props.prop_birdbath",
+   "layer": "mid",
+   "anchor": "walk",
+   "platforms": [
+    { "x0": -97, "x1": 97, "y": -210, "kind": "perch" }
+   ],
+   "tags": ["water"],
+   "shadow": 151
+  },
+  "prop_planter_stone": {
+   "frame": "props.prop_planter_stone",
+   "layer": "mid",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -179, "x1": 179, "y": -131, "kind": "perch" }
+   ]
+  },
+  "prop_fence_short": {
+   "frame": "props.prop_fence_short",
+   "layer": "back",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -134, "x1": 134, "y": -206, "kind": "perch" }
+   ]
+  },
+  "prop_fence_pillar": {
+   "frame": "props.prop_fence_pillar",
+   "layer": "back",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -153, "x1": 153, "y": -231, "kind": "perch" }
+   ]
+  },
+  "prop_tree": {
+   "frame": "props.prop_tree",
+   "layer": "back",
+   "anchor": "back",
+   "tags": ["sway"]
+  },
+  "prop_bush": {
+   "frame": "props.prop_bush",
+   "layer": "mid",
+   "anchor": "back",
+   "tags": ["sway"]
+  },
+  "prop_sandwich_board": {
+   "frame": "props.prop_sandwich_board",
+   "layer": "mid",
+   "anchor": "walk",
+   "platforms": [
+    { "x0": -55, "x1": 55, "y": -214, "kind": "perch" }
+   ],
+   "shadow": 128
+  },
+  "prop_flower_box": {
+   "frame": "props.prop_flower_box",
+   "layer": "mid",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -142, "x1": 142, "y": -98, "kind": "perch" }
+   ]
+  },
+  "prop_crates": {
+   "frame": "props.prop_crates",
+   "layer": "mid",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -146, "x1": 146, "y": -207, "kind": "perch" }
+   ]
+  },
+  "home_hut": {
+   "frame": "l1_home.hut",
+   "layer": "back",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -606, "x1": 551, "y": -628, "kind": "perch" },
+    { "x0": 551, "x1": 641, "y": -577, "kind": "perch" },
+    { "x0": 15, "x1": 115, "y": -712, "kind": "perch" }
+   ]
+  },
+  "home_crate_blue": {
+   "frame": "l1_home.crate_blue",
+   "layer": "mid",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -62, "x1": 62, "y": -96, "kind": "perch" }
+   ],
+   "shadow": 140
+  },
+  "home_crate_wood": {
+   "frame": "l1_home.crate_wood",
+   "layer": "mid",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -66, "x1": 66, "y": -98, "kind": "perch" }
+   ],
+   "shadow": 150
+  },
+  "home_bag_small": {
+   "frame": "l1_home.bag_small",
+   "layer": "mid",
+   "anchor": "walk",
+   "platforms": [
+    { "x0": -36, "x1": 36, "y": -88, "kind": "perch" }
+   ],
+   "shadow": 100
+  },
+  "prop_cafe_table": {
+   "frame": "props.prop_cafe_table",
+   "layer": "mid",
+   "anchor": "walk",
+   "platforms": [
+    { "x0": -55, "x1": 55, "y": -141, "kind": "perch" }
+   ],
+   "shadow": 222
+  },
+  "prop_cafe_chair": {
+   "frame": "props.prop_cafe_chair",
+   "layer": "mid",
+   "anchor": "walk",
+   "platforms": [
+    { "x0": -43, "x1": 43, "y": -107, "kind": "perch" }
+   ],
+   "shadow": 101
+  },
+  "prop_bakery_facade": {
+   "frame": "props.prop_bakery_facade",
+   "layer": "back",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -268, "x1": 268, "y": -410, "kind": "perch" }
+   ]
+  },
+  "prop_bakery_door": {
+   "frame": "props.prop_bakery_door",
+   "layer": "back",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -103, "x1": 104, "y": -392, "kind": "perch" }
+   ]
+  },
+  "prop_service_door": {
+   "frame": "props.prop_service_door",
+   "layer": "back",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -99, "x1": 99, "y": -334, "kind": "perch" }
+   ]
+  },
+  "prop_market_stall": {
+   "frame": "props.prop_market_stall",
+   "layer": "mid",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -160, "x1": 160, "y": -314, "kind": "perch" }
+   ]
+  },
+  "prop_chalkboard_coffee": {
+   "frame": "props.prop_chalkboard_coffee",
+   "layer": "mid",
+   "anchor": "walk",
+   "shadow": 93
+  },
+  "prop_dumpster_green": {
+   "frame": "props.prop_dumpster_green",
+   "layer": "mid",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -139, "x1": 139, "y": -211, "kind": "perch" }
+   ],
+   "tags": ["bin"]
+  },
+  "prop_dumpster_blue": {
+   "frame": "props.prop_dumpster_blue",
+   "layer": "mid",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -102, "x1": 102, "y": -187, "kind": "perch" }
+   ],
+   "tags": ["bin"]
+  },
+  "prop_trash_bags": {
+   "frame": "props.prop_trash_bags",
+   "layer": "mid",
+   "anchor": "walk",
+   "platforms": [
+    { "x0": -66, "x1": 66, "y": -116, "kind": "perch" }
+   ],
+   "tags": ["bin"],
+   "shadow": 177
+  },
+  "prop_pallet": {
+   "frame": "props.prop_pallet",
+   "layer": "mid",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -88, "x1": 88, "y": -135, "kind": "perch" }
+   ]
+  },
+  "prop_hand_truck": {
+   "frame": "props.prop_hand_truck",
+   "layer": "mid",
+   "anchor": "walk",
+   "shadow": 80
+  },
+  "prop_utility_box": {
+   "frame": "props.prop_utility_box",
+   "layer": "wall",
+   "anchor": "wall",
+   "platforms": [
+    { "x0": -93, "x1": 93, "y": -93, "kind": "perch" }
+   ]
+  },
+  "prop_wall_vent": {
+   "frame": "props.prop_wall_vent",
+   "layer": "wall",
+   "anchor": "wall"
+  },
+  "prop_pipe_elbow": {
+   "frame": "props.prop_pipe_elbow",
+   "layer": "wall",
+   "anchor": "wall"
+  },
+  "prop_pipe_straight": {
+   "frame": "props.prop_pipe_straight",
+   "layer": "wall",
+   "anchor": "wall"
+  },
+  "prop_junction_box": {
+   "frame": "props.prop_junction_box",
+   "layer": "wall",
+   "anchor": "wall"
+  },
+  "prop_fire_escape": {
+   "frame": "props.prop_fire_escape",
+   "layer": "wall",
+   "anchor": "wall",
+   "platforms": [
+    { "x0": -111, "x1": 111, "y": -80, "kind": "perch" }
+   ]
+  },
+  "tile_fence_a": {
+   "frame": "tiles.tile_fence_a",
+   "layer": "back",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -300, "x1": 300, "y": -293, "kind": "perch" }
+   ],
+   "joint": { "l": -278, "r": 297 }
+  },
+  "tile_fence_b": {
+   "frame": "tiles.tile_fence_b",
+   "layer": "back",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -192, "x1": 192, "y": -293, "kind": "perch" }
+   ],
+   "joint": { "l": -270, "r": 167 }
+  },
+  "tile_brick_wall_wide": {
+   "frame": "tiles.tile_brick_wall_wide",
+   "layer": "back",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -143, "x1": 143, "y": -200, "kind": "perch" }
+   ]
+  },
+  "tile_brick_wall_narrow": {
+   "frame": "tiles.tile_brick_wall_narrow",
+   "layer": "back",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -57, "x1": 57, "y": -199, "kind": "perch" }
+   ]
+  },
+  "tile_brick_wall_corner": {
+   "frame": "tiles.tile_brick_wall_corner",
+   "layer": "back",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -69, "x1": 69, "y": -201, "kind": "perch" }
+   ]
+  },
+  "tile_brick_pillar": {
+   "frame": "tiles.tile_brick_pillar",
+   "layer": "back",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -36, "x1": 36, "y": -199, "kind": "perch" }
+   ]
+  },
+  "tile_pillar_short": {
+   "frame": "tiles.tile_pillar_short",
+   "layer": "back",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -33, "x1": 33, "y": -122, "kind": "perch" }
+   ]
+  },
+  "tile_parapet_a": {
+   "frame": "tiles.tile_parapet_a",
+   "layer": "back",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -101, "x1": 101, "y": -112, "kind": "perch" }
+   ]
+  },
+  "tile_parapet_b": {
+   "frame": "tiles.tile_parapet_b",
+   "layer": "back",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -112, "x1": 112, "y": -112, "kind": "perch" }
+   ]
+  },
+  "tile_parapet_c": {
+   "frame": "tiles.tile_parapet_c",
+   "layer": "back",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -76, "x1": 76, "y": -112, "kind": "perch" }
+   ]
+  },
+  "tile_parapet_corner": {
+   "frame": "tiles.tile_parapet_corner",
+   "layer": "back",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -87, "x1": 87, "y": -121, "kind": "perch" }
+   ]
+  },
+  "tile_hedge_a": {
+   "frame": "tiles.tile_hedge_a",
+   "layer": "mid",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -83, "x1": 83, "y": -99, "kind": "perch" }
+   ],
+   "tags": ["sway"]
+  },
+  "tile_hedge_b": {
+   "frame": "tiles.tile_hedge_b",
+   "layer": "mid",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -70, "x1": 70, "y": -95, "kind": "perch" }
+   ],
+   "tags": ["sway"]
+  },
+  "tile_hedge_c": {
+   "frame": "tiles.tile_hedge_c",
+   "layer": "mid",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -68, "x1": 68, "y": -94, "kind": "perch" }
+   ],
+   "tags": ["sway"]
+  },
+  "tile_hedge_small": {
+   "frame": "tiles.tile_hedge_small",
+   "layer": "mid",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -45, "x1": 45, "y": -94, "kind": "perch" }
+   ],
+   "tags": ["sway"]
+  },
+  "tile_flowers_a": {
+   "frame": "tiles.tile_flowers_a",
+   "layer": "mid",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -83, "x1": 83, "y": -62, "kind": "perch" }
+   ]
+  },
+  "tile_flowers_b": {
+   "frame": "tiles.tile_flowers_b",
+   "layer": "mid",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -67, "x1": 67, "y": -62, "kind": "perch" }
+   ]
+  },
+  "tile_flowers_c": {
+   "frame": "tiles.tile_flowers_c",
+   "layer": "mid",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -71, "x1": 71, "y": -59, "kind": "perch" }
+   ]
+  },
+  "tile_flowers_small": {
+   "frame": "tiles.tile_flowers_small",
+   "layer": "mid",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -48, "x1": 48, "y": -58, "kind": "perch" }
+   ]
+  },
+  "tile_ledge_small": {
+   "frame": "tiles.tile_ledge_small",
+   "layer": "wall",
+   "anchor": "wall",
+   "platforms": [
+    { "x0": -65, "x1": 65, "y": -67, "kind": "perch" }
+   ]
+  },
+  "tile_ledge_medium": {
+   "frame": "tiles.tile_ledge_medium",
+   "layer": "wall",
+   "anchor": "wall",
+   "platforms": [
+    { "x0": -94, "x1": 94, "y": -69, "kind": "perch" }
+   ]
+  },
+  "tile_ledge_long_a": {
+   "frame": "tiles.tile_ledge_long_a",
+   "layer": "wall",
+   "anchor": "wall",
+   "platforms": [
+    { "x0": -86, "x1": 86, "y": -73, "kind": "perch" }
+   ]
+  },
+  "tile_ledge_long_b": {
+   "frame": "tiles.tile_ledge_long_b",
+   "layer": "wall",
+   "anchor": "wall",
+   "platforms": [
+    { "x0": -158, "x1": 158, "y": -76, "kind": "perch" }
+   ]
+  },
+  "tile_stairs": {
+   "frame": "tiles.tile_stairs",
+   "layer": "mid",
+   "anchor": "walk",
+   "platforms": [
+    { "x0": -149, "x1": -62, "y": -74, "kind": "perch" },
+    { "x0": -62, "x1": 31, "y": -147, "kind": "perch" },
+    { "x0": 31, "x1": 149, "y": -216, "kind": "perch" }
+   ]
+  },
+  "tile_puddle_a": {
+   "frame": "tiles.tile_puddle_a",
+   "layer": "mid",
+   "anchor": "walk"
+  },
+  "tile_puddle_b": {
+   "frame": "tiles.tile_puddle_b",
+   "layer": "mid",
+   "anchor": "walk"
+  },
+  "tile_wall_ivy": {
+   "frame": "tiles.tile_wall_ivy",
+   "layer": "wall",
+   "anchor": "wall",
+   "tags": ["sway"]
+  },
+  "fg_fence": {
+   "frame": "foreground.fg_fence",
+   "layer": "front",
+   "anchor": "front",
+   "tags": ["hide"]
+  },
+  "fg_bush_01": {
+   "frame": "foreground.fg_bush_01",
+   "layer": "front",
+   "anchor": "front",
+   "tags": ["hide", "sway"]
+  },
+  "fg_bush_02": {
+   "frame": "foreground.fg_bush_02",
+   "layer": "front",
+   "anchor": "front",
+   "tags": ["hide", "sway"]
+  },
+  "fg_bush_03": {
+   "frame": "foreground.fg_bush_03",
+   "layer": "front",
+   "anchor": "front",
+   "tags": ["hide", "sway"]
+  },
+  "fg_branch_01": {
+   "frame": "foreground.fg_branch_01",
+   "layer": "front",
+   "anchor": "top",
+   "tags": ["hide", "sway"]
+  },
+  "fg_branch_02": {
+   "frame": "foreground.fg_branch_02",
+   "layer": "front",
+   "anchor": "top",
+   "tags": ["hide", "sway"]
+  },
+  "fg_branch_03": {
+   "frame": "foreground.fg_branch_03",
+   "layer": "front",
+   "anchor": "top",
+   "tags": ["hide", "sway"]
+  },
+  "fg_vines": {
+   "frame": "foreground.fg_vines",
+   "layer": "front",
+   "anchor": "top",
+   "tags": ["hide", "sway"]
+  },
+  "fill_paving_patch": {
+   "frame": "fill_street.paving_patch",
+   "layer": "mid",
+   "anchor": "walk"
+  },
+  "fill_curb_chipped": {
+   "frame": "fill_street.curb_chipped",
+   "layer": "mid",
+   "anchor": "walk"
+  },
+  "fill_paving_crack": {
+   "frame": "fill_street.paving_crack",
+   "layer": "mid",
+   "anchor": "walk"
+  },
+  "fill_wall_damp": {
+   "frame": "fill_street.wall_damp",
+   "layer": "wall",
+   "anchor": "wall"
+  },
+  "fill_wall_streak": {
+   "frame": "fill_street.wall_streak",
+   "layer": "wall",
+   "anchor": "wall"
+  },
+  "fill_leaf_pile": {
+   "frame": "fill_street.leaf_pile",
+   "layer": "mid",
+   "anchor": "walk"
+  },
+  "fill_paper_cup": {
+   "frame": "fill_street.paper_cup",
+   "layer": "mid",
+   "anchor": "walk"
+  },
+  "fill_paper_scrap_a": {
+   "frame": "fill_street.paper_scrap_a",
+   "layer": "mid",
+   "anchor": "walk"
+  },
+  "fill_paper_scrap_b": {
+   "frame": "fill_street.paper_scrap_b",
+   "layer": "mid",
+   "anchor": "walk"
+  },
+  "fill_paper_bag": {
+   "frame": "fill_street.paper_bag",
+   "layer": "mid",
+   "anchor": "walk"
+  },
+  "fill_paving_scuffs": {
+   "frame": "fill_street.paving_scuffs",
+   "layer": "mid",
+   "anchor": "walk"
+  },
+  "fill_street_plaque": {
+   "frame": "fill_facade.street_plaque",
+   "layer": "wall",
+   "anchor": "wall"
+  },
+  "fill_house_plate": {
+   "frame": "fill_facade.house_plate",
+   "layer": "wall",
+   "anchor": "wall"
+  },
+  "fill_rolled_blind": {
+   "frame": "fill_facade.rolled_blind",
+   "layer": "wall",
+   "anchor": "wall"
+  },
+  "fill_shutter_open_left": {
+   "frame": "fill_facade.shutter_open_left",
+   "layer": "wall",
+   "anchor": "wall"
+  },
+  "fill_shutter_open_right": {
+   "frame": "fill_facade.shutter_open_right",
+   "layer": "wall",
+   "anchor": "wall"
+  },
+  "fill_shutters_closed": {
+   "frame": "fill_facade.shutters_closed",
+   "layer": "wall",
+   "anchor": "wall"
+  },
+  "fill_electrical_cable": {
+   "frame": "fill_facade.electrical_cable",
+   "layer": "wall",
+   "anchor": "wall"
+  },
+  "fill_paper_notices": {
+   "frame": "fill_facade.paper_notices",
+   "layer": "wall",
+   "anchor": "wall"
+  },
+  "fill_curtains": {
+   "frame": "fill_facade.curtains",
+   "layer": "wall",
+   "anchor": "wall"
+  },
+  "fill_cafe_valance": {
+   "frame": "fill_facade.cafe_valance",
+   "layer": "wall",
+   "anchor": "wall"
+  },
+  "fill_stone_sill": {
+   "frame": "fill_perches.stone_sill",
+   "layer": "wall",
+   "anchor": "wall",
+   "platforms": [
+    { "x0": -175, "x1": 175, "y": -126, "kind": "perch" }
+   ]
+  },
+  "fill_stone_cornice": {
+   "frame": "fill_perches.stone_cornice",
+   "layer": "wall",
+   "anchor": "wall",
+   "platforms": [
+    { "x0": -445, "x1": 445, "y": -138, "kind": "perch" }
+   ]
+  },
+  "fill_metal_canopy": {
+   "frame": "fill_perches.metal_canopy",
+   "layer": "wall",
+   "anchor": "wall",
+   "platforms": [
+    { "x0": -385, "x1": 385, "y": -260, "kind": "perch" }
+   ]
+  },
+  "fill_iron_balcony": {
+   "frame": "fill_perches.iron_balcony",
+   "layer": "wall",
+   "anchor": "wall",
+   "platforms": [
+    { "x0": -215, "x1": 215, "y": -190, "kind": "perch" }
+   ]
+  },
+  "fill_rain_gutter": {
+   "frame": "fill_perches.rain_gutter",
+   "layer": "wall",
+   "anchor": "wall",
+   "platforms": [
+    { "x0": -295, "x1": 210, "y": -213, "kind": "perch" }
+   ]
+  },
+  "fill_hanging_sign": {
+   "frame": "fill_perches.hanging_sign",
+   "layer": "wall",
+   "anchor": "wall",
+   "platforms": [
+    { "x0": -148, "x1": 153, "y": -235, "kind": "perch" }
+   ]
+  },
+  "fill_utility_wires": {
+   "frame": "fill_perches.utility_wires",
+   "layer": "wall",
+   "anchor": "wall"
+  },
+  "fill_wooden_beam": {
+   "frame": "fill_perches.wooden_beam",
+   "layer": "wall",
+   "anchor": "wall",
+   "platforms": [
+    { "x0": -98, "x1": 146, "y": -205, "kind": "perch" }
+   ]
+  },
+  "fill_park_fence_left": {
+   "frame": "fill_transitions.park_fence_left",
+   "layer": "back",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -180, "x1": 135, "y": -136, "kind": "perch" }
+   ]
+  },
+  "fill_park_fence_right": {
+   "frame": "fill_transitions.park_fence_right",
+   "layer": "back",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -135, "x1": 180, "y": -136, "kind": "perch" }
+   ]
+  },
+  "fill_brick_pier": {
+   "frame": "fill_transitions.brick_pier",
+   "layer": "back",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -67, "x1": 67, "y": -270, "kind": "perch" }
+   ]
+  },
+  "fill_alley_arch": {
+   "frame": "fill_transitions.alley_arch",
+   "layer": "back",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -215, "x1": 215, "y": -474, "kind": "perch" }
+   ]
+  },
+  "fill_yard_gate_closed": {
+   "frame": "fill_transitions.yard_gate_closed",
+   "layer": "back",
+   "anchor": "back"
+  },
+  "fill_yard_gate_open": {
+   "frame": "fill_transitions.yard_gate_open",
+   "layer": "back",
+   "anchor": "back"
+  },
+  "fill_curb_ramp": {
+   "frame": "fill_transitions.curb_ramp",
+   "layer": "mid",
+   "anchor": "walk"
+  },
+  "fill_courtyard_paving": {
+   "frame": "fill_transitions.courtyard_paving",
+   "layer": "mid",
+   "anchor": "walk"
+  },
+  "fill_bakery_window_clean": {
+   "frame": "fill_reactive.bakery_window_clean",
+   "layer": "wall",
+   "anchor": "wall",
+   "platforms": [
+    { "x0": -160, "x1": 160, "y": -82, "kind": "perch" }
+   ]
+  },
+  "fill_bakery_window_hit": {
+   "frame": "fill_reactive.bakery_window_hit",
+   "layer": "wall",
+   "anchor": "wall",
+   "platforms": [
+    { "x0": -160, "x1": 160, "y": -82, "kind": "perch" }
+   ]
+  },
+  "fill_bakery_sign_clean": {
+   "frame": "fill_reactive.bakery_sign_clean",
+   "layer": "wall",
+   "anchor": "wall"
+  },
+  "fill_bakery_sign_hit": {
+   "frame": "fill_reactive.bakery_sign_hit",
+   "layer": "wall",
+   "anchor": "wall"
+  },
+  "fill_bench_clean": {
+   "frame": "fill_reactive.bench_clean",
+   "layer": "mid",
+   "anchor": "walk",
+   "platforms": [
+    { "x0": -175, "x1": 175, "y": -110, "kind": "perch" }
+   ],
+   "tags": ["seat"],
+   "shadow": 350
+  },
+  "fill_bench_hit": {
+   "frame": "fill_reactive.bench_hit",
+   "layer": "mid",
+   "anchor": "walk",
+   "platforms": [
+    { "x0": -175, "x1": 175, "y": -110, "kind": "perch" }
+   ],
+   "tags": ["seat"],
+   "shadow": 350
+  },
+  "fill_monument_plaque_clean": {
+   "frame": "fill_reactive.monument_plaque_clean",
+   "layer": "wall",
+   "anchor": "wall"
+  },
+  "fill_monument_plaque_hit": {
+   "frame": "fill_reactive.monument_plaque_hit",
+   "layer": "wall",
+   "anchor": "wall"
+  },
+  "fill_flowerpot_clean": {
+   "frame": "fill_reactive.flowerpot_clean",
+   "layer": "mid",
+   "anchor": "walk",
+   "shadow": 130
+  },
+  "fill_flowerpot_tipped": {
+   "frame": "fill_reactive.flowerpot_tipped",
+   "layer": "mid",
+   "anchor": "walk",
+   "shadow": 190
+  },
+  "road_scaffold": {
+   "frame": "l1_roadworks.scaffold_mesh",
+   "layer": "mid",
+   "anchor": "walk"
+  },
+  "road_post": {
+   "frame": "l1_roadworks.scaffold_post",
+   "layer": "mid",
+   "anchor": "walk"
+  },
+  "road_rubble": {
+   "frame": "l1_roadworks.rubble",
+   "layer": "mid",
+   "anchor": "walk"
+  },
+  "road_cable": {
+   "frame": "l1_roadworks.cable",
+   "layer": "mid",
+   "anchor": "walk"
+  },
+  "road_tools": {
+   "frame": "l1_roadworks.toolbag",
+   "layer": "mid",
+   "anchor": "walk"
+  },
+  "home_hut_openable": {
+   "frame": "l1_hut_shell_view.shell",
+   "layer": "back",
+   "anchor": "back",
+   "platforms": [
+    { "x0": -606, "x1": 551, "y": -628, "kind": "perch" },
+    { "x0": 551, "x1": 641, "y": -577, "kind": "perch" },
+    { "x0": 15, "x1": 115, "y": -712, "kind": "perch" }
+   ]
+  },
+  "hut_room": {
+   "frame": "l1_hut_room_openable.room",
+   "layer": "back",
+   "anchor": "wall"
+  }
+ }
+}

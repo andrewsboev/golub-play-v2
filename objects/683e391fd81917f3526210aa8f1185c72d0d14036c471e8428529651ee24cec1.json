@@ -1,0 +1,33 @@
+{
+  "version": 3,
+  "kind": "level",
+  "name": "Утро у пекарни",
+  "entry": {
+    "location": "main",
+    "spawn": "start"
+  },
+  "locations": [
+    {
+      "id": "main",
+      "map": "locations/level1/street.json"
+    },
+    {
+      "id": "hut",
+      "map": "locations/level1/hut.json"
+    }
+  ],
+  "objectives": [
+    {
+      "id": "roadworks",
+      "text": "Прогнать рабочих"
+    },
+    {
+      "id": "meal",
+      "text": "Поесть у мусорки"
+    },
+    {
+      "id": "granny",
+      "text": "Проучить бабку"
+    }
+  ]
+}

@@ -1,0 +1,205 @@
+{
+  "status": "reviewed_needs_revision",
+  "comparisons": {
+    "small_contact": {
+      "feedback": "Мелкий контакт — процедурный вариант лучше.",
+      "preferred": "procedural",
+      "baselineFile": "pigeon_peck_01.wav",
+      "productionApproved": false,
+      "nextAction": "Preserve this baseline; do not replace it with the tested generic impacts. Other peck variants remain unreviewed."
+    },
+    "soft_impact": {
+      "feedback": "Мягкий удар — процедурный вариант лучше.",
+      "preferred": "procedural",
+      "baselineFile": "baguette_hit_01.wav",
+      "productionApproved": false,
+      "nextAction": "Preserve this baseline; do not replace it with the tested soft impacts. Other baguette variants remain unreviewed."
+    },
+    "metal_impact": {
+      "feedback": "Металлический отклик — все так себе.",
+      "detail": "Мешают искусственный звон и слишком тонкий/лёгкий удар.",
+      "requiredSeparation": [
+        "cabinet.open",
+        "lock.unlock",
+        "door.open",
+        "door.close"
+      ],
+      "preferred": "none",
+      "productionApproved": false,
+      "nextAction": "Use heavier, damped metal with distinct cabinet, lock and door actions. No generic metallic hit shared between these events; neither the procedural lock nor the three light metal samples is an accepted baseline."
+    },
+    "concrete_step": {
+      "feedback": "Шаг по бетону — процедурный лучше всех, но тоже так себе.",
+      "preferred": "procedural_needs_revision",
+      "baselineFile": "worker_flee_steps_01.wav",
+      "productionApproved": false,
+      "nextAction": "Use the procedural version only as a comparison baseline; footsteps still need improvement. The tested concrete samples are not the direction."
+    }
+  },
+  "sampleRate": 44100,
+  "channels": 1,
+  "bits": 16,
+  "sourcePage": "https://kenney.nl/assets/impact-sounds",
+  "license": "CC0",
+  "originalEncoding": "lossy OGG; WAV export does not restore lossless masters",
+  "recipe": "Mono downmix; DC highpass 22 Hz; optional two-pole lowpass; silence trim; short edge fades; static gain with peak ceiling. No oscillators, generated noise, drum layers, compression or limiter.",
+  "files": [
+    {
+      "file": "small_contact_01.wav",
+      "bank": "small_contact",
+      "original": "impactGeneric_light_000.ogg",
+      "sourceSha256": "f0e982611e97512fee5f777986b67e8b435434b601f94992ec044f7e89fb5acb",
+      "sha256": "378ed35ac5f422764fee8c632b51c8510dde147152e90e475acbbec69af6061e",
+      "seconds": 0.10015873015873016,
+      "peakDbfs": -11.999681589064403,
+      "clippedSamples": 0,
+      "gainDb": -9.690603828027731,
+      "trimStartFrame": 0,
+      "trimEndFrame": 4417
+    },
+    {
+      "file": "small_contact_02.wav",
+      "bank": "small_contact",
+      "original": "impactGeneric_light_001.ogg",
+      "sourceSha256": "c3cd1c073d186ae8fa35788ba94de581f1826e7427a7bb26490b2695fac18efa",
+      "sha256": "2d57a45a33621c94e11ebdd5de3759505bdd44cff98a7cac810433b63af98409",
+      "seconds": 0.08358276643990929,
+      "peakDbfs": -11.999681589064403,
+      "clippedSamples": 0,
+      "gainDb": -9.66028013309424,
+      "trimStartFrame": 0,
+      "trimEndFrame": 3686
+    },
+    {
+      "file": "small_contact_03.wav",
+      "bank": "small_contact",
+      "original": "impactGeneric_light_002.ogg",
+      "sourceSha256": "d0bf60905b59ff630ffe01eb0edeeacd2504eaa8fb6523aeef7d2458b78264d3",
+      "sha256": "5ba77be229f3ef92ed4e12b56b42ef1eac5f70a8e898ecf3907cfd97afbdbf02",
+      "seconds": 0.10063492063492063,
+      "peakDbfs": -11.999681589064403,
+      "clippedSamples": 0,
+      "gainDb": -10.026008485658613,
+      "trimStartFrame": 0,
+      "trimEndFrame": 4438
+    },
+    {
+      "file": "soft_impact_01.wav",
+      "bank": "soft_impact",
+      "original": "impactSoft_medium_000.ogg",
+      "sourceSha256": "7d3ba0bb5e60a11b5d3e558c141303dcf494256675fbf753c0d252d2cf0481e3",
+      "sha256": "8d5ec32c959b9f6e7bd36e3d8187c88ef6cf694e0846839f0b1025dcbd632e60",
+      "seconds": 0.11510204081632654,
+      "peakDbfs": -10.034298061812718,
+      "clippedSamples": 0,
+      "gainDb": -8.232001623026214,
+      "trimStartFrame": 0,
+      "trimEndFrame": 5076
+    },
+    {
+      "file": "soft_impact_02.wav",
+      "bank": "soft_impact",
+      "original": "impactSoft_medium_001.ogg",
+      "sourceSha256": "7642a4fd43e547afe4f7adfadb3dabb681c0ff512f52c1674bae30a726841faf",
+      "sha256": "8cde7ff1885ba239bb100510d458dfb351c4800e6c39ac49d411237e6e581652",
+      "seconds": 0.18038548752834468,
+      "peakDbfs": -10.498404742269399,
+      "clippedSamples": 0,
+      "gainDb": -7.509091221506204,
+      "trimStartFrame": 0,
+      "trimEndFrame": 7955
+    },
+    {
+      "file": "soft_impact_03.wav",
+      "bank": "soft_impact",
+      "original": "impactSoft_medium_002.ogg",
+      "sourceSha256": "5069e3571a77d7f7aae9ef71d0364aa245fb7d64a7c8cc9956f221d03088c089",
+      "sha256": "ce2ba73f8e556ca77bde2e34f6298d5eb7229f2f63874ceafb965aebb0d180dc",
+      "seconds": 0.13229024943310658,
+      "peakDbfs": -10.614587733180514,
+      "clippedSamples": 0,
+      "gainDb": -8.205082419203096,
+      "trimStartFrame": 0,
+      "trimEndFrame": 5834
+    },
+    {
+      "file": "metal_impact_01.wav",
+      "bank": "metal_impact",
+      "original": "impactMetal_light_000.ogg",
+      "sourceSha256": "33b5e6e37c6e9d54e07bf5a89b12c76e879f40c1ea83cdd82714df1d6f9fec6d",
+      "sha256": "84d7cfc04dca703c9ba07d670fccdca54fe80319e598f349d6b4fac10a8c8e8b",
+      "seconds": 0.2559863945578231,
+      "peakDbfs": -9.999861863811931,
+      "clippedSamples": 0,
+      "gainDb": -8.625008440111712,
+      "trimStartFrame": 0,
+      "trimEndFrame": 11289
+    },
+    {
+      "file": "metal_impact_02.wav",
+      "bank": "metal_impact",
+      "original": "impactMetal_light_001.ogg",
+      "sourceSha256": "fba69c467ddd85da7b1d82e259f936b876d9ba6a3d6f1b24bdd10468e46bfe08",
+      "sha256": "9d319307135813c44c3447eb3bcd077132e033bbaf2123a2ef0dca789448fb28",
+      "seconds": 0.18383219954648525,
+      "peakDbfs": -9.999861863811931,
+      "clippedSamples": 0,
+      "gainDb": -8.292301272738099,
+      "trimStartFrame": 0,
+      "trimEndFrame": 8107
+    },
+    {
+      "file": "metal_impact_03.wav",
+      "bank": "metal_impact",
+      "original": "impactMetal_light_002.ogg",
+      "sourceSha256": "25a96f90a9a1f88a531e824e126f0519504625e5635e65a72e4f31611428db29",
+      "sha256": "c326f729727e1256ce496ec9b95f127c4ba0f1ad8f075ebd71919ec8eca8ccdb",
+      "seconds": 0.1756235827664399,
+      "peakDbfs": -9.999861863811931,
+      "clippedSamples": 0,
+      "gainDb": -8.273730738615946,
+      "trimStartFrame": 0,
+      "trimEndFrame": 7745
+    },
+    {
+      "file": "concrete_step_01.wav",
+      "bank": "concrete_step",
+      "original": "footstep_concrete_000.ogg",
+      "sourceSha256": "d7267e183067757c92c169de2a379abea592cfca6b39bb2e8feea15221ad79fe",
+      "sha256": "82037e7a636fce7fbc5aa97916c1bb9b2aa74bf5df4621852505830ca852f790",
+      "seconds": 0.071859410430839,
+      "peakDbfs": -11.999681589064403,
+      "clippedSamples": 0,
+      "gainDb": -10.379555683650326,
+      "trimStartFrame": 0,
+      "trimEndFrame": 3169
+    },
+    {
+      "file": "concrete_step_02.wav",
+      "bank": "concrete_step",
+      "original": "footstep_concrete_001.ogg",
+      "sourceSha256": "507a75eb19b897087855a3be3cf11a12d7fa37d143ad535eeebe0b8031c7325d",
+      "sha256": "30206b666a29bb4360779a93de809af672ebc2629dfd8565dfa71c6cf82a5994",
+      "seconds": 0.07485260770975057,
+      "peakDbfs": -11.999681589064403,
+      "clippedSamples": 0,
+      "gainDb": -10.313083665852705,
+      "trimStartFrame": 0,
+      "trimEndFrame": 3301
+    },
+    {
+      "file": "concrete_step_03.wav",
+      "bank": "concrete_step",
+      "original": "footstep_concrete_002.ogg",
+      "sourceSha256": "b21fa546d74941196b25da8a20b7010abd8c05c4fcf93545d1f344e66a664e13",
+      "sha256": "be22e3271bbd114278790b95f4b33e431d820028a319cf3c13cb522f0ae32dab",
+      "seconds": 0.07492063492063492,
+      "peakDbfs": -11.999681589064403,
+      "clippedSamples": 0,
+      "gainDb": -10.320779455736687,
+      "trimStartFrame": 0,
+      "trimEndFrame": 3304
+    }
+  ],
+  "decoder": "Chrome/156.0.8078.76"
+}

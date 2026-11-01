@@ -1,0 +1,45 @@
+# Створка будки — отдельно от кирпичного корпуса. Поворот вокруг правой петли задаёт spec кадров.
+character hut_door:
+    title "Дверь будки"
+    preview "l1_hut_inward.leaf_closed"
+    atlas = "l1_hut_inward"
+    pose "leaf_closed"
+    facing = 1
+    depth = -8.95
+    hitbox -235 10 0 430
+    immune = true
+    shadow = 0
+    view = sprite("l1_hut_view", "inside", x - 215, y - 431, depth=-9.5)
+
+var opened = false
+var view = nil
+
+state closed:
+    opened = false
+    pose "leaf_closed"
+
+state open:
+    pass
+
+func is_open():
+    return opened
+
+func finish_open():
+    opened = true
+    pose "leaf_open"
+    go open
+
+func finish_closed():
+    opened = false
+    pose "leaf_closed"
+    go closed
+
+on location_enter(id):
+    if id == "main" and opened: play_cutscene "hut_close"
+
+on location_loaded(id):
+    if id == "main" and opened: play_cutscene "hut_close"
+
+on kick:
+    sfx "clink"
+    return true
