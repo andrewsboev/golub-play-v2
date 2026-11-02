@@ -1,0 +1,47 @@
+# Месть за банку/бутылку. Состояние и возврат к своему занятию задаёт сам персонаж.
+# time — время состояния object_revenge; все ожидания и таймеры сохраняет VM.
+func retaliate(run_clip, kick_clip, idle_frame):
+    var safe_for = 0
+    face pigeon
+    pose idle_frame
+    say pick("Ах ты пернатый!", "Банками кидаться?! Ну погоди!", "Иди сюда, хулиган!") 1.2
+    if in_view(): sfx "ouch"
+    alert true
+    wait 0.22
+    play run_clip
+    every frame:
+        if pigeon.dead or pigeon.hidden: break
+        face pigeon
+        # Быстрее пешего голубя. На безопасной высоте человека можно переждать.
+        if pigeon.feet_y < y - 230: safe_for += dt
+        else: safe_for = 0
+        if safe_for >= 2.8 or time > 8: break
+        if abs(dx) > 125:
+            var next_x = x + facing * min(abs(dx) - 125, 650 * dt)
+            var floor_y = surface_y(next_x, y - 20)
+            # Не шагает в яму или на крышу за голубем.
+            if floor_y != nil and abs(floor_y - y) < 24 and pigeon_visible(): x = next_x
+        draw_dy = -abs(sin(time * 19)) * 6
+        if abs(dx) <= 140 and pigeon_visible() and touches_pigeon(-70, 220, 0, 150):
+            draw_dy = 0
+            if play(kick_clip) == 0: pose kick_clip
+            # Направление ноги фиксировано: взлёт и уход за спину спасают и во время замаха.
+            wait 0.17
+            sfx "swing"
+            if not pigeon.hidden and pigeon_visible() and touches_pigeon(0, 240, 0, 150) and hurt_pigeon(x, true):
+                say pick("Будешь знать!", "Получай, хулиган!") 1
+                wait 0.4
+                break
+            wait 0.4
+            play run_clip
+    draw_dy = 0
+    alert false
+    pose idle_frame
+    if not pigeon.dead: say pick("Вот же птица…", "Ладно, сиди там!", "Ещё попадёшься!") 1
+
+func light_weapon(weapon):
+    return weapon in ["can", "bottle"]
+
+on leave "object_revenge":
+    alert false
+    draw_dy = 0

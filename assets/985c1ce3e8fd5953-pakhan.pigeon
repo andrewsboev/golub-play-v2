@@ -1,0 +1,167 @@
+# Пахан (level1_old, памятник) — вожак местной стаи, жирный голубь в шрамах, сидит на голове
+# памятника. Необязательная секретная ветка, учит «подразнить»: встань перед ним и клюнь воздух — он
+# распушится (телеграф) и спикирует; промахнулся — лежит оглушённый, бей. Три раза — свергнут, стая твоя
+# (у бабки она один раз отвлечёт её).
+
+character pakhan:
+    title "Пахан"
+    preview "l1_misc.pakhan_idle"
+    param lift "Подъём" number step 5 = 710 "Выше линии ног, px (голова памятника — 710)"
+    atlas = "l1_misc"
+    depth = DEPTH_FRONT
+    hitbox -85 85 0 165
+    say_height = 200
+    death_line = "Голубя поставил на место Пахан. Стая молчит"
+    # По умолчанию — голова памятника (верхняя площадка park_monument)
+    if level.lift <= 0: y = ground - 710
+    if level.facing == 0: facing = -1
+    perch_x = x
+    perch_y = y
+
+const HITS_TO_WIN = 3
+# Распушился перед пике — столько секунд на то, чтобы уйти с места
+const PUFF_TIME = 0.8
+const DIVE_TIME = 0.45
+const STUN_TIME = 2.6
+const RETURN_TIME = 0.9
+# Замечает голубя ближе этого — показательное пике по массовке
+const NOTICE = 900
+
+var perch_x = 0
+var perch_y = 0
+var from_x = 0
+var from_y = 0
+var to_x = 0
+var to_y = 0
+var noticed = false
+var hits = 0
+
+state sit:
+    x = perch_x
+    y = perch_y
+    pose "pakhan_idle"
+    every frame:
+        face pigeon
+        if not noticed and abs(dx) < NOTICE:
+            noticed = true
+            go show
+
+# Показательное пике по массовке под памятником — так он встретит и тебя
+state show:
+    say "Это моя территория!" 1.4
+    from_x = x
+    from_y = y
+    to_x = x + facing * 380
+    to_y = ground
+    play "pakhan_dive"
+    every frame:
+        var k = min(1, time / 1.6)
+        x = from_x + (to_x - from_x) * sin(k * pi)
+        y = from_y + (to_y - 60 - from_y) * sin(k * pi)
+        if time >= 1.6: go sit
+
+state puff:
+    face pigeon
+    pose "pakhan_puff"
+    say pick("Ну всё, салага!", "Сейчас научу уважению!") 0.9 210
+    sfx "coo"
+    wait PUFF_TIME
+    go dive
+
+# Пикирует туда, где голубь был в конце телеграфа: ушёл с места — промах
+state dive:
+    face pigeon
+    from_x = x
+    from_y = y
+    to_x = pigeon.x
+    if pigeon.on_ground: to_y = pigeon.feet_y
+    else: to_y = ground
+    play "pakhan_dive"
+    every frame:
+        var k = min(1, time / DIVE_TIME)
+        x = from_x + (to_x - from_x) * k
+        y = from_y + (to_y - from_y) * k * k
+        if touches_pigeon(-85, 85, 0, 165) and hurt_pigeon():
+            say "Знай своё место!" 1
+            go back
+        if k >= 1:
+            dust
+            go stun
+
+state stun:
+    play "pakhan_stun"
+    popup x (y - 160) "Промахнулся!"
+    wait STUN_TIME
+    go back
+
+state hit:
+    pose "pakhan_hit"
+    hits += 1
+    if in_view(): sfx "ouch"
+    wait 0.5
+    if hits >= HITS_TO_WIN: go defeat
+    say pick("Ах ты!..", "Я тебе это припомню!") 0.9
+    go back
+
+# Обратно на трон
+state back:
+    from_x = x
+    from_y = y
+    play "pakhan_fly"
+    every frame:
+        var k = min(1, time / RETURN_TIME)
+        face_to perch_x
+        x = from_x + (perch_x - from_x) * k
+        y = from_y + (perch_y - from_y) * sin(k * pi / 2)
+        if k >= 1:
+            facing = -1
+            go sit
+
+state defeat:
+    pose "pakhan_squawk"
+    say "Ладно, ладно! Стая твоя…" 2
+    award 500 "Пахан свергнут!" x (y - 240)
+    deed "pakhan"
+    flock_ally = true
+    toast "Стая теперь твоя — она ещё пригодится"
+    wait 2.2
+    go gone
+
+state gone:
+    from_x = x
+    from_y = y
+    facing = 1
+    play "pakhan_fly"
+    every frame:
+        x = from_x + 600 * time
+        y = from_y - 500 * time
+        if time > 2:
+            vanish
+            return
+
+on hit:
+    if immune or state == hit: return
+    if state == stun:
+        score_hit 120
+        go hit
+    elif state == sit:
+        # Облили на троне — тоже вызов
+        score_hit 40
+        say pick("Ты на кого крыло поднял?!", "Салага!") 1
+        go puff
+
+on peck:
+    if state != stun: return false
+    award 100 "Клюнул Пахана!" x (y - 180)
+    go hit
+    return true
+
+# Подразнили перед ним — распушился
+on taunt:
+    if state == sit or state == show:
+        go puff
+        return true
+    return false
+
+every frame:
+    immune = state in [defeat, gone, dive, back, show]

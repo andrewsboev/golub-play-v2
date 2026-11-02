@@ -1,0 +1,116 @@
+# Клерк в обучении (уровень tutorial): стоит спиной к голубю, говорит по телефону, кофе при нём. Курлык за спиной —
+# роняет кофе; помёт — злится и гонится за голубем, пока тот не спрячется в бак. Наставнику — события tut_coo,
+# tut_hit, tut_lost.
+import retaliation
+
+character tut_clerk:
+    title "Клерк (обучение)"
+    preview "people.clerk_idle"
+    atlas = "people"
+    say_height = 420
+    hitbox -70 70 0 400
+    solid = true
+    facing = 1
+
+const CHASE_SPEED = 170
+
+var dropped = false
+var angry = false
+var shove_in = 0
+
+state phone:
+    facing = 1
+    play "clerk_phone"
+
+state object_revenge:
+    retaliate("people.clerk_flee", "reactions.clerk_kick", "people.clerk_angry")
+    go phone
+
+on weapon_hit(weapon):
+    if not light_weapon(weapon): return false
+    if state != object_revenge: go object_revenge
+    return true
+
+# Вздрогнул от «гррру» за спиной, подскок — и кофе на тротуаре
+state startled:
+    face pigeon
+    pose "clerk_idle"
+    alert true 470
+    every frame:
+        draw_dy = -sin(pi * min(1, time / 0.22)) * 22
+        if time > 0.45:
+            draw_dy = 0
+            alert false
+            dropped = true
+            spawn_food "coffee" (x + facing * 80) y
+            say "Мой кофе!!"
+            if in_view(): sfx "ouch"
+            broadcast "tut_coo"
+            go sulk
+
+state sulk:
+    pose "clerk_angry"
+    wait 1.2
+    facing = 1
+    # Кофе уже на тротуаре — обратно к телефону (на часы он смотрит со стаканчиком в руке); дальше — кадры без
+    # стаканчика (атлас clerk_nocup)
+    play "clerk_phone"
+
+state hit:
+    if dropped: pose "clerk_nocup.clerk_nc_hit"
+    else: pose "clerk_hit"
+    say pick("Мой костюм!!!", "Это же Армани!")
+    if in_view(): sfx "ouch"
+    broadcast "tut_hit"
+    wait 1.1
+    face pigeon
+    pose "clerk_angry"
+    say "Ну всё, голубь!" 1.2
+    wait 0.8
+    go chase
+
+state chase:
+    if dropped: play "clerk_nocup.clerk_nc_walk"
+    else: play "clerk_walk"
+    every frame:
+        shove_in = max(0, shove_in - dt)
+        if pigeon.hidden: go lost
+        face pigeon
+        if abs(dx) > 90: x += facing * CHASE_SPEED * dt
+        if shove_in == 0 and touches_pigeon(-90, 130, 0, 300):
+            shove_in = 1.2
+            sfx "swing"
+            shove_pigeon from_x=x
+            say pick("Попался!", "Иди сюда!") 0.9
+
+# Голубь в баке — потерял, ушёл прочь
+state lost:
+    if dropped: pose "clerk_nocup.clerk_nc_idle"
+    else: pose "clerk_idle"
+    say "Куда он делся?.." 1.6
+    wait 1.8
+    facing = 1
+    if dropped: play "clerk_nocup.clerk_nc_walk"
+    else: play "clerk_walk"
+    every frame:
+        x += 150 * dt
+        if time > 1.2: alpha = max(0, 1 - (time - 1.2) / 0.8)
+        if time > 2:
+            broadcast "tut_lost"
+            vanish
+            return
+
+on coo:
+    if dropped or state != phone: return
+    if abs(dx) > 400 or pigeon.feet_y <= y - 320: return
+    go startled
+
+on hit:
+    if angry: return
+    angry = true
+    score_hit 100
+    hit_stop 0.04
+    go hit
+
+on leave "startled":
+    alert false

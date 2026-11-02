@@ -1,0 +1,741 @@
+# Парковый жирдяй — первый мини-босс уровня 1 (level1_old, экран 2). Сидит на лавке с бутербродом и
+# газетой, голубей не терпит. Сначала — провокация: голубь рядом, на лавке, курлычет, дразнит — мужик злится всё
+# сильнее (машет газетой, пинает в голубя банку) и наконец встаёт. Встаёт и сразу, если у него стащили бутерброд,
+# на него насрали, клюнули или пнули, или голубь проскочил мимо. Пока сидит, облететь его нельзя: кто летит над
+# ним — того газетой снизу вверх и на землю (slam_pigeon).
+# Бой — на запертой арене (level.min_x..level.max_x, lock_arena «park»): мужик уходит в правую часть, голубь — в
+# левой. Терпение 3: удар газетой низом, пинок, бросок банки, удар вверх — только по зависшему прямо над головой
+# (выше — пролетай и сри сверху). Окна, когда он открыт (по нему — целое сердечко): потерял равновесие
+# после пинка мимо, промахнулся газетой вверх. Помёт вне окна — половинка. Побеждённый падает, роняет булку голубю,
+# встаёт и плетётся на свою лавку — сидит там в помёте и крошках, бурчит.
+
+import props
+
+character park_jerk:
+    title "Жирдяй в парке"
+    preview "l1_jerk.sit_eat"
+    preview "l1_people.student_eat"
+    param walk "Арена" range "Участок боя: арена «park»"
+    facing = -1
+    spawn_x = x
+    min_x = level.min_x + 100
+    max_x = level.max_x - 100
+    show_j("sit_eat")
+    sit_body()
+    depth = DEPTH_BEHIND
+    death_line = "Голубя прибил газетой мужик в парке. Мужик доволен"
+
+const PATIENCE = 3
+const WALK_SPEED = 150
+# Злость до того, как он встанет (рядом — понемногу, на лавке рядом с ним — быстрее, курлык и дразнилка — рывком)
+const ANNOY_SHOO = 30
+const ANNOY_CAN = 60
+const ANNOY_MAX = 100
+# Голубь в воздухе ближе этого по x и не выше этого над ногами — сбивает газетой вверх
+const AIR_REACH = 210
+# Докуда достаёт газета вверх (от ног): сидя — до самого неба (мирное время: через него не пролететь); в бою —
+# только по зависшему прямо над головой, выше — пролетай и сри сверху
+const AIR_TOP = 820
+const FIGHT_AIR_TOP = 560
+const FIGHT_AIR_CD = 1.4
+const GRAZE_DAMAGE = 0.5
+const GRAZE_COOLDOWN = 1.0
+# Получил урон — столько секунд сквозь него можно пройти и пролететь (сменить место), газетой вверх он не бьёт
+const PASS_TIME = 3
+const CAN_GRAVITY = 1700
+# Окна уязвимости, с — в 1,5 раза длиннее первых (не успевали осознать и долететь) и не короче к концу боя
+const STUMBLE_TIME = 2.85
+const SWAT_MISS_TIME = 2.1
+const TIRED_TIME = 3.9
+# Сколько атак подряд, потом — отдышка (окно)
+const ATTACKS_BEFORE_REST = 3
+# Попал по голубю — отходит от него на столько (из угла есть выход)
+const BACK_OFF = 300
+
+var spawn_x = 0
+var min_x = 0
+var max_x = 0
+var patience = 3
+var annoy = 0
+var has_food = true
+var shooed = false
+var can_kicked = false
+var fighting = false
+var attacks = 0
+var strike_hit = false
+var air_cd = 0
+var throw_cd = 3
+var graze_cd = 0
+# Сколько ещё секунд сквозь него можно пройти и пролететь (только что получил)
+var pass_t = 0
+var say_cd = 0
+var eat_t = 0
+var walk_t = 0
+# Банка в полёте (пнул с лавки или бросил в бою)
+var can = nil
+var can_hurts = false
+
+# --- Картинки: свой атлас l1_jerk, пока его нет — студент (сидя) и бабка (стоя) ---
+
+var FALLBACK = nil
+
+func fallback(name):
+    if FALLBACK == nil:
+        FALLBACK = table()
+        FALLBACK.sit_eat = "l1_people.student_eat"
+        FALLBACK.sit_chew = "l1_people.student_chew"
+        FALLBACK.sit_shoo_1 = "l1_people.student_shock"
+        FALLBACK.sit_shoo_2 = "l1_people.student_angry"
+        FALLBACK.sit_kick = "l1_people.student_angry"
+        FALLBACK.sit_swat = "l1_people.student_angry"
+        FALLBACK.sit_shocked = "l1_people.student_shock"
+        FALLBACK.sit_getting_up = "l1_people.student_angry"
+        FALLBACK.idle_1 = "granny.granny_idle_01"
+        FALLBACK.idle_2 = "granny.granny_angry_01"
+        FALLBACK.walk_1 = "granny.granny_walk_01"
+        FALLBACK.walk_2 = "granny.granny_walk_02"
+        FALLBACK.walk_3 = "granny.granny_walk_03"
+        FALLBACK.walk_4 = "granny.granny_walk_04"
+        FALLBACK.swing_windup = "granny.granny_windup_01"
+        FALLBACK.swing_hit = "granny.granny_swing_02"
+        FALLBACK.swat_windup = "granny.granny_windup_overhead"
+        FALLBACK.swat_hit = "granny.granny_overhead_02"
+        FALLBACK.kick_windup = "granny.granny_ready"
+        FALLBACK.kick_hit = "granny.granny_lunge_01"
+        FALLBACK.throw_windup = "l1_boss.boss_windup"
+        FALLBACK.throw_release = "l1_boss.boss_throw"
+        FALLBACK.stumble_1 = "granny.granny_dizzy_01"
+        FALLBACK.stumble_2 = "granny.granny_dizzy_02"
+        FALLBACK.hit_head = "granny.granny_hit_01"
+        FALLBACK.hit_shin = "granny.granny_hit_02"
+        FALLBACK.fall = "granny.granny_stunned_01"
+        FALLBACK.defeated_1 = "granny.granny_stunned_01"
+        FALLBACK.defeated_2 = "granny.granny_tired_01"
+    return FALLBACK[name]
+
+func show_j(name):
+    if has_frame("l1_jerk." + name):
+        atlas = "l1_jerk"
+        pose name
+    else:
+        var f = fallback(name)
+        # Атлас — тот, из которого кадр (иначе персонаж — невидимый «режиссёр»)
+        if "l1_people" in f: atlas = "l1_people"
+        elif "l1_boss" in f: atlas = "l1_boss"
+        else: atlas = "granny"
+        pose f
+
+# Тело и мишень сидя и стоя: сквозь него не пройти — только над ним, а над ним — газетой
+func sit_body():
+    hitbox -120 120 0 380
+    solid = true
+    body -90 90 0 320
+
+func stand_body():
+    hitbox -110 110 0 440
+    solid = true
+    body -75 75 0 420
+    # Стоя — перед урной и доской (сидя он за подлокотником лавки)
+    depth = DEPTH_FRONT
+
+# --- Правила боя ---
+
+func speed():
+    return 1 + 0.2 * (PATIENCE - patience)
+
+func vulnerable():
+    return state in [stumble, swatMiss, tired]
+
+func walk_toward(target, spd):
+    face_to target
+    var d = target - x
+    x += sign(d) * min(abs(d), spd * dt)
+    x = clamp(x, min_x, max_x)
+
+func walk_frames():
+    walk_t += dt * 7 * speed()
+    show_j("walk_" + str(floor(walk_t) % 4 + 1))
+
+# Удар: проверяет зону один раз за атаку
+func strike(f0, f1, u0, u1):
+    if strike_hit or not touches_pigeon(f0, f1, u0, u1): return
+    strike_hit = hurt_pigeon()
+
+# Голубь пролетает рядом или над ним — сбить
+func air_top():
+    if fighting: return FIGHT_AIR_TOP
+    return AIR_TOP
+
+func air_threat():
+    if pigeon.dead or pigeon.hidden or air_cd > 0 or pass_t > 0: return false
+    if abs(dx) >= AIR_REACH or pigeon.feet_y >= y - 90 or pigeon.feet_y <= y - air_top(): return false
+    # Пешком по спинке лавки над головой — тоже «через него»
+    if pigeon.on_ground: return abs(dx) < 140 and pigeon.feet_y < y - 150
+    return true
+
+func swoosh(sx, sy, up):
+    var s = sprite("ui", "fx_swoosh", sx, sy, depth=DEPTH_FX)
+    s.scale = 0.6
+    s.flip = facing < 0
+    if up: s.angle = -90 * facing
+    tween s 0.3 alpha=0 kill=true
+
+func grumble(lines):
+    if say_cd > 0: return
+    say pick(lines) 1.1 470
+    say_cd = 2.2
+
+# --- Что зовёт сценарий уровня ---
+
+func is_defeated():
+    return state in [fallen, defeated, trudge, sulk]
+
+func engaged():
+    return fighting
+
+func reset():
+    fighting = true
+    pass_t = 0
+    alpha = 1
+    stand_body()
+    patience = PATIENCE
+    attacks = 0
+    throw_cd = 3
+    x = level.max_x - 380
+    face pigeon
+    alert false
+    go approach
+
+# --- Лавка: провокация ---
+
+state sit:
+    fighting = false
+    every frame:
+        if air_threat():
+            go sitSwat
+            break
+        # Ест: откусил — жуёт
+        if has_food:
+            eat_t += dt
+            if eat_t > 1.3:
+                eat_t = 0
+                if frame == "sit_eat" or "student_eat" in frame: show_j("sit_chew")
+                else: show_j("sit_eat")
+        # Злится, пока голубь рядом, а рядом на лавке — сильнее
+        if abs(dx) < 420 and pigeon.on_ground and not pigeon.hidden:
+            annoy += 7 * dt
+            if pigeon.feet_y < ground - 80 and abs(dx) < 300: annoy += 14 * dt
+        # Проскочил мимо — встаёт
+        if facing < 0 and pigeon.x > x + 150:
+            go getUp
+            break
+        if annoy >= ANNOY_MAX:
+            go getUp
+            break
+        if annoy >= ANNOY_CAN and not can_kicked:
+            go kickCan
+            break
+        if annoy >= ANNOY_SHOO and not shooed:
+            go shoo
+            break
+
+state shoo:
+    shooed = true
+    say pick("Кыш отсюда, крысы летучие!", "Пошли вон, разносчики заразы!") 1.4 470
+    sfx "shout"
+    repeat 4:
+        show_j("sit_shoo_1")
+        wait 0.16
+        show_j("sit_shoo_2")
+        wait 0.16
+    show_j("sit_eat")
+    go sit
+
+# Пинает банку в сторону голубя: долетела — отпихнула, упала — лежит, её можно пинать
+state kickCan:
+    can_kicked = true
+    show_j("sit_kick")
+    say "А ну пошёл!" 1.1 470
+    sfx "clink"
+    throw_can(x + facing * 110, ground - 40, false)
+    wait 0.6
+    show_j("sit_eat")
+    go sit
+
+state sitSwat:
+    face pigeon
+    show_j("sit_shoo_1")
+    wait 0.18
+    show_j("sit_swat")
+    sfx "swing"
+    swoosh(x + facing * 40, y - 420, true)
+    if touches_pigeon(-160, 230, 150, AIR_TOP): slam_pigeon x
+    air_cd = 0.6
+    annoy += 25
+    grumble(["Куда?! А ну вниз!", "Через меня — не пролетишь!", "Сидеть, курица!"])
+    wait 0.4
+    show_j("sit_eat")
+    go sit
+
+# Стащили бутерброд: «Э-э!» — и встаёт
+state sitShocked:
+    show_j("sit_shocked")
+    say pick("Э! Мой бутерброд!", "Ты чё, охренел?!") 1.2 470
+    wait 1.0
+    go getUp
+
+state getUp:
+    face pigeon
+    show_j("sit_getting_up")
+    alert true 480
+    say pick("Ну всё, ты допрыгался!", "Ах ты ж пернатая гнида!") 1.3 480
+    wait 0.9
+    alert false
+    go intro
+
+# Встал: арена заперта, «та-да-дам» и плашка — дальше бой
+# Встал: арена заперта, «та-да-дам» и плашка; мужик топает в правую часть арены, голубь — в левой: есть миг
+# приготовиться. Пока идёт — его не задеть и он никого не бьёт
+state intro:
+    fighting = true
+    solid = false
+    depth = DEPTH_FRONT
+    show_j("idle_1")
+    lock_arena("park", level.min_x, level.max_x)
+    sfx "sting"
+    shake 0.25 0.006
+    banner "ПАРКОВЫЙ ЖИРДЯЙ" "ур. 1"
+    var mid = (level.min_x + level.max_x) / 2
+    if pigeon.x > mid - 150: place_pigeon(level.min_x + 380)
+    var spot = level.max_x - 380
+    walk_t = 0
+    every frame:
+        if abs(spot - x) > 8:
+            walk_toward(spot, WALK_SPEED * 2.2)
+            walk_frames()
+        else:
+            face pigeon
+            show_j("idle_2")
+        if time > 2.2 and abs(spot - x) <= 8: break
+    stand_body()
+    throw_cd = 3
+    face pigeon
+    go approach
+
+# --- Бой ---
+# Ритм: три атаки — отдышка (окно); попал по голубю — злорадствует и отходит (из угла есть выход); промахнулся
+# пинком или газетой вверх — окно сразу. Замахи с полным терпением дольше, к концу быстрее.
+
+state approach:
+    every frame:
+        if air_threat():
+            go swatUp
+            break
+        if abs(dx) > 40: walk_toward(pigeon.x, WALK_SPEED * speed())
+        if abs(dx) > 40: walk_frames()
+        else: show_j("idle_1")
+        if abs(dx) < 270 and pigeon.on_ground:
+            if attacks % 3 == 2: go kickUp
+            else: go swingUp
+            break
+        if throw_cd <= 0 and abs(dx) > 520:
+            go throwUp
+            break
+        if time > 6:
+            go throwUp
+            break
+
+# Атака кончилась: попал — злорадство и отход, третья подряд — отдышка, иначе — дальше
+func after_attack():
+    attacks += 1
+    if strike_hit: go gloat
+    elif attacks >= ATTACKS_BEFORE_REST: go tired
+    else: go approach
+
+func windup_time(base):
+    return base * (1.25 - 0.12 * (PATIENCE - patience))
+
+state swingUp:
+    face pigeon
+    show_j("swing_windup")
+    alert true 480
+    wait windup_time(0.6)
+    go swing
+
+state swing:
+    strike_hit = false
+    show_j("swing_hit")
+    sfx "swing"
+    swoosh(x + facing * 200, y - 140, false)
+    every frame:
+        if time < 0.15: strike(10, 320, 0, 260)
+        if time >= 0.45:
+            after_attack()
+            break
+
+state kickUp:
+    face pigeon
+    show_j("kick_windup")
+    alert true 480
+    say pick("Щас как дам!", "Получай!") 0.8 480
+    wait windup_time(0.55)
+    go kick
+
+state kick:
+    strike_hit = false
+    show_j("kick_hit")
+    sfx "swing"
+    every frame:
+        if time < 0.15: strike(30, 290, 0, 170)
+        if time >= 0.35:
+            if strike_hit: after_attack()
+            else: go stumble
+            break
+
+# Пнул мимо — потерял равновесие: открыт
+state stumble:
+    attacks = 0
+    window_hint()
+    say pick("Оп… оп-оп-оп!", "Ёлки…") 1 480
+    every frame:
+        if floor(time * 4) % 2 == 0: show_j("stumble_1")
+        else: show_j("stumble_2")
+        bomb_marker 1 - time / window_time()
+        if time > window_time(): go approach
+
+state throwUp:
+    face pigeon
+    show_j("throw_windup")
+    alert true 480
+    say pick("Лови!", "На, жри!") 0.8 480
+    wait windup_time(0.55)
+    go throw
+
+state throw:
+    strike_hit = false
+    show_j("throw_release")
+    sfx "whoosh"
+    throw_cd = random(3.5, 5)
+    throw_can(x + facing * 120, y - 330, true)
+    wait 0.6
+    after_attack()
+
+# Голубь завис над ним — газетой снизу вверх: отталкивает вбок (не вбивает в землю)
+state swatUp:
+    face pigeon
+    show_j("swat_windup")
+    alert true 480
+    wait windup_time(0.35)
+    go swat
+
+state swat:
+    strike_hit = false
+    show_j("swat_hit")
+    sfx "swing"
+    swoosh(x + facing * 40, y - 480, true)
+    every frame:
+        if time < 0.15 and not strike_hit and touches_pigeon(-160, 240, 150, FIGHT_AIR_TOP):
+            strike_hit = hurt_pigeon()
+            if not strike_hit:
+                shove_pigeon
+                strike_hit = true
+            grumble(["Брысь отсюда!", "Через меня — не пролетишь!", "Куда полез?!"])
+        if time >= 0.4:
+            air_cd = FIGHT_AIR_CD
+            if strike_hit: after_attack()
+            else: go swatMiss
+            break
+
+# Промахнулся вверх — газета перевесила: открыт
+state swatMiss:
+    attacks = 0
+    window_hint()
+    show_j("stumble_1")
+    say pick("Да чтоб тебя!", "Куда делся?!") 1 480
+    every frame:
+        bomb_marker 1 - time / window_time()
+        if time > window_time(): go approach
+
+# Три атаки подряд — выдохся: стоит, отдувается, шлёпает газетой по ладони — открыт
+state tired:
+    attacks = 0
+    window_hint()
+    face pigeon
+    say pick("Уф… уф… щас…", "Фух… дай отдышаться…", "Ох… годы не те…") 1.3 480
+    every frame:
+        if floor(time * 2.5) % 2 == 0: show_j("idle_2")
+        else: show_j("idle_1")
+        bomb_marker 1 - time / window_time()
+        if time > window_time(): go approach
+
+# Попал по голубю — доволен собой и отходит: голубю есть куда деться
+state gloat:
+    show_j("idle_2")
+    face pigeon
+    grumble(["Ха! Получил?", "Знай наших!", "Ещё хочешь?"])
+    var back = x - sign(dx) * BACK_OFF
+    if sign(dx) == 0: back = x + BACK_OFF
+    back = clamp(back, min_x, max_x)
+    every frame:
+        if abs(back - x) > 8:
+            x += sign(back - x) * min(abs(back - x), WALK_SPEED * 1.4 * dt)
+            walk_frames()
+            face pigeon
+        else: show_j("idle_2")
+        if time > 1.2:
+            if attacks >= ATTACKS_BEFORE_REST: go tired
+            else: go approach
+            break
+
+# Окно открылось: первый раз — подсказка
+func window_hint():
+    hint_once "jerk_window" "Мужик открылся! Клюнь ({peck}), пни ({kick}) или насри ({poop}) — пока мишень над головой"
+
+func window_time():
+    if state == swatMiss: return SWAT_MISS_TIME
+    if state == tired: return TIRED_TIME
+    return STUMBLE_TIME
+
+# Попали: терпение уже снято в обработчике
+state hurtHead:
+    show_j("hit_head")
+    sfx "ouch"
+    shake 0.2 0.008
+    hit_stop 0.1
+    say pick("Фу-у! Ах ты ж!", "Прямо на кепку?!") 1 480
+    wait 0.8
+    after_hurt()
+
+state hurtShin:
+    show_j("hit_shin")
+    sfx "ouch"
+    hit_stop 0.1
+    say pick("А-а-а, нога!", "Ай! Зараза!") 1 480
+    every frame:
+        draw_dy = -abs(sin(time * 9)) * 30
+        if time > 0.8:
+            draw_dy = 0
+            after_hurt()
+
+func after_hurt():
+    if patience <= 0: go fallen
+    else: go approach
+
+state fallen:
+    fighting = false
+    pass_t = 0
+    alpha = 1
+    overlay_off
+    alert false
+    show_j("fall")
+    sfx "smash"
+    big_dust x ground
+    shake 0.3 0.01
+    wait 0.6
+    go defeated
+
+# Сбит с ног: сидит на земле, булка — голубю; потом — на лавку
+state defeated:
+    show_j("defeated_1")
+    solid = false
+    immune = true
+    hide_boss_bar
+    release_arena "park"
+    var side = sign(pigeon.x - x)
+    if side == 0: side = 1
+    toss_food "bun" clamp(x + side * 220, level.min_x + 80, level.max_x - 80) from_x=x from_y=(y - 250)
+    if has_food: toss_food "sandwich" clamp(x + side * 330, level.min_x + 80, level.max_x - 80) from_x=x from_y=(y - 250)
+    has_food = false
+    award 500 "Парковый жирдяй проучен!" x (y - 520)
+    objective "park_jerk"
+    broadcast "park_jerk_defeated" x
+    wait 0.9
+    show_j("defeated_2")
+    say pick("Это моя булка была…", "Ну всё… ну всё…") 1.2 380
+    wait 1.0
+    go trudge
+
+# Встаёт и плетётся обратно на свою лавку
+state trudge:
+    show_j("get_up_pooped")
+    wait 0.6
+    walk_t = 0
+    every frame:
+        if abs(spawn_x - x) <= 6: break
+        face_to spawn_x
+        x += sign(spawn_x - x) * min(abs(spawn_x - x), WALK_SPEED * 0.65 * dt)
+        walk_t += dt * 4.5
+        show_j("trudge_" + str(floor(walk_t) % 4 + 1))
+    x = spawn_x
+    facing = -1
+    show_j("sit_down_pooped")
+    wait 0.4
+    go sulk
+
+# Сидит на лавке в помёте и крошках, бурчит
+state sulk:
+    show_j("sit_pooped_1")
+    depth = DEPTH_BEHIND
+    repeat:
+        wait random(2.5, 4.5)
+        if in_view():
+            # Отряхивает кепку или грозит голубю кулаком
+            if random(0, 1) < 0.5: show_j("sit_pooped_2")
+            else:
+                face pigeon
+                show_j("sit_pooped_3")
+            say pick("Чтоб вас всех…", "Мэрии напишу… всё напишу…", "Голуби… Ненавижу…", "Это моя булка была…") 1.6 470
+            wait 1.6
+        facing = -1
+        show_j("sit_pooped_1")
+
+# Голубь погиб в бою: доволен (дальше — reset по respawn)
+state victory:
+    fighting = false
+    show_j("idle_2")
+    say "Так-то! Знай своё место!" 1.6 480
+
+on leave(s):
+    if s in [swingUp, kickUp, throwUp, swatUp, getUp]: alert false
+    if s in [stumble, swatMiss, tired]: overlay_off
+
+# --- Банка: летит дугой; can_hurts — ранит (бросок в бою), иначе только отпихивает ---
+
+func throw_can(sx, sy, hurts):
+    if can != nil: kill can
+    if has_frame("l1_home.can"): can = sprite("l1_home", "can", sx, sy, depth=21, origin_x=0.5, origin_y=0.5)
+    else: can = sprite("items", "nest_cup_lid", sx, sy, depth=21, origin_x=0.5, origin_y=0.5)
+    can_hurts = hurts
+    var v = ballistic(sx, sy, pigeon.x, pigeon.feet_y - 40, 0.75, CAN_GRAVITY)
+    fly can v[0] v[1] CAN_GRAVITY spin=720 ground=(ground - 20)
+
+func update_can():
+    if can == nil: return
+    if pigeon_in(can.x - 30, can.y - 30, 60, 60):
+        # Банка — полсердечка
+        if can_hurts: hurt_pigeon(can.x, true)
+        else: shove_pigeon can.x
+        sfx "clink"
+        land_can()
+        return
+    if can.landed: land_can()
+
+# Упала — дальше это обычная банка на тротуаре: её можно пинать
+func land_can():
+    sfx "clink"
+    var cx = clamp(can.x, level.min_x + 60, level.max_x - 60)
+    kill can
+    can = nil
+    spawn "can" cx
+
+# --- События ---
+
+on peck:
+    if state in [fallen, defeated, trudge, sulk, victory]: return false
+    if state in [hurtHead, hurtShin, intro]: return true
+    if not fighting:
+        if state in [getUp, sitShocked, intro]: return true
+        if has_food:
+            # Бутерброд — из рук; летит к голубю
+            has_food = false
+            toss_food "sandwich" (x + facing * 200) from_x=x from_y=(y - 260)
+            award 100 "Бутерброд угнан!" x (y - 460)
+            go sitShocked
+        else:
+            say "Ай! Ты чё клюёшься?!" 1 470
+            go getUp
+        return true
+    if vulnerable():
+        patience = max(0, patience - 1)
+        score_hit 100
+        popup x (y - 500) "−1 терпение" "#ff6b5b"
+        took_damage()
+        go hurtShin
+        return true
+    # Не вовремя — отмахивается
+    grumble(["Ах ты!", "Ну-ка брысь!"])
+    if not (state in [swing, swingUp, kick, kickUp, swat, swatUp, throw, throwUp, intro, gloat]): go swingUp
+    return true
+
+on kick:
+    if state in [fallen, defeated, trudge, sulk, victory]: return false
+    if state in [hurtHead, hurtShin, intro]: return true
+    if not fighting:
+        if not (state in [getUp, sitShocked, intro]):
+            say "Ты кого пнул, пернатый?!" 1 470
+            go getUp
+        return true
+    if vulnerable():
+        patience = max(0, patience - 1)
+        score_hit 100
+        popup x (y - 500) "−1 терпение" "#ff6b5b"
+        took_damage()
+        if wing: go hurtHead
+        else: go hurtShin
+        return true
+    grumble(["Щекотно!", "Ха! И это всё?"])
+    return true
+
+on taunt:
+    if not fighting and state == sit:
+        annoy += 35
+        grumble(["Чего уставился?", "Иди отсюда, пока цел!"])
+        return true
+    if state == approach and abs(dx) < 520:
+        go kickUp
+        return true
+    return false
+
+on coo:
+    if not fighting and state == sit:
+        annoy += 20
+        grumble(["Чего курлычешь?", "Заткнись, а?"])
+
+on hit:
+    if state in [fallen, defeated, trudge, sulk, victory, hurtHead, hurtShin, intro]: return
+    if not fighting:
+        if not (state in [getUp, sitShocked, intro]):
+            score_hit 60 hx hy
+            say pick("Ах ты ж… на меня?!", "Ну всё, пернатый!") 1.2 470
+            go getUp
+        return
+    if vulnerable():
+        patience = max(0, patience - 1)
+        score_hit 100 hx hy
+        popup x (y - 500) "−1 терпение" "#ff6b5b"
+        took_damage()
+        go hurtHead
+        return
+    if graze_cd > 0: return
+    graze_cd = GRAZE_COOLDOWN
+    patience = max(0, patience - GRAZE_DAMAGE)
+    score_hit 30 hx hy
+    impact hx hy
+    popup x (y - 500) "−½ терпения" "#ffb347"
+    took_damage()
+    if patience <= 0:
+        go hurtHead
+        return
+    grumble(["Тьфу! Ну погоди!", "Фу, гадость!"])
+
+# Получил: насквозь проходим PASS_TIME секунд
+func took_damage():
+    pass_t = PASS_TIME
+
+every frame:
+    # Пока сквозь него можно пройти — полупрозрачный, мигает
+    if pass_t > 0:
+        pass_t -= dt
+        if fighting and not (state in [intro, fallen, defeated]):
+            solid = false
+            alpha = 0.55 + 0.25 * abs(sin(age * 9))
+        if pass_t <= 0:
+            alpha = 1
+            if fighting and not (state in [intro, fallen, defeated]): solid = true
+    if fighting and in_arena("park"): boss_bar "Парковый жирдяй" patience PATIENCE
+    air_cd -= dt
+    throw_cd -= dt
+    graze_cd -= dt
+    say_cd -= dt
+    update_can()
+    reveal_near("park_jerk", 900)

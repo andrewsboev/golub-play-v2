@@ -1,0 +1,127 @@
+# Продавец на рынке (level1_old): у прилавка с колбасами протирает стойку, на стойке — сосиска.
+# Стащил — он орёт «Держи вора!» и гонится с метлой через весь рынок: не ворота, а короткая погоня.
+# Добежал до края рынка (x2 в уровне) — выдохся и бредёт обратно. Облил — на секунду встал утираться.
+
+character seller:
+    title "Продавец"
+    preview "l1_people.seller_idle"
+    param x2 "Конец погони" number step 50 "x, где продавец выдыхается"
+    atlas = "l1_people"
+    hitbox -80 80 0 400
+    say_height = 450
+    death_line = "Голубь получил метлой. Продавец сосисок отомщён"
+    # Продавец — слева от прилавка, лицом к нему; сосиска — на стойке
+    x = level.x - 330
+    post_x = x
+    sausage_x = level.x + 60
+    end_x = level.x + 2200
+    if level.x2 > level.x:
+        end_x = level.x2
+    face 1
+    spawn_food "sausage" sausage_x COUNTER_Y
+
+# Стойка прилавка market_stall_deli — высота над тротуаром
+const COUNTER_Y = 838 - 150
+const CHASE_SPEED = 370
+const CHASE_TIME = 9
+const SWING_REACH = 170
+
+var post_x = 0
+var end_x = 0
+var sausage_x = 0
+var swing_cooldown = 0
+var bob = random(10)
+
+state wipe:
+    face 1
+    play "seller_wipe"
+    wait until not food_at("sausage", sausage_x, 90)
+    go shout
+
+state shout:
+    face pigeon
+    pose "seller_point"
+    say "Держи вора!!! Моя сосиска!" 1.4 460
+    sfx "shout"
+    award 200 "Стащил сосиску!"
+    deed "market_sausage"
+    wait 0.7
+    go chase
+
+state chase:
+    play "seller_run"
+    every frame:
+        face pigeon
+        if abs(dx) > 40:
+            x += facing * CHASE_SPEED * dt
+        # Метлой достаёт низко летящего и идущего
+        if abs(dx) < SWING_REACH and pigeon.feet_y > ground - 280 and swing_cooldown <= 0:
+            go swing
+        if x > end_x or time > CHASE_TIME:
+            award 150 "Удрал!"
+            go tired
+
+state swing:
+    pose "seller_shake"
+    sfx "swing"
+    wait 0.25
+    if abs(dx) < SWING_REACH + 30:
+        hurt_pigeon
+    swing_cooldown = 1.2
+    go chase
+
+state hit:
+    immune = true
+    pose "seller_hit"
+    say pick("Тьфу ты!", "Ах ты ж!..") 0.9 460
+    wait 1.1
+    immune = false
+    go chase
+
+state tired:
+    pose "seller_tired"
+    say "Уф… Ну погоди у меня…" 1.8 440
+    wait 2.2
+    go back
+
+state back:
+    face -1
+    play "seller_run"
+    every frame:
+        x -= 160 * dt
+        if x <= post_x:
+            x = post_x
+            go wipe
+
+state shoo:
+    face pigeon
+    pose "seller_shake"
+    say "Кыш отсюда! Тут не подают!" 1 460
+    if abs(dx) < 220:
+        shove_pigeon
+    wait 1
+    go wipe
+
+on hit:
+    score_hit 70
+    if state == chase or state == swing:
+        go hit
+    elif state == wipe:
+        say pick("Эй! Я тут торгую!", "Санэпидемстанцию вызову!") 1.2
+
+# Клюнул в ногу, пока он протирает стойку, — прогонит
+on peck:
+    if state == wipe:
+        go shoo
+        return true
+    return false
+
+every frame:
+    swing_cooldown = max(0, swing_cooldown - dt)
+    # Покачивание: на бегу подпрыгивает, стоя — чуть дышит
+    if state == chase or state == back:
+        bob += dt * 10
+        draw_dy = -abs(sin(bob)) * 5
+    else:
+        bob += dt * 2
+        draw_dy = sin(bob) * 1.2

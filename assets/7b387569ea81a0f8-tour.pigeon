@@ -1,0 +1,331 @@
+# Экскурсия в парке (уровень 1, арена tour; level1_old): гид и три туриста охотятся за кадром
+# с голубем. Группа — стена: по земле толпа отталкивает, над ней любая камера ослепляет вспышкой. Пройти:
+# - «Фотобомба» ×3 — облить туриста, пока он целится; карточка-«полароид» показывает облитого, после трёх
+#   испорченных кадров группа сбегает;
+# - позорно — выхватить жёлтый платок с зонта гида, пока она показывает достопримечательность: арена
+#   ломается, группа идёт за платком куда угодно — заведи её в фонтан у памятника.
+# Голубь, стоящий в рамке смирно, позирует сам — ничего не даёт, кроме строчки в газете. Турист в гавайке
+# жуёт хот-дог — его можно вырвать из рук.
+# Невидимый «режиссёр»: гид (guide) и туристы (tourist) — его участники; видоискатель и снимки — его.
+
+character tour:
+    title "Экскурсия"
+    preview "tour.guide_present"
+    guide = spawn("guide", x)
+    var roles = ["hawaiian", "selfie", "polaroid"]
+    var offsets = [210, 380, 550]
+    for i in range(3):
+        var t = spawn("tourist", x + offsets[i], role=roles[i])
+        # Место в погоне за платком: насколько отстаёт от голубя
+        t.lag = 300 + i * 170
+        append tourists t
+    # Фонтанчик у памятника (блок с меткой water): туда заводят группу с платком
+    fountain_x = water_after(x, x + 2200)
+
+const PHOTOS = 3
+const BONUS = 300
+# Группа замечает голубя, когда он ближе этого к гиду
+const NOTICE_RANGE = 800
+# Рамка кадра вокруг голубя
+const FRAME_W = 330
+const FRAME_H = 297
+# Ослепление вспышкой и сколько после него вспышки не действуют
+const BLIND_TIME = 1.0
+const BLIND_IMMUNE = 1.6
+# Погоня за платком: скорость группы (голубь пешком — 400) и где она сдаётся — так далеко за фонтаном
+const CHASE_SPEED = 300
+const GIVE_UP_PAST = 2200
+# Нырок в фонтан: с какого расстояния до него
+const DIVE_REACH = 170
+
+var guide = nil
+var tourists = []
+var fountain_x = 0
+var started = false
+var done = false
+var stolen = false
+var photobombs = 0
+var splashed = 0
+var shooter = nil
+var frame_x = 0
+var frame_y = 0
+var pose_n = 1
+var next_shot = 1.5
+var flash_immune = 0
+var push_cooldown = 0
+var banner_in = 0
+var give_up = 0
+var shot_index = 0
+var posed = false
+
+state waiting:
+    every frame:
+        if pigeon.x < guide.x - NOTICE_RANGE: continue
+        started = true
+        # Появился уже за экскурсией (отладка, --x) — её как не было
+        if pigeon.x > guide.x + 1500:
+            done = true
+            go over
+        guide.go("present")
+        for t in tourists:
+            t.go("point")
+        # Правила — после того, как гид договорит
+        banner_in = 2.4
+        go running
+
+state running:
+    every frame:
+        run()
+
+state over:
+    pass
+
+func run():
+    if banner_in > 0:
+        banner_in -= dt
+        if banner_in <= 0 and not done:
+            banner "Экскурсия «Голуби нашего парка»" "Испорти три кадра: облей туриста, пока он целится"
+            # Первый снимок — когда правила уже прочитаны
+            next_shot = 2.5
+    if stolen:
+        chase()
+        return
+    if done: return
+    crowd()
+    # Гид показывает достопримечательность — туристы смотрят туда же
+    for t in tourists:
+        if not t.alive or t.busy(): continue
+        if guide.pointing() and t.state != "look": t.go("look")
+        elif not guide.pointing() and t.state == "look": t.go("idle")
+    if shooter != nil: return
+    # Пролёт над группой: ближайший турист вскидывает камеру
+    if off_ground() and pigeon.x > guard_left() and pigeon.x < guard_right() and flash_immune <= 0 and not pigeon.dazzled:
+        var t = nearest()
+        if t != nil: start_shot(t, true)
+        return
+    if banner_in > 0: return
+    next_shot -= dt
+    if next_shot > 0 or guide.pointing() or guide.state == "present" or pigeon.dazzled: return
+    if pigeon.x > guide.x - 60 or pigeon.x < guide.x - 1100: return
+    var t = next_shooter()
+    if t != nil: start_shot(t, false)
+
+func off_ground():
+    return pigeon.feet_y < ground - 12
+
+# Небо над туристами (не над гидом) простреливается: от первого стоящего до последнего
+func guard_left():
+    var l = 1000000000
+    for t in tourists:
+        if t.alive and not t.scared(): l = min(l, t.x - 90)
+    return l
+
+func guard_right():
+    var r = -1000000000
+    for t in tourists:
+        if t.alive and not t.scared(): r = max(r, t.x + 90)
+    return r
+
+func nearest():
+    var best = nil
+    var bd = 1000000000
+    for t in tourists:
+        if t.alive and not t.busy() and abs(t.x - pigeon.x) < bd:
+            bd = abs(t.x - pigeon.x)
+            best = t
+    return best
+
+func next_shooter():
+    for k in range(1, 4):
+        var t = tourists[(shot_index + k) % 3]
+        if t.alive and not t.busy():
+            shot_index = (shot_index + k) % 3
+            return t
+    return nil
+
+func active_count():
+    var n = 0
+    for t in tourists:
+        if t.alive and not t.scared(): n += 1
+    return n
+
+# Сколько участников ещё идёт за платком
+func chaser_count():
+    var n = 0
+    if guide.alive and guide.state in ["chase", "robbed"]: n += 1
+    for t in tourists:
+        if t.alive and t.state == "chase": n += 1
+    return n
+
+func in_frame():
+    var px = pigeon.x
+    var py = pigeon.feet_y - 40
+    return px >= frame_x and px <= frame_x + FRAME_W and py >= frame_y and py <= frame_y + FRAME_H
+
+func start_shot(t, quick):
+    shooter = t
+    pose_n = random_int(1, 3)
+    # Голубь — в нижней трети кадра: сверху влезает парк, снизу рамка не уходит под тротуар
+    frame_x = pigeon.x - FRAME_W / 2
+    frame_y = pigeon.feet_y + 40 - FRAME_H
+    t.good = false
+    t.shoot(quick)
+    viewfinder frame_x frame_y FRAME_W FRAME_H 1.35
+
+# Кадр с прицела (турист целится, k — доля прицеливания): уголки сходятся; голубь в рамке и стоит — позирует
+func aiming(k):
+    viewfinder frame_x frame_y FRAME_W FRAME_H (1.35 - 0.35 * k)
+    if shooter != nil and not shooter.quick and in_frame() and pigeon.on_ground and pigeon.idle: pigeon.pose = pose_n
+
+func blind(seconds, push):
+    dazzle_pigeon seconds push
+    flash_immune = BLIND_IMMUNE
+    sfx "dazzle"
+    whiteout 0.85 0.55
+
+func flash(t):
+    overlay_off
+    sfx "shutter"
+    var c = t.camera_point()
+    var fl = sprite("tour", "fx_flash_small", c[0], c[1], depth=31)
+    fl.blend = "add"
+    fl.scale = 0.4
+    tween fl 0.28 scale=1.3 alpha=0 ease="cubic_out" kill=true
+    if done: return
+    if t.quick:
+        # Проверка пролёта: голубь всё ещё над группой — ослеплён и отброшен назад
+        if pigeon.x > guard_left() - 80 and pigeon.x < guard_right() + 80 and off_ground() and flash_immune <= 0:
+            blind(BLIND_TIME, -420)
+        return
+    var inside = in_frame()
+    if inside and pigeon.on_ground and pigeon.idle and not pigeon.dazzled:
+        # Милота: позировал сам. Экскурсию это не проходит — только строчка в завтрашней газете
+        t.good = true
+        polaroid frame_x frame_y FRAME_W FRAME_H
+        sfx "pickup"
+        if not posed:
+            posed = true
+            deed "cute_pose"
+            toast "Голубь позирует! Газета это запомнит"
+    elif inside and not pigeon.on_ground and flash_immune <= 0:
+        blind(BLIND_TIME, -260)
+    elif inside and flash_immune <= 0:
+        popup pigeon.x (pigeon.feet_y - 160) "Смазано!" "#e8dcc4"
+        blind(0.45, 0)
+
+func shot_done(t):
+    if shooter == t:
+        shooter = nil
+        overlay_off
+    next_shot = random(1.1, 1.9)
+
+# Облил снимающего: кадр испорчен — на карточке облитый турист. Три испорченных кадра — группа сбегает
+func photobomb(t):
+    shot_done(t)
+    next_shot = 1.6
+    photobombs += 1
+    toast tr("Испорчен кадр {n} из {total}", "n", photobombs, "total", PHOTOS)
+    if photobombs >= PHOTOS: finish()
+    # Снимок — когда турист уже в облитой позе
+    wait 0.25
+    polaroid (t.x - 180) (t.y - 470) 360 324
+
+# Угнал платок: арена ломается, группа идёт за ним
+func steal_scarf():
+    if done: return
+    done = true
+    stolen = true
+    shooter = nil
+    overlay_off
+    pigeon.pose = 0
+    pigeon.costume = "scarf"
+    sfx "pickup"
+    award 300 "Угнал экскурсию!" guide.x (guide.y - 460)
+    deed "tour_scarf"
+    guide.go("robbed")
+    for t in tourists:
+        if t.alive and t.state != "flee": t.go("chase")
+    release_arena "tour"
+    toast "Группа идёт за платком. Заведи её в фонтан у памятника!"
+
+# Три испорченных кадра: гид в отчаянии, группа сбегает, арена открыта
+func finish():
+    if done: return
+    done = true
+    shooter = nil
+    overlay_off
+    pigeon.pose = 0
+    if guide.alive: guide.go("despair")
+    for t in tourists:
+        if t.alive and t.state != "flee": t.go("flee")
+    deed "tour_photobomb"
+    release_arena "tour"
+    add_score BONUS
+    sfx "objective"
+    toast tr("Экскурсия сорвана! +{n}", "n", BONUS)
+
+func splash(n):
+    splashed += 1
+    award 150 "Плюх!" n.x (n.y - 300)
+    # Все в воде — платок больше не нужен
+    var wet = not guide.alive or guide.state == "splash"
+    for t in tourists:
+        if t.alive and t.state != "splash" and t.state != "flee": wet = false
+    if wet:
+        deed "tour_fountain"
+        drop_scarf(fountain_x + 60, ground)
+        sfx "objective"
+        toast "Экскурсия искупалась!"
+
+func drop_scarf(px, py):
+    if pigeon.costume != "scarf": return
+    pigeon.costume = ""
+    var s = sprite("tour", "guide_scarf", px, py - 60, depth=DEPTH_BEHIND)
+    tween s 0.6 y=py angle=20 ease="quad_out"
+    tween s 1.0 alpha=0 delay=10 kill=true
+
+# Толпа стоит стеной: к гиду можно подойти, дальше — оттолкнут. Сел посреди группы на урну или карниз —
+# тоже сгонят, иначе вспышки ослепляли бы его по кругу
+func crowd():
+    push_cooldown = max(0, push_cooldown - dt)
+    if not pigeon.on_ground: return
+    var front = guide.x - 75
+    var back = max(guard_right(), guide.x + 80)
+    if pigeon.x <= front or pigeon.x >= back: return
+    if not off_ground() and pigeon.x < front + 70:
+        stop_pigeon_at front
+    elif push_cooldown <= 0:
+        push_cooldown = 0.7
+        shove_pigeon (pigeon.x + 60)
+        say_at (pigeon.x + 40) (ground - 420) pick("Кыш, кыш!", "Не путайся под ногами!") 0.9
+
+# Платок у голубя: гид впереди, туристы — следом, каждый на своём отставании. Голубь пролетел над
+# фонтаном — кто дошёл до воды, ныряет за платком. Улетел слишком далеко — группа сдаётся
+func chase():
+    # Голубь за фонтаном (с той стороны, куда идёт группа) — вода между ними
+    var over = fountain_x > guide.x and pigeon.x > fountain_x - 40 or fountain_x < guide.x and pigeon.x < fountain_x + 40
+    var group = [guide]
+    for t in tourists:
+        append group t
+    for n in group:
+        if not n.alive or n.state != "chase": continue
+        var lag = 130
+        if n != guide: lag = n.lag
+        var d = 1
+        if pigeon.x < n.x: d = -1
+        var target = pigeon.x - d * lag
+        if abs(target - n.x) > 6:
+            n.facing = d
+            n.x += d * min(abs(target - n.x), CHASE_SPEED * dt)
+        if over and abs(n.x - fountain_x) < DIVE_REACH: n.go("dive")
+    # Убежал за край парка — платок не догнать
+    if give_up <= 0 and pigeon.x > fountain_x + GIVE_UP_PAST and chaser_count() > 0:
+        give_up = 0.01
+        if guide.state == "chase": guide.go("giveup")
+        for t in tourists:
+            if t.state == "chase": t.go("giveup")
+        toast "Группа отстала. Платок больше не нужен"
+        drop_scarf(pigeon.x, ground)
+
+every frame:
+    flash_immune = max(0, flash_immune - dt)

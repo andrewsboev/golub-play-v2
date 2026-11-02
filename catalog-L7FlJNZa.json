@@ -1,0 +1,5814 @@
+{
+  "schemaVersion": 2,
+  "files": [
+    {
+      "path": "/assets/anims.json",
+      "url": "assets/5b381b68f3eb8997-anims.json",
+      "sha256": "5b381b68f3eb89976cbd996303b992f988bddf1ae61c1e9b67d72bf84affb7ac",
+      "bytes": 49386,
+      "groups": [
+        "boot"
+      ]
+    },
+    {
+      "path": "/assets/atlases/ambient.json",
+      "url": "assets/d8df5f0048839d3e-ambient.json",
+      "sha256": "d8df5f0048839d3e26dbd55592334c57ce7cc141f8b7cc64d716959e421c0782",
+      "bytes": 4366,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/ambient.webp",
+      "url": "assets/1497225ace6564cd-ambient.webp",
+      "sha256": "1497225ace6564cd652cf2835d5ce4f85edab2b29724d1e6634900d2b3c64d13",
+      "bytes": 102760,
+      "width": 654,
+      "height": 603,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/bin.json",
+      "url": "assets/3f422115cad9c6e2-bin.json",
+      "sha256": "3f422115cad9c6e2d08fc7d537364bf0277319ff33f6cec790c6004abbeec26e",
+      "bytes": 859,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/bin.webp",
+      "url": "assets/6fa9ae12fc247157-bin.webp",
+      "sha256": "6fa9ae12fc24715753ecc3a0fee62f356cc8cedb557e4600cb71361e8a28c7ca",
+      "bytes": 41866,
+      "width": 385,
+      "height": 391,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/bin_soiled.json",
+      "url": "assets/e0cc9083b9218716-bin_soiled.json",
+      "sha256": "e0cc9083b92187169672b383a7960edfd1a035615c938c6dadcd04bcb40e9c2b",
+      "bytes": 965,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/bin_soiled.webp",
+      "url": "assets/6c7e65be6cea70bb-bin_soiled.webp",
+      "sha256": "6c7e65be6cea70bba01824a3cad05b939a7952a8ccbb0035986bb459183c3ccc",
+      "bytes": 45706,
+      "width": 383,
+      "height": 392,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/clerk_nocup.json",
+      "url": "assets/c8797ca44c3da105-clerk_nocup.json",
+      "sha256": "c8797ca44c3da10525d219647da879aebc84c0d6e0106da5e62cbefe80a7fd00",
+      "bytes": 1100,
+      "groups": [
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/clerk_nocup.webp",
+      "url": "assets/104903447a9ece93-clerk_nocup.webp",
+      "sha256": "104903447a9ece939227ee626183f5e1e63338163828078203b6a7ec95e1ff28",
+      "bytes": 121394,
+      "width": 872,
+      "height": 837,
+      "groups": [
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/dog.json",
+      "url": "assets/022bea6a0efaa892-dog.json",
+      "sha256": "022bea6a0efaa89262edd509c9d5f03d8d44dedfbed4bf0071a42fb4981ab3f9",
+      "bytes": 8334,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/atlases/dog.webp",
+      "url": "assets/dae33ee22faf3fe3-dog.webp",
+      "sha256": "dae33ee22faf3fe36896afa8c507fa7abafc3dc836120d578aee1653b51cf4c3",
+      "bytes": 649474,
+      "width": 1792,
+      "height": 1601,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/atlases/fill_facade.json",
+      "url": "assets/f8d6bb879cc10fc2-fill_facade.json",
+      "sha256": "f8d6bb879cc10fc2394cbfdd53dc5f09214daebb63d220a5717363e48894e425",
+      "bytes": 2045,
+      "groups": []
+    },
+    {
+      "path": "/assets/atlases/fill_facade.webp",
+      "url": "assets/1fc30270fd36b37f-fill_facade.webp",
+      "sha256": "1fc30270fd36b37fe8c6eadb5c26eb68b50ebcb56096ce5ef966a570d945d145",
+      "bytes": 212012,
+      "width": 1169,
+      "height": 1035,
+      "groups": []
+    },
+    {
+      "path": "/assets/atlases/fill_perches.json",
+      "url": "assets/84475b3cf81330e0-fill_perches.json",
+      "sha256": "84475b3cf81330e012feabe4276c08546ad62135d6ec1009de5d9a30a3932f5d",
+      "bytes": 1640,
+      "groups": []
+    },
+    {
+      "path": "/assets/atlases/fill_perches.webp",
+      "url": "assets/5ba945bc8e012d3d-fill_perches.webp",
+      "sha256": "5ba945bc8e012d3dfc1823a97e1fe9b9b731aa5dfe88c2711d543996557fac57",
+      "bytes": 204932,
+      "width": 1389,
+      "height": 1212,
+      "groups": []
+    },
+    {
+      "path": "/assets/atlases/fill_reactive.json",
+      "url": "assets/040772f69c33e219-fill_reactive.json",
+      "sha256": "040772f69c33e2192ec3509b145a66d717b8a266a348dc63a8412a40424a6a97",
+      "bytes": 2061,
+      "groups": []
+    },
+    {
+      "path": "/assets/atlases/fill_reactive.webp",
+      "url": "assets/0ad27e662a995ede-fill_reactive.webp",
+      "sha256": "0ad27e662a995ede426bd7309e4f535535f46009aff92cefb1130181f4121991",
+      "bytes": 234336,
+      "width": 964,
+      "height": 1171,
+      "groups": []
+    },
+    {
+      "path": "/assets/atlases/fill_street.json",
+      "url": "assets/b24f2f737df57a9a-fill_street.json",
+      "sha256": "b24f2f737df57a9a25ef9c865783900c264bd39de63ba1a991c2e73b7958e4b4",
+      "bytes": 2180,
+      "groups": []
+    },
+    {
+      "path": "/assets/atlases/fill_street.webp",
+      "url": "assets/d79b73b7285f2407-fill_street.webp",
+      "sha256": "d79b73b7285f240733f90b2660ac13c30dba8fe1552a92d30fa92e661a836d77",
+      "bytes": 71998,
+      "width": 517,
+      "height": 406,
+      "groups": []
+    },
+    {
+      "path": "/assets/atlases/fill_transitions.json",
+      "url": "assets/a98033dbd5d63473-fill_transitions.json",
+      "sha256": "a98033dbd5d634733dc8d6c1b3808a64176fc28cbb7f1d09b89f7d845e7a4aee",
+      "bytes": 1649,
+      "groups": []
+    },
+    {
+      "path": "/assets/atlases/fill_transitions.webp",
+      "url": "assets/11ba376e759366cc-fill_transitions.webp",
+      "sha256": "11ba376e759366cc1911d4a2adb057c249aed620cb1914789aad95a0e33bea20",
+      "bytes": 326590,
+      "width": 1308,
+      "height": 1353,
+      "groups": []
+    },
+    {
+      "path": "/assets/atlases/film_front.json",
+      "url": "assets/e4129f7c98b97e91-film_front.json",
+      "sha256": "e4129f7c98b97e91e6164269893164d4867880588b04df521369c359a1fc298c",
+      "bytes": 1049,
+      "groups": [
+        "film:mayor_paper"
+      ]
+    },
+    {
+      "path": "/assets/atlases/film_front.webp",
+      "url": "assets/9b2738fb6abe641a-film_front.webp",
+      "sha256": "9b2738fb6abe641a6c89de4f50a11c95afac287ac9d70c64a2ab4961b2e9f3ca",
+      "bytes": 645196,
+      "width": 2356,
+      "height": 1881,
+      "groups": [
+        "film:mayor_paper"
+      ]
+    },
+    {
+      "path": "/assets/atlases/film_low.json",
+      "url": "assets/24848cd46cd76588-film_low.json",
+      "sha256": "24848cd46cd765884158d1c02fc455f10103f560d71a444fdd06d89292ce4b8c",
+      "bytes": 667,
+      "groups": [
+        "film:mayor_paper"
+      ]
+    },
+    {
+      "path": "/assets/atlases/film_low.webp",
+      "url": "assets/dd482b2f5372ad6c-film_low.webp",
+      "sha256": "dd482b2f5372ad6c343ee32822d23c836cae7e9a761db538f071a7588775ecbc",
+      "bytes": 454686,
+      "width": 1672,
+      "height": 1687,
+      "groups": [
+        "film:mayor_paper"
+      ]
+    },
+    {
+      "path": "/assets/atlases/film_top.json",
+      "url": "assets/694b12a1d53b050a-film_top.json",
+      "sha256": "694b12a1d53b050ae4894c9167020cb3529ab93e33733eca4305d81b3e77faa7",
+      "bytes": 3164,
+      "groups": [
+        "film:mayor_paper"
+      ]
+    },
+    {
+      "path": "/assets/atlases/film_top.webp",
+      "url": "assets/b1007e1ff9750566-film_top.webp",
+      "sha256": "b1007e1ff97505669c83b2f2d6dc14350bb2ce784e4721322c65b2102853e3fb",
+      "bytes": 963094,
+      "width": 2795,
+      "height": 2144,
+      "groups": [
+        "film:mayor_paper"
+      ]
+    },
+    {
+      "path": "/assets/atlases/food_ground_v6.json",
+      "url": "assets/3b3f750ceadbf53e-food_ground_v6.json",
+      "sha256": "3b3f750ceadbf53ea2337a0b74044bc3f374258ce08b353697a32284c63050d8",
+      "bytes": 11207,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/food_ground_v6.webp",
+      "url": "assets/801dc77f3c0adc85-food_ground_v6.webp",
+      "sha256": "801dc77f3c0adc85d21ca65c9836f07faf87cee8fa734fac6d498174ced2bac7",
+      "bytes": 66170,
+      "width": 347,
+      "height": 332,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/foreground.json",
+      "url": "assets/059e22ec1addcffa-foreground.json",
+      "sha256": "059e22ec1addcffa2b0c115aa5b5b3afb4ba5d5d1f05182da147b7e7fabca294",
+      "bytes": 1626,
+      "groups": []
+    },
+    {
+      "path": "/assets/atlases/foreground.webp",
+      "url": "assets/58f0e094962f05d6-foreground.webp",
+      "sha256": "58f0e094962f05d66ba9f2573fe31e5c32fe2ca91349c53f44ac71d60dc60ba9",
+      "bytes": 363262,
+      "width": 1242,
+      "height": 1252,
+      "groups": []
+    },
+    {
+      "path": "/assets/atlases/gang.json",
+      "url": "assets/e37c04924154caa1-gang.json",
+      "sha256": "e37c04924154caa1ee50dfbe7dc217e63cc5514d357e6187994dc50620f4f8fe",
+      "bytes": 3214,
+      "groups": [
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/atlases/gang.webp",
+      "url": "assets/4f244bb8560889b1-gang.webp",
+      "sha256": "4f244bb8560889b14ae212259feeee9c0a27ef078f4ba23c5ab977f10c425c5a",
+      "bytes": 424788,
+      "width": 1318,
+      "height": 1487,
+      "groups": [
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/atlases/garage_boxes_v3.json",
+      "url": "assets/cd502bf8655cf8cd-garage_boxes_v3.json",
+      "sha256": "cd502bf8655cf8cd334ddc27ecfa2acb5484c5cab5d4c214439ca5efcfbe27ac",
+      "bytes": 941,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/garage_boxes_v3.webp",
+      "url": "assets/8b660d96417b04a8-garage_boxes_v3.webp",
+      "sha256": "8b660d96417b04a82015a7adb1de5cb1ca76d47aaef739ab08fc429bb88e9b9a",
+      "bytes": 14332,
+      "width": 256,
+      "height": 176,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/garage_boxes_v3_soiled.json",
+      "url": "assets/59c4648a38c96a4d-garage_boxes_v3_soiled.json",
+      "sha256": "59c4648a38c96a4d244fc012909274738e2835eeaf6534519934bc5c4fa70101",
+      "bytes": 967,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/garage_boxes_v3_soiled.webp",
+      "url": "assets/01f2f8d1b571cfcd-garage_boxes_v3_soiled.webp",
+      "sha256": "01f2f8d1b571cfcde39d2b8d27944983a44a1db954c91dee0c04e9af06e91202",
+      "bytes": 15514,
+      "width": 256,
+      "height": 178,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/garage_shelf_v3.json",
+      "url": "assets/44a78c4d687e8555-garage_shelf_v3.json",
+      "sha256": "44a78c4d687e8555a277c1799e8066a3fd6946883c6d24c6ded8ee261eee1dbc",
+      "bytes": 1519,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/garage_shelf_v3.webp",
+      "url": "assets/6860b9eec4002e79-garage_shelf_v3.webp",
+      "sha256": "6860b9eec4002e7942a0cdf8cdbc0150da6a56ef2229edd1fd6ff1e957c13463",
+      "bytes": 77332,
+      "width": 1141,
+      "height": 746,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/garage_storage.json",
+      "url": "assets/810e88fe2cfba0b1-garage_storage.json",
+      "sha256": "810e88fe2cfba0b1de3773c43bfbbf25a322e2eb9e1e822cac1b10b62febeaea",
+      "bytes": 1366,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/garage_storage.webp",
+      "url": "assets/5e100bb931424cfa-garage_storage.webp",
+      "sha256": "5e100bb931424cfa6d4451eb05f2d254fc5a12e9b12e5694ad3342c0c6138eaa",
+      "bytes": 80712,
+      "width": 667,
+      "height": 678,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/garage_storage_soiled.json",
+      "url": "assets/1e2af3fe7ec68165-garage_storage_soiled.json",
+      "sha256": "1e2af3fe7ec68165e80883ececd46677c879e97cc547bc34fb1d8eb2d8734cd9",
+      "bytes": 1390,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/garage_storage_soiled.webp",
+      "url": "assets/ad8a1eb1cbaf5ca6-garage_storage_soiled.webp",
+      "sha256": "ad8a1eb1cbaf5ca660109b770523ac9171c3526bcb824dde4f48fe2c33db2594",
+      "bytes": 72840,
+      "width": 668,
+      "height": 679,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/granny.json",
+      "url": "assets/4492c1ef50c675f1-granny.json",
+      "sha256": "4492c1ef50c675f1495aeea6602b63251d8605c31fcf65e7b9e3a8b00386a60d",
+      "bytes": 8343,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/granny.webp",
+      "url": "assets/6f38f3cdc9e8bad6-granny.webp",
+      "sha256": "6f38f3cdc9e8bad60fef734867340714f288593ec1c805ee194e44a68261bfeb",
+      "bytes": 1106706,
+      "width": 2749,
+      "height": 2419,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/granny_soiled.json",
+      "url": "assets/a7b7b1691715d193-granny_soiled.json",
+      "sha256": "a7b7b1691715d193a032d4ddb90147e9396f7e7396785c520b1f30b76da01c55",
+      "bytes": 8837,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/granny_soiled.webp",
+      "url": "assets/e52898c969451d3c-granny_soiled.webp",
+      "sha256": "e52898c969451d3c454bbced8c92d7d1654cca132da21c31f0ea6899f3b1642d",
+      "bytes": 1140958,
+      "width": 2376,
+      "height": 2733,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/items.json",
+      "url": "assets/5c4239c82b62e685-items.json",
+      "sha256": "5c4239c82b62e685cab3445ee0d6a346aff38dd1fd94ee96c054ec4df7f1658c",
+      "bytes": 4704,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/items.webp",
+      "url": "assets/a85d489595ad3ce1-items.webp",
+      "sha256": "a85d489595ad3ce15f9f57c8b36cc2e0ed562a50390d6a8e6c4aacceb10609b7",
+      "bytes": 63358,
+      "width": 347,
+      "height": 319,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/kids.json",
+      "url": "assets/68ffe2bb9a60dd33-kids.json",
+      "sha256": "68ffe2bb9a60dd33c4910a713d94eb06890a95e9f002084bfff8082fddddc1e7",
+      "bytes": 12881,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/kids.webp",
+      "url": "assets/e768413a5ea3e03c-kids.webp",
+      "sha256": "e768413a5ea3e03c62565e29b9b41b88bbedc8b72a2b218c096c013218245e33",
+      "bytes": 1139472,
+      "width": 2338,
+      "height": 2369,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_boss.json",
+      "url": "assets/da9329def7fd0658-l1_boss.json",
+      "sha256": "da9329def7fd0658c9aec5112c285386042f4559286f50cfcb3dd3b6fa62461a",
+      "bytes": 2634,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_boss.webp",
+      "url": "assets/01ad1498e6307724-l1_boss.webp",
+      "sha256": "01ad1498e6307724b7bc9a3e7b0da8534ccd56265bcd780c8d283924d5186c6d",
+      "bytes": 391940,
+      "width": 1425,
+      "height": 1477,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_boss_soiled.json",
+      "url": "assets/ee735e5b9dae39e1-l1_boss_soiled.json",
+      "sha256": "ee735e5b9dae39e1306de3e078916ef9a0e201008d68c1b842b5f42a7e730a71",
+      "bytes": 1964,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_boss_soiled.webp",
+      "url": "assets/17f2a1b87f92d9d1-l1_boss_soiled.webp",
+      "sha256": "17f2a1b87f92d9d1c5d6081fd2044055a5b5ff7d7a6bd0735b41964fd548ab43",
+      "bytes": 303642,
+      "width": 1421,
+      "height": 1468,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_cabinet_service.json",
+      "url": "assets/dc7893a99bbb8b47-l1_cabinet_service.json",
+      "sha256": "dc7893a99bbb8b479158652220e8ea2f0688ee41b3b6efe915d7fa863293c7ce",
+      "bytes": 1067,
+      "groups": [
+        "level:level1",
+        "level:test_level1",
+        "film:powerbox_service"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_cabinet_service.webp",
+      "url": "assets/cb7ad6f7478c97e7-l1_cabinet_service.webp",
+      "sha256": "cb7ad6f7478c97e74d7fa67e7e901a86a540d16843df66232a9cee3025bf0cfa",
+      "bytes": 104272,
+      "width": 795,
+      "height": 740,
+      "groups": [
+        "level:level1",
+        "level:test_level1",
+        "film:powerbox_service"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_cabinet_service_soiled.json",
+      "url": "assets/6021802453cd580a-l1_cabinet_service_soiled.json",
+      "sha256": "6021802453cd580a4c675cef319a73a2c01ba267d127f104a86b6e89a0e7b975",
+      "bytes": 1165,
+      "groups": [
+        "level:level1",
+        "level:test_level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_cabinet_service_soiled.webp",
+      "url": "assets/f7f99b76e6a84159-l1_cabinet_service_soiled.webp",
+      "sha256": "f7f99b76e6a84159615426a1bdc7745d4d622df347e02d8180b42efa8bd33d66",
+      "bytes": 118552,
+      "width": 794,
+      "height": 740,
+      "groups": [
+        "level:level1",
+        "level:test_level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_control_lever.json",
+      "url": "assets/297d8e40e74fdc9c-l1_control_lever.json",
+      "sha256": "297d8e40e74fdc9cae78ebe494500f61b7cceb2e94580807f23398548e2454ec",
+      "bytes": 654,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_control_lever.webp",
+      "url": "assets/beada29ba1adaec0-l1_control_lever.webp",
+      "sha256": "beada29ba1adaec0a741a56f3c8031504a02d4ae21fb46c6f3267af4c9cfbbac",
+      "bytes": 34688,
+      "width": 334,
+      "height": 442,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_granny_down.json",
+      "url": "assets/f1e6824ac9f625b7-l1_granny_down.json",
+      "sha256": "f1e6824ac9f625b79fd9065e4373a197c26877744cb0ed4d39357125e9770fe9",
+      "bytes": 1647,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_granny_down.webp",
+      "url": "assets/ecacabd5b73a6a10-l1_granny_down.webp",
+      "sha256": "ecacabd5b73a6a104b3f67f8e0fe023d766cafd92bfe6eb47155eced649d3b68",
+      "bytes": 190166,
+      "width": 1007,
+      "height": 1050,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_home.json",
+      "url": "assets/1743fdf947e2e9d2-l1_home.json",
+      "sha256": "1743fdf947e2e9d2adc4815ffab12e7301e6f9aca062beeb5c70b1b10120ea23",
+      "bytes": 3105,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_home.webp",
+      "url": "assets/b3b33437a9f2dfe0-l1_home.webp",
+      "sha256": "b3b33437a9f2dfe04fcce29ebaff0ef69bef56b4133e0aba5e971905ce753373",
+      "bytes": 341026,
+      "width": 1314,
+      "height": 1102,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_home_soiled.json",
+      "url": "assets/57f106ed89748334-l1_home_soiled.json",
+      "sha256": "57f106ed89748334809574635ee3aa66b07401241cac61764cbd1b29e20fa76c",
+      "bytes": 3119,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_home_soiled.webp",
+      "url": "assets/852aa405d9a5512b-l1_home_soiled.webp",
+      "sha256": "852aa405d9a5512b0ed8a9380cef8fd264529c803e6aefca7390b10cee9a66e2",
+      "bytes": 110710,
+      "width": 584,
+      "height": 606,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_hut.json",
+      "url": "assets/d081819d766b47c1-l1_hut.json",
+      "sha256": "d081819d766b47c15dbe9055b34900d9fb5b0ea473a9189f21eaac07694651f7",
+      "bytes": 1070,
+      "groups": [
+        "level:level1",
+        "film:powerbox_service"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_hut.webp",
+      "url": "assets/2d5aaf0639284ed4-l1_hut.webp",
+      "sha256": "2d5aaf0639284ed452ad4db250eebd8bbd7ee33a74ec6505d3b7784bc229b769",
+      "bytes": 237152,
+      "width": 1314,
+      "height": 1151,
+      "groups": [
+        "level:level1",
+        "film:powerbox_service"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_hut_exit_view.json",
+      "url": "assets/85f0efd156510652-l1_hut_exit_view.json",
+      "sha256": "85f0efd156510652fcebc2b7114370822c23aea59fe1f7e48f4fcd8b0e701100",
+      "bytes": 271,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_hut_exit_view.webp",
+      "url": "assets/e4a80df92fe60a25-l1_hut_exit_view.webp",
+      "sha256": "e4a80df92fe60a25c071ea9db432a6fa43f453bad4d53345e8bbc6fabe2345fc",
+      "bytes": 22832,
+      "width": 320,
+      "height": 580,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_hut_inside_away.json",
+      "url": "assets/f9b09cf4d8f04cad-l1_hut_inside_away.json",
+      "sha256": "f9b09cf4d8f04cad5fd0e5ef6a3324f6976e1600f10963aceb7779e125739f5d",
+      "bytes": 2466,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_hut_inside_away.webp",
+      "url": "assets/31992cc58863fd4b-l1_hut_inside_away.webp",
+      "sha256": "31992cc58863fd4bea33b91d176f7bade20c3eac378d7b9d04ea475b6a03a8a4",
+      "bytes": 185582,
+      "width": 1230,
+      "height": 1726,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_hut_interior.json",
+      "url": "assets/771840ad470c3dac-l1_hut_interior.json",
+      "sha256": "771840ad470c3dacf11bb23ddec7c67ddd73b297af6fc496e44a5624626fdd04",
+      "bytes": 2455,
+      "groups": []
+    },
+    {
+      "path": "/assets/atlases/l1_hut_interior.webp",
+      "url": "assets/725003b39a2bb215-l1_hut_interior.webp",
+      "sha256": "725003b39a2bb215dbabf4f1855f9cf118d2a3690edb831e9abb56088cc9c797",
+      "bytes": 225672,
+      "width": 1675,
+      "height": 1565,
+      "groups": []
+    },
+    {
+      "path": "/assets/atlases/l1_hut_inward.json",
+      "url": "assets/8bebc473fc749cb3-l1_hut_inward.json",
+      "sha256": "8bebc473fc749cb3aea1d09b1572d266adb4ce2004818e48694640cb9dc761d4",
+      "bytes": 2453,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_hut_inward.webp",
+      "url": "assets/47ac4e3535064cbc-l1_hut_inward.webp",
+      "sha256": "47ac4e3535064cbc8304a4f57d41bc3d712153be1dbdc5bf319fba7209912b7c",
+      "bytes": 135640,
+      "width": 938,
+      "height": 1312,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_hut_light.json",
+      "url": "assets/d074df796f161cdf-l1_hut_light.json",
+      "sha256": "d074df796f161cdf38fcb21fa27e7c424f3fb021eba5a2eca597e5d9db4d0670",
+      "bytes": 1133,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_hut_light.webp",
+      "url": "assets/1db3086a9c910f35-l1_hut_light.webp",
+      "sha256": "1db3086a9c910f35867c6db456c877853a9b2ddfe677b017824ea02fef126e76",
+      "bytes": 10814,
+      "width": 160,
+      "height": 282,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_hut_room.json",
+      "url": "assets/c6bdd921a9136606-l1_hut_room.json",
+      "sha256": "c6bdd921a91366061e111f6bfebe930351c9d2c4bc272bbb40bdf07155c6d4c0",
+      "bytes": 272,
+      "groups": []
+    },
+    {
+      "path": "/assets/atlases/l1_hut_room.webp",
+      "url": "assets/9817a868200a74a7-l1_hut_room.webp",
+      "sha256": "9817a868200a74a7f138ae14456cb8937b4722a25660f25b7d5087a7c5b85278",
+      "bytes": 269264,
+      "width": 1920,
+      "height": 1081,
+      "groups": []
+    },
+    {
+      "path": "/assets/atlases/l1_hut_room_lighting.json",
+      "url": "assets/c9241aff9c766a8d-l1_hut_room_lighting.json",
+      "sha256": "c9241aff9c766a8d9766be48a19273cfc48cb2be907374bd3760548931ae4fc9",
+      "bytes": 281,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_hut_room_lighting.webp",
+      "url": "assets/0a8e8fd705afee97-l1_hut_room_lighting.webp",
+      "sha256": "0a8e8fd705afee97282c445f8491710de73da5ba96ae42b4ccbbf9f4d58faa0b",
+      "bytes": 243700,
+      "width": 1920,
+      "height": 1081,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_hut_room_openable.json",
+      "url": "assets/a2479c3ed84a1767-l1_hut_room_openable.json",
+      "sha256": "a2479c3ed84a1767ca669c27706bac1ce5cbd67dd5a1157f97348fc8bb1913b4",
+      "bytes": 281,
+      "groups": []
+    },
+    {
+      "path": "/assets/atlases/l1_hut_room_openable.webp",
+      "url": "assets/4e0a7022d39dafcf-l1_hut_room_openable.webp",
+      "sha256": "4e0a7022d39dafcf359cda23b0eaf9c87f54fd879f1a93835704f7645a06848a",
+      "bytes": 256178,
+      "width": 1920,
+      "height": 1081,
+      "groups": []
+    },
+    {
+      "path": "/assets/atlases/l1_hut_shell_view.json",
+      "url": "assets/2f4ba2fc379fdce9-l1_hut_shell_view.json",
+      "sha256": "2f4ba2fc379fdce907d9df3f4e033782636812013153f63d7d42ee64ad5df273",
+      "bytes": 285,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_hut_shell_view.webp",
+      "url": "assets/0c33e2448e541519-l1_hut_shell_view.webp",
+      "sha256": "0c33e2448e54151996f418bc1955d0561fc24d31239eaf5ac05d0c58225b7ac6",
+      "bytes": 195056,
+      "width": 1314,
+      "height": 720,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_hut_view.json",
+      "url": "assets/6ee648088201f1c5-l1_hut_view.json",
+      "sha256": "6ee648088201f1c53042cd72ae50fb62388ae2e63acaa8fdfa1a2b1c8a7c4ec0",
+      "bytes": 266,
+      "groups": []
+    },
+    {
+      "path": "/assets/atlases/l1_hut_view.webp",
+      "url": "assets/a546f740b395de31-l1_hut_view.webp",
+      "sha256": "a546f740b395de31814713652ba18d64e753f69bd621e4eb5e03dcc52034fb71",
+      "bytes": 22594,
+      "width": 216,
+      "height": 423,
+      "groups": []
+    },
+    {
+      "path": "/assets/atlases/l1_hut_view_lighting.json",
+      "url": "assets/5d9a03994b118c3d-l1_hut_view_lighting.json",
+      "sha256": "5d9a03994b118c3dedb50796ad28859fbe0c33badccc1715b45b390a73b5caf3",
+      "bytes": 275,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_hut_view_lighting.webp",
+      "url": "assets/2e716415edb550f9-l1_hut_view_lighting.webp",
+      "sha256": "2e716415edb550f905513ebe5c23cd8eb5e4ce2d9de1f10e8a4cdd5d3b459e18",
+      "bytes": 20412,
+      "width": 216,
+      "height": 423,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_jerk.json",
+      "url": "assets/03d2b229932f2af6-l1_jerk.json",
+      "sha256": "03d2b229932f2af67481d46960c5b44ff7022253f877baba2d96ef3bf61fb225",
+      "bytes": 7505,
+      "groups": []
+    },
+    {
+      "path": "/assets/atlases/l1_jerk.webp",
+      "url": "assets/af11a7dc2de6a3f4-l1_jerk.webp",
+      "sha256": "af11a7dc2de6a3f4ac225c2268e2149dc95864ceb2604b235de61ed1ddedaa0e",
+      "bytes": 1060968,
+      "width": 2660,
+      "height": 2416,
+      "groups": []
+    },
+    {
+      "path": "/assets/atlases/l1_misc.json",
+      "url": "assets/aafbc31f9ec0c68a-l1_misc.json",
+      "sha256": "aafbc31f9ec0c68a3f90adda2cfd567fbfce4acade5b5dcd927f34ee930f5bab",
+      "bytes": 8303,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_misc.webp",
+      "url": "assets/1a0691e81835b8cc-l1_misc.webp",
+      "sha256": "1a0691e81835b8cc62bbe648d8a681bb9b9f9925f149b92075b80ba7a93419e6",
+      "bytes": 482864,
+      "width": 1232,
+      "height": 1207,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_paper.json",
+      "url": "assets/4c2590a4f7e1f6a7-l1_paper.json",
+      "sha256": "4c2590a4f7e1f6a732cf61a966036f1af7025538feab04a992320d7be81c8a3a",
+      "bytes": 1463,
+      "groups": [
+        "finale",
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_paper.webp",
+      "url": "assets/95ddb1556c1718e9-l1_paper.webp",
+      "sha256": "95ddb1556c1718e9c8ca187b69352663e90cd5d88aac31eb7262e70365908895",
+      "bytes": 149354,
+      "width": 1328,
+      "height": 912,
+      "groups": [
+        "finale",
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_park.json",
+      "url": "assets/39f3ebc6093e7ac5-l1_park.json",
+      "sha256": "39f3ebc6093e7ac5fbc06f004b9555bf4daf96f4367d8e2547bb4bd543c0a61f",
+      "bytes": 462,
+      "groups": []
+    },
+    {
+      "path": "/assets/atlases/l1_park.webp",
+      "url": "assets/bfcd10c5b8eb1ae7-l1_park.webp",
+      "sha256": "bfcd10c5b8eb1ae7df82255ea64afd68245cf87b1ff0dda27f00c9979c498fe4",
+      "bytes": 108420,
+      "width": 946,
+      "height": 494,
+      "groups": []
+    },
+    {
+      "path": "/assets/atlases/l1_people.json",
+      "url": "assets/fd39dbbea01b9e15-l1_people.json",
+      "sha256": "fd39dbbea01b9e151cae01cc45e358660adf4a8acc414da90461d2c4b57364cd",
+      "bytes": 4451,
+      "groups": [
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_people.webp",
+      "url": "assets/2d99d0979d5fd973-l1_people.webp",
+      "sha256": "2d99d0979d5fd973c758394ac8265e772276bbe7a621279c5404651722da5470",
+      "bytes": 608774,
+      "width": 1901,
+      "height": 1626,
+      "groups": [
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_roadworks.json",
+      "url": "assets/ffcca9781fd4b706-l1_roadworks.json",
+      "sha256": "ffcca9781fd4b706f735fb7af23c17c9bc0f4398dec330f89f2dbe5e1765d663",
+      "bytes": 1851,
+      "groups": [
+        "level:level1",
+        "level:test_level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_roadworks.webp",
+      "url": "assets/2d33096beb6cea6b-l1_roadworks.webp",
+      "sha256": "2d33096beb6cea6bf515edb36de941fdd15080a4752bacb7d0254a65e5926104",
+      "bytes": 216678,
+      "width": 1340,
+      "height": 1185,
+      "groups": [
+        "level:level1",
+        "level:test_level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_service_backdrop.json",
+      "url": "assets/73750a527b646e23-l1_service_backdrop.json",
+      "sha256": "73750a527b646e23bdff412c767ef546f00fa96d1747d834826ec34d7a278be6",
+      "bytes": 276,
+      "groups": [
+        "level:level1",
+        "film:powerbox_service"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_service_backdrop.webp",
+      "url": "assets/1f58bb366da0c5d2-l1_service_backdrop.webp",
+      "sha256": "1f58bb366da0c5d22e0c02eb5f97256c216511576d25476ad690066dd1b0b5da",
+      "bytes": 175568,
+      "width": 1672,
+      "height": 941,
+      "groups": [
+        "level:level1",
+        "film:powerbox_service"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_worker.json",
+      "url": "assets/556ddf8ca20c472d-l1_worker.json",
+      "sha256": "556ddf8ca20c472d36f6809ba85afe6b675b521f84af32b2be13bf4398b73160",
+      "bytes": 2420,
+      "groups": [
+        "level:level1",
+        "level:test_level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_worker.webp",
+      "url": "assets/d8e67b8efe37b15c-l1_worker.webp",
+      "sha256": "d8e67b8efe37b15c38661dd69c41e61a13fc5e0bc56f471116178643b6214399",
+      "bytes": 313068,
+      "width": 1640,
+      "height": 1268,
+      "groups": [
+        "level:level1",
+        "level:test_level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_worker_bag.json",
+      "url": "assets/b6f650f70097f278-l1_worker_bag.json",
+      "sha256": "b6f650f70097f27890d864ed832a15d2462a09a6aba1d84277a66a752310b224",
+      "bytes": 665,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_worker_bag.webp",
+      "url": "assets/2cfa42fcb60c42c8-l1_worker_bag.webp",
+      "sha256": "2cfa42fcb60c42c8cbf1f073e7582d9770f01c9d886b81e8cbee1f51930e4950",
+      "bytes": 29144,
+      "width": 347,
+      "height": 284,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_worker_run.json",
+      "url": "assets/2f311e9bfbf4ead8-l1_worker_run.json",
+      "sha256": "2f311e9bfbf4ead89b14ee30fca672425b4a23798900d4113f55a12a438fdea8",
+      "bytes": 1630,
+      "groups": [
+        "level:level1",
+        "level:test_level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_worker_run.webp",
+      "url": "assets/7a984f31fa34ed24-l1_worker_run.webp",
+      "sha256": "7a984f31fa34ed24929386d6e773d03b23a52a9b3c896a5c727ab8108e3cb195",
+      "bytes": 188528,
+      "width": 1316,
+      "height": 1270,
+      "groups": [
+        "level:level1",
+        "level:test_level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_worker_run_soiled.json",
+      "url": "assets/4762c652b354e75a-l1_worker_run_soiled.json",
+      "sha256": "4762c652b354e75a90d82ffc5ccfed0056ccc04440c472626132c8d9f50ac7fc",
+      "bytes": 1767,
+      "groups": [
+        "level:level1",
+        "level:test_level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_worker_run_soiled.webp",
+      "url": "assets/934c86f889b56b77-l1_worker_run_soiled.webp",
+      "sha256": "934c86f889b56b77c8e827f0f45a3ce6a2da0c73d48e85c6399fa9e0abe6acd8",
+      "bytes": 209836,
+      "width": 1316,
+      "height": 1270,
+      "groups": [
+        "level:level1",
+        "level:test_level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_worker_soiled.json",
+      "url": "assets/63e04febedeb382a-l1_worker_soiled.json",
+      "sha256": "63e04febedeb382a44c78ce70c0641ba98ba78c68e596410901af4d82a430ed8",
+      "bytes": 2728,
+      "groups": [
+        "level:level1",
+        "level:test_level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l1_worker_soiled.webp",
+      "url": "assets/b955b5f18bdefb56-l1_worker_soiled.webp",
+      "sha256": "b955b5f18bdefb5622cf9f7693d587b64468cf00b71a13c7852e8be5fea0be7f",
+      "bytes": 303008,
+      "width": 1684,
+      "height": 1282,
+      "groups": [
+        "level:level1",
+        "level:test_level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l2_dive.json",
+      "url": "assets/87ee4798de9f6306-l2_dive.json",
+      "sha256": "87ee4798de9f6306ac8c4051273754999984bba0f21ceb6816c2ed668e3ff72f",
+      "bytes": 2262,
+      "groups": [
+        "level:level2"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l2_dive.webp",
+      "url": "assets/3dfd959f86a99ec7-l2_dive.webp",
+      "sha256": "3dfd959f86a99ec704ecae7aeb8ca0eeb6aa28115088974feec31a5168961911",
+      "bytes": 67912,
+      "width": 553,
+      "height": 493,
+      "groups": [
+        "level:level2"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l2_water.json",
+      "url": "assets/cc53a5106ad324a6-l2_water.json",
+      "sha256": "cc53a5106ad324a6830f9e2dfef5d728ae14c3062bdd8f038946cf8686c1cb1d",
+      "bytes": 1391,
+      "groups": [
+        "level:level2"
+      ]
+    },
+    {
+      "path": "/assets/atlases/l2_water.webp",
+      "url": "assets/60fd57e830dec131-l2_water.webp",
+      "sha256": "60fd57e830dec13150eea06a9e2caa1a6c3d2d4b4b798c2cf54d6f55aa199f6d",
+      "bytes": 133254,
+      "width": 960,
+      "height": 932,
+      "groups": [
+        "level:level2"
+      ]
+    },
+    {
+      "path": "/assets/atlases/leaves.json",
+      "url": "assets/d7b0cd0f1b6be381-leaves.json",
+      "sha256": "d7b0cd0f1b6be3818b2c93194437e4bc2a45491d7180780b03510aea0ac5caf1",
+      "bytes": 2282,
+      "groups": [
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/atlases/leaves.webp",
+      "url": "assets/95af015b4c806744-leaves.webp",
+      "sha256": "95af015b4c8067448d02c4db8523597484bd8f66f7b23a5e84485fa2945ee046",
+      "bytes": 14580,
+      "width": 185,
+      "height": 145,
+      "groups": [
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/atlases/mentor.json",
+      "url": "assets/21a1c48ffefa0c12-mentor.json",
+      "sha256": "21a1c48ffefa0c12a7b5440cb09dd5d77895a6e762819d7ad2a5c60a017ce818",
+      "bytes": 1250,
+      "groups": [
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/mentor.webp",
+      "url": "assets/3321f237bb3d335d-mentor.webp",
+      "sha256": "3321f237bb3d335d4feb6132ec65ca656aafdeb6e1722e831515c19bfc2b89e1",
+      "bytes": 42442,
+      "width": 348,
+      "height": 418,
+      "groups": [
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/park_brick.json",
+      "url": "assets/aa978ec8c1aed10e-park_brick.json",
+      "sha256": "aa978ec8c1aed10e5541b7a8fcd2534f398ba353aafdf6900c589c47314a78f8",
+      "bytes": 284,
+      "groups": [
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/atlases/park_brick.webp",
+      "url": "assets/3aa52e9815c81d57-park_brick.webp",
+      "sha256": "3aa52e9815c81d57b10ab9e293d6a068c74fd50e164bf900635b0d5f13b5cde0",
+      "bytes": 124386,
+      "width": 825,
+      "height": 548,
+      "groups": [
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/atlases/park_tree_wide.json",
+      "url": "assets/6467785f19fc076c-park_tree_wide.json",
+      "sha256": "6467785f19fc076ce2cee7022406e60ab36ca507fd2e9ead0ad925b4e543e396",
+      "bytes": 290,
+      "groups": [
+        "level:level1",
+        "level:level1_old",
+        "level:test_level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/park_tree_wide.webp",
+      "url": "assets/99634d2bc9322c4d-park_tree_wide.webp",
+      "sha256": "99634d2bc9322c4d663b33b5427e5c89dccef63e2bbc9db00ec4f45e3bec4237",
+      "bytes": 223584,
+      "width": 1012,
+      "height": 869,
+      "groups": [
+        "level:level1",
+        "level:level1_old",
+        "level:test_level1"
+      ]
+    },
+    {
+      "path": "/assets/atlases/people.json",
+      "url": "assets/7223ec4caf854040-people.json",
+      "sha256": "7223ec4caf85404069f7c974c5bb2261b106874d191d7119cb13a89e61e3123f",
+      "bytes": 12722,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/people.webp",
+      "url": "assets/ad993ef518fe64fe-people.webp",
+      "sha256": "ad993ef518fe64feb2e92088bb153af7fccbaa730e52672d466aa9ca97daff66",
+      "bytes": 1554304,
+      "width": 2906,
+      "height": 2758,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/pigeon.json",
+      "url": "assets/2a0c124d4fee58e5-pigeon.json",
+      "sha256": "2a0c124d4fee58e55b29cefba40edd8547a388b15fa7dea8471a93a976d5eaa2",
+      "bytes": 15168,
+      "groups": [
+        "results",
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial",
+        "level:level2"
+      ]
+    },
+    {
+      "path": "/assets/atlases/pigeon.webp",
+      "url": "assets/8e48967c08b6ec08-pigeon.webp",
+      "sha256": "8e48967c08b6ec08172e253e21660a427dd084bf76e117ab5a4e321256e3826e",
+      "bytes": 489770,
+      "width": 1305,
+      "height": 1329,
+      "groups": [
+        "results",
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial",
+        "level:level2"
+      ]
+    },
+    {
+      "path": "/assets/atlases/pigeon_baton.json",
+      "url": "assets/2958d835e10010cb-pigeon_baton.json",
+      "sha256": "2958d835e10010cb7759ad9d43bd1cbcf4becd145891135d887608fd46d0d5cc",
+      "bytes": 1813,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/pigeon_baton.webp",
+      "url": "assets/7bff303445ad17e4-pigeon_baton.webp",
+      "sha256": "7bff303445ad17e4d3aae47a7a2f7e69b0d77863ccbee1660cf4150bf8d83518",
+      "bytes": 58272,
+      "width": 480,
+      "height": 637,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/pigeon_electric.json",
+      "url": "assets/d4953b2927f2f3e5-pigeon_electric.json",
+      "sha256": "d4953b2927f2f3e5ae4b8f697ddb74716b5715ba427742d50a070d6d70d8e6dd",
+      "bytes": 979,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/pigeon_electric.webp",
+      "url": "assets/beaa50c824eeca99-pigeon_electric.webp",
+      "sha256": "beaa50c824eeca99174cd58ff3a9941e0808b71460770519f7de01d3e12d9862",
+      "bytes": 61770,
+      "width": 373,
+      "height": 375,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/pigeon_kick.json",
+      "url": "assets/ac10131e817ce5c4-pigeon_kick.json",
+      "sha256": "ac10131e817ce5c4052340650e5c5a2417bd858ac50a7980fcb3c49ef381b425",
+      "bytes": 1670,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial",
+        "level:level2"
+      ]
+    },
+    {
+      "path": "/assets/atlases/pigeon_kick.webp",
+      "url": "assets/a2d258cb6bf8f229-pigeon_kick.webp",
+      "sha256": "a2d258cb6bf8f22912cdb3ed38d876962e05b0f31c50a162a819e06680516471",
+      "bytes": 48020,
+      "width": 474,
+      "height": 430,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial",
+        "level:level2"
+      ]
+    },
+    {
+      "path": "/assets/atlases/pigeon_ladder_rear_v4.json",
+      "url": "assets/ee89467e880bb66f-pigeon_ladder_rear_v4.json",
+      "sha256": "ee89467e880bb66fe82c0a83bba49fa03bd379fc42578c3defb9ebded74be70a",
+      "bytes": 8822,
+      "groups": [
+        "level:test_ladder"
+      ]
+    },
+    {
+      "path": "/assets/atlases/pigeon_ladder_rear_v4.webp",
+      "url": "assets/08a5b9fe60128266-pigeon_ladder_rear_v4.webp",
+      "sha256": "08a5b9fe6012826632083da50e8ad0df3acde6f22c8d641381c0502990cc25c8",
+      "bytes": 217196,
+      "width": 790,
+      "height": 890,
+      "groups": [
+        "level:test_ladder"
+      ]
+    },
+    {
+      "path": "/assets/atlases/pigeon_push_front.json",
+      "url": "assets/c9b7b9cc951df32c-pigeon_push_front.json",
+      "sha256": "c9b7b9cc951df32cf572c6bc745956b451a543082c074d4e50bb2d0bfd0e187e",
+      "bytes": 949,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/pigeon_push_front.webp",
+      "url": "assets/fa990b620b8ae4c0-pigeon_push_front.webp",
+      "sha256": "fa990b620b8ae4c001b9d1d8286805cba4e771377d6085e13c89407b278305d9",
+      "bytes": 24488,
+      "width": 315,
+      "height": 323,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/pigeon_rig.json",
+      "url": "assets/0381c98e719f4214-pigeon_rig.json",
+      "sha256": "0381c98e719f4214c705b60b3bfa223ad180417fd8a7c6466fdaf1420221998d",
+      "bytes": 1822,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial",
+        "level:level2"
+      ]
+    },
+    {
+      "path": "/assets/atlases/pigeon_rig.webp",
+      "url": "assets/79a493953fc56a2f-pigeon_rig.webp",
+      "sha256": "79a493953fc56a2f40362e4711e21d64bc2efa3d9611af1f68b25eee162a0d93",
+      "bytes": 24898,
+      "width": 352,
+      "height": 328,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial",
+        "level:level2"
+      ]
+    },
+    {
+      "path": "/assets/atlases/props.json",
+      "url": "assets/07b21f651990fe1b-props.json",
+      "sha256": "07b21f651990fe1b311e57ab7ac6b775ec153d48bd655feab01926f966fe678a",
+      "bytes": 6780,
+      "groups": [
+        "level:level1",
+        "level:level1_old",
+        "level:test_level1",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/props.webp",
+      "url": "assets/672bd4d17e946ed8-props.webp",
+      "sha256": "672bd4d17e946ed8df91e50de0f5203e6cd0ed623924083140e618e871f4cc3b",
+      "bytes": 624552,
+      "width": 1645,
+      "height": 1485,
+      "groups": [
+        "level:level1",
+        "level:level1_old",
+        "level:test_level1",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/reactions.json",
+      "url": "assets/0a032e297355b8ee-reactions.json",
+      "sha256": "0a032e297355b8ee3d9e33499604b4cbcafcf633ff4368f283ab6a2d979264f2",
+      "bytes": 4052,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/reactions.webp",
+      "url": "assets/d3048ffc30fd4067-reactions.webp",
+      "sha256": "d3048ffc30fd4067ca7ece20ecbc41d4f33b8ffd8c53a46f484d1e55f979480b",
+      "bytes": 315788,
+      "width": 1336,
+      "height": 1402,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/sewer_ladder_v1.json",
+      "url": "assets/3c40b02836b26de2-sewer_ladder_v1.json",
+      "sha256": "3c40b02836b26de26b31d5550cfcfb3faf54d4c1160a8c4b17294d7e7260013e",
+      "bytes": 696,
+      "groups": [
+        "level:test_ladder"
+      ]
+    },
+    {
+      "path": "/assets/atlases/sewer_ladder_v1.webp",
+      "url": "assets/e37c0f36ab41a1a0-sewer_ladder_v1.webp",
+      "sha256": "e37c0f36ab41a1a0ab906bf11ac5a711c1147b5d8fd225245c13aab04766ad15",
+      "bytes": 4056,
+      "width": 130,
+      "height": 118,
+      "groups": [
+        "level:test_ladder"
+      ]
+    },
+    {
+      "path": "/assets/atlases/style_alley.json",
+      "url": "assets/290e260b64931860-style_alley.json",
+      "sha256": "290e260b64931860bbb464413724d607d1d5cbcdd983a843317ca608c43b37f2",
+      "bytes": 2033,
+      "groups": [
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/atlases/style_alley.webp",
+      "url": "assets/9757abe4ae4e24d8-style_alley.webp",
+      "sha256": "9757abe4ae4e24d845ed758bf70562d3d75f2fbe7b7a01ebb21cabf6c0e68372",
+      "bytes": 290208,
+      "width": 1315,
+      "height": 1416,
+      "groups": [
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/atlases/style_front.json",
+      "url": "assets/1e408a54673a4bb4-style_front.json",
+      "sha256": "1e408a54673a4bb4321d76a926800164601d93bbd409dbf6e1f7edb3e08703dc",
+      "bytes": 1261,
+      "groups": [
+        "level:level1",
+        "level:level1_old",
+        "level:test_level1",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/style_front.webp",
+      "url": "assets/1f4c5ab36613575b-style_front.webp",
+      "sha256": "1f4c5ab36613575b93edb8376c5dba500479873370b0ae1372830d839d4e3103",
+      "bytes": 562154,
+      "width": 1390,
+      "height": 1727,
+      "groups": [
+        "level:level1",
+        "level:level1_old",
+        "level:test_level1",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/style_ground.json",
+      "url": "assets/74ff5e824ab53694-style_ground.json",
+      "sha256": "74ff5e824ab53694147d9f25dec1f61cf42962da6a6d8140796af5c1ab25533b",
+      "bytes": 290,
+      "groups": [
+        "level:level1",
+        "level:level1_old",
+        "level:test_level1",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/style_ground.webp",
+      "url": "assets/a5422a6e4b3c0c46-style_ground.webp",
+      "sha256": "a5422a6e4b3c0c460be4516675717c14dc93fb43b6949ed56c1abfa6f4099c00",
+      "bytes": 43270,
+      "width": 1452,
+      "height": 304,
+      "groups": [
+        "level:level1",
+        "level:level1_old",
+        "level:test_level1",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/style_house.json",
+      "url": "assets/00513e2a98cbcad3-style_house.json",
+      "sha256": "00513e2a98cbcad3672b805c75e643d03ca232f8ec45def29acc8e25622a4137",
+      "bytes": 872,
+      "groups": [
+        "level:level1",
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/atlases/style_house.webp",
+      "url": "assets/93123762c68cd22a-style_house.webp",
+      "sha256": "93123762c68cd22a04efac297c2bc95811a5861796c66789692ff2954f7a0126",
+      "bytes": 1130134,
+      "width": 2916,
+      "height": 2719,
+      "groups": [
+        "level:level1",
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/atlases/style_market.json",
+      "url": "assets/ee7119cd36bd627d-style_market.json",
+      "sha256": "ee7119cd36bd627dab623eb1ce4ba933a3eb55cdeaf0b5754426e7b7696e231a",
+      "bytes": 1672,
+      "groups": [
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/atlases/style_market.webp",
+      "url": "assets/4e9d26f2be269c71-style_market.webp",
+      "sha256": "4e9d26f2be269c712ac45a54c75b8a88aa730d394e6c668fa88c626ab7ebf5d3",
+      "bytes": 390742,
+      "width": 1643,
+      "height": 1539,
+      "groups": [
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/atlases/style_park.json",
+      "url": "assets/5a581327fb3cb439-style_park.json",
+      "sha256": "5a581327fb3cb43963d91eafaecae13ca21e9b27a085e22191a0c7b7474a910d",
+      "bytes": 1456,
+      "groups": [
+        "level:level1",
+        "level:level1_old",
+        "level:test_level1",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/style_park.webp",
+      "url": "assets/ece8f65de84d9bda-style_park.webp",
+      "sha256": "ece8f65de84d9bda7311c13f0d02a096c0d2bb6fd09cf6a3f8396df0051a725f",
+      "bytes": 513416,
+      "width": 1666,
+      "height": 1608,
+      "groups": [
+        "level:level1",
+        "level:level1_old",
+        "level:test_level1",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/style_street.json",
+      "url": "assets/c93597e191079a3a-style_street.json",
+      "sha256": "c93597e191079a3a53667a2a10d66c3a345a7fb97a5ab8778e32e9a14de528d6",
+      "bytes": 1856,
+      "groups": [
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/atlases/style_street.webp",
+      "url": "assets/4f005168a7624c77-style_street.webp",
+      "sha256": "4f005168a7624c77b188ead552c7b42b049305dc444016a7c0d51b542b5ad82a",
+      "bytes": 298238,
+      "width": 1502,
+      "height": 1064,
+      "groups": [
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/atlases/style_yard.json",
+      "url": "assets/40c854bc73dd9799-style_yard.json",
+      "sha256": "40c854bc73dd9799048f568bc306a970a3f418fd14213a1107f343d5259bfa2a",
+      "bytes": 1077,
+      "groups": [
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/atlases/style_yard.webp",
+      "url": "assets/baaaf6572a6c04f7-style_yard.webp",
+      "sha256": "baaaf6572a6c04f71a9503dc4152212c2bdc3267da17915ea39e2a1d9bbbf505",
+      "bytes": 1682680,
+      "width": 3594,
+      "height": 3483,
+      "groups": [
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/atlases/tiles.json",
+      "url": "assets/296304044342b905-tiles.json",
+      "sha256": "296304044342b90524ce46a2ed4cab8e6255c78a9c33e3d641f4cb6ab464d777",
+      "bytes": 8163,
+      "groups": [
+        "level:level1",
+        "level:level1_old",
+        "level:test_level1",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/tiles.webp",
+      "url": "assets/c3b5852364e467d7-tiles.webp",
+      "sha256": "c3b5852364e467d7cd609130eb6032e6bcdb54e1d2bf7fc6c89e3f24d3aa0698",
+      "bytes": 392624,
+      "width": 1210,
+      "height": 1203,
+      "groups": [
+        "level:level1",
+        "level:level1_old",
+        "level:test_level1",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/tour.json",
+      "url": "assets/c493c31488849fb3-tour.json",
+      "sha256": "c493c31488849fb32820fd81aac1a49e63ec31e31ed221f472471e451af946ca",
+      "bytes": 10476,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/atlases/tour.webp",
+      "url": "assets/6376edaddd8dad97-tour.webp",
+      "sha256": "6376edaddd8dad974f311d78c4ab0fa708286bf363a1f262434230e50f564a05",
+      "bytes": 1200476,
+      "width": 2492,
+      "height": 2530,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/atlases/tour2.json",
+      "url": "assets/4f769bb55eefe82c-tour2.json",
+      "sha256": "4f769bb55eefe82c87173c2913ccaa748cc68634cccad3ed6c04f26bd0363a75",
+      "bytes": 3457,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/atlases/tour2.webp",
+      "url": "assets/3093f98714c0e8a6-tour2.webp",
+      "sha256": "3093f98714c0e8a6f1b63c81e88b8207c1b93500b75f65aea890270960dc8479",
+      "bytes": 604732,
+      "width": 1859,
+      "height": 1614,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/atlases/ui.json",
+      "url": "assets/9bb9eb3bf09e1b75-ui.json",
+      "sha256": "9bb9eb3bf09e1b750a26453a11ba33f1646afae50db93f6d733b9974e48a03bb",
+      "bytes": 5648,
+      "groups": [
+        "ui",
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/ui.webp",
+      "url": "assets/182aa6ee28911405-ui.webp",
+      "sha256": "182aa6ee28911405100d67134030306744cd5534a4bf6615032cefbfbd608003",
+      "bytes": 213582,
+      "width": 995,
+      "height": 879,
+      "groups": [
+        "ui",
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/atlases/water_fx.json",
+      "url": "assets/d6fb001fb05fbf02-water_fx.json",
+      "sha256": "d6fb001fb05fbf02070696fd38367e0c1524e928bb0a88ee80d83fed8f4bbadf",
+      "bytes": 27870,
+      "groups": [
+        "level:level2"
+      ]
+    },
+    {
+      "path": "/assets/atlases/water_fx.webp",
+      "url": "assets/48c781e7b6a1d064-water_fx.webp",
+      "sha256": "48c781e7b6a1d06486660bf99fb6e38627616502f9e3e460e62326b3ad7ab5fb",
+      "bytes": 198114,
+      "width": 992,
+      "height": 1021,
+      "groups": [
+        "level:level2"
+      ]
+    },
+    {
+      "path": "/assets/atlases/water_light.json",
+      "url": "assets/ea1bc994b9643766-water_light.json",
+      "sha256": "ea1bc994b964376697605acf4896ad09a8cc9cd5d555359ddc8014e19a5a7f1f",
+      "bytes": 3706,
+      "groups": [
+        "level:level2"
+      ]
+    },
+    {
+      "path": "/assets/atlases/water_light.webp",
+      "url": "assets/8833bad956f70308-water_light.webp",
+      "sha256": "8833bad956f703087be9f5010c37880136da26600faffcc02b47a51c5c1b6bd4",
+      "bytes": 204900,
+      "width": 2186,
+      "height": 961,
+      "groups": [
+        "level:level2"
+      ]
+    },
+    {
+      "path": "/assets/atlases/wedding.json",
+      "url": "assets/6a241ceaa075ee06-wedding.json",
+      "sha256": "6a241ceaa075ee0611fdf883e775794788748ba420ead2c742e1e5698f5d524a",
+      "bytes": 8392,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/atlases/wedding.webp",
+      "url": "assets/754324c3c7caca4c-wedding.webp",
+      "sha256": "754324c3c7caca4cf86e4d276f29a646e9baec6603ea0e18fc9aece97fde9b41",
+      "bytes": 1139948,
+      "width": 2534,
+      "height": 2338,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/audio/music/level1/manifest.json",
+      "url": "assets/8474eaaab07d0ad5-manifest.json",
+      "sha256": "8474eaaab07d0ad5fc96e0d8e0175683e813c5ace7f90e20dd88121eddc54468",
+      "bytes": 16973,
+      "groups": []
+    },
+    {
+      "path": "/assets/audio/sfx/foley-reference/manifest.json",
+      "url": "assets/24a635304e827ba5-manifest.json",
+      "sha256": "24a635304e827ba544fbf7a16ced5097ca416e6ea6ff7ef72628fe1702186acf",
+      "bytes": 8362,
+      "groups": []
+    },
+    {
+      "path": "/assets/audio/sfx/level1/manifest.json",
+      "url": "assets/65be4c5129f29b2d-manifest.json",
+      "sha256": "65be4c5129f29b2de226a0c06da3a6b7b16576397b95b875e65d05e6a4a0fcc2",
+      "bytes": 40071,
+      "groups": []
+    },
+    {
+      "path": "/assets/audio/sfx/level1/qc-report.json",
+      "url": "assets/8d3c80b9b303c153-qc-report.json",
+      "sha256": "8d3c80b9b303c1530dfa831c257ce6f7a767fb641f9213ded357fd83b9e61d87",
+      "bytes": 209586,
+      "groups": []
+    },
+    {
+      "path": "/assets/audio/sfx/mechanisms-reference/alternatives.json",
+      "url": "assets/f4ac8d57c15449e9-alternatives.json",
+      "sha256": "f4ac8d57c15449e9b8bb78f74bd48c4fa12c84e71ae0dcebbdf3daa61dfa30e3",
+      "bytes": 10256,
+      "groups": []
+    },
+    {
+      "path": "/assets/audio/sfx/mechanisms-reference/manifest.json",
+      "url": "assets/a410b05ba2526963-manifest.json",
+      "sha256": "a410b05ba252696355e482e17c45787f0474adc320a512f0dce29c3e15ccc31e",
+      "bytes": 11383,
+      "groups": []
+    },
+    {
+      "path": "/assets/audio/sfx/mechanisms-reference/SOURCE-ALTERNATIVES-CC0.json",
+      "url": "assets/0d5a10e33eaea0d0-SOURCE-ALTERNATIVES-CC0.json",
+      "sha256": "0d5a10e33eaea0d0cf997e817814f9e9e1aa7e1d85fd3502dd121abc466a4c33",
+      "bytes": 1420,
+      "groups": []
+    },
+    {
+      "path": "/assets/audio/sfx/mechanisms-reference/SOURCE-CC0.json",
+      "url": "assets/54e29e6de0738fde-SOURCE-CC0.json",
+      "sha256": "54e29e6de0738fde5a546bf0d86d7584eb52071750dde12a62cdd8b7f243c3da",
+      "bytes": 587,
+      "groups": []
+    },
+    {
+      "path": "/assets/bg/bg_alley_door.webp",
+      "url": "assets/2b93b6b74f19c454-bg_alley_door.webp",
+      "sha256": "2b93b6b74f19c4548118251a339d9eb6c4af3d9e518fae4c758e3cec95f72b8b",
+      "bytes": 197596,
+      "width": 1920,
+      "height": 1080,
+      "groups": []
+    },
+    {
+      "path": "/assets/bg/bg_alley_dumpster.webp",
+      "url": "assets/f82e94a4d82d7f81-bg_alley_dumpster.webp",
+      "sha256": "f82e94a4d82d7f810296d8319af52eff7c3e11ed1ab48fb72843edd1eaaaf4df",
+      "bytes": 214190,
+      "width": 1920,
+      "height": 1080,
+      "groups": []
+    },
+    {
+      "path": "/assets/bg/bg_alley_service.webp",
+      "url": "assets/d2ec63989d74faa3-bg_alley_service.webp",
+      "sha256": "d2ec63989d74faa384fd74a45c8a59194e9792c581ef30bb31b85ca8282c616e",
+      "bytes": 218604,
+      "width": 1920,
+      "height": 1080,
+      "groups": []
+    },
+    {
+      "path": "/assets/bg/bg_bakery_citybread.webp",
+      "url": "assets/9d9b9f51f3b0fe7b-bg_bakery_citybread.webp",
+      "sha256": "9d9b9f51f3b0fe7b12b0bc977811ef0af2bb8db4e477145fe9ac06ad87ead2b8",
+      "bytes": 241016,
+      "width": 1920,
+      "height": 1080,
+      "groups": []
+    },
+    {
+      "path": "/assets/bg/bg_bakery_fresh.webp",
+      "url": "assets/be28a0758a9b7573-bg_bakery_fresh.webp",
+      "sha256": "be28a0758a9b7573652e17c533e9826e37475d9d49e315041f7dd84b7d1ce28e",
+      "bytes": 259468,
+      "width": 1920,
+      "height": 1080,
+      "groups": []
+    },
+    {
+      "path": "/assets/bg/bg_courtyard.webp",
+      "url": "assets/47ca387bdb412b42-bg_courtyard.webp",
+      "sha256": "47ca387bdb412b428f2ef81bb714d81b5bc8c6d182ebea57f4d5847bce6afbb6",
+      "bytes": 368156,
+      "width": 1920,
+      "height": 1080,
+      "groups": [
+        "results"
+      ]
+    },
+    {
+      "path": "/assets/bg/bg_market_cafe.webp",
+      "url": "assets/aacb9a1944d43b78-bg_market_cafe.webp",
+      "sha256": "aacb9a1944d43b7839aac402d4a548cc2087dedc4eae47f7c8c02b99e703157e",
+      "bytes": 236370,
+      "width": 1920,
+      "height": 1080,
+      "groups": []
+    },
+    {
+      "path": "/assets/bg/bg_market_goods.webp",
+      "url": "assets/32476ca5fa0dff76-bg_market_goods.webp",
+      "sha256": "32476ca5fa0dff7686ce49cbd2d0d64df4600765bc1df08ba089000d6bf0f59c",
+      "bytes": 263340,
+      "width": 1920,
+      "height": 1080,
+      "groups": []
+    },
+    {
+      "path": "/assets/bg/bg_park_statue.webp",
+      "url": "assets/4d6066f5b8ff3b8a-bg_park_statue.webp",
+      "sha256": "4d6066f5b8ff3b8ab1d78f0e94e97d9266d12edc0cb22943e9a2c22df7c439e7",
+      "bytes": 296666,
+      "width": 1920,
+      "height": 1080,
+      "groups": []
+    },
+    {
+      "path": "/assets/bg/bg_park_tree.webp",
+      "url": "assets/daf034f59b7d7692-bg_park_tree.webp",
+      "sha256": "daf034f59b7d769285b394aac08612611a0b418ebaca46641775e96a703e0748",
+      "bytes": 244258,
+      "width": 1920,
+      "height": 1080,
+      "groups": []
+    },
+    {
+      "path": "/assets/bg/bg_park_wall.webp",
+      "url": "assets/5be5203feaec7b6f-bg_park_wall.webp",
+      "sha256": "5be5203feaec7b6f172ac0bb41523f33a3771e6e5dd33e49c52ee6bef61c6759",
+      "bytes": 234024,
+      "width": 1920,
+      "height": 1080,
+      "groups": []
+    },
+    {
+      "path": "/assets/bg/dive_quay.webp",
+      "url": "assets/e91e767e321cea42-dive_quay.webp",
+      "sha256": "e91e767e321cea428e7d67fa37057b7b95b228b4857ad78afe9d9e31eb0da717",
+      "bytes": 401112,
+      "width": 1920,
+      "height": 1080,
+      "groups": [
+        "level:level2"
+      ]
+    },
+    {
+      "path": "/assets/bg/illus_pigine.webp",
+      "url": "assets/9a029cab50fcc58b-illus_pigine.webp",
+      "sha256": "9a029cab50fcc58b10c830596c2ec5ed006c3f7db65c8a3c5cd2821f7ae85ec4",
+      "bytes": 58256,
+      "width": 1920,
+      "height": 1080,
+      "groups": [
+        "splash"
+      ]
+    },
+    {
+      "path": "/assets/bg/illus_title_dusk.webp",
+      "url": "assets/2a04e2dc2969536e-illus_title_dusk.webp",
+      "sha256": "2a04e2dc2969536e1e3a5e291e374c63b179481ca2f786f39741d77d537c4576",
+      "bytes": 267570,
+      "width": 1920,
+      "height": 1080,
+      "groups": [
+        "title:illus_title_dusk"
+      ]
+    },
+    {
+      "path": "/assets/bg/illus_title_night.webp",
+      "url": "assets/cbe100a6cd499ece-illus_title_night.webp",
+      "sha256": "cbe100a6cd499ecee87e334ec27e589a4c0b36bf988f4c1a8f93648935c4cd04",
+      "bytes": 268118,
+      "width": 1920,
+      "height": 1080,
+      "groups": [
+        "title:illus_title_night"
+      ]
+    },
+    {
+      "path": "/assets/bg/illus_victory.webp",
+      "url": "assets/3bc001567e37b039-illus_victory.webp",
+      "sha256": "3bc001567e37b039ef648a27d5a1bdeaaa202245cf0153ccc94dad9a9ce09149",
+      "bytes": 376888,
+      "width": 1920,
+      "height": 1080,
+      "groups": [
+        "finale"
+      ]
+    },
+    {
+      "path": "/assets/flow/ambient.json",
+      "url": "assets/d28d06c26b9059c3-ambient.json",
+      "sha256": "d28d06c26b9059c3070116cfda8849cfe8774f49a7709ea35427f7d091b67a38",
+      "bytes": 39145,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/flow/clerk_nocup.json",
+      "url": "assets/0b9293bfa7377e7c-clerk_nocup.json",
+      "sha256": "0b9293bfa7377e7cb3164a54c5537ac8c48ada2ea0639d348dc62b021feda001",
+      "bytes": 10948,
+      "groups": [
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/flow/dog.json",
+      "url": "assets/400f3e62e6ad44e7-dog.json",
+      "sha256": "400f3e62e6ad44e79a25b639d24f37774c2493f7372a77ba3b7051bf171954e2",
+      "bytes": 168577,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/flow/granny.json",
+      "url": "assets/3c5b18d62dc9dd47-granny.json",
+      "sha256": "3c5b18d62dc9dd47485dde5ff2e9ce57a1bd93e8078fb2b6a24b9ad72a15dfa1",
+      "bytes": 254535,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/flow/kids.json",
+      "url": "assets/a3cc67dc34b39e3d-kids.json",
+      "sha256": "a3cc67dc34b39e3d7d4415b5ce44dbc2e7ab2ec2cf96b0e68434a0cab51fcc94",
+      "bytes": 438177,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/flow/l1_cabinet_service.json",
+      "url": "assets/647869ae339bddf6-l1_cabinet_service.json",
+      "sha256": "647869ae339bddf6dbc1a484f285df535bb875b840a272a83706451577ec7bf3",
+      "bytes": 8755,
+      "groups": [
+        "level:level1",
+        "level:test_level1",
+        "film:powerbox_service"
+      ]
+    },
+    {
+      "path": "/assets/flow/l1_control_lever.json",
+      "url": "assets/cc19bfe4ce997031-l1_control_lever.json",
+      "sha256": "cc19bfe4ce997031640998582cf21093a9594dd81070489bb2e838fee90e87a9",
+      "bytes": 187,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/assets/flow/l1_granny_down.json",
+      "url": "assets/ba70525758aa0eef-l1_granny_down.json",
+      "sha256": "ba70525758aa0eeffcedaef5a6304afa0addc2dda6ec4cc1614e106bc7793420",
+      "bytes": 12345,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/flow/l1_hut.json",
+      "url": "assets/9a07223716fa967a-l1_hut.json",
+      "sha256": "9a07223716fa967ae82e433d6c73138d83fd4a63291dab9a02fdf39ed97a94c2",
+      "bytes": 4430,
+      "groups": [
+        "level:level1",
+        "film:powerbox_service"
+      ]
+    },
+    {
+      "path": "/assets/flow/l1_hut_inside_away.json",
+      "url": "assets/781ad82979b3ad73-l1_hut_inside_away.json",
+      "sha256": "781ad82979b3ad739cb77958eb580257729649a49d0b860e0faa2a58f13bfcd7",
+      "bytes": 37900,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/assets/flow/l1_hut_interior.json",
+      "url": "assets/0b3d4a21fd9051b2-l1_hut_interior.json",
+      "sha256": "0b3d4a21fd9051b2977b25330b06a20a99bc82ee097f76c50cbe440b8582725f",
+      "bytes": 40453,
+      "groups": []
+    },
+    {
+      "path": "/assets/flow/l1_hut_inward.json",
+      "url": "assets/36c215f72f8caf7e-l1_hut_inward.json",
+      "sha256": "36c215f72f8caf7ed9111bf1dd98685e4f550f9fd812a236df81d1df932a8171",
+      "bytes": 30044,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/assets/flow/l1_misc.json",
+      "url": "assets/b221524d3ce73049-l1_misc.json",
+      "sha256": "b221524d3ce73049055712ed71eed8f224d26127b1ec8c08a8921ee3ad49e935",
+      "bytes": 13995,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/flow/l1_people.json",
+      "url": "assets/c224350d53720d59-l1_people.json",
+      "sha256": "c224350d53720d598da8991519287f4b28acb084f79d4bb01d32dcab69f13576",
+      "bytes": 27176,
+      "groups": [
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/flow/l1_worker.json",
+      "url": "assets/553b9cff28669342-l1_worker.json",
+      "sha256": "553b9cff286693420c13f4002159fb2061ae1ca165700246b79167978db236e3",
+      "bytes": 5172,
+      "groups": [
+        "level:level1",
+        "level:test_level1"
+      ]
+    },
+    {
+      "path": "/assets/flow/l1_worker_run.json",
+      "url": "assets/5ac13da8ebf81d9e-l1_worker_run.json",
+      "sha256": "5ac13da8ebf81d9ed75463aef5353291065ead716ead6b609f7ebf2bb7e5f8f4",
+      "bytes": 39952,
+      "groups": [
+        "level:level1",
+        "level:test_level1"
+      ]
+    },
+    {
+      "path": "/assets/flow/l2_dive.json",
+      "url": "assets/23a8c8e1323e67ab-l2_dive.json",
+      "sha256": "23a8c8e1323e67ab3b4c07ab140a7b1d066ffc23da6973d9a3ae9bb43b70564d",
+      "bytes": 9830,
+      "groups": [
+        "level:level2"
+      ]
+    },
+    {
+      "path": "/assets/flow/mentor.json",
+      "url": "assets/3c4a43d437766bfc-mentor.json",
+      "sha256": "3c4a43d437766bfc2a8429c16497f779df8c8eabcbab0f8ce209b69c3210837e",
+      "bytes": 1793,
+      "groups": [
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/flow/people.json",
+      "url": "assets/adec8453ea282db6-people.json",
+      "sha256": "adec8453ea282db6e514ca952af3b583918002368a8c3c9c41ce0c1fb78ae4a9",
+      "bytes": 174851,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/flow/pigeon.json",
+      "url": "assets/14401089916f6861-pigeon.json",
+      "sha256": "14401089916f68618981ea42a2aad245a5f1e83600847bfdecd06020945e44d3",
+      "bytes": 243434,
+      "groups": [
+        "results",
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial",
+        "level:level2"
+      ]
+    },
+    {
+      "path": "/assets/flow/pigeon_baton.json",
+      "url": "assets/961bc22b17d7b6e1-pigeon_baton.json",
+      "sha256": "961bc22b17d7b6e1125533dbf8d8eb8af4bcb1da2e7b99834e52460ee8a5d9ae",
+      "bytes": 3922,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/flow/pigeon_ladder_rear_v4.json",
+      "url": "assets/355d2eb633141ee2-pigeon_ladder_rear_v4.json",
+      "sha256": "355d2eb633141ee2cf1b7adca816dcfdbe018c5377ca8de93773a5e1a6821743",
+      "bytes": 118310,
+      "groups": [
+        "level:test_ladder"
+      ]
+    },
+    {
+      "path": "/assets/flow/pigeon_push_front.json",
+      "url": "assets/02d8f172c66b6780-pigeon_push_front.json",
+      "sha256": "02d8f172c66b6780471bdf830b577d367fad782e5520424dbbcf9b1165630205",
+      "bytes": 14855,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/flow/reactions.json",
+      "url": "assets/ba05538fab946d77-reactions.json",
+      "sha256": "ba05538fab946d777e571379f1f4ac28ef6634e180163893e43a316550a9ec23",
+      "bytes": 9745,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/flow/tour.json",
+      "url": "assets/e5cc09189122d8e8-tour.json",
+      "sha256": "e5cc09189122d8e83cd016de481de73309a4a3ddf5ea13bc53f4f5af4c188233",
+      "bytes": 102309,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/flow/tour2.json",
+      "url": "assets/67c0030de7b3a7d2-tour2.json",
+      "sha256": "67c0030de7b3a7d253953bbd7864fb2a4f4a3f70783c6036bc3ac3c916611620",
+      "bytes": 131,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/flow/wedding.json",
+      "url": "assets/94de4c48af294182-wedding.json",
+      "sha256": "94de4c48af294182757c5cc831c2a7ab400bfeef0a2a796c6a90e60dff92db73",
+      "bytes": 86765,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/levels/level1.webp",
+      "url": "assets/30963ec662f948af-level1.webp",
+      "sha256": "30963ec662f948af8ffb29e20addfbff58e25e51e456f0070110572fb93165c7",
+      "bytes": 88902,
+      "width": 768,
+      "height": 432,
+      "groups": [
+        "preview:level1",
+        "levels"
+      ]
+    },
+    {
+      "path": "/assets/levels/level2_prison.webp",
+      "url": "assets/141fa8bf6c7e8ada-level2_prison.webp",
+      "sha256": "141fa8bf6c7e8adaf7dc48e943ce0df76b4533cd83ff8a9ca03969fc1b126796",
+      "bytes": 74716,
+      "width": 768,
+      "height": 432,
+      "groups": [
+        "preview:level_prison",
+        "levels"
+      ]
+    },
+    {
+      "path": "/assets/levels/level2_underwater.webp",
+      "url": "assets/20ecd920168fe5c8-level2_underwater.webp",
+      "sha256": "20ecd920168fe5c8cd5f14ecbb24ae9d65b7e6833439bb47fb5505776cc373c5",
+      "bytes": 139604,
+      "width": 768,
+      "height": 432,
+      "groups": [
+        "preview:level2",
+        "levels"
+      ]
+    },
+    {
+      "path": "/assets/levels/level3_christmas.webp",
+      "url": "assets/8a22c44a6245952c-level3_christmas.webp",
+      "sha256": "8a22c44a6245952cc0e51446eed7f3b58d49f24b63409aad1a27acc702d5ff52",
+      "bytes": 159368,
+      "width": 768,
+      "height": 432,
+      "groups": [
+        "preview:level3",
+        "levels"
+      ]
+    },
+    {
+      "path": "/assets/levels/level3_night.webp",
+      "url": "assets/fd68e14075d5ec48-level3_night.webp",
+      "sha256": "fd68e14075d5ec480cda6ad57ff7115c7297a269933847170ad1e3886eb7c308",
+      "bytes": 119878,
+      "width": 768,
+      "height": 432,
+      "groups": [
+        "preview:level4",
+        "levels"
+      ]
+    },
+    {
+      "path": "/assets/manifest.json",
+      "url": "assets/9c1c5602271bb7a4-manifest.json",
+      "sha256": "9c1c5602271bb7a4f762d18810ef1c6f94530f976d2b88b43d051d609c06a996",
+      "bytes": 2663,
+      "groups": [
+        "boot"
+      ]
+    },
+    {
+      "path": "/assets/meshanim/l1_people.reader_read_01.json",
+      "url": "assets/941d711285db7729-l1_people.reader_read_01.json",
+      "sha256": "941d711285db772948fef48b56e73b1a7b485bdece98000168523db07c5c1ad4",
+      "bytes": 569,
+      "groups": [
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/meshanim/l1_people.reader_read_02.json",
+      "url": "assets/53147816be3892bd-l1_people.reader_read_02.json",
+      "sha256": "53147816be3892bd3480275b4fbccc579a21c8af4e2edcd3e088dd9a0a48cee4",
+      "bytes": 574,
+      "groups": [
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/meshanim/l1_people.seller_idle.json",
+      "url": "assets/791b74c3dabc2aa0-l1_people.seller_idle.json",
+      "sha256": "791b74c3dabc2aa0cc8c90bbad50f79e761096b9e0c93f992bef6e06b861976b",
+      "bytes": 560,
+      "groups": [
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/meshanim/l1_people.student_chew.json",
+      "url": "assets/dd7355bc9e7187aa-l1_people.student_chew.json",
+      "sha256": "dd7355bc9e7187aaefc5519f11717b17a955039358e69df7260dc2aa86f164a7",
+      "bytes": 570,
+      "groups": [
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/meshanim/l1_people.student_eat.json",
+      "url": "assets/b228a448561a1346-l1_people.student_eat.json",
+      "sha256": "b228a448561a13463820633be0638fd6e5a592db958c3de73f9fbf3ac88f530b",
+      "bytes": 567,
+      "groups": [
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/meshanim/l1_people.student_phone.json",
+      "url": "assets/0643f44e8e397f4a-l1_people.student_phone.json",
+      "sha256": "0643f44e8e397f4aa50d765fabc3b613415a44f56c0bd12551dbe76cfb0d523a",
+      "bytes": 569,
+      "groups": [
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/meshanim/mentor.mentor_idle.json",
+      "url": "assets/84dac0b6e5db670a-mentor.mentor_idle.json",
+      "sha256": "84dac0b6e5db670addc10a2fb7b8a8554703c64018921389af819ee1053fada5",
+      "bytes": 740,
+      "groups": [
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/meshanim/mentor.mentor_talk.json",
+      "url": "assets/d199809717691654-mentor.mentor_talk.json",
+      "sha256": "d1998097176916549905f8ae8dd557f9167f98479b83cc2041e700156a95462c",
+      "bytes": 811,
+      "groups": [
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/meshanim/people.bride_idle.json",
+      "url": "assets/bc5273b77248fb14-people.bride_idle.json",
+      "sha256": "bc5273b77248fb148d3da5cf5a8613f204be4a33569891147b5abc462884bd21",
+      "bytes": 565,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/meshanim/people.clerk_idle.json",
+      "url": "assets/c179cb61a226fcd3-people.clerk_idle.json",
+      "sha256": "c179cb61a226fcd392835a9d7f8b205f2733535efbffb1a70a86ee7c98a3c8d9",
+      "bytes": 565,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/meshanim/people.clerk_phone_01.json",
+      "url": "assets/94fcb11d4d93eb5a-people.clerk_phone_01.json",
+      "sha256": "94fcb11d4d93eb5af4b89b0f4cafa32fa6b85a9aeaf21880dda06406f466d26c",
+      "bytes": 566,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/meshanim/people.clerk_phone_02.json",
+      "url": "assets/c687e9f2c8413ed1-people.clerk_phone_02.json",
+      "sha256": "c687e9f2c8413ed1cabb65284ed7871698181452bbfd44839b135ffe5930e51d",
+      "bytes": 566,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/meshanim/people.clerk_sip.json",
+      "url": "assets/e1da1c675bf0fd73-people.clerk_sip.json",
+      "sha256": "e1da1c675bf0fd7388bbdb46032b1e36d080131e19b07ab0f3eec3b0c6ad7293",
+      "bytes": 566,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/meshanim/people.clerk_watch.json",
+      "url": "assets/1c65fc943f9cd841-people.clerk_watch.json",
+      "sha256": "1c65fc943f9cd84124a7776ea184ccf74e64d00548bf7baa933c705e19a10498",
+      "bytes": 566,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/meshanim/people.grandma_idle_01.json",
+      "url": "assets/27989abb77a96682-people.grandma_idle_01.json",
+      "sha256": "27989abb77a96682d08be225c6923f12719e2f6fab1a562172614e39eeeaf82b",
+      "bytes": 728,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/meshanim/people.groom_idle.json",
+      "url": "assets/0a612408e9c0a663-people.groom_idle.json",
+      "sha256": "0a612408e9c0a663216c1c132a8e2d95b06fa97ec40cee518a533245186299e4",
+      "bytes": 563,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/meshanim/people.ice_idle.json",
+      "url": "assets/e46c7bf8ab4df6e6-people.ice_idle.json",
+      "sha256": "e46c7bf8ab4df6e6726d38ef42938dd945010fba29fbf5ce7e9d663c2bea989a",
+      "bytes": 565,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/meshanim/people.ice_lick.json",
+      "url": "assets/d087f68bdcfe029b-people.ice_lick.json",
+      "sha256": "d087f68bdcfe029bcdf26607d34831324c70c450ac0a1b608f007f5e4b9caffa",
+      "bytes": 561,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/meshanim/people.ice_show.json",
+      "url": "assets/64f7d9a915e97c64-people.ice_show.json",
+      "sha256": "64f7d9a915e97c644fd1cea74c3b52e1860ebaf2e1475cccd915c433bc9b3a44",
+      "bytes": 563,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/meshanim/people.tourist_eat.json",
+      "url": "assets/e672e11ef3ef9038-people.tourist_eat.json",
+      "sha256": "e672e11ef3ef9038403843989c6fd2bef57d1ecb3a577502e08d76f7e1bae631",
+      "bytes": 568,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/meshanim/people.tourist_map.json",
+      "url": "assets/7cc4f9ee350cba9c-people.tourist_map.json",
+      "sha256": "7cc4f9ee350cba9cdf6a8d38a0a7e3db1521a14839ceaf01e6a005505195788f",
+      "bytes": 565,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/meshanim/pigeon.pigeon_carry_idle.json",
+      "url": "assets/3c42cfaebe8f5f9f-pigeon.pigeon_carry_idle.json",
+      "sha256": "3c42cfaebe8f5f9fcab05b28065f4627e52666179c13cae0854b24ad0c6c38b2",
+      "bytes": 664,
+      "groups": [
+        "results",
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial",
+        "level:level2"
+      ]
+    },
+    {
+      "path": "/assets/meshanim/pigeon.pigeon_idle_01.json",
+      "url": "assets/98614f9f395ba9e1-pigeon.pigeon_idle_01.json",
+      "sha256": "98614f9f395ba9e11a0d54fc8520f6f96c8f5832ec758fbe0ca5a2ae77d67c5c",
+      "bytes": 657,
+      "groups": [
+        "results",
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial",
+        "level:level2"
+      ]
+    },
+    {
+      "path": "/assets/meshanim/pigeon.pigeon_idle_02.json",
+      "url": "assets/8c540ac90754b523-pigeon.pigeon_idle_02.json",
+      "sha256": "8c540ac90754b52357ee104ee8337dcd5c5bf67e817a4986a230c929c5e6420a",
+      "bytes": 656,
+      "groups": [
+        "results",
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial",
+        "level:level2"
+      ]
+    },
+    {
+      "path": "/assets/meshanim/pigeon.pigeon_idle_03.json",
+      "url": "assets/b938fba0f0dc0ab8-pigeon.pigeon_idle_03.json",
+      "sha256": "b938fba0f0dc0ab898a703639acf9974fdf8668f0a17319568338b821534ad0b",
+      "bytes": 653,
+      "groups": [
+        "results",
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial",
+        "level:level2"
+      ]
+    },
+    {
+      "path": "/assets/meshanim/pigeon.pigeon_pose_01.json",
+      "url": "assets/c60b686d4d446163-pigeon.pigeon_pose_01.json",
+      "sha256": "c60b686d4d446163e9c616863eac689dbe7f593b6462bcaa417db2d512a15c52",
+      "bytes": 653,
+      "groups": [
+        "results",
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial",
+        "level:level2"
+      ]
+    },
+    {
+      "path": "/assets/meshanim/pigeon.pigeon_pose_02.json",
+      "url": "assets/8b2b17939d08971a-pigeon.pigeon_pose_02.json",
+      "sha256": "8b2b17939d08971a6ae8131af30f34e5e4fa0ff77ee90b677828f1926beab9bb",
+      "bytes": 661,
+      "groups": [
+        "results",
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial",
+        "level:level2"
+      ]
+    },
+    {
+      "path": "/assets/meshanim/pigeon.pigeon_pose_03.json",
+      "url": "assets/63612798e7fe02be-pigeon.pigeon_pose_03.json",
+      "sha256": "63612798e7fe02be4e92f9386b4001adbdec7f9fc7967bf93c6ac0546e676de8",
+      "bytes": 660,
+      "groups": [
+        "results",
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial",
+        "level:level2"
+      ]
+    },
+    {
+      "path": "/assets/meshanim/reactions.pigeon_purr_01.json",
+      "url": "assets/8cedc93c8e22b1f6-reactions.pigeon_purr_01.json",
+      "sha256": "8cedc93c8e22b1f6471af36801d8e396f7ca332b9383562294d99a2b1bfeb1fc",
+      "bytes": 664,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/meshanim/reactions.pigeon_purr_02.json",
+      "url": "assets/d1fb15477b2cc311-reactions.pigeon_purr_02.json",
+      "sha256": "d1fb15477b2cc311671ebc1b882f27380132643f5a9fd7a3130f4f9c165b1c72",
+      "bytes": 663,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/meshanim/tour.selfie_idle.json",
+      "url": "assets/51c61d1af44b500e-tour.selfie_idle.json",
+      "sha256": "51c61d1af44b500e987b9d07c3233f82687a15a0af71cbe7be81ff57febf60df",
+      "bytes": 560,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/assets/parallax/city.webp",
+      "url": "assets/ca2ad701ba2c9075-city.webp",
+      "sha256": "ca2ad701ba2c90751f3e2153c53d793e910fcb512c38086f0e7ffb5e52abf1a4",
+      "bytes": 171474,
+      "width": 1680,
+      "height": 640,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/parallax/middle.webp",
+      "url": "assets/c6c7a2955ea95287-middle.webp",
+      "sha256": "c6c7a2955ea95287f3c4873f19b9722b49a6c6e0a4f2f47894a26e7345c94b92",
+      "bytes": 221878,
+      "width": 1360,
+      "height": 640,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/parallax/sky.webp",
+      "url": "assets/55913b8dfa6edea0-sky.webp",
+      "sha256": "55913b8dfa6edea0f8f25092304d3fd20df2613780398eb4ee1c29d8cbec0c89",
+      "bytes": 71426,
+      "width": 3000,
+      "height": 1080,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/assets/rigs/pigeon.json",
+      "url": "assets/1e093097baae6604-pigeon.json",
+      "sha256": "1e093097baae6604a7e521ae98e95494d317d7ffe767452a98d6ecd9dce40f3e",
+      "bytes": 2829,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial",
+        "level:level2"
+      ]
+    },
+    {
+      "path": "/assets/strips/strip_level1_00.webp",
+      "url": "assets/d11c254ede056261-strip_level1_00.webp",
+      "sha256": "d11c254ede056261e839105604acdce5666084a6c6323eef9ecfff461d1654d7",
+      "bytes": 267066,
+      "width": 2048,
+      "height": 1080,
+      "groups": []
+    },
+    {
+      "path": "/assets/strips/strip_level1_01.webp",
+      "url": "assets/02d3a654b4be1bd2-strip_level1_01.webp",
+      "sha256": "02d3a654b4be1bd2526d8fe2e0a1081a7e3b6018d4dccacd7909d43081d5e888",
+      "bytes": 252464,
+      "width": 2048,
+      "height": 1080,
+      "groups": []
+    },
+    {
+      "path": "/assets/strips/strip_level1_02.webp",
+      "url": "assets/c668223dddfb385a-strip_level1_02.webp",
+      "sha256": "c668223dddfb385a243608a36757ea54360f20e898414687837a8d3bf53294a6",
+      "bytes": 303030,
+      "width": 2048,
+      "height": 1080,
+      "groups": []
+    },
+    {
+      "path": "/assets/strips/strip_level1_03.webp",
+      "url": "assets/98422fc91a9fc13f-strip_level1_03.webp",
+      "sha256": "98422fc91a9fc13f3cac6f66141c2394af215eba2eb7c0964db669a0ee9f518f",
+      "bytes": 270044,
+      "width": 2048,
+      "height": 1080,
+      "groups": []
+    },
+    {
+      "path": "/assets/strips/strip_level1_04.webp",
+      "url": "assets/910f65008fcdee97-strip_level1_04.webp",
+      "sha256": "910f65008fcdee97e00f2d878e9088c43ff710d2ad14b6f9ff8efd44282d4f6d",
+      "bytes": 286214,
+      "width": 2048,
+      "height": 1080,
+      "groups": []
+    },
+    {
+      "path": "/assets/strips/strip_level1_05.webp",
+      "url": "assets/61e009b820a11674-strip_level1_05.webp",
+      "sha256": "61e009b820a11674d2c0a4173165b8303ad91ca8673774a40caaa7b9ae37ed73",
+      "bytes": 227722,
+      "width": 2048,
+      "height": 1080,
+      "groups": []
+    },
+    {
+      "path": "/assets/strips/strip_level1_06.webp",
+      "url": "assets/17723f1b965959b4-strip_level1_06.webp",
+      "sha256": "17723f1b965959b43cf0302ad74ac5b8485cd47b7f9a6cb5ee68859884efc892",
+      "bytes": 216244,
+      "width": 2048,
+      "height": 1080,
+      "groups": []
+    },
+    {
+      "path": "/assets/strips/strip_level1_07.webp",
+      "url": "assets/c9d49a69e8a90880-strip_level1_07.webp",
+      "sha256": "c9d49a69e8a9088035fed7e6d543a4b018cc6ff3d900fe08d307659fed03673b",
+      "bytes": 286104,
+      "width": 2048,
+      "height": 1080,
+      "groups": []
+    },
+    {
+      "path": "/assets/strips/strip_level1_08.webp",
+      "url": "assets/7949146cc237439e-strip_level1_08.webp",
+      "sha256": "7949146cc237439e9c900b9e2e11546c82efe2d97253ba64f57af4e2765f3ee2",
+      "bytes": 162652,
+      "width": 716,
+      "height": 1080,
+      "groups": []
+    },
+    {
+      "path": "/assets/strips/strip_level1_win_00.webp",
+      "url": "assets/8e0bd12697ea204b-strip_level1_win_00.webp",
+      "sha256": "8e0bd12697ea204be8c09c617c4b5a12040f6e40fddf71751d15d1aca189b23e",
+      "bytes": 567704,
+      "width": 2048,
+      "height": 1080,
+      "groups": [
+        "level:level1.win"
+      ]
+    },
+    {
+      "path": "/assets/strips/strip_level1_win_01.webp",
+      "url": "assets/551c2aa2f4e14e4e-strip_level1_win_01.webp",
+      "sha256": "551c2aa2f4e14e4ecdaa27eeb802b033f8f58a8aed11561fd0add594d030ecf0",
+      "bytes": 601150,
+      "width": 2048,
+      "height": 1080,
+      "groups": [
+        "level:level1.win"
+      ]
+    },
+    {
+      "path": "/assets/strips/strip_level1_win_02.webp",
+      "url": "assets/41fe101eeaa2aa79-strip_level1_win_02.webp",
+      "sha256": "41fe101eeaa2aa79eeebea06eb8f0439b8e3f0d19fbd99c7b2351e002e02d3a8",
+      "bytes": 660408,
+      "width": 2048,
+      "height": 1080,
+      "groups": [
+        "level:level1.win"
+      ]
+    },
+    {
+      "path": "/assets/strips/strip_level1_win_03.webp",
+      "url": "assets/47737fdd7aa9ae17-strip_level1_win_03.webp",
+      "sha256": "47737fdd7aa9ae17cc48c7e0395a0d6d2377809ec66ea88b3f9d7fe92e68d5b7",
+      "bytes": 579776,
+      "width": 2048,
+      "height": 1080,
+      "groups": [
+        "level:level1.win"
+      ]
+    },
+    {
+      "path": "/assets/strips/strip_level1_win_04.webp",
+      "url": "assets/bea6c05ac4c5d8ce-strip_level1_win_04.webp",
+      "sha256": "bea6c05ac4c5d8ce59a0a08f527bdf2b429b886bcb3d84ec5457e0a4536a541c",
+      "bytes": 531470,
+      "width": 2048,
+      "height": 1080,
+      "groups": [
+        "level:level1.win"
+      ]
+    },
+    {
+      "path": "/assets/strips/strip_level1_win_05.webp",
+      "url": "assets/b09f486dc2b01731-strip_level1_win_05.webp",
+      "sha256": "b09f486dc2b0173127688d925311c858f3435a1f418edd44bf71139139bd29a2",
+      "bytes": 581834,
+      "width": 2048,
+      "height": 1080,
+      "groups": [
+        "level:level1.win"
+      ]
+    },
+    {
+      "path": "/assets/strips/strip_level1_win_06.webp",
+      "url": "assets/f14e19055c100508-strip_level1_win_06.webp",
+      "sha256": "f14e19055c1005086bbd71387af33e912e5d9537026fb095c04d029973677c86",
+      "bytes": 519318,
+      "width": 2048,
+      "height": 1080,
+      "groups": [
+        "level:level1.win"
+      ]
+    },
+    {
+      "path": "/assets/strips/strip_level1_win_07.webp",
+      "url": "assets/c2c211d572a265ba-strip_level1_win_07.webp",
+      "sha256": "c2c211d572a265ba4c2a27721ff75eccbbf0b46b18fbed79c40fa47d3cf81538",
+      "bytes": 583972,
+      "width": 2048,
+      "height": 1080,
+      "groups": [
+        "level:level1.win"
+      ]
+    },
+    {
+      "path": "/assets/strips/strip_level1_win_08.webp",
+      "url": "assets/13b7d51ab54f1268-strip_level1_win_08.webp",
+      "sha256": "13b7d51ab54f12683f087d5855577660e55f664e49132f4f1b3c02cb6edfbb6d",
+      "bytes": 536338,
+      "width": 2048,
+      "height": 1080,
+      "groups": [
+        "level:level1.win"
+      ]
+    },
+    {
+      "path": "/assets/strips/strip_level1_win_09.webp",
+      "url": "assets/9f7ddbbfa6c2fca3-strip_level1_win_09.webp",
+      "sha256": "9f7ddbbfa6c2fca3aa4a98faf7a5b53311850c7f0634103faaa9a76c891c5956",
+      "bytes": 544502,
+      "width": 2048,
+      "height": 1080,
+      "groups": [
+        "level:level1.win"
+      ]
+    },
+    {
+      "path": "/assets/strips/strip_level1_win_10.webp",
+      "url": "assets/9cb678b2be41a5e3-strip_level1_win_10.webp",
+      "sha256": "9cb678b2be41a5e3d12b01295ee151ec990bde25e0ea6783da0d3277dbac70a6",
+      "bytes": 629780,
+      "width": 2048,
+      "height": 1080,
+      "groups": [
+        "level:level1.win"
+      ]
+    },
+    {
+      "path": "/assets/strips/strip_level1_win_11.webp",
+      "url": "assets/3ed7ea1dc39f3676-strip_level1_win_11.webp",
+      "sha256": "3ed7ea1dc39f36768959cf314c533d2623a0cfb7e7fe37642f287f9a723f374e",
+      "bytes": 364592,
+      "width": 1245,
+      "height": 1080,
+      "groups": [
+        "level:level1.win"
+      ]
+    },
+    {
+      "path": "/assets/ui/cursor.webp",
+      "url": "assets/99ef5b37a9330de8-cursor.webp",
+      "sha256": "99ef5b37a9330de86ece613ca7b966be48086166df9db7d338b516788ed41378",
+      "bytes": 3436,
+      "width": 48,
+      "height": 48,
+      "groups": []
+    },
+    {
+      "path": "/levels/blocks.json",
+      "url": "assets/b651410c631302d5-blocks.json",
+      "sha256": "b651410c631302d5b8fd81254fa75fd6b3811dc543d892aaa251865208076c2d",
+      "bytes": 30771,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test",
+        "level:test_ladder",
+        "level:test_level1",
+        "level:test_pushprops",
+        "level:test_routes",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/levels/campaign.json",
+      "url": "assets/f4a67b1ba392bdcf-campaign.json",
+      "sha256": "f4a67b1ba392bdcf3c5fc09e45ecf00980986324666ddc8935a29a8f32ed2aca",
+      "bytes": 1834,
+      "groups": [
+        "boot"
+      ]
+    },
+    {
+      "path": "/levels/level1.json",
+      "url": "assets/4e4523815266b7bf-level1.json",
+      "sha256": "4e4523815266b7bf3edd5927fad3a0919ac9cd676712ba59c2c8c38603c8c108",
+      "bytes": 24139,
+      "groups": []
+    },
+    {
+      "path": "/levels/level1.scandal.json",
+      "url": "assets/b9ead2c86b97de98-level1.scandal.json",
+      "sha256": "b9ead2c86b97de98cf0864707152bff5510dc93978c0b6cb5e4b22c46aa2a56e",
+      "bytes": 4513,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/levels/level1.win.json",
+      "url": "assets/ba923da423811494-level1.win.json",
+      "sha256": "ba923da42381149422c95e4f51295b0ac1d145b443c2f3dd564166c4219e89b6",
+      "bytes": 10021,
+      "groups": [
+        "level:level1.win"
+      ]
+    },
+    {
+      "path": "/levels/level1_blocks.json",
+      "url": "assets/683e391fd81917f3-level1_blocks.json",
+      "sha256": "683e391fd81917f3526210aa8f1185c72d0d14036c471e8428529651ee24cec1",
+      "bytes": 579,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/levels/level1_old_blocks.json",
+      "url": "assets/b4b73bee0e66f5e4-level1_old_blocks.json",
+      "sha256": "b4b73bee0e66f5e469e6a4cd63ff36d2f21434566513428de41d21554b9ba25d",
+      "bytes": 13482,
+      "groups": [
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/levels/level2.dive.json",
+      "url": "assets/b3e92ecc6498c264-level2.dive.json",
+      "sha256": "b3e92ecc6498c2649d0a935e13f4b61daf14e656aafd4548f8f9cca5c1e16e4a",
+      "bytes": 8400,
+      "groups": [
+        "level:level2"
+      ]
+    },
+    {
+      "path": "/levels/locations/level1/hut.json",
+      "url": "assets/8429a7427a065bcd-hut.json",
+      "sha256": "8429a7427a065bcda50657ae80a795970a6d7d23e5a0d334b6bbb3ed0321ea91",
+      "bytes": 2652,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/levels/locations/level1/street.json",
+      "url": "assets/1fa2e9058288724d-street.json",
+      "sha256": "1fa2e9058288724d022e532ac0f0b1bd15b97739e8b898df7c0c831af43bafa9",
+      "bytes": 7647,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/levels/locations/test_routes/room.json",
+      "url": "assets/fd9f04d52332c1b7-room.json",
+      "sha256": "fd9f04d52332c1b7b94f61552145a70dcf797f713b7847fdd8c9f729b0d76828",
+      "bytes": 1232,
+      "groups": [
+        "level:test_routes"
+      ]
+    },
+    {
+      "path": "/levels/locations/test_routes/street.json",
+      "url": "assets/5f1935383e55c8fd-street.json",
+      "sha256": "5f1935383e55c8fdbc74b6a1c15f8e9477578862c560a46df215952089dd59f8",
+      "bytes": 3136,
+      "groups": [
+        "level:test_routes"
+      ]
+    },
+    {
+      "path": "/levels/test.json",
+      "url": "assets/430f05b78743f424-test.json",
+      "sha256": "430f05b78743f424f2a3d72c7e438ffd17ee1c6dffac03e5cd477f4ff2ae72d6",
+      "bytes": 1837,
+      "groups": [
+        "level:test"
+      ]
+    },
+    {
+      "path": "/levels/test_ladder.json",
+      "url": "assets/47d2f50edf5586e7-test_ladder.json",
+      "sha256": "47d2f50edf5586e708127aacc6a7aa0d588a8fc8ccc5a507858bf18ac88febf1",
+      "bytes": 595,
+      "groups": [
+        "level:test_ladder"
+      ]
+    },
+    {
+      "path": "/levels/test_level1_blocks.json",
+      "url": "assets/36563e1bf0ae7513-test_level1_blocks.json",
+      "sha256": "36563e1bf0ae7513235f8914aeec16084891736fe29c38d81768cc5f1b1b0f2b",
+      "bytes": 3007,
+      "groups": [
+        "level:test_level1"
+      ]
+    },
+    {
+      "path": "/levels/test_pushprops.json",
+      "url": "assets/dd9d39927bf9bdb0-test_pushprops.json",
+      "sha256": "dd9d39927bf9bdb01aec99eeb6e9fb91c46b2025d4c25113d3f5f7a8efb00f82",
+      "bytes": 866,
+      "groups": [
+        "level:test_pushprops"
+      ]
+    },
+    {
+      "path": "/levels/test_routes.json",
+      "url": "assets/6dd15f289bbea7bd-test_routes.json",
+      "sha256": "6dd15f289bbea7bd614dc46e0a2ca72b2948892f13a195c9ece4bd51203df059",
+      "bytes": 333,
+      "groups": [
+        "level:test_routes"
+      ]
+    },
+    {
+      "path": "/levels/tutorial_blocks.json",
+      "url": "assets/30e5123b20b7a02b-tutorial_blocks.json",
+      "sha256": "30e5123b20b7a02b3e47ebe9159ab96df055069506d31cdef5b3eb480dab9173",
+      "bytes": 2139,
+      "groups": [
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/scripts/can.pigeon",
+      "url": "assets/ac0888a80fc5dc1f-can.pigeon",
+      "sha256": "ac0888a80fc5dc1fa48bcb64755a1f8f8d11a347bc7bf0ab2b69c5dc5bdb0f4f",
+      "bytes": 7067,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test_level1",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/scripts/control_lever.pigeon",
+      "url": "assets/22da0663298af179-control_lever.pigeon",
+      "sha256": "22da0663298af179979337895468ed9171415db9677ece803cb9cb7d782ee075",
+      "bytes": 1181,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/scripts/crate.pigeon",
+      "url": "assets/5f5da0ce203212b3-crate.pigeon",
+      "sha256": "5f5da0ce203212b3a0cf858ded744cacd81ed94f9a379b1743d28272e6020d51",
+      "bytes": 1192,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/scripts/dog.pigeon",
+      "url": "assets/64013168e6c0ce09-dog.pigeon",
+      "sha256": "64013168e6c0ce099168e575ce464760ab02ddf52957ab4b0abedafab4e8c30b",
+      "bytes": 4750,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/scripts/door_push.pigeon",
+      "url": "assets/95d9d4db31c135ef-door_push.pigeon",
+      "sha256": "95d9d4db31c135effca8191a935b0074a7dd5ae38b54b66461f58aeb2187f9f4",
+      "bytes": 231,
+      "groups": []
+    },
+    {
+      "path": "/scripts/feeder.pigeon",
+      "url": "assets/b1c6d16b44de30cd-feeder.pigeon",
+      "sha256": "b1c6d16b44de30cd7df58ecc32074dd2bd0488f4c89e7122220f50b8a41ba33e",
+      "bytes": 3549,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/scripts/food_rival.pigeon",
+      "url": "assets/7f0fab9ccf75ed33-food_rival.pigeon",
+      "sha256": "7f0fab9ccf75ed331b2dd72c3857dc4db5cd6d9e3b5501169910771e8aae0fc6",
+      "bytes": 2448,
+      "groups": [
+        "level:level1",
+        "level:test_level1"
+      ]
+    },
+    {
+      "path": "/scripts/gang.pigeon",
+      "url": "assets/96d30f6047a70b07-gang.pigeon",
+      "sha256": "96d30f6047a70b07ec63a537df7deceea6d8b193af9a7eb64e96377f9cbd8570",
+      "bytes": 7056,
+      "groups": [
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/scripts/gang_kid.pigeon",
+      "url": "assets/169b47dd657eeef0-gang_kid.pigeon",
+      "sha256": "169b47dd657eeef018b82d6513f3a029a5f6d830e7acc4bd9d92e4794dd3cc9a",
+      "bytes": 6355,
+      "groups": [
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/scripts/garage_box.pigeon",
+      "url": "assets/2fcdb79a33935f84-garage_box.pigeon",
+      "sha256": "2fcdb79a33935f8436c2ec49d623e7a2046e858dbb88c206af4b3d2be7785698",
+      "bytes": 2312,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/scripts/garage_shelf.pigeon",
+      "url": "assets/4edbdbe1acca416c-garage_shelf.pigeon",
+      "sha256": "4edbdbe1acca416c67d7ba20fd30793e6f3ce474b579e72a6b3508f6d5a113ad",
+      "bytes": 1186,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/scripts/granny.pigeon",
+      "url": "assets/9f6d15da7c83555d-granny.pigeon",
+      "sha256": "9f6d15da7c83555d2779c85a4e5af78415d00490f7a620cce5a175ce1edfe3f4",
+      "bytes": 20903,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/scripts/granny_intro.pigeon",
+      "url": "assets/0f85de73398bded4-granny_intro.pigeon",
+      "sha256": "0f85de73398bded4d876faf17c6caba0e79d1a3283bb0a2d32760b818cccac35",
+      "bytes": 980,
+      "groups": [
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/scripts/guide.pigeon",
+      "url": "assets/61d000de3efda449-guide.pigeon",
+      "sha256": "61d000de3efda449dac1fcf26d48fcd657b1e99936104a4a5bbbf029d4425232",
+      "bytes": 5480,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/scripts/homie.pigeon",
+      "url": "assets/4220e2d0ebfd9790-homie.pigeon",
+      "sha256": "4220e2d0ebfd9790853468d76ffe524a576979855aff10e44a2ecb63c4828b6b",
+      "bytes": 2685,
+      "groups": []
+    },
+    {
+      "path": "/scripts/hut_close.pigeon",
+      "url": "assets/ffb0f517cc0eba54-hut_close.pigeon",
+      "sha256": "ffb0f517cc0eba548c235e4a786a731c3b49061f9e52988c10eea69ee7397590",
+      "bytes": 335,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/scripts/hut_door.pigeon",
+      "url": "assets/a3e2f93f22016851-hut_door.pigeon",
+      "sha256": "a3e2f93f22016851ec7fc0baabb9c6521fefda8a771c97beccbe066826d060ea",
+      "bytes": 1357,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/scripts/hut_enter.pigeon",
+      "url": "assets/a4a9cda860c28080-hut_enter.pigeon",
+      "sha256": "a4a9cda860c2808095c7f8e42ee0f1f935e33ff7cccdc395fcd1a0204ae26b1b",
+      "bytes": 501,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/scripts/hut_exit.pigeon",
+      "url": "assets/fe416a25b1f2f104-hut_exit.pigeon",
+      "sha256": "fe416a25b1f2f104c53bf36ffbef6f0ac0682b4a36126ca136aea8d7b2b3c3e8",
+      "bytes": 435,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/scripts/hut_exit_door.pigeon",
+      "url": "assets/15a776fffebd3af8-hut_exit_door.pigeon",
+      "sha256": "15a776fffebd3af85643813aeb8d50bbef1a87182ed0728fa6b963216c3c28f1",
+      "bytes": 731,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/scripts/hut_lamp.pigeon",
+      "url": "assets/6a1db2cc61099d2f-hut_lamp.pigeon",
+      "sha256": "6a1db2cc61099d2f6e7d9af2cbb5259343aa98ef375576b604d39ff39a3fb352",
+      "bytes": 1878,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/scripts/hut_light_switch.pigeon",
+      "url": "assets/b1954aaa0245abcd-hut_light_switch.pigeon",
+      "sha256": "b1954aaa0245abcdb364a25d12fa790fd76fbabd202e460f0311197bfd0202d9",
+      "bytes": 1391,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/scripts/hut_service.pigeon",
+      "url": "assets/59a2004030b343ec-hut_service.pigeon",
+      "sha256": "59a2004030b343ec66dd48537147e6e895d2b329ae2caff9e0be2d8b0c8eb892",
+      "bytes": 180,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/scripts/kid.pigeon",
+      "url": "assets/38f1a727e715a1e2-kid.pigeon",
+      "sha256": "38f1a727e715a1e2398409bdd30afd2d71fd1c4e12ea84b9756d159731d5efe3",
+      "bytes": 4602,
+      "groups": [
+        "level:level1.win"
+      ]
+    },
+    {
+      "path": "/scripts/level1.pigeon",
+      "url": "assets/c4bd783801ecea51-level1.pigeon",
+      "sha256": "c4bd783801ecea51263ff77eeb13a77557c870bb6718908dfaea3d1894b5151b",
+      "bytes": 1134,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/scripts/level1_granny_intro.pigeon",
+      "url": "assets/b174ea07aee30728-level1_granny_intro.pigeon",
+      "sha256": "b174ea07aee3072808748550d1f702181dd931bcbefbc75fb42cf3035f999e17",
+      "bytes": 367,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/scripts/level1_old.pigeon",
+      "url": "assets/767a0f79d875b6e0-level1_old.pigeon",
+      "sha256": "767a0f79d875b6e0a5e52e16efc71f5eb688d6f420dbda16b1091aaf77513334",
+      "bytes": 5119,
+      "groups": [
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/scripts/lib/common.pigeon",
+      "url": "assets/98e92c7acb9a16e5-common.pigeon",
+      "sha256": "98e92c7acb9a16e54ebd3583b5ff8afb597391c770366ec34e645f96239a4430",
+      "bytes": 790,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/scripts/lib/props.pigeon",
+      "url": "assets/1d14fe79571ebba5-props.pigeon",
+      "sha256": "1d14fe79571ebba55730973d5e36012a1a952ac3df784dc3f327238f8ab6372c",
+      "bytes": 1391,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test_level1",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/scripts/lib/retaliation.pigeon",
+      "url": "assets/80160bb747de733c-retaliation.pigeon",
+      "sha256": "80160bb747de733c44f6410b6da0529c05ab9514da81a9128d5c5f8ea6785add",
+      "bytes": 2275,
+      "groups": [
+        "level:level1",
+        "level:level1.win",
+        "level:level1_old",
+        "level:test_level1",
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/scripts/mentor.pigeon",
+      "url": "assets/9cb5cd0569dce335-mentor.pigeon",
+      "sha256": "9cb5cd0569dce335c059cfb08aad0bdc0e2c0aaf7ee9908263fc3fc1092ae392",
+      "bytes": 7360,
+      "groups": [
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/scripts/notice_board.pigeon",
+      "url": "assets/488851180ec1fb1b-notice_board.pigeon",
+      "sha256": "488851180ec1fb1b0b7258d3f4e8356e24b0d27cfc42a4643ad34f7805f04221",
+      "bytes": 1395,
+      "groups": []
+    },
+    {
+      "path": "/scripts/pakhan.pigeon",
+      "url": "assets/985c1ce3e8fd5953-pakhan.pigeon",
+      "sha256": "985c1ce3e8fd59536e56367b983e5aba99a7081c2a75bcfb7658d98faaa3fba8",
+      "bytes": 5078,
+      "groups": [
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/scripts/paper_bag.pigeon",
+      "url": "assets/3d41e490ed857ef5-paper_bag.pigeon",
+      "sha256": "3d41e490ed857ef52ee66271d0be1cf1cb35a7b91a2f23ea7441024b6aeafcd1",
+      "bytes": 886,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/scripts/park_jerk.pigeon",
+      "url": "assets/3ec0967c0b92ab39-park_jerk.pigeon",
+      "sha256": "3ec0967c0b92ab390fdde5ebe796e75b5306ce20b064e58bdb7152543ad729eb",
+      "bytes": 26653,
+      "groups": []
+    },
+    {
+      "path": "/scripts/passerby.pigeon",
+      "url": "assets/0d5e5ed591d1f232-passerby.pigeon",
+      "sha256": "0d5e5ed591d1f23215eb7b17dfb2be4cb8b13ffe455d952532d7ecc6bd2af380",
+      "bytes": 10245,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/scripts/power_box.pigeon",
+      "url": "assets/6c846614c6d12a98-power_box.pigeon",
+      "sha256": "6c846614c6d12a98ee53952e212db2b89b9707d667710ec23eb1e1e9eba1037e",
+      "bytes": 6145,
+      "groups": [
+        "level:level1",
+        "level:test_level1"
+      ]
+    },
+    {
+      "path": "/scripts/procession.pigeon",
+      "url": "assets/e0faffd7ff2df873-procession.pigeon",
+      "sha256": "e0faffd7ff2df87309b01e7087cfe218408318b62653da38e7e9d499625e340b",
+      "bytes": 10533,
+      "groups": [
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/scripts/reader.pigeon",
+      "url": "assets/99e74d6e291e5582-reader.pigeon",
+      "sha256": "99e74d6e291e5582fbe159e5268cc7ccd68ea218ec0979cd22018a5f7b3ce66f",
+      "bytes": 1774,
+      "groups": [
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/scripts/roadworks.pigeon",
+      "url": "assets/adea2e64dec35fd9-roadworks.pigeon",
+      "sha256": "adea2e64dec35fd949ef367a6e3c75753f02af0b05d1bd567625009cd08625cc",
+      "bytes": 3188,
+      "groups": [
+        "level:level1",
+        "level:test_level1"
+      ]
+    },
+    {
+      "path": "/scripts/road_worker.pigeon",
+      "url": "assets/4f05a9d5e5e4b15b-road_worker.pigeon",
+      "sha256": "4f05a9d5e5e4b15bda9fc96fb0f04125e40327e3e79e977ddb28e1af6d8917a5",
+      "bytes": 3789,
+      "groups": [
+        "level:level1",
+        "level:test_level1"
+      ]
+    },
+    {
+      "path": "/scripts/seller.pigeon",
+      "url": "assets/2f06d831ba49138c-seller.pigeon",
+      "sha256": "2f06d831ba49138ca34e372d1560e4346cf963ef35d81a3cf8cc759cb3f57e7a",
+      "bytes": 3766,
+      "groups": [
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/scripts/street_lamp.pigeon",
+      "url": "assets/784ba8b928629a72-street_lamp.pigeon",
+      "sha256": "784ba8b928629a728317f2c2813fbf86278b2508695809ebdb02a8309cf19f02",
+      "bytes": 708,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/scripts/student.pigeon",
+      "url": "assets/86618dbbda34289a-student.pigeon",
+      "sha256": "86618dbbda34289a3e9437e3428d9bb72f9b0859d66d25559a9a229b67bf5f37",
+      "bytes": 2783,
+      "groups": [
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/scripts/test_level1.pigeon",
+      "url": "assets/e77170fc87f482a0-test_level1.pigeon",
+      "sha256": "e77170fc87f482a0ecebdee1b855682981c7cb5abccb1f7e80334998ecb77a22",
+      "bytes": 138,
+      "groups": [
+        "level:test_level1"
+      ]
+    },
+    {
+      "path": "/scripts/test_level1_probe.pigeon",
+      "url": "assets/3b4d5934e398bf49-test_level1_probe.pigeon",
+      "sha256": "3b4d5934e398bf49c4fe5427ff9c9f2f650b0ad6589c5d4934e93ed44f5378a0",
+      "bytes": 498,
+      "groups": [
+        "level:test_level1"
+      ]
+    },
+    {
+      "path": "/scripts/test_location_room.pigeon",
+      "url": "assets/d9eb56e8a1691c5b-test_location_room.pigeon",
+      "sha256": "d9eb56e8a1691c5bdeb32dcf5c0268bd54d9ed0dfe40aed07a8bdb4603ee98b3",
+      "bytes": 395,
+      "groups": [
+        "level:test_routes"
+      ]
+    },
+    {
+      "path": "/scripts/tour.pigeon",
+      "url": "assets/7b387569ea81a0f8-tour.pigeon",
+      "sha256": "7b387569ea81a0f8959e37dc96d53e0806f29f61377500971419ee193f6afd2c",
+      "bytes": 13744,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/scripts/tourist.pigeon",
+      "url": "assets/219d058a6258dbaa-tourist.pigeon",
+      "sha256": "219d058a6258dbaa5e17e710e6d374ba724cf8894a8e9ac5931c08ebde17c569",
+      "bytes": 9843,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/scripts/trap.pigeon",
+      "url": "assets/31902628847903e6-trap.pigeon",
+      "sha256": "31902628847903e69a2babf5032e6690d727c90287ebb3fd811af59edeb5affd",
+      "bytes": 3920,
+      "groups": [
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/scripts/trash_bag.pigeon",
+      "url": "assets/60665dda710a32ee-trash_bag.pigeon",
+      "sha256": "60665dda710a32eef72b546a3423a33b0e752c73e3018c42854a5baff1975f4a",
+      "bytes": 1499,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/scripts/trash_can.pigeon",
+      "url": "assets/165e87e0194b6df6-trash_can.pigeon",
+      "sha256": "165e87e0194b6df61e8be9b2470bbb963387bf73a9a7feb0dabe8a7c535d8c21",
+      "bytes": 1635,
+      "groups": [
+        "level:level1",
+        "level:test_level1"
+      ]
+    },
+    {
+      "path": "/scripts/tut_clerk.pigeon",
+      "url": "assets/ca63629a72841c5e-tut_clerk.pigeon",
+      "sha256": "ca63629a72841c5ed6e91b7972e3ba40eb3fc47cc36a642eb0c8119b8b3f2519",
+      "bytes": 3428,
+      "groups": [
+        "level:tutorial"
+      ]
+    },
+    {
+      "path": "/scripts/wedding.pigeon",
+      "url": "assets/0cd1614855521e72-wedding.pigeon",
+      "sha256": "0cd1614855521e7207cf376085b4be421b076b40abfd7b645428f985908bf59c",
+      "bytes": 1899,
+      "groups": [
+        "level:level1.win",
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/scripts/wed_cake.pigeon",
+      "url": "assets/878e709fe12153bf-wed_cake.pigeon",
+      "sha256": "878e709fe12153bfc9947a402fb0c8dda8fa26f9611354a598dada331f3a400c",
+      "bytes": 932,
+      "groups": [
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/scripts/wed_member.pigeon",
+      "url": "assets/aba177dae935b32b-wed_member.pigeon",
+      "sha256": "aba177dae935b32b0261d0dc4e23502694e605d18c54bda7c26217d265111279",
+      "bytes": 4837,
+      "groups": [
+        "level:level1_old"
+      ]
+    },
+    {
+      "path": "/scripts/worker_bag.pigeon",
+      "url": "assets/addacee7df6c8310-worker_bag.pigeon",
+      "sha256": "addacee7df6c831057370d2b6ab9c202e776fe601a542b6b686fdf4cde9a46f2",
+      "bytes": 1620,
+      "groups": [
+        "level:level1"
+      ]
+    },
+    {
+      "path": "/films/mayor_paper.pigeon",
+      "url": "assets/c65c81dac9abee14-mayor_paper.pigeon",
+      "sha256": "c65c81dac9abee142e2d3f45aed4b2186d97c49bc71247ef3f4407683feba5f3",
+      "bytes": 5063,
+      "groups": [
+        "film:mayor_paper"
+      ]
+    },
+    {
+      "path": "/films/powerbox_service.pigeon",
+      "url": "assets/c4b6d6107cad4b07-powerbox_service.pigeon",
+      "sha256": "c4b6d6107cad4b07f71c4fd69927a47012b97843b0c7ca5f84e8581d3290e36b",
+      "bytes": 881,
+      "groups": [
+        "level:level1",
+        "film:powerbox_service"
+      ]
+    },
+    {
+      "path": "/locales/en.json",
+      "url": "assets/45bbf16d505ec3c3-en.json",
+      "sha256": "45bbf16d505ec3c36366941d40d052b940f5779f824f7a67ae0fb6789f97bef8",
+      "bytes": 54626,
+      "groups": [
+        "boot"
+      ]
+    },
+    {
+      "path": "/fonts/OFL-PTSerif.txt",
+      "url": "assets/ddf311c28ddf5a5a-OFL-PTSerif.txt",
+      "sha256": "ddf311c28ddf5a5ad9747649837346b67bed9d356789c3072bb27dbce49e514d",
+      "bytes": 4434,
+      "groups": [
+        "boot"
+      ]
+    },
+    {
+      "path": "/fonts/OFL-Rubik.txt",
+      "url": "assets/472cbe7c25441df6-OFL-Rubik.txt",
+      "sha256": "472cbe7c25441df63e9c7864b43eb3c0f4b3df950c66a76224e6cfe1eae843fb",
+      "bytes": 4384,
+      "groups": [
+        "boot"
+      ]
+    },
+    {
+      "path": "/fonts/GolubSerif-Bold.ttf",
+      "url": "assets/aa925f4b351740a8-GolubSerif-Bold.ttf",
+      "sha256": "aa925f4b351740a84c8b5f75272fcbb295eba9dfa726cfdff29116f0b1c66c75",
+      "bytes": 207204,
+      "groups": [
+        "boot"
+      ]
+    },
+    {
+      "path": "/fonts/GolubSerif-Italic.ttf",
+      "url": "assets/ca2a922d1b11bed2-GolubSerif-Italic.ttf",
+      "sha256": "ca2a922d1b11bed21f05c29494d950280cc3d04cb90bdfdfe05de9b029a80506",
+      "bytes": 244652,
+      "groups": [
+        "boot"
+      ]
+    },
+    {
+      "path": "/fonts/GolubSerif-Regular.ttf",
+      "url": "assets/9917cf72697c0dc9-GolubSerif-Regular.ttf",
+      "sha256": "9917cf72697c0dc955ed9f3a62984afc07b01bacb92e9fc5f7cdf46817d67940",
+      "bytes": 227024,
+      "groups": [
+        "boot"
+      ]
+    },
+    {
+      "path": "/fonts/Rubik-Variable.ttf",
+      "url": "assets/1b3a7437ba2af80e-Rubik-Variable.ttf",
+      "sha256": "1b3a7437ba2af80e465e773ed60c5036d1ba6ace492d89046dbcf18fb31e4e88",
+      "bytes": 359804,
+      "groups": [
+        "boot"
+      ]
+    }
+  ],
+  "groups": {
+    "boot": [
+      "/assets/anims.json",
+      "/assets/manifest.json",
+      "/fonts/GolubSerif-Bold.ttf",
+      "/fonts/GolubSerif-Italic.ttf",
+      "/fonts/GolubSerif-Regular.ttf",
+      "/fonts/OFL-PTSerif.txt",
+      "/fonts/OFL-Rubik.txt",
+      "/fonts/Rubik-Variable.ttf",
+      "/levels/campaign.json",
+      "/locales/en.json"
+    ],
+    "ui": [
+      "/assets/atlases/ui.json",
+      "/assets/atlases/ui.webp"
+    ],
+    "splash": [
+      "/assets/bg/illus_pigine.webp"
+    ],
+    "title:illus_title_dusk": [
+      "/assets/bg/illus_title_dusk.webp"
+    ],
+    "title:illus_title_night": [
+      "/assets/bg/illus_title_night.webp"
+    ],
+    "preview:level1": [
+      "/assets/levels/level1.webp"
+    ],
+    "preview:level_prison": [
+      "/assets/levels/level2_prison.webp"
+    ],
+    "preview:level2": [
+      "/assets/levels/level2_underwater.webp"
+    ],
+    "preview:level3": [
+      "/assets/levels/level3_christmas.webp"
+    ],
+    "preview:level4": [
+      "/assets/levels/level3_night.webp"
+    ],
+    "levels": [
+      "/assets/levels/level1.webp",
+      "/assets/levels/level2_prison.webp",
+      "/assets/levels/level2_underwater.webp",
+      "/assets/levels/level3_christmas.webp",
+      "/assets/levels/level3_night.webp"
+    ],
+    "finale": [
+      "/assets/atlases/l1_paper.json",
+      "/assets/atlases/l1_paper.webp",
+      "/assets/bg/illus_victory.webp"
+    ],
+    "results": [
+      "/assets/atlases/pigeon.json",
+      "/assets/atlases/pigeon.webp",
+      "/assets/bg/bg_courtyard.webp",
+      "/assets/flow/pigeon.json",
+      "/assets/meshanim/pigeon.pigeon_carry_idle.json",
+      "/assets/meshanim/pigeon.pigeon_idle_01.json",
+      "/assets/meshanim/pigeon.pigeon_idle_02.json",
+      "/assets/meshanim/pigeon.pigeon_idle_03.json",
+      "/assets/meshanim/pigeon.pigeon_pose_01.json",
+      "/assets/meshanim/pigeon.pigeon_pose_02.json",
+      "/assets/meshanim/pigeon.pigeon_pose_03.json"
+    ],
+    "level:level1": [
+      "/assets/atlases/ambient.json",
+      "/assets/atlases/ambient.webp",
+      "/assets/atlases/bin.json",
+      "/assets/atlases/bin.webp",
+      "/assets/atlases/bin_soiled.json",
+      "/assets/atlases/bin_soiled.webp",
+      "/assets/atlases/food_ground_v6.json",
+      "/assets/atlases/food_ground_v6.webp",
+      "/assets/atlases/garage_boxes_v3.json",
+      "/assets/atlases/garage_boxes_v3.webp",
+      "/assets/atlases/garage_boxes_v3_soiled.json",
+      "/assets/atlases/garage_boxes_v3_soiled.webp",
+      "/assets/atlases/garage_shelf_v3.json",
+      "/assets/atlases/garage_shelf_v3.webp",
+      "/assets/atlases/garage_storage.json",
+      "/assets/atlases/garage_storage.webp",
+      "/assets/atlases/garage_storage_soiled.json",
+      "/assets/atlases/garage_storage_soiled.webp",
+      "/assets/atlases/granny.json",
+      "/assets/atlases/granny.webp",
+      "/assets/atlases/granny_soiled.json",
+      "/assets/atlases/granny_soiled.webp",
+      "/assets/atlases/items.json",
+      "/assets/atlases/items.webp",
+      "/assets/atlases/kids.json",
+      "/assets/atlases/kids.webp",
+      "/assets/atlases/l1_boss.json",
+      "/assets/atlases/l1_boss.webp",
+      "/assets/atlases/l1_boss_soiled.json",
+      "/assets/atlases/l1_boss_soiled.webp",
+      "/assets/atlases/l1_cabinet_service.json",
+      "/assets/atlases/l1_cabinet_service.webp",
+      "/assets/atlases/l1_cabinet_service_soiled.json",
+      "/assets/atlases/l1_cabinet_service_soiled.webp",
+      "/assets/atlases/l1_control_lever.json",
+      "/assets/atlases/l1_control_lever.webp",
+      "/assets/atlases/l1_granny_down.json",
+      "/assets/atlases/l1_granny_down.webp",
+      "/assets/atlases/l1_home.json",
+      "/assets/atlases/l1_home.webp",
+      "/assets/atlases/l1_home_soiled.json",
+      "/assets/atlases/l1_home_soiled.webp",
+      "/assets/atlases/l1_hut.json",
+      "/assets/atlases/l1_hut.webp",
+      "/assets/atlases/l1_hut_exit_view.json",
+      "/assets/atlases/l1_hut_exit_view.webp",
+      "/assets/atlases/l1_hut_inside_away.json",
+      "/assets/atlases/l1_hut_inside_away.webp",
+      "/assets/atlases/l1_hut_inward.json",
+      "/assets/atlases/l1_hut_inward.webp",
+      "/assets/atlases/l1_hut_light.json",
+      "/assets/atlases/l1_hut_light.webp",
+      "/assets/atlases/l1_hut_room_lighting.json",
+      "/assets/atlases/l1_hut_room_lighting.webp",
+      "/assets/atlases/l1_hut_shell_view.json",
+      "/assets/atlases/l1_hut_shell_view.webp",
+      "/assets/atlases/l1_hut_view_lighting.json",
+      "/assets/atlases/l1_hut_view_lighting.webp",
+      "/assets/atlases/l1_misc.json",
+      "/assets/atlases/l1_misc.webp",
+      "/assets/atlases/l1_paper.json",
+      "/assets/atlases/l1_paper.webp",
+      "/assets/atlases/l1_roadworks.json",
+      "/assets/atlases/l1_roadworks.webp",
+      "/assets/atlases/l1_service_backdrop.json",
+      "/assets/atlases/l1_service_backdrop.webp",
+      "/assets/atlases/l1_worker.json",
+      "/assets/atlases/l1_worker.webp",
+      "/assets/atlases/l1_worker_bag.json",
+      "/assets/atlases/l1_worker_bag.webp",
+      "/assets/atlases/l1_worker_run.json",
+      "/assets/atlases/l1_worker_run.webp",
+      "/assets/atlases/l1_worker_run_soiled.json",
+      "/assets/atlases/l1_worker_run_soiled.webp",
+      "/assets/atlases/l1_worker_soiled.json",
+      "/assets/atlases/l1_worker_soiled.webp",
+      "/assets/atlases/park_tree_wide.json",
+      "/assets/atlases/park_tree_wide.webp",
+      "/assets/atlases/pigeon.json",
+      "/assets/atlases/pigeon.webp",
+      "/assets/atlases/pigeon_baton.json",
+      "/assets/atlases/pigeon_baton.webp",
+      "/assets/atlases/pigeon_electric.json",
+      "/assets/atlases/pigeon_electric.webp",
+      "/assets/atlases/pigeon_kick.json",
+      "/assets/atlases/pigeon_kick.webp",
+      "/assets/atlases/pigeon_push_front.json",
+      "/assets/atlases/pigeon_push_front.webp",
+      "/assets/atlases/pigeon_rig.json",
+      "/assets/atlases/pigeon_rig.webp",
+      "/assets/atlases/props.json",
+      "/assets/atlases/props.webp",
+      "/assets/atlases/reactions.json",
+      "/assets/atlases/reactions.webp",
+      "/assets/atlases/style_front.json",
+      "/assets/atlases/style_front.webp",
+      "/assets/atlases/style_ground.json",
+      "/assets/atlases/style_ground.webp",
+      "/assets/atlases/style_house.json",
+      "/assets/atlases/style_house.webp",
+      "/assets/atlases/style_park.json",
+      "/assets/atlases/style_park.webp",
+      "/assets/atlases/tiles.json",
+      "/assets/atlases/tiles.webp",
+      "/assets/atlases/ui.json",
+      "/assets/atlases/ui.webp",
+      "/assets/flow/ambient.json",
+      "/assets/flow/granny.json",
+      "/assets/flow/kids.json",
+      "/assets/flow/l1_cabinet_service.json",
+      "/assets/flow/l1_control_lever.json",
+      "/assets/flow/l1_granny_down.json",
+      "/assets/flow/l1_hut.json",
+      "/assets/flow/l1_hut_inside_away.json",
+      "/assets/flow/l1_hut_inward.json",
+      "/assets/flow/l1_misc.json",
+      "/assets/flow/l1_worker.json",
+      "/assets/flow/l1_worker_run.json",
+      "/assets/flow/pigeon.json",
+      "/assets/flow/pigeon_baton.json",
+      "/assets/flow/pigeon_push_front.json",
+      "/assets/flow/reactions.json",
+      "/assets/meshanim/pigeon.pigeon_carry_idle.json",
+      "/assets/meshanim/pigeon.pigeon_idle_01.json",
+      "/assets/meshanim/pigeon.pigeon_idle_02.json",
+      "/assets/meshanim/pigeon.pigeon_idle_03.json",
+      "/assets/meshanim/pigeon.pigeon_pose_01.json",
+      "/assets/meshanim/pigeon.pigeon_pose_02.json",
+      "/assets/meshanim/pigeon.pigeon_pose_03.json",
+      "/assets/meshanim/reactions.pigeon_purr_01.json",
+      "/assets/meshanim/reactions.pigeon_purr_02.json",
+      "/assets/parallax/city.webp",
+      "/assets/parallax/middle.webp",
+      "/assets/parallax/sky.webp",
+      "/assets/rigs/pigeon.json",
+      "/films/powerbox_service.pigeon",
+      "/levels/blocks.json",
+      "/levels/level1.scandal.json",
+      "/levels/level1_blocks.json",
+      "/levels/locations/level1/hut.json",
+      "/levels/locations/level1/street.json",
+      "/scripts/can.pigeon",
+      "/scripts/control_lever.pigeon",
+      "/scripts/crate.pigeon",
+      "/scripts/food_rival.pigeon",
+      "/scripts/garage_box.pigeon",
+      "/scripts/garage_shelf.pigeon",
+      "/scripts/granny.pigeon",
+      "/scripts/hut_close.pigeon",
+      "/scripts/hut_door.pigeon",
+      "/scripts/hut_enter.pigeon",
+      "/scripts/hut_exit.pigeon",
+      "/scripts/hut_exit_door.pigeon",
+      "/scripts/hut_lamp.pigeon",
+      "/scripts/hut_light_switch.pigeon",
+      "/scripts/hut_service.pigeon",
+      "/scripts/level1.pigeon",
+      "/scripts/level1_granny_intro.pigeon",
+      "/scripts/lib/props.pigeon",
+      "/scripts/lib/retaliation.pigeon",
+      "/scripts/paper_bag.pigeon",
+      "/scripts/power_box.pigeon",
+      "/scripts/road_worker.pigeon",
+      "/scripts/roadworks.pigeon",
+      "/scripts/street_lamp.pigeon",
+      "/scripts/trash_bag.pigeon",
+      "/scripts/trash_can.pigeon",
+      "/scripts/worker_bag.pigeon"
+    ],
+    "level:level1.win": [
+      "/assets/atlases/ambient.json",
+      "/assets/atlases/ambient.webp",
+      "/assets/atlases/bin.json",
+      "/assets/atlases/bin.webp",
+      "/assets/atlases/bin_soiled.json",
+      "/assets/atlases/bin_soiled.webp",
+      "/assets/atlases/dog.json",
+      "/assets/atlases/dog.webp",
+      "/assets/atlases/food_ground_v6.json",
+      "/assets/atlases/food_ground_v6.webp",
+      "/assets/atlases/garage_storage.json",
+      "/assets/atlases/garage_storage.webp",
+      "/assets/atlases/garage_storage_soiled.json",
+      "/assets/atlases/garage_storage_soiled.webp",
+      "/assets/atlases/granny.json",
+      "/assets/atlases/granny.webp",
+      "/assets/atlases/granny_soiled.json",
+      "/assets/atlases/granny_soiled.webp",
+      "/assets/atlases/items.json",
+      "/assets/atlases/items.webp",
+      "/assets/atlases/kids.json",
+      "/assets/atlases/kids.webp",
+      "/assets/atlases/l1_boss.json",
+      "/assets/atlases/l1_boss.webp",
+      "/assets/atlases/l1_boss_soiled.json",
+      "/assets/atlases/l1_boss_soiled.webp",
+      "/assets/atlases/l1_granny_down.json",
+      "/assets/atlases/l1_granny_down.webp",
+      "/assets/atlases/l1_home.json",
+      "/assets/atlases/l1_home.webp",
+      "/assets/atlases/l1_home_soiled.json",
+      "/assets/atlases/l1_home_soiled.webp",
+      "/assets/atlases/l1_misc.json",
+      "/assets/atlases/l1_misc.webp",
+      "/assets/atlases/l1_paper.json",
+      "/assets/atlases/l1_paper.webp",
+      "/assets/atlases/people.json",
+      "/assets/atlases/people.webp",
+      "/assets/atlases/pigeon.json",
+      "/assets/atlases/pigeon.webp",
+      "/assets/atlases/pigeon_baton.json",
+      "/assets/atlases/pigeon_baton.webp",
+      "/assets/atlases/pigeon_electric.json",
+      "/assets/atlases/pigeon_electric.webp",
+      "/assets/atlases/pigeon_kick.json",
+      "/assets/atlases/pigeon_kick.webp",
+      "/assets/atlases/pigeon_push_front.json",
+      "/assets/atlases/pigeon_push_front.webp",
+      "/assets/atlases/pigeon_rig.json",
+      "/assets/atlases/pigeon_rig.webp",
+      "/assets/atlases/reactions.json",
+      "/assets/atlases/reactions.webp",
+      "/assets/atlases/tour.json",
+      "/assets/atlases/tour.webp",
+      "/assets/atlases/tour2.json",
+      "/assets/atlases/tour2.webp",
+      "/assets/atlases/ui.json",
+      "/assets/atlases/ui.webp",
+      "/assets/atlases/wedding.json",
+      "/assets/atlases/wedding.webp",
+      "/assets/flow/ambient.json",
+      "/assets/flow/dog.json",
+      "/assets/flow/granny.json",
+      "/assets/flow/kids.json",
+      "/assets/flow/l1_granny_down.json",
+      "/assets/flow/l1_misc.json",
+      "/assets/flow/people.json",
+      "/assets/flow/pigeon.json",
+      "/assets/flow/pigeon_baton.json",
+      "/assets/flow/pigeon_push_front.json",
+      "/assets/flow/reactions.json",
+      "/assets/flow/tour.json",
+      "/assets/flow/tour2.json",
+      "/assets/flow/wedding.json",
+      "/assets/meshanim/people.bride_idle.json",
+      "/assets/meshanim/people.clerk_idle.json",
+      "/assets/meshanim/people.clerk_phone_01.json",
+      "/assets/meshanim/people.clerk_phone_02.json",
+      "/assets/meshanim/people.clerk_sip.json",
+      "/assets/meshanim/people.clerk_watch.json",
+      "/assets/meshanim/people.grandma_idle_01.json",
+      "/assets/meshanim/people.groom_idle.json",
+      "/assets/meshanim/people.ice_idle.json",
+      "/assets/meshanim/people.ice_lick.json",
+      "/assets/meshanim/people.ice_show.json",
+      "/assets/meshanim/people.tourist_eat.json",
+      "/assets/meshanim/people.tourist_map.json",
+      "/assets/meshanim/pigeon.pigeon_carry_idle.json",
+      "/assets/meshanim/pigeon.pigeon_idle_01.json",
+      "/assets/meshanim/pigeon.pigeon_idle_02.json",
+      "/assets/meshanim/pigeon.pigeon_idle_03.json",
+      "/assets/meshanim/pigeon.pigeon_pose_01.json",
+      "/assets/meshanim/pigeon.pigeon_pose_02.json",
+      "/assets/meshanim/pigeon.pigeon_pose_03.json",
+      "/assets/meshanim/reactions.pigeon_purr_01.json",
+      "/assets/meshanim/reactions.pigeon_purr_02.json",
+      "/assets/meshanim/tour.selfie_idle.json",
+      "/assets/parallax/city.webp",
+      "/assets/parallax/middle.webp",
+      "/assets/parallax/sky.webp",
+      "/assets/rigs/pigeon.json",
+      "/assets/strips/strip_level1_win_00.webp",
+      "/assets/strips/strip_level1_win_01.webp",
+      "/assets/strips/strip_level1_win_02.webp",
+      "/assets/strips/strip_level1_win_03.webp",
+      "/assets/strips/strip_level1_win_04.webp",
+      "/assets/strips/strip_level1_win_05.webp",
+      "/assets/strips/strip_level1_win_06.webp",
+      "/assets/strips/strip_level1_win_07.webp",
+      "/assets/strips/strip_level1_win_08.webp",
+      "/assets/strips/strip_level1_win_09.webp",
+      "/assets/strips/strip_level1_win_10.webp",
+      "/assets/strips/strip_level1_win_11.webp",
+      "/levels/blocks.json",
+      "/levels/level1.win.json",
+      "/scripts/can.pigeon",
+      "/scripts/dog.pigeon",
+      "/scripts/feeder.pigeon",
+      "/scripts/granny.pigeon",
+      "/scripts/guide.pigeon",
+      "/scripts/kid.pigeon",
+      "/scripts/lib/common.pigeon",
+      "/scripts/lib/props.pigeon",
+      "/scripts/lib/retaliation.pigeon",
+      "/scripts/passerby.pigeon",
+      "/scripts/tour.pigeon",
+      "/scripts/tourist.pigeon",
+      "/scripts/wedding.pigeon"
+    ],
+    "level:level1_old": [
+      "/assets/atlases/ambient.json",
+      "/assets/atlases/ambient.webp",
+      "/assets/atlases/bin.json",
+      "/assets/atlases/bin.webp",
+      "/assets/atlases/bin_soiled.json",
+      "/assets/atlases/bin_soiled.webp",
+      "/assets/atlases/dog.json",
+      "/assets/atlases/dog.webp",
+      "/assets/atlases/food_ground_v6.json",
+      "/assets/atlases/food_ground_v6.webp",
+      "/assets/atlases/gang.json",
+      "/assets/atlases/gang.webp",
+      "/assets/atlases/garage_storage.json",
+      "/assets/atlases/garage_storage.webp",
+      "/assets/atlases/garage_storage_soiled.json",
+      "/assets/atlases/garage_storage_soiled.webp",
+      "/assets/atlases/granny.json",
+      "/assets/atlases/granny.webp",
+      "/assets/atlases/granny_soiled.json",
+      "/assets/atlases/granny_soiled.webp",
+      "/assets/atlases/items.json",
+      "/assets/atlases/items.webp",
+      "/assets/atlases/kids.json",
+      "/assets/atlases/kids.webp",
+      "/assets/atlases/l1_boss.json",
+      "/assets/atlases/l1_boss.webp",
+      "/assets/atlases/l1_boss_soiled.json",
+      "/assets/atlases/l1_boss_soiled.webp",
+      "/assets/atlases/l1_granny_down.json",
+      "/assets/atlases/l1_granny_down.webp",
+      "/assets/atlases/l1_home.json",
+      "/assets/atlases/l1_home.webp",
+      "/assets/atlases/l1_home_soiled.json",
+      "/assets/atlases/l1_home_soiled.webp",
+      "/assets/atlases/l1_misc.json",
+      "/assets/atlases/l1_misc.webp",
+      "/assets/atlases/l1_paper.json",
+      "/assets/atlases/l1_paper.webp",
+      "/assets/atlases/l1_people.json",
+      "/assets/atlases/l1_people.webp",
+      "/assets/atlases/leaves.json",
+      "/assets/atlases/leaves.webp",
+      "/assets/atlases/park_brick.json",
+      "/assets/atlases/park_brick.webp",
+      "/assets/atlases/park_tree_wide.json",
+      "/assets/atlases/park_tree_wide.webp",
+      "/assets/atlases/people.json",
+      "/assets/atlases/people.webp",
+      "/assets/atlases/pigeon.json",
+      "/assets/atlases/pigeon.webp",
+      "/assets/atlases/pigeon_baton.json",
+      "/assets/atlases/pigeon_baton.webp",
+      "/assets/atlases/pigeon_electric.json",
+      "/assets/atlases/pigeon_electric.webp",
+      "/assets/atlases/pigeon_kick.json",
+      "/assets/atlases/pigeon_kick.webp",
+      "/assets/atlases/pigeon_push_front.json",
+      "/assets/atlases/pigeon_push_front.webp",
+      "/assets/atlases/pigeon_rig.json",
+      "/assets/atlases/pigeon_rig.webp",
+      "/assets/atlases/props.json",
+      "/assets/atlases/props.webp",
+      "/assets/atlases/reactions.json",
+      "/assets/atlases/reactions.webp",
+      "/assets/atlases/style_alley.json",
+      "/assets/atlases/style_alley.webp",
+      "/assets/atlases/style_front.json",
+      "/assets/atlases/style_front.webp",
+      "/assets/atlases/style_ground.json",
+      "/assets/atlases/style_ground.webp",
+      "/assets/atlases/style_house.json",
+      "/assets/atlases/style_house.webp",
+      "/assets/atlases/style_market.json",
+      "/assets/atlases/style_market.webp",
+      "/assets/atlases/style_park.json",
+      "/assets/atlases/style_park.webp",
+      "/assets/atlases/style_street.json",
+      "/assets/atlases/style_street.webp",
+      "/assets/atlases/style_yard.json",
+      "/assets/atlases/style_yard.webp",
+      "/assets/atlases/tiles.json",
+      "/assets/atlases/tiles.webp",
+      "/assets/atlases/tour.json",
+      "/assets/atlases/tour.webp",
+      "/assets/atlases/tour2.json",
+      "/assets/atlases/tour2.webp",
+      "/assets/atlases/ui.json",
+      "/assets/atlases/ui.webp",
+      "/assets/atlases/wedding.json",
+      "/assets/atlases/wedding.webp",
+      "/assets/flow/ambient.json",
+      "/assets/flow/dog.json",
+      "/assets/flow/granny.json",
+      "/assets/flow/kids.json",
+      "/assets/flow/l1_granny_down.json",
+      "/assets/flow/l1_misc.json",
+      "/assets/flow/l1_people.json",
+      "/assets/flow/people.json",
+      "/assets/flow/pigeon.json",
+      "/assets/flow/pigeon_baton.json",
+      "/assets/flow/pigeon_push_front.json",
+      "/assets/flow/reactions.json",
+      "/assets/flow/tour.json",
+      "/assets/flow/tour2.json",
+      "/assets/flow/wedding.json",
+      "/assets/meshanim/l1_people.reader_read_01.json",
+      "/assets/meshanim/l1_people.reader_read_02.json",
+      "/assets/meshanim/l1_people.seller_idle.json",
+      "/assets/meshanim/l1_people.student_chew.json",
+      "/assets/meshanim/l1_people.student_eat.json",
+      "/assets/meshanim/l1_people.student_phone.json",
+      "/assets/meshanim/people.bride_idle.json",
+      "/assets/meshanim/people.clerk_idle.json",
+      "/assets/meshanim/people.clerk_phone_01.json",
+      "/assets/meshanim/people.clerk_phone_02.json",
+      "/assets/meshanim/people.clerk_sip.json",
+      "/assets/meshanim/people.clerk_watch.json",
+      "/assets/meshanim/people.grandma_idle_01.json",
+      "/assets/meshanim/people.groom_idle.json",
+      "/assets/meshanim/people.ice_idle.json",
+      "/assets/meshanim/people.ice_lick.json",
+      "/assets/meshanim/people.ice_show.json",
+      "/assets/meshanim/people.tourist_eat.json",
+      "/assets/meshanim/people.tourist_map.json",
+      "/assets/meshanim/pigeon.pigeon_carry_idle.json",
+      "/assets/meshanim/pigeon.pigeon_idle_01.json",
+      "/assets/meshanim/pigeon.pigeon_idle_02.json",
+      "/assets/meshanim/pigeon.pigeon_idle_03.json",
+      "/assets/meshanim/pigeon.pigeon_pose_01.json",
+      "/assets/meshanim/pigeon.pigeon_pose_02.json",
+      "/assets/meshanim/pigeon.pigeon_pose_03.json",
+      "/assets/meshanim/reactions.pigeon_purr_01.json",
+      "/assets/meshanim/reactions.pigeon_purr_02.json",
+      "/assets/meshanim/tour.selfie_idle.json",
+      "/assets/parallax/city.webp",
+      "/assets/parallax/middle.webp",
+      "/assets/parallax/sky.webp",
+      "/assets/rigs/pigeon.json",
+      "/levels/blocks.json",
+      "/levels/level1_old_blocks.json",
+      "/scripts/can.pigeon",
+      "/scripts/dog.pigeon",
+      "/scripts/feeder.pigeon",
+      "/scripts/gang.pigeon",
+      "/scripts/gang_kid.pigeon",
+      "/scripts/granny.pigeon",
+      "/scripts/granny_intro.pigeon",
+      "/scripts/guide.pigeon",
+      "/scripts/level1_old.pigeon",
+      "/scripts/lib/common.pigeon",
+      "/scripts/lib/props.pigeon",
+      "/scripts/lib/retaliation.pigeon",
+      "/scripts/pakhan.pigeon",
+      "/scripts/passerby.pigeon",
+      "/scripts/procession.pigeon",
+      "/scripts/reader.pigeon",
+      "/scripts/seller.pigeon",
+      "/scripts/student.pigeon",
+      "/scripts/tour.pigeon",
+      "/scripts/tourist.pigeon",
+      "/scripts/trap.pigeon",
+      "/scripts/wed_cake.pigeon",
+      "/scripts/wed_member.pigeon",
+      "/scripts/wedding.pigeon"
+    ],
+    "level:test": [
+      "/assets/atlases/ambient.json",
+      "/assets/atlases/ambient.webp",
+      "/assets/atlases/bin.json",
+      "/assets/atlases/bin.webp",
+      "/assets/atlases/bin_soiled.json",
+      "/assets/atlases/bin_soiled.webp",
+      "/assets/atlases/food_ground_v6.json",
+      "/assets/atlases/food_ground_v6.webp",
+      "/assets/atlases/garage_storage.json",
+      "/assets/atlases/garage_storage.webp",
+      "/assets/atlases/garage_storage_soiled.json",
+      "/assets/atlases/garage_storage_soiled.webp",
+      "/assets/atlases/granny.json",
+      "/assets/atlases/granny.webp",
+      "/assets/atlases/granny_soiled.json",
+      "/assets/atlases/granny_soiled.webp",
+      "/assets/atlases/items.json",
+      "/assets/atlases/items.webp",
+      "/assets/atlases/kids.json",
+      "/assets/atlases/kids.webp",
+      "/assets/atlases/l1_misc.json",
+      "/assets/atlases/l1_misc.webp",
+      "/assets/atlases/l1_paper.json",
+      "/assets/atlases/l1_paper.webp",
+      "/assets/atlases/pigeon.json",
+      "/assets/atlases/pigeon.webp",
+      "/assets/atlases/pigeon_baton.json",
+      "/assets/atlases/pigeon_baton.webp",
+      "/assets/atlases/pigeon_electric.json",
+      "/assets/atlases/pigeon_electric.webp",
+      "/assets/atlases/pigeon_kick.json",
+      "/assets/atlases/pigeon_kick.webp",
+      "/assets/atlases/pigeon_push_front.json",
+      "/assets/atlases/pigeon_push_front.webp",
+      "/assets/atlases/pigeon_rig.json",
+      "/assets/atlases/pigeon_rig.webp",
+      "/assets/atlases/reactions.json",
+      "/assets/atlases/reactions.webp",
+      "/assets/atlases/ui.json",
+      "/assets/atlases/ui.webp",
+      "/assets/flow/ambient.json",
+      "/assets/flow/granny.json",
+      "/assets/flow/kids.json",
+      "/assets/flow/l1_misc.json",
+      "/assets/flow/pigeon.json",
+      "/assets/flow/pigeon_baton.json",
+      "/assets/flow/pigeon_push_front.json",
+      "/assets/flow/reactions.json",
+      "/assets/meshanim/pigeon.pigeon_carry_idle.json",
+      "/assets/meshanim/pigeon.pigeon_idle_01.json",
+      "/assets/meshanim/pigeon.pigeon_idle_02.json",
+      "/assets/meshanim/pigeon.pigeon_idle_03.json",
+      "/assets/meshanim/pigeon.pigeon_pose_01.json",
+      "/assets/meshanim/pigeon.pigeon_pose_02.json",
+      "/assets/meshanim/pigeon.pigeon_pose_03.json",
+      "/assets/meshanim/reactions.pigeon_purr_01.json",
+      "/assets/meshanim/reactions.pigeon_purr_02.json",
+      "/assets/parallax/city.webp",
+      "/assets/parallax/middle.webp",
+      "/assets/parallax/sky.webp",
+      "/assets/rigs/pigeon.json",
+      "/levels/blocks.json",
+      "/levels/test.json"
+    ],
+    "level:test_ladder": [
+      "/assets/atlases/ambient.json",
+      "/assets/atlases/ambient.webp",
+      "/assets/atlases/bin.json",
+      "/assets/atlases/bin.webp",
+      "/assets/atlases/bin_soiled.json",
+      "/assets/atlases/bin_soiled.webp",
+      "/assets/atlases/food_ground_v6.json",
+      "/assets/atlases/food_ground_v6.webp",
+      "/assets/atlases/garage_storage.json",
+      "/assets/atlases/garage_storage.webp",
+      "/assets/atlases/garage_storage_soiled.json",
+      "/assets/atlases/garage_storage_soiled.webp",
+      "/assets/atlases/granny.json",
+      "/assets/atlases/granny.webp",
+      "/assets/atlases/granny_soiled.json",
+      "/assets/atlases/granny_soiled.webp",
+      "/assets/atlases/items.json",
+      "/assets/atlases/items.webp",
+      "/assets/atlases/kids.json",
+      "/assets/atlases/kids.webp",
+      "/assets/atlases/l1_misc.json",
+      "/assets/atlases/l1_misc.webp",
+      "/assets/atlases/l1_paper.json",
+      "/assets/atlases/l1_paper.webp",
+      "/assets/atlases/pigeon.json",
+      "/assets/atlases/pigeon.webp",
+      "/assets/atlases/pigeon_baton.json",
+      "/assets/atlases/pigeon_baton.webp",
+      "/assets/atlases/pigeon_electric.json",
+      "/assets/atlases/pigeon_electric.webp",
+      "/assets/atlases/pigeon_kick.json",
+      "/assets/atlases/pigeon_kick.webp",
+      "/assets/atlases/pigeon_ladder_rear_v4.json",
+      "/assets/atlases/pigeon_ladder_rear_v4.webp",
+      "/assets/atlases/pigeon_push_front.json",
+      "/assets/atlases/pigeon_push_front.webp",
+      "/assets/atlases/pigeon_rig.json",
+      "/assets/atlases/pigeon_rig.webp",
+      "/assets/atlases/reactions.json",
+      "/assets/atlases/reactions.webp",
+      "/assets/atlases/sewer_ladder_v1.json",
+      "/assets/atlases/sewer_ladder_v1.webp",
+      "/assets/atlases/ui.json",
+      "/assets/atlases/ui.webp",
+      "/assets/flow/ambient.json",
+      "/assets/flow/granny.json",
+      "/assets/flow/kids.json",
+      "/assets/flow/l1_misc.json",
+      "/assets/flow/pigeon.json",
+      "/assets/flow/pigeon_baton.json",
+      "/assets/flow/pigeon_ladder_rear_v4.json",
+      "/assets/flow/pigeon_push_front.json",
+      "/assets/flow/reactions.json",
+      "/assets/meshanim/pigeon.pigeon_carry_idle.json",
+      "/assets/meshanim/pigeon.pigeon_idle_01.json",
+      "/assets/meshanim/pigeon.pigeon_idle_02.json",
+      "/assets/meshanim/pigeon.pigeon_idle_03.json",
+      "/assets/meshanim/pigeon.pigeon_pose_01.json",
+      "/assets/meshanim/pigeon.pigeon_pose_02.json",
+      "/assets/meshanim/pigeon.pigeon_pose_03.json",
+      "/assets/meshanim/reactions.pigeon_purr_01.json",
+      "/assets/meshanim/reactions.pigeon_purr_02.json",
+      "/assets/parallax/city.webp",
+      "/assets/parallax/middle.webp",
+      "/assets/parallax/sky.webp",
+      "/assets/rigs/pigeon.json",
+      "/levels/blocks.json",
+      "/levels/test_ladder.json"
+    ],
+    "level:test_level1": [
+      "/assets/atlases/ambient.json",
+      "/assets/atlases/ambient.webp",
+      "/assets/atlases/bin.json",
+      "/assets/atlases/bin.webp",
+      "/assets/atlases/bin_soiled.json",
+      "/assets/atlases/bin_soiled.webp",
+      "/assets/atlases/food_ground_v6.json",
+      "/assets/atlases/food_ground_v6.webp",
+      "/assets/atlases/garage_storage.json",
+      "/assets/atlases/garage_storage.webp",
+      "/assets/atlases/garage_storage_soiled.json",
+      "/assets/atlases/garage_storage_soiled.webp",
+      "/assets/atlases/granny.json",
+      "/assets/atlases/granny.webp",
+      "/assets/atlases/granny_soiled.json",
+      "/assets/atlases/granny_soiled.webp",
+      "/assets/atlases/items.json",
+      "/assets/atlases/items.webp",
+      "/assets/atlases/kids.json",
+      "/assets/atlases/kids.webp",
+      "/assets/atlases/l1_cabinet_service.json",
+      "/assets/atlases/l1_cabinet_service.webp",
+      "/assets/atlases/l1_cabinet_service_soiled.json",
+      "/assets/atlases/l1_cabinet_service_soiled.webp",
+      "/assets/atlases/l1_home.json",
+      "/assets/atlases/l1_home.webp",
+      "/assets/atlases/l1_home_soiled.json",
+      "/assets/atlases/l1_home_soiled.webp",
+      "/assets/atlases/l1_misc.json",
+      "/assets/atlases/l1_misc.webp",
+      "/assets/atlases/l1_paper.json",
+      "/assets/atlases/l1_paper.webp",
+      "/assets/atlases/l1_roadworks.json",
+      "/assets/atlases/l1_roadworks.webp",
+      "/assets/atlases/l1_worker.json",
+      "/assets/atlases/l1_worker.webp",
+      "/assets/atlases/l1_worker_run.json",
+      "/assets/atlases/l1_worker_run.webp",
+      "/assets/atlases/l1_worker_run_soiled.json",
+      "/assets/atlases/l1_worker_run_soiled.webp",
+      "/assets/atlases/l1_worker_soiled.json",
+      "/assets/atlases/l1_worker_soiled.webp",
+      "/assets/atlases/park_tree_wide.json",
+      "/assets/atlases/park_tree_wide.webp",
+      "/assets/atlases/pigeon.json",
+      "/assets/atlases/pigeon.webp",
+      "/assets/atlases/pigeon_baton.json",
+      "/assets/atlases/pigeon_baton.webp",
+      "/assets/atlases/pigeon_electric.json",
+      "/assets/atlases/pigeon_electric.webp",
+      "/assets/atlases/pigeon_kick.json",
+      "/assets/atlases/pigeon_kick.webp",
+      "/assets/atlases/pigeon_push_front.json",
+      "/assets/atlases/pigeon_push_front.webp",
+      "/assets/atlases/pigeon_rig.json",
+      "/assets/atlases/pigeon_rig.webp",
+      "/assets/atlases/props.json",
+      "/assets/atlases/props.webp",
+      "/assets/atlases/reactions.json",
+      "/assets/atlases/reactions.webp",
+      "/assets/atlases/style_front.json",
+      "/assets/atlases/style_front.webp",
+      "/assets/atlases/style_ground.json",
+      "/assets/atlases/style_ground.webp",
+      "/assets/atlases/style_park.json",
+      "/assets/atlases/style_park.webp",
+      "/assets/atlases/tiles.json",
+      "/assets/atlases/tiles.webp",
+      "/assets/atlases/ui.json",
+      "/assets/atlases/ui.webp",
+      "/assets/flow/ambient.json",
+      "/assets/flow/granny.json",
+      "/assets/flow/kids.json",
+      "/assets/flow/l1_cabinet_service.json",
+      "/assets/flow/l1_misc.json",
+      "/assets/flow/l1_worker.json",
+      "/assets/flow/l1_worker_run.json",
+      "/assets/flow/pigeon.json",
+      "/assets/flow/pigeon_baton.json",
+      "/assets/flow/pigeon_push_front.json",
+      "/assets/flow/reactions.json",
+      "/assets/meshanim/pigeon.pigeon_carry_idle.json",
+      "/assets/meshanim/pigeon.pigeon_idle_01.json",
+      "/assets/meshanim/pigeon.pigeon_idle_02.json",
+      "/assets/meshanim/pigeon.pigeon_idle_03.json",
+      "/assets/meshanim/pigeon.pigeon_pose_01.json",
+      "/assets/meshanim/pigeon.pigeon_pose_02.json",
+      "/assets/meshanim/pigeon.pigeon_pose_03.json",
+      "/assets/meshanim/reactions.pigeon_purr_01.json",
+      "/assets/meshanim/reactions.pigeon_purr_02.json",
+      "/assets/parallax/city.webp",
+      "/assets/parallax/middle.webp",
+      "/assets/parallax/sky.webp",
+      "/assets/rigs/pigeon.json",
+      "/levels/blocks.json",
+      "/levels/test_level1_blocks.json",
+      "/scripts/can.pigeon",
+      "/scripts/food_rival.pigeon",
+      "/scripts/lib/props.pigeon",
+      "/scripts/lib/retaliation.pigeon",
+      "/scripts/power_box.pigeon",
+      "/scripts/road_worker.pigeon",
+      "/scripts/roadworks.pigeon",
+      "/scripts/test_level1.pigeon",
+      "/scripts/test_level1_probe.pigeon",
+      "/scripts/trash_can.pigeon"
+    ],
+    "level:test_pushprops": [
+      "/assets/atlases/ambient.json",
+      "/assets/atlases/ambient.webp",
+      "/assets/atlases/bin.json",
+      "/assets/atlases/bin.webp",
+      "/assets/atlases/bin_soiled.json",
+      "/assets/atlases/bin_soiled.webp",
+      "/assets/atlases/food_ground_v6.json",
+      "/assets/atlases/food_ground_v6.webp",
+      "/assets/atlases/garage_storage.json",
+      "/assets/atlases/garage_storage.webp",
+      "/assets/atlases/garage_storage_soiled.json",
+      "/assets/atlases/garage_storage_soiled.webp",
+      "/assets/atlases/granny.json",
+      "/assets/atlases/granny.webp",
+      "/assets/atlases/granny_soiled.json",
+      "/assets/atlases/granny_soiled.webp",
+      "/assets/atlases/items.json",
+      "/assets/atlases/items.webp",
+      "/assets/atlases/kids.json",
+      "/assets/atlases/kids.webp",
+      "/assets/atlases/l1_home.json",
+      "/assets/atlases/l1_home.webp",
+      "/assets/atlases/l1_home_soiled.json",
+      "/assets/atlases/l1_home_soiled.webp",
+      "/assets/atlases/l1_misc.json",
+      "/assets/atlases/l1_misc.webp",
+      "/assets/atlases/l1_paper.json",
+      "/assets/atlases/l1_paper.webp",
+      "/assets/atlases/pigeon.json",
+      "/assets/atlases/pigeon.webp",
+      "/assets/atlases/pigeon_baton.json",
+      "/assets/atlases/pigeon_baton.webp",
+      "/assets/atlases/pigeon_electric.json",
+      "/assets/atlases/pigeon_electric.webp",
+      "/assets/atlases/pigeon_kick.json",
+      "/assets/atlases/pigeon_kick.webp",
+      "/assets/atlases/pigeon_push_front.json",
+      "/assets/atlases/pigeon_push_front.webp",
+      "/assets/atlases/pigeon_rig.json",
+      "/assets/atlases/pigeon_rig.webp",
+      "/assets/atlases/reactions.json",
+      "/assets/atlases/reactions.webp",
+      "/assets/atlases/ui.json",
+      "/assets/atlases/ui.webp",
+      "/assets/flow/ambient.json",
+      "/assets/flow/granny.json",
+      "/assets/flow/kids.json",
+      "/assets/flow/l1_misc.json",
+      "/assets/flow/pigeon.json",
+      "/assets/flow/pigeon_baton.json",
+      "/assets/flow/pigeon_push_front.json",
+      "/assets/flow/reactions.json",
+      "/assets/meshanim/pigeon.pigeon_carry_idle.json",
+      "/assets/meshanim/pigeon.pigeon_idle_01.json",
+      "/assets/meshanim/pigeon.pigeon_idle_02.json",
+      "/assets/meshanim/pigeon.pigeon_idle_03.json",
+      "/assets/meshanim/pigeon.pigeon_pose_01.json",
+      "/assets/meshanim/pigeon.pigeon_pose_02.json",
+      "/assets/meshanim/pigeon.pigeon_pose_03.json",
+      "/assets/meshanim/reactions.pigeon_purr_01.json",
+      "/assets/meshanim/reactions.pigeon_purr_02.json",
+      "/assets/parallax/city.webp",
+      "/assets/parallax/middle.webp",
+      "/assets/parallax/sky.webp",
+      "/assets/rigs/pigeon.json",
+      "/levels/blocks.json",
+      "/levels/test_pushprops.json"
+    ],
+    "level:test_routes": [
+      "/assets/atlases/ambient.json",
+      "/assets/atlases/ambient.webp",
+      "/assets/atlases/bin.json",
+      "/assets/atlases/bin.webp",
+      "/assets/atlases/bin_soiled.json",
+      "/assets/atlases/bin_soiled.webp",
+      "/assets/atlases/food_ground_v6.json",
+      "/assets/atlases/food_ground_v6.webp",
+      "/assets/atlases/garage_storage.json",
+      "/assets/atlases/garage_storage.webp",
+      "/assets/atlases/garage_storage_soiled.json",
+      "/assets/atlases/garage_storage_soiled.webp",
+      "/assets/atlases/granny.json",
+      "/assets/atlases/granny.webp",
+      "/assets/atlases/granny_soiled.json",
+      "/assets/atlases/granny_soiled.webp",
+      "/assets/atlases/items.json",
+      "/assets/atlases/items.webp",
+      "/assets/atlases/kids.json",
+      "/assets/atlases/kids.webp",
+      "/assets/atlases/l1_misc.json",
+      "/assets/atlases/l1_misc.webp",
+      "/assets/atlases/l1_paper.json",
+      "/assets/atlases/l1_paper.webp",
+      "/assets/atlases/pigeon.json",
+      "/assets/atlases/pigeon.webp",
+      "/assets/atlases/pigeon_baton.json",
+      "/assets/atlases/pigeon_baton.webp",
+      "/assets/atlases/pigeon_electric.json",
+      "/assets/atlases/pigeon_electric.webp",
+      "/assets/atlases/pigeon_kick.json",
+      "/assets/atlases/pigeon_kick.webp",
+      "/assets/atlases/pigeon_push_front.json",
+      "/assets/atlases/pigeon_push_front.webp",
+      "/assets/atlases/pigeon_rig.json",
+      "/assets/atlases/pigeon_rig.webp",
+      "/assets/atlases/props.json",
+      "/assets/atlases/props.webp",
+      "/assets/atlases/reactions.json",
+      "/assets/atlases/reactions.webp",
+      "/assets/atlases/ui.json",
+      "/assets/atlases/ui.webp",
+      "/assets/flow/ambient.json",
+      "/assets/flow/granny.json",
+      "/assets/flow/kids.json",
+      "/assets/flow/l1_misc.json",
+      "/assets/flow/pigeon.json",
+      "/assets/flow/pigeon_baton.json",
+      "/assets/flow/pigeon_push_front.json",
+      "/assets/flow/reactions.json",
+      "/assets/meshanim/pigeon.pigeon_carry_idle.json",
+      "/assets/meshanim/pigeon.pigeon_idle_01.json",
+      "/assets/meshanim/pigeon.pigeon_idle_02.json",
+      "/assets/meshanim/pigeon.pigeon_idle_03.json",
+      "/assets/meshanim/pigeon.pigeon_pose_01.json",
+      "/assets/meshanim/pigeon.pigeon_pose_02.json",
+      "/assets/meshanim/pigeon.pigeon_pose_03.json",
+      "/assets/meshanim/reactions.pigeon_purr_01.json",
+      "/assets/meshanim/reactions.pigeon_purr_02.json",
+      "/assets/parallax/city.webp",
+      "/assets/parallax/middle.webp",
+      "/assets/parallax/sky.webp",
+      "/assets/rigs/pigeon.json",
+      "/levels/blocks.json",
+      "/levels/locations/test_routes/room.json",
+      "/levels/locations/test_routes/street.json",
+      "/levels/test_routes.json",
+      "/scripts/test_location_room.pigeon"
+    ],
+    "level:tutorial": [
+      "/assets/atlases/ambient.json",
+      "/assets/atlases/ambient.webp",
+      "/assets/atlases/bin.json",
+      "/assets/atlases/bin.webp",
+      "/assets/atlases/bin_soiled.json",
+      "/assets/atlases/bin_soiled.webp",
+      "/assets/atlases/clerk_nocup.json",
+      "/assets/atlases/clerk_nocup.webp",
+      "/assets/atlases/food_ground_v6.json",
+      "/assets/atlases/food_ground_v6.webp",
+      "/assets/atlases/garage_storage.json",
+      "/assets/atlases/garage_storage.webp",
+      "/assets/atlases/garage_storage_soiled.json",
+      "/assets/atlases/garage_storage_soiled.webp",
+      "/assets/atlases/granny.json",
+      "/assets/atlases/granny.webp",
+      "/assets/atlases/granny_soiled.json",
+      "/assets/atlases/granny_soiled.webp",
+      "/assets/atlases/items.json",
+      "/assets/atlases/items.webp",
+      "/assets/atlases/kids.json",
+      "/assets/atlases/kids.webp",
+      "/assets/atlases/l1_home.json",
+      "/assets/atlases/l1_home.webp",
+      "/assets/atlases/l1_home_soiled.json",
+      "/assets/atlases/l1_home_soiled.webp",
+      "/assets/atlases/l1_misc.json",
+      "/assets/atlases/l1_misc.webp",
+      "/assets/atlases/l1_paper.json",
+      "/assets/atlases/l1_paper.webp",
+      "/assets/atlases/mentor.json",
+      "/assets/atlases/mentor.webp",
+      "/assets/atlases/people.json",
+      "/assets/atlases/people.webp",
+      "/assets/atlases/pigeon.json",
+      "/assets/atlases/pigeon.webp",
+      "/assets/atlases/pigeon_baton.json",
+      "/assets/atlases/pigeon_baton.webp",
+      "/assets/atlases/pigeon_electric.json",
+      "/assets/atlases/pigeon_electric.webp",
+      "/assets/atlases/pigeon_kick.json",
+      "/assets/atlases/pigeon_kick.webp",
+      "/assets/atlases/pigeon_push_front.json",
+      "/assets/atlases/pigeon_push_front.webp",
+      "/assets/atlases/pigeon_rig.json",
+      "/assets/atlases/pigeon_rig.webp",
+      "/assets/atlases/props.json",
+      "/assets/atlases/props.webp",
+      "/assets/atlases/reactions.json",
+      "/assets/atlases/reactions.webp",
+      "/assets/atlases/style_front.json",
+      "/assets/atlases/style_front.webp",
+      "/assets/atlases/style_ground.json",
+      "/assets/atlases/style_ground.webp",
+      "/assets/atlases/style_park.json",
+      "/assets/atlases/style_park.webp",
+      "/assets/atlases/tiles.json",
+      "/assets/atlases/tiles.webp",
+      "/assets/atlases/ui.json",
+      "/assets/atlases/ui.webp",
+      "/assets/flow/ambient.json",
+      "/assets/flow/clerk_nocup.json",
+      "/assets/flow/granny.json",
+      "/assets/flow/kids.json",
+      "/assets/flow/l1_misc.json",
+      "/assets/flow/mentor.json",
+      "/assets/flow/people.json",
+      "/assets/flow/pigeon.json",
+      "/assets/flow/pigeon_baton.json",
+      "/assets/flow/pigeon_push_front.json",
+      "/assets/flow/reactions.json",
+      "/assets/meshanim/mentor.mentor_idle.json",
+      "/assets/meshanim/mentor.mentor_talk.json",
+      "/assets/meshanim/people.bride_idle.json",
+      "/assets/meshanim/people.clerk_idle.json",
+      "/assets/meshanim/people.clerk_phone_01.json",
+      "/assets/meshanim/people.clerk_phone_02.json",
+      "/assets/meshanim/people.clerk_sip.json",
+      "/assets/meshanim/people.clerk_watch.json",
+      "/assets/meshanim/people.grandma_idle_01.json",
+      "/assets/meshanim/people.groom_idle.json",
+      "/assets/meshanim/people.ice_idle.json",
+      "/assets/meshanim/people.ice_lick.json",
+      "/assets/meshanim/people.ice_show.json",
+      "/assets/meshanim/people.tourist_eat.json",
+      "/assets/meshanim/people.tourist_map.json",
+      "/assets/meshanim/pigeon.pigeon_carry_idle.json",
+      "/assets/meshanim/pigeon.pigeon_idle_01.json",
+      "/assets/meshanim/pigeon.pigeon_idle_02.json",
+      "/assets/meshanim/pigeon.pigeon_idle_03.json",
+      "/assets/meshanim/pigeon.pigeon_pose_01.json",
+      "/assets/meshanim/pigeon.pigeon_pose_02.json",
+      "/assets/meshanim/pigeon.pigeon_pose_03.json",
+      "/assets/meshanim/reactions.pigeon_purr_01.json",
+      "/assets/meshanim/reactions.pigeon_purr_02.json",
+      "/assets/parallax/city.webp",
+      "/assets/parallax/middle.webp",
+      "/assets/parallax/sky.webp",
+      "/assets/rigs/pigeon.json",
+      "/levels/blocks.json",
+      "/levels/tutorial_blocks.json",
+      "/scripts/can.pigeon",
+      "/scripts/lib/props.pigeon",
+      "/scripts/lib/retaliation.pigeon",
+      "/scripts/mentor.pigeon",
+      "/scripts/tut_clerk.pigeon"
+    ],
+    "level:level2": [
+      "/assets/atlases/l2_dive.json",
+      "/assets/atlases/l2_dive.webp",
+      "/assets/atlases/l2_water.json",
+      "/assets/atlases/l2_water.webp",
+      "/assets/atlases/pigeon.json",
+      "/assets/atlases/pigeon.webp",
+      "/assets/atlases/pigeon_kick.json",
+      "/assets/atlases/pigeon_kick.webp",
+      "/assets/atlases/pigeon_rig.json",
+      "/assets/atlases/pigeon_rig.webp",
+      "/assets/atlases/water_fx.json",
+      "/assets/atlases/water_fx.webp",
+      "/assets/atlases/water_light.json",
+      "/assets/atlases/water_light.webp",
+      "/assets/bg/dive_quay.webp",
+      "/assets/flow/l2_dive.json",
+      "/assets/flow/pigeon.json",
+      "/assets/meshanim/pigeon.pigeon_carry_idle.json",
+      "/assets/meshanim/pigeon.pigeon_idle_01.json",
+      "/assets/meshanim/pigeon.pigeon_idle_02.json",
+      "/assets/meshanim/pigeon.pigeon_idle_03.json",
+      "/assets/meshanim/pigeon.pigeon_pose_01.json",
+      "/assets/meshanim/pigeon.pigeon_pose_02.json",
+      "/assets/meshanim/pigeon.pigeon_pose_03.json",
+      "/assets/rigs/pigeon.json",
+      "/levels/level2.dive.json"
+    ],
+    "film:mayor_paper": [
+      "/assets/atlases/film_front.json",
+      "/assets/atlases/film_front.webp",
+      "/assets/atlases/film_low.json",
+      "/assets/atlases/film_low.webp",
+      "/assets/atlases/film_top.json",
+      "/assets/atlases/film_top.webp",
+      "/films/mayor_paper.pigeon"
+    ],
+    "film:powerbox_service": [
+      "/assets/atlases/l1_cabinet_service.json",
+      "/assets/atlases/l1_cabinet_service.webp",
+      "/assets/atlases/l1_hut.json",
+      "/assets/atlases/l1_hut.webp",
+      "/assets/atlases/l1_service_backdrop.json",
+      "/assets/atlases/l1_service_backdrop.webp",
+      "/assets/flow/l1_cabinet_service.json",
+      "/assets/flow/l1_hut.json",
+      "/films/powerbox_service.pigeon"
+    ]
+  },
+  "levels": {
+    "level1": {
+      "source": "/levels/level1_blocks.json",
+      "metadata": [
+        "/levels/level1_blocks.json",
+        "/levels/locations/level1/street.json",
+        "/levels/locations/level1/hut.json",
+        "/films/powerbox_service.pigeon"
+      ],
+      "scripts": [
+        "can",
+        "control_lever",
+        "crate",
+        "food_rival",
+        "garage_box",
+        "garage_shelf",
+        "granny",
+        "hut_close",
+        "hut_door",
+        "hut_enter",
+        "hut_exit",
+        "hut_exit_door",
+        "hut_lamp",
+        "hut_light_switch",
+        "hut_service",
+        "level1",
+        "level1_granny_intro",
+        "paper_bag",
+        "power_box",
+        "props",
+        "retaliation",
+        "road_worker",
+        "roadworks",
+        "street_lamp",
+        "trash_bag",
+        "trash_can",
+        "worker_bag"
+      ],
+      "images": [
+        "/assets/atlases/ambient.webp",
+        "/assets/atlases/bin.webp",
+        "/assets/atlases/bin_soiled.webp",
+        "/assets/atlases/food_ground_v6.webp",
+        "/assets/atlases/garage_boxes_v3.webp",
+        "/assets/atlases/garage_boxes_v3_soiled.webp",
+        "/assets/atlases/garage_shelf_v3.webp",
+        "/assets/atlases/garage_storage.webp",
+        "/assets/atlases/garage_storage_soiled.webp",
+        "/assets/atlases/granny.webp",
+        "/assets/atlases/granny_soiled.webp",
+        "/assets/atlases/items.webp",
+        "/assets/atlases/kids.webp",
+        "/assets/atlases/l1_boss.webp",
+        "/assets/atlases/l1_boss_soiled.webp",
+        "/assets/atlases/l1_cabinet_service.webp",
+        "/assets/atlases/l1_cabinet_service_soiled.webp",
+        "/assets/atlases/l1_control_lever.webp",
+        "/assets/atlases/l1_granny_down.webp",
+        "/assets/atlases/l1_home.webp",
+        "/assets/atlases/l1_home_soiled.webp",
+        "/assets/atlases/l1_hut.webp",
+        "/assets/atlases/l1_hut_exit_view.webp",
+        "/assets/atlases/l1_hut_inside_away.webp",
+        "/assets/atlases/l1_hut_inward.webp",
+        "/assets/atlases/l1_hut_light.webp",
+        "/assets/atlases/l1_hut_room_lighting.webp",
+        "/assets/atlases/l1_hut_shell_view.webp",
+        "/assets/atlases/l1_hut_view_lighting.webp",
+        "/assets/atlases/l1_misc.webp",
+        "/assets/atlases/l1_paper.webp",
+        "/assets/atlases/l1_roadworks.webp",
+        "/assets/atlases/l1_service_backdrop.webp",
+        "/assets/atlases/l1_worker.webp",
+        "/assets/atlases/l1_worker_bag.webp",
+        "/assets/atlases/l1_worker_run.webp",
+        "/assets/atlases/l1_worker_run_soiled.webp",
+        "/assets/atlases/l1_worker_soiled.webp",
+        "/assets/atlases/park_tree_wide.webp",
+        "/assets/atlases/pigeon.webp",
+        "/assets/atlases/pigeon_baton.webp",
+        "/assets/atlases/pigeon_electric.webp",
+        "/assets/atlases/pigeon_kick.webp",
+        "/assets/atlases/pigeon_push_front.webp",
+        "/assets/atlases/pigeon_rig.webp",
+        "/assets/atlases/props.webp",
+        "/assets/atlases/reactions.webp",
+        "/assets/atlases/style_front.webp",
+        "/assets/atlases/style_ground.webp",
+        "/assets/atlases/style_house.webp",
+        "/assets/atlases/style_park.webp",
+        "/assets/atlases/tiles.webp",
+        "/assets/atlases/ui.webp",
+        "/assets/parallax/city.webp",
+        "/assets/parallax/middle.webp",
+        "/assets/parallax/sky.webp"
+      ]
+    },
+    "level1.win": {
+      "source": "/levels/level1.win.json",
+      "metadata": [
+        "/levels/level1.win.json"
+      ],
+      "scripts": [
+        "can",
+        "common",
+        "dog",
+        "feeder",
+        "granny",
+        "guide",
+        "kid",
+        "passerby",
+        "props",
+        "retaliation",
+        "tour",
+        "tourist",
+        "wedding"
+      ],
+      "images": [
+        "/assets/atlases/ambient.webp",
+        "/assets/atlases/bin.webp",
+        "/assets/atlases/bin_soiled.webp",
+        "/assets/atlases/dog.webp",
+        "/assets/atlases/food_ground_v6.webp",
+        "/assets/atlases/garage_storage.webp",
+        "/assets/atlases/garage_storage_soiled.webp",
+        "/assets/atlases/granny.webp",
+        "/assets/atlases/granny_soiled.webp",
+        "/assets/atlases/items.webp",
+        "/assets/atlases/kids.webp",
+        "/assets/atlases/l1_boss.webp",
+        "/assets/atlases/l1_boss_soiled.webp",
+        "/assets/atlases/l1_granny_down.webp",
+        "/assets/atlases/l1_home.webp",
+        "/assets/atlases/l1_home_soiled.webp",
+        "/assets/atlases/l1_misc.webp",
+        "/assets/atlases/l1_paper.webp",
+        "/assets/atlases/people.webp",
+        "/assets/atlases/pigeon.webp",
+        "/assets/atlases/pigeon_baton.webp",
+        "/assets/atlases/pigeon_electric.webp",
+        "/assets/atlases/pigeon_kick.webp",
+        "/assets/atlases/pigeon_push_front.webp",
+        "/assets/atlases/pigeon_rig.webp",
+        "/assets/atlases/reactions.webp",
+        "/assets/atlases/tour.webp",
+        "/assets/atlases/tour2.webp",
+        "/assets/atlases/ui.webp",
+        "/assets/atlases/wedding.webp",
+        "/assets/parallax/city.webp",
+        "/assets/parallax/middle.webp",
+        "/assets/parallax/sky.webp",
+        "/assets/strips/strip_level1_win_00.webp",
+        "/assets/strips/strip_level1_win_01.webp",
+        "/assets/strips/strip_level1_win_02.webp",
+        "/assets/strips/strip_level1_win_03.webp",
+        "/assets/strips/strip_level1_win_04.webp",
+        "/assets/strips/strip_level1_win_05.webp",
+        "/assets/strips/strip_level1_win_06.webp",
+        "/assets/strips/strip_level1_win_07.webp",
+        "/assets/strips/strip_level1_win_08.webp",
+        "/assets/strips/strip_level1_win_09.webp",
+        "/assets/strips/strip_level1_win_10.webp",
+        "/assets/strips/strip_level1_win_11.webp"
+      ]
+    },
+    "level1_old": {
+      "source": "/levels/level1_old_blocks.json",
+      "metadata": [
+        "/levels/level1_old_blocks.json"
+      ],
+      "scripts": [
+        "can",
+        "common",
+        "dog",
+        "feeder",
+        "gang",
+        "gang_kid",
+        "granny",
+        "granny_intro",
+        "guide",
+        "level1_old",
+        "pakhan",
+        "passerby",
+        "procession",
+        "props",
+        "reader",
+        "retaliation",
+        "seller",
+        "student",
+        "tour",
+        "tourist",
+        "trap",
+        "wed_cake",
+        "wed_member",
+        "wedding"
+      ],
+      "images": [
+        "/assets/atlases/ambient.webp",
+        "/assets/atlases/bin.webp",
+        "/assets/atlases/bin_soiled.webp",
+        "/assets/atlases/dog.webp",
+        "/assets/atlases/food_ground_v6.webp",
+        "/assets/atlases/gang.webp",
+        "/assets/atlases/garage_storage.webp",
+        "/assets/atlases/garage_storage_soiled.webp",
+        "/assets/atlases/granny.webp",
+        "/assets/atlases/granny_soiled.webp",
+        "/assets/atlases/items.webp",
+        "/assets/atlases/kids.webp",
+        "/assets/atlases/l1_boss.webp",
+        "/assets/atlases/l1_boss_soiled.webp",
+        "/assets/atlases/l1_granny_down.webp",
+        "/assets/atlases/l1_home.webp",
+        "/assets/atlases/l1_home_soiled.webp",
+        "/assets/atlases/l1_misc.webp",
+        "/assets/atlases/l1_paper.webp",
+        "/assets/atlases/l1_people.webp",
+        "/assets/atlases/leaves.webp",
+        "/assets/atlases/park_brick.webp",
+        "/assets/atlases/park_tree_wide.webp",
+        "/assets/atlases/people.webp",
+        "/assets/atlases/pigeon.webp",
+        "/assets/atlases/pigeon_baton.webp",
+        "/assets/atlases/pigeon_electric.webp",
+        "/assets/atlases/pigeon_kick.webp",
+        "/assets/atlases/pigeon_push_front.webp",
+        "/assets/atlases/pigeon_rig.webp",
+        "/assets/atlases/props.webp",
+        "/assets/atlases/reactions.webp",
+        "/assets/atlases/style_alley.webp",
+        "/assets/atlases/style_front.webp",
+        "/assets/atlases/style_ground.webp",
+        "/assets/atlases/style_house.webp",
+        "/assets/atlases/style_market.webp",
+        "/assets/atlases/style_park.webp",
+        "/assets/atlases/style_street.webp",
+        "/assets/atlases/style_yard.webp",
+        "/assets/atlases/tiles.webp",
+        "/assets/atlases/tour.webp",
+        "/assets/atlases/tour2.webp",
+        "/assets/atlases/ui.webp",
+        "/assets/atlases/wedding.webp",
+        "/assets/parallax/city.webp",
+        "/assets/parallax/middle.webp",
+        "/assets/parallax/sky.webp"
+      ]
+    },
+    "test": {
+      "source": "/levels/test.json",
+      "metadata": [
+        "/levels/test.json"
+      ],
+      "scripts": [],
+      "images": [
+        "/assets/atlases/ambient.webp",
+        "/assets/atlases/bin.webp",
+        "/assets/atlases/bin_soiled.webp",
+        "/assets/atlases/food_ground_v6.webp",
+        "/assets/atlases/garage_storage.webp",
+        "/assets/atlases/garage_storage_soiled.webp",
+        "/assets/atlases/granny.webp",
+        "/assets/atlases/granny_soiled.webp",
+        "/assets/atlases/items.webp",
+        "/assets/atlases/kids.webp",
+        "/assets/atlases/l1_misc.webp",
+        "/assets/atlases/l1_paper.webp",
+        "/assets/atlases/pigeon.webp",
+        "/assets/atlases/pigeon_baton.webp",
+        "/assets/atlases/pigeon_electric.webp",
+        "/assets/atlases/pigeon_kick.webp",
+        "/assets/atlases/pigeon_push_front.webp",
+        "/assets/atlases/pigeon_rig.webp",
+        "/assets/atlases/reactions.webp",
+        "/assets/atlases/ui.webp",
+        "/assets/parallax/city.webp",
+        "/assets/parallax/middle.webp",
+        "/assets/parallax/sky.webp"
+      ]
+    },
+    "test_ladder": {
+      "source": "/levels/test_ladder.json",
+      "metadata": [
+        "/levels/test_ladder.json"
+      ],
+      "scripts": [],
+      "images": [
+        "/assets/atlases/ambient.webp",
+        "/assets/atlases/bin.webp",
+        "/assets/atlases/bin_soiled.webp",
+        "/assets/atlases/food_ground_v6.webp",
+        "/assets/atlases/garage_storage.webp",
+        "/assets/atlases/garage_storage_soiled.webp",
+        "/assets/atlases/granny.webp",
+        "/assets/atlases/granny_soiled.webp",
+        "/assets/atlases/items.webp",
+        "/assets/atlases/kids.webp",
+        "/assets/atlases/l1_misc.webp",
+        "/assets/atlases/l1_paper.webp",
+        "/assets/atlases/pigeon.webp",
+        "/assets/atlases/pigeon_baton.webp",
+        "/assets/atlases/pigeon_electric.webp",
+        "/assets/atlases/pigeon_kick.webp",
+        "/assets/atlases/pigeon_ladder_rear_v4.webp",
+        "/assets/atlases/pigeon_push_front.webp",
+        "/assets/atlases/pigeon_rig.webp",
+        "/assets/atlases/reactions.webp",
+        "/assets/atlases/sewer_ladder_v1.webp",
+        "/assets/atlases/ui.webp",
+        "/assets/parallax/city.webp",
+        "/assets/parallax/middle.webp",
+        "/assets/parallax/sky.webp"
+      ]
+    },
+    "test_level1": {
+      "source": "/levels/test_level1_blocks.json",
+      "metadata": [
+        "/levels/test_level1_blocks.json"
+      ],
+      "scripts": [
+        "can",
+        "food_rival",
+        "power_box",
+        "props",
+        "retaliation",
+        "road_worker",
+        "roadworks",
+        "test_level1",
+        "test_level1_probe",
+        "trash_can"
+      ],
+      "images": [
+        "/assets/atlases/ambient.webp",
+        "/assets/atlases/bin.webp",
+        "/assets/atlases/bin_soiled.webp",
+        "/assets/atlases/food_ground_v6.webp",
+        "/assets/atlases/garage_storage.webp",
+        "/assets/atlases/garage_storage_soiled.webp",
+        "/assets/atlases/granny.webp",
+        "/assets/atlases/granny_soiled.webp",
+        "/assets/atlases/items.webp",
+        "/assets/atlases/kids.webp",
+        "/assets/atlases/l1_cabinet_service.webp",
+        "/assets/atlases/l1_cabinet_service_soiled.webp",
+        "/assets/atlases/l1_home.webp",
+        "/assets/atlases/l1_home_soiled.webp",
+        "/assets/atlases/l1_misc.webp",
+        "/assets/atlases/l1_paper.webp",
+        "/assets/atlases/l1_roadworks.webp",
+        "/assets/atlases/l1_worker.webp",
+        "/assets/atlases/l1_worker_run.webp",
+        "/assets/atlases/l1_worker_run_soiled.webp",
+        "/assets/atlases/l1_worker_soiled.webp",
+        "/assets/atlases/park_tree_wide.webp",
+        "/assets/atlases/pigeon.webp",
+        "/assets/atlases/pigeon_baton.webp",
+        "/assets/atlases/pigeon_electric.webp",
+        "/assets/atlases/pigeon_kick.webp",
+        "/assets/atlases/pigeon_push_front.webp",
+        "/assets/atlases/pigeon_rig.webp",
+        "/assets/atlases/props.webp",
+        "/assets/atlases/reactions.webp",
+        "/assets/atlases/style_front.webp",
+        "/assets/atlases/style_ground.webp",
+        "/assets/atlases/style_park.webp",
+        "/assets/atlases/tiles.webp",
+        "/assets/atlases/ui.webp",
+        "/assets/parallax/city.webp",
+        "/assets/parallax/middle.webp",
+        "/assets/parallax/sky.webp"
+      ]
+    },
+    "test_pushprops": {
+      "source": "/levels/test_pushprops.json",
+      "metadata": [
+        "/levels/test_pushprops.json"
+      ],
+      "scripts": [],
+      "images": [
+        "/assets/atlases/ambient.webp",
+        "/assets/atlases/bin.webp",
+        "/assets/atlases/bin_soiled.webp",
+        "/assets/atlases/food_ground_v6.webp",
+        "/assets/atlases/garage_storage.webp",
+        "/assets/atlases/garage_storage_soiled.webp",
+        "/assets/atlases/granny.webp",
+        "/assets/atlases/granny_soiled.webp",
+        "/assets/atlases/items.webp",
+        "/assets/atlases/kids.webp",
+        "/assets/atlases/l1_home.webp",
+        "/assets/atlases/l1_home_soiled.webp",
+        "/assets/atlases/l1_misc.webp",
+        "/assets/atlases/l1_paper.webp",
+        "/assets/atlases/pigeon.webp",
+        "/assets/atlases/pigeon_baton.webp",
+        "/assets/atlases/pigeon_electric.webp",
+        "/assets/atlases/pigeon_kick.webp",
+        "/assets/atlases/pigeon_push_front.webp",
+        "/assets/atlases/pigeon_rig.webp",
+        "/assets/atlases/reactions.webp",
+        "/assets/atlases/ui.webp",
+        "/assets/parallax/city.webp",
+        "/assets/parallax/middle.webp",
+        "/assets/parallax/sky.webp"
+      ]
+    },
+    "test_routes": {
+      "source": "/levels/test_routes.json",
+      "metadata": [
+        "/levels/test_routes.json",
+        "/levels/locations/test_routes/street.json",
+        "/levels/locations/test_routes/room.json"
+      ],
+      "scripts": [
+        "test_location_room"
+      ],
+      "images": [
+        "/assets/atlases/ambient.webp",
+        "/assets/atlases/bin.webp",
+        "/assets/atlases/bin_soiled.webp",
+        "/assets/atlases/food_ground_v6.webp",
+        "/assets/atlases/garage_storage.webp",
+        "/assets/atlases/garage_storage_soiled.webp",
+        "/assets/atlases/granny.webp",
+        "/assets/atlases/granny_soiled.webp",
+        "/assets/atlases/items.webp",
+        "/assets/atlases/kids.webp",
+        "/assets/atlases/l1_misc.webp",
+        "/assets/atlases/l1_paper.webp",
+        "/assets/atlases/pigeon.webp",
+        "/assets/atlases/pigeon_baton.webp",
+        "/assets/atlases/pigeon_electric.webp",
+        "/assets/atlases/pigeon_kick.webp",
+        "/assets/atlases/pigeon_push_front.webp",
+        "/assets/atlases/pigeon_rig.webp",
+        "/assets/atlases/props.webp",
+        "/assets/atlases/reactions.webp",
+        "/assets/atlases/ui.webp",
+        "/assets/parallax/city.webp",
+        "/assets/parallax/middle.webp",
+        "/assets/parallax/sky.webp"
+      ]
+    },
+    "tutorial": {
+      "source": "/levels/tutorial_blocks.json",
+      "metadata": [
+        "/levels/tutorial_blocks.json"
+      ],
+      "scripts": [
+        "can",
+        "mentor",
+        "props",
+        "retaliation",
+        "tut_clerk"
+      ],
+      "images": [
+        "/assets/atlases/ambient.webp",
+        "/assets/atlases/bin.webp",
+        "/assets/atlases/bin_soiled.webp",
+        "/assets/atlases/clerk_nocup.webp",
+        "/assets/atlases/food_ground_v6.webp",
+        "/assets/atlases/garage_storage.webp",
+        "/assets/atlases/garage_storage_soiled.webp",
+        "/assets/atlases/granny.webp",
+        "/assets/atlases/granny_soiled.webp",
+        "/assets/atlases/items.webp",
+        "/assets/atlases/kids.webp",
+        "/assets/atlases/l1_home.webp",
+        "/assets/atlases/l1_home_soiled.webp",
+        "/assets/atlases/l1_misc.webp",
+        "/assets/atlases/l1_paper.webp",
+        "/assets/atlases/mentor.webp",
+        "/assets/atlases/people.webp",
+        "/assets/atlases/pigeon.webp",
+        "/assets/atlases/pigeon_baton.webp",
+        "/assets/atlases/pigeon_electric.webp",
+        "/assets/atlases/pigeon_kick.webp",
+        "/assets/atlases/pigeon_push_front.webp",
+        "/assets/atlases/pigeon_rig.webp",
+        "/assets/atlases/props.webp",
+        "/assets/atlases/reactions.webp",
+        "/assets/atlases/style_front.webp",
+        "/assets/atlases/style_ground.webp",
+        "/assets/atlases/style_park.webp",
+        "/assets/atlases/tiles.webp",
+        "/assets/atlases/ui.webp",
+        "/assets/parallax/city.webp",
+        "/assets/parallax/middle.webp",
+        "/assets/parallax/sky.webp"
+      ]
+    }
+  }
+}

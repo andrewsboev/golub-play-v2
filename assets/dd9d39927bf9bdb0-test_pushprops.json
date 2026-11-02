@@ -1,0 +1,23 @@
+{
+  "version": 3,
+  "kind": "location",
+  "name": "Push props",
+  "width": 2400,
+  "height": 1080,
+  "diagnostic": true,
+  "spawnPoints": [{"id": "start", "x": 350, "y": 650, "facing": 1}],
+  "solids": [
+    {"id": "floor_left", "x": 0, "y": 868, "w": 800, "h": 212},
+    {"id": "floor_right", "x": 1200, "y": 868, "w": 1200, "h": 212},
+    {"id": "pit_floor", "x": 800, "y": 1020, "w": 400, "h": 60},
+    {"id": "shelf", "x": 320, "y": 650, "w": 380, "h": 30},
+    {"id": "wall", "x": 2050, "y": 480, "w": 40, "h": 388}
+  ],
+  "blocks": [
+    {"id": "home_crate_wood", "x": 550, "y": 650, "pushable": true},
+    {"id": "home_crate_blue", "x": 1300, "y": 868},
+    {"id": "prop_trash_can", "x": 1650, "y": 868, "pushable": true, "loot": ["bun", "fries"]}
+  ],
+  "npcs": [], "food": [], "zones": [], "doors": [], "cameraZones": [],
+  "ground": [], "objectives": []
+}

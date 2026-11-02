@@ -1,0 +1,77 @@
+# Общий ID находки исключает повторный ключ при возвращении в комнату.
+character garage_box:
+    title "Коробка на полке"
+    preview "garage_boxes_v3.box_closed"
+    param role "Содержимое" choice "" "Пусто", key "Ключ"
+    param mode "Вид коробки" choice "" "Большая", small "Маленькая"
+    atlas = "garage_boxes_v3"
+    pose "box_closed"
+    hitbox -58 58 0 90
+    shadow = 100
+
+var opened = false
+var kick_dir = 1
+var target_x = 0
+var landing_y = 0
+var flight = nil
+var dirty = false
+
+func open_box():
+    if opened: return
+    opened = true
+    if level.role == "key" and quest_collect("garage_key", "key"):
+        pigeon.say "Ключ? Хмм..." 2.5
+        sfx "pickup"
+        sparkle x (y - 90)
+        toast "Найден ключ. Инвентарь — I"
+    else:
+        popup x (y - 120) "Пусто…" "#e8dcc4"
+
+state stand:
+    if opened:
+        if level.mode == "small": pose "box_small_open"
+        else: pose "box_open"
+    elif level.mode == "small": pose "box_small"
+    else: pose "box_closed"
+
+state kicked:
+    open_box()
+    if level.mode == "small": pose "box_small_open"
+    else: pose "box_open"
+    sfx "shove"
+    target_x = clamp(x + kick_dir * 190, 100, 1810)
+    landing_y = surface_y(target_x, y - 2)
+    if landing_y == nil: landing_y = 943
+    # Полёт считает общая баллистика; временная картинка не зависит от Sync персонажа.
+    var frame = "box_open"
+    if level.mode == "small": frame = "box_small_open"
+    var sheet = "garage_boxes_v3"
+    if dirty: sheet = "garage_boxes_v3_soiled"
+    flight = sprite(sheet, frame, x, y, depth=DEPTH_NPC)
+    visible = false
+    immune = true
+    var v = ballistic(x, y, target_x, landing_y, 0.45, 1400)
+    fly flight v[0] v[1] 1400 spin=(kick_dir * 220) ground=landing_y
+    wait until flight.landed
+    x = flight.x
+    y = flight.y
+    kill flight
+    flight = nil
+    visible = true
+    immune = false
+    dust 0.5 x y
+    go stand
+
+on kick(dir, wing):
+    if state == kicked: return true
+    kick_dir = dir
+    go kicked
+    return true
+
+every frame:
+    if flight != nil:
+        x = flight.x
+        y = flight.y
+
+on hit:
+    dirty = true

@@ -1,0 +1,21 @@
+{
+  "version": 3,
+  "kind": "location",
+  "name": "Лестница — спуск",
+  "width": 1920,
+  "height": 1080,
+  "diagnostic": true,
+  "parallax": false,
+  "spawnPoints": [{"id": "start", "x": 932, "y": 250, "facing": 1}],
+  "solids": [
+    {"id": "upper", "x": 300, "y": 250, "w": 1120, "h": 16, "oneWay": true},
+    {"id": "floor", "x": 0, "y": 970, "w": 1920, "h": 110, "oneWay": false}
+  ],
+  "zones": [{"id": "sewer", "kind": "ladder", "x": 894, "y": 250, "w": 132, "h": 720}],
+  "blocks": [],
+  "ground": [],
+  "npcs": [],
+  "doors": [],
+  "cameraZones": [],
+  "objectives": []
+}

@@ -1,0 +1,24 @@
+# Полки комнаты; коробки — отдельные интерактивные объекты.
+character garage_shelf:
+    title "Гаражный стеллаж"
+    preview "garage_shelf_v3.shelf"
+    atlas = "garage_shelf_v3"
+    pose "shelf"
+    depth = DEPTH_BACK
+    immune = true
+    shadow = 0
+    add_perch (x - 280) (y - 256) 560
+    add_perch (x - 280) (y - 445) 560
+
+# Полотно полки за коробками, её передний край перекрывает основание и тень.
+# Все слои хранятся в VM вместе со снимком комнаты.
+var boards = nil
+var lips = nil
+
+func mount_boards():
+    if boards != nil: return
+    boards = [sprite("garage_shelf_v3", "board_0", x, y - 445, depth=DEPTH_BACK + 0.1), sprite("garage_shelf_v3", "board_1", x, y - 256, depth=DEPTH_BACK + 0.1), sprite("garage_shelf_v3", "board_2", x, y - 75, depth=DEPTH_BACK + 0.1)]
+    lips = [sprite("garage_shelf_v3", "lip_0", x, y - 445, depth=DEPTH_FRONT), sprite("garage_shelf_v3", "lip_1", x, y - 256, depth=DEPTH_FRONT), sprite("garage_shelf_v3", "lip_2", x, y - 75, depth=DEPTH_FRONT)]
+
+state stand:
+    mount_boards()
