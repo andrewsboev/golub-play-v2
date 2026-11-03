@@ -1,0 +1,16 @@
+{
+  "atlas": "l1_hut_inward",
+  "frame": "leaf_closed",
+  "cols": 48,
+  "rows": 88,
+  "pins": [
+    {"name": "mount", "x": 35, "y": 226, "r": 16},
+    {"name": "handle", "x": 61, "y": 226, "r": 28}
+  ],
+  "clips": [
+    {"name": "idle", "length": 1, "loop": true, "tracks": []},
+    {"name": "rattle", "length": 0.62, "loop": false, "tracks": [
+      {"pin": "handle", "keys": [[0, 0, 0], [0.1, -2, 11], [0.2, 0, -2], [0.32, -2, 9], [0.44, 0, -1], [0.62, 0, 0]]}
+    ]}
+  ]
+}

@@ -1,0 +1,56 @@
+import light_shards
+
+character cabinet_lamp:
+    title "Лампа над щитком"
+    preview "l1_home.lamp_on"
+    atlas = "l1_home"
+    hitbox -45 45 0 71
+    immune = true
+    shadow = 0
+    depth = DEPTH_BACK
+    light = glow(x, y - 11, 170, "#ffd98a", 0.55, depth=DEPTH_BACK)
+    light.flicker = 0.05
+
+var light = nil
+
+func place(at_x, at_y, size):
+    x = at_x
+    y = at_y
+    scale = size
+    hitbox (-45 * size) (45 * size) 0 (71 * size)
+    light.x = x
+    light.y = y - 11 * size
+    light.radius = 170 * size
+
+func set_lamp(lit):
+    if state == broken: return
+    if lit: go lit
+    else: go dark
+
+state lit:
+    pose "lamp_on"
+    origin_y = 1
+    light.visible = true
+
+state dark:
+    pose "lamp_off"
+    origin_y = 1
+    light.visible = false
+
+state broken:
+    pose "wall_lamp_broken.broken"
+    origin_y = 1
+    light.visible = false
+
+on kick(dir, wing):
+    if state == broken: return false
+    go broken
+    light_shards(x, y - 11, dir)
+    shock_pigeon x
+    return true
+
+on weapon_hit(kind):
+    if state == broken: return false
+    go broken
+    light_shards(x, y - 11, pigeon.facing)
+    return true

@@ -1,0 +1,57 @@
+character notice_board_lamp:
+    title "Лампа"
+    preview "l1_start_board_swing_v1.lamp"
+    atlas = "l1_start_board_swing_v1"
+    pose "lamp"
+    immune = true
+    shadow = 0
+    depth = -6.9
+    light = glow(x, y + 57, 65, "#ffc266", 0.5)
+    sync_lamp()
+
+var light = nil
+var swing_dir = 1
+
+func sync_lamp():
+    # Колба, плафон, свечение и зона попадания следуют одному углу вокруг подвеса.
+    var a = angle * pi / 180
+    var bulb_x = -sin(a) * 57
+    var bulb_y = cos(a) * 57
+    light.x = x + bulb_x
+    light.y = y + bulb_y
+    hitbox (bulb_x - 16) (bulb_x + 16) (-bulb_y - 15) (-bulb_y + 15)
+
+every frame:
+    sync_lamp()
+
+state lit:
+    angle = 0
+
+state swinging:
+    # Штатные твины дают затухающие качания и сохраняются с VM и графом комнаты.
+    stop_tweens self
+    tween self 0.12 angle=(swing_dir * 18) ease="sine"
+    wait 0.12
+    tween self 0.3 angle=(-swing_dir * 13) ease="sine"
+    wait 0.3
+    tween self 0.3 angle=(swing_dir * 9) ease="sine"
+    wait 0.3
+    tween self 0.3 angle=(-swing_dir * 5) ease="sine"
+    wait 0.3
+    tween self 0.3 angle=(swing_dir * 2) ease="sine"
+    wait 0.3
+    tween self 0.3 angle=0 ease="sine"
+    wait 0.3
+    go lit
+
+func sway(dir):
+    swing_dir = -dir
+    sfx "clink"
+    go swinging
+    return true
+
+on kick(dir, wing):
+    return sway(dir)
+
+on weapon_hit(kind):
+    return sway(pigeon.facing)

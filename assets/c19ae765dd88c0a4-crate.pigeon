@@ -1,0 +1,40 @@
+# Ящик пружинит от пинка; только экземпляр с level.pushable можно толкать.
+character crate:
+    title "Ящик"
+    preview "street_crates_v5.crate_blue"
+    param mode "Вид ящика" choice blue "Синий", wood "Деревянный"
+    param pushable "Можно толкать" choice false "Нет", true "Да"
+    atlas = "street_crates_v5"
+    if level.mode == "wood":
+        pose "crate_wood"
+        hitbox -72 72 0 101
+        push_body -66 66 0 98
+        if not level.pushable: add_perch (x - 66) (y - 98) 132
+        shadow = 150
+    else:
+        pose "crate_blue"
+        hitbox -69 69 0 104
+        push_body -62 62 0 96
+        if not level.pushable: add_perch (x - 62) (y - 96) 124
+        shadow = 140
+    immune = true
+
+var kick_dir = 1
+
+state stand:
+    angle = 0
+
+state kicked:
+    stop_tweens self
+    angle = kick_dir * 5
+    tween self 0.22 angle=0
+    sfx "shove"
+    wait 0.24
+    go stand
+
+on kick(dir, wing):
+    # Стоя сверху, голубь бьёт перед собой, а не в собственную опору.
+    if pigeon.feet_y <= y - 90: return false
+    kick_dir = dir
+    go kicked
+    return true

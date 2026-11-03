@@ -1,0 +1,41 @@
+# Доска и кронштейн неподвижны; плафон с колбой — отдельный подвес.
+character start_notice_board:
+    title "Доска объявлений"
+    preview "l1_start_board_swing_v1.board"
+    atlas = "l1_start_board_swing_v1"
+    hitbox 0 0 0 0
+    immune = true
+    shadow = 0
+    # Площадки принадлежат неподвижным козырьку и кронштейну.
+    add_perch (x - 145) (y - 373) 290
+    add_perch (x + 5) (y - 451) 22
+    setup_lamp()
+
+# Поле light оставлено для удаления свечения из прежнего цельного рисунка при загрузке.
+var light = nil
+var lamp = nil
+
+state lit:
+    pose "l1_start_board_swing_v1.board"
+
+# Прежний снимок с разбитой колбой переходит на новый целый подвес.
+state broken:
+    go lit
+
+func setup_lamp():
+    # Доска стоит за лавкой (слой блоков mid = -7), в том числе в прежних снимках.
+    depth = -7.1
+    if light != nil:
+        kill light
+        light = nil
+    if lamp == nil: lamp = actor("start_notice_lamp")
+    if lamp == nil:
+        lamp = spawn("notice_board_lamp", x + 19.6, y=(y - 427.6), name="start_notice_lamp")
+    hitbox 0 0 0 0
+    go lit
+
+on location_loaded(id):
+    setup_lamp()
+
+on location_enter(id):
+    setup_lamp()

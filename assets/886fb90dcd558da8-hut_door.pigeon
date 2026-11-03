@@ -1,0 +1,79 @@
+# Створка будки — отдельно от кирпичного корпуса. Поворот вокруг правой петли задаёт spec кадров.
+character hut_door:
+    title "Дверь будки"
+    preview "l1_hut_inward.leaf_closed"
+    atlas = "l1_hut_inward"
+    pose "leaf_closed"
+    facing = 1
+    depth = -8.95
+    scale = 0.88
+    hitbox (-235 * scale) (10 * scale) 0 (430 * scale)
+    immune = true
+    shadow = 0
+    view = sprite("l1_hut_view_lighting", "inside", x - 215 * scale, y - 431 * scale, depth=-9.5)
+    view.scale = scale
+    entrance_light = room_light(x - 215 * scale, y - 431 * scale, 216 * scale, 423.45 * scale, x - 170 * scale, y - 300 * scale, 800 * scale, "#ffe0ac", 0, "#16191f", depth=-9.45)
+
+var opened = false
+var view = nil
+var entrance_light = nil
+
+func sync_view():
+    # Лампой управляет щиток, но её крепление следует за фасадом будки.
+    var box = actor("repair_box")
+    if box != nil: box.place_lamp(x - 84 * scale, y - 467 * scale, scale)
+    entrance_light.intensity = 0
+    if run_flag("hut_light_on") and not run_flag("hut_bulb_broken"):
+        entrance_light.intensity = 1.2
+
+state closed:
+    sync_view()
+    opened = false
+    pose "leaf_closed"
+    mesh_play "idle"
+
+state rattling:
+    mesh_play "rattle"
+    sfx "clink"
+    wait 0.62
+    go closed
+
+state open:
+    pass
+
+func is_open():
+    return opened
+
+func is_unlocked():
+    # Посещённая в прежней версии комната остаётся доступна без нового поиска.
+    return run_flag("hut_unlocked") or run_flag("__door/main/hut_entrance") or run_flag("__door/hut/hut_exit")
+
+on door_interact(id):
+    if id != "hut_entrance": return
+    run_flag "hut_key_ready" (quest_has("hut_key") or is_unlocked())
+    if not run_flag("hut_key_ready"):
+        pigeon.say "Заперто" 2
+        if state != rattling: go rattling
+        return true
+
+func finish_open():
+    opened = true
+    pose "leaf_open"
+    go open
+
+func finish_closed():
+    opened = false
+    pose "leaf_closed"
+    go closed
+
+on location_enter(id):
+    sync_view()
+    if id == "main" and opened: play_cutscene "hut_close"
+
+on location_loaded(id):
+    sync_view()
+    if id == "main" and opened: play_cutscene "hut_close"
+
+on kick:
+    sfx "clink"
+    return true

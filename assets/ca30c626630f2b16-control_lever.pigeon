@@ -1,0 +1,34 @@
+character control_lever:
+    title "Пульт заслонки"
+    preview "l1_control_lever.off"
+    atlas = "l1_control_lever"
+    hitbox -78 78 0 177
+    immune = true
+    shadow = 0
+    depth = -8.9
+
+func unlock():
+    run_flag "road_box_open" true
+    go activated
+
+state off:
+    pose "off"
+    if run_flag("road_box_open"): go activated
+
+state activated:
+    pose "on"
+
+on location_enter(id):
+    if run_flag("road_box_open"): go activated
+
+on location_loaded(id):
+    if run_flag("road_box_open"): go activated
+
+on peck:
+    return true
+
+on kick:
+    if run_flag("road_box_open") or cutscene_playing(): return true
+    if pigeon.feet_y > y - 20: return true
+    play_cutscene "hut_service"
+    return true

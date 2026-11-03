@@ -1,0 +1,25 @@
+# Отдельная зона попадания плафона: удар по стойке не разбивает стекло.
+character street_bulb:
+    atlas = "props"
+    pose "prop_lamp_post"
+    alpha = 0
+    shadow = 0
+    immune = true
+    hitbox -50 50 0 145
+
+state intact:
+    pass
+
+state broken:
+    hitbox 0 0 0 0
+
+on kick(dir, wing):
+    if not parent.break_lamp(dir): return false
+    go broken
+    shock_pigeon x
+    return true
+
+on weapon_hit(kind):
+    if not parent.break_lamp(pigeon.facing): return false
+    go broken
+    return true

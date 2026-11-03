@@ -1,0 +1,15 @@
+# Номер использует обычную кат-сцену: она управляет вводом, ожиданием клипов и промоткой.
+cutscene hut_mop_rock
+
+actor hut_mop
+
+at 0:
+    wait pigeon.walk_to(hut_mop.x - 50)
+    wait 0.15
+    pigeon.face 1
+    hut_mop.take()
+    wait hut_mop.play("pickup")
+    wait hut_mop.play("strum")
+    wait hut_mop.play("finale")
+    hut_mop.put_back()
+    end_cutscene

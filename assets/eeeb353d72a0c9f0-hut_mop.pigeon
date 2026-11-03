@@ -1,0 +1,43 @@
+# Швабра и исполнитель — один актёр: во время номера второй инструмент не остаётся у стены.
+character hut_mop:
+    title "Швабра"
+    preview "pigeon_mop_rock_v1.mop"
+    atlas = "pigeon_mop_rock_v1"
+    pose "mop"
+    hitbox -36 65 0 245
+    immune = true
+    shadow = 0
+    depth = DEPTH_BACK
+
+var performing = false
+
+state stand:
+    pose "mop"
+
+func take():
+    performing = true
+    x = pigeon.x
+    pigeon.visible = false
+    depth = DEPTH_PIGEON
+
+func put_back():
+    if not performing: return
+    performing = false
+    pigeon.visible = true
+    x = level.x
+    depth = DEPTH_BACK
+    pose "mop"
+
+on interact_hint:
+    if performing or cutscene_playing(): return ""
+    if abs(dx) > 100 or abs(pigeon.feet_y - y) > 55: return ""
+    return "Взаимодействовать ({interact})"
+
+on interact:
+    if performing or cutscene_playing(): return true
+    if abs(dx) > 100 or abs(pigeon.feet_y - y) > 55: return false
+    play_cutscene "hut_mop_rock"
+    return true
+
+on cutscene_end(id):
+    if id == "hut_mop_rock": put_back()

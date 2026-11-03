@@ -1,0 +1,54 @@
+# Фонарь: стойку больно пинать, попадание по плафону разбивает лампу.
+import light_shards
+
+character street_lamp:
+    title "Уличный фонарь"
+    preview "props.prop_lamp_post"
+    atlas = "props"
+    pose "prop_lamp_post"
+    hitbox -34 34 0 350
+    immune = true
+    shadow = 65
+    add_perch (x - 33) (y - 469) 66
+    lamp = glow(x, y - 425, 70, "#ffd98a", 0.5, depth=DEPTH_BACK)
+    lamp.flicker = 0.1
+    spawn "street_bulb" x y=(y - 350)
+
+var lamp = nil
+var kick_dir = 1
+
+state stand:
+    angle = 0
+
+state kicked:
+    stop_tweens self
+    angle = kick_dir * 0.65
+    tween self 0.25 angle=0
+    sfx "clink"
+    wait 0.26
+    go stand
+
+state broken:
+    pose "street_lamp_broken.broken"
+    lamp.visible = false
+    angle = 0
+
+func break_lamp(dir):
+    if state == broken: return false
+    stop_tweens self
+    go broken
+    light_shards(x, y - 425, dir)
+    return true
+
+on kick(dir, wing):
+    if state == kicked: return true
+    if state == broken:
+        sfx "clink"
+        return true
+    kick_dir = dir
+    dazzle_pigeon 0.5
+    pigeon.flinch()
+    pigeon.say "Ауч!" 0.8
+    sfx "ouch"
+    go kicked
+    return true

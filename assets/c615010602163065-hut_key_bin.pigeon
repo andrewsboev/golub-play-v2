@@ -1,0 +1,66 @@
+# Рисунок уже находится в блоках карты; этот NPC добавляет только взаимодействие.
+character hut_key_bin:
+    title "Бак с ключом хозблока"
+    atlas = "bin"
+    visible = false
+    hitbox -55 55 0 160
+    immune = true
+    shadow = 0
+
+var found_view = nil
+
+func search():
+    if state == finding: return
+    sfx "bin"
+    if quest_collect("hut_key", "key"):
+        go finding
+    else:
+        popup x (y - 190) "Пусто…" "#e8dcc4"
+
+state idle:
+    pass
+
+state finding:
+    var side = sign(pigeon.x - x)
+    if side == 0: side = pigeon.facing
+    var drop_x = x + side * 105
+    var floor_y = surface_y(drop_x, y - 10)
+    if floor_y == nil: floor_y = y + 10
+    var drop_y = floor_y - 15
+    # Ключ вращается вокруг середины, а не вокруг зубца дверного ключа.
+    found_view = sprite("hut_key_turn_v1", "key_0", x, y - 150, depth=DEPTH_PIGEON + 0.5, origin_x=0.5, origin_y=0.5)
+    found_view.angle = -side * 30
+    var v = ballistic(x, y - 150, drop_x, drop_y, 0.58, 2000)
+    fly found_view v[0] v[1] 2000 spin=(side * 115) ground=drop_y
+    wait until found_view.landed
+    dust 0.25 found_view.x floor_y
+    fly found_view (side * 45) (-135) 2200 spin=(-side * 140) ground=drop_y
+    wait until found_view.landed
+    tween found_view 0.12 angle=0 ease="quad_out"
+    wait 0.12
+    sparkle found_view.x found_view.y
+    sfx "pickup"
+    pigeon.say "Ключ от хозблока!" 2
+    toast "Найден ключ от хозблока. У двери — {interact}"
+    tween found_view 0.22 x=pigeon.x y=(pigeon.feet_y - 65) scale=0.35 alpha=0 ease="sine"
+    wait 0.22
+    kill found_view
+    found_view = nil
+    go idle
+
+on interact_hint:
+    if abs(dx) > 60 or abs(pigeon.feet_y - y) > 100: return ""
+    return "Порыться в баке ({interact})"
+
+on interact:
+    pigeon.peck()
+    search()
+    return true
+
+on peck:
+    search()
+    return true
+
+on kick:
+    search()
+    return true

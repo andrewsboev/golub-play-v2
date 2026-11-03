@@ -1,0 +1,11 @@
+# Общие осколки ламп: опора берётся из текущей комнаты, а не из старой линии тротуара.
+func light_shards(at_x, at_y, dir):
+    sfx "shatter"
+    sparks at_x at_y 7
+    var floor_y = surface_y(at_x, at_y)
+    if floor_y == nil: floor_y = at_y + 1000
+    for i in range(8):
+        var chip = sprite("l1_hut_light", "chip", at_x + random(-18, 18), at_y, depth=DEPTH_FRONT)
+        chip.scale = random(0.65, 1.25)
+        fly chip (dir * 90 + random(-160, 160)) random(-160, 40) 900 random(-420, 420) floor_y
+        tween chip 0.4 alpha=0 delay=1.1 kill=true

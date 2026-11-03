@@ -1,0 +1,33 @@
+# Открываем именно дверь постройки: щиток справа к этому переходу не относится.
+cutscene hut_enter
+
+actor hut_door
+
+at 0:
+    var walk_time = pigeon.walk_to(hut_door.x - 100 * hut_door.scale)
+    wait walk_time + 0.15
+    pigeon.face 1
+    if not hut_door.is_unlocked():
+        var key = sprite("hut_key_turn_v1", "key_0", hut_door.x - 225 * hut_door.scale, hut_door.y - 186 * hut_door.scale, depth=-8.8)
+        key.scale = hut_door.scale
+        key.alpha = 0
+        tween key 0.25 x=(hut_door.x - 195 * hut_door.scale) alpha=1 ease="quad_out"
+        wait 0.25
+        anim key "hut_key_turn_v1.turn"
+        wait 0.67
+        sfx "clink"
+        run_flag "hut_unlocked" true
+        wait 0.15
+        anim key "hut_key_turn_v1.return"
+        wait 0.5
+        tween key 0.2 x=(hut_door.x - 225 * hut_door.scale) alpha=0
+        wait 0.2
+        kill key
+    if not hut_door.is_open():
+        pigeon.kick()
+        wait 0.12
+        var opening_time = hut_door.play("opening")
+        sfx "clink"
+        wait opening_time
+        hut_door.finish_open()
+    end_cutscene

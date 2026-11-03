@@ -1,0 +1,490 @@
+{
+  "version": 3,
+  "name": "Значит, война",
+  "width": 9000,
+  "ground": [
+    {
+      "x0": 0,
+      "x1": 9000,
+      "kind": "city",
+      "y": 818
+    }
+  ],
+  "blocks": [
+    {
+      "id": "tile_fence_b",
+      "x": 48,
+      "noPlatforms": true,
+      "y": 838
+    },
+    {
+      "id": "tile_fence_b",
+      "x": 485,
+      "noPlatforms": true,
+      "y": 838
+    },
+    {
+      "id": "tile_fence_b",
+      "x": 1880,
+      "noPlatforms": true,
+      "y": 838
+    },
+    {
+      "id": "tile_fence_b",
+      "x": 2317,
+      "noPlatforms": true,
+      "y": 838
+    },
+    {
+      "id": "tile_fence_b",
+      "x": 2754,
+      "noPlatforms": true,
+      "y": 838
+    },
+    {
+      "id": "park_tree_wide",
+      "x": 300,
+      "y": 838
+    },
+    {
+      "id": "park_tree",
+      "x": 2480,
+      "y": 838
+    },
+    {
+      "id": "home_hut_openable",
+      "x": 1269.88,
+      "y": 838,
+      "scale": 0.88
+    },
+    {
+      "id": "prop_bench",
+      "x": 520,
+      "y": 858,
+      "scale": 0.68
+    },
+    {
+      "id": "start_litter_bin",
+      "x": 755,
+      "y": 858,
+      "scale": 0.65
+    },
+    {
+      "id": "fg_grass",
+      "x": 640,
+      "y": 1200
+    },
+    {
+      "id": "fg_grass",
+      "x": 1950,
+      "y": 1200
+    },
+    {
+      "id": "tile_fence_b",
+      "x": 3100,
+      "noPlatforms": true,
+      "y": 838
+    },
+    {
+      "id": "tile_fence_b",
+      "x": 3537,
+      "noPlatforms": true,
+      "y": 838
+    },
+    {
+      "id": "tile_fence_b",
+      "x": 3974,
+      "noPlatforms": true,
+      "y": 838
+    },
+    {
+      "id": "tile_fence_b",
+      "x": 4411,
+      "noPlatforms": true,
+      "y": 838
+    },
+    {
+      "id": "tile_fence_b",
+      "x": 4848,
+      "noPlatforms": true,
+      "y": 838
+    },
+    {
+      "id": "tile_fence_b",
+      "x": 5285,
+      "noPlatforms": true,
+      "y": 838
+    },
+    {
+      "id": "tile_fence_b",
+      "x": 5722,
+      "noPlatforms": true,
+      "y": 838
+    },
+    {
+      "id": "tile_fence_b",
+      "x": 6159,
+      "noPlatforms": true,
+      "y": 838
+    },
+    {
+      "id": "tile_fence_b",
+      "x": 6596,
+      "noPlatforms": true,
+      "y": 838
+    },
+    {
+      "id": "tile_fence_b",
+      "x": 7033,
+      "noPlatforms": true,
+      "y": 838
+    },
+    {
+      "id": "tile_fence_b",
+      "x": 7470,
+      "noPlatforms": true,
+      "y": 838
+    },
+    {
+      "id": "tile_fence_b",
+      "x": 7907,
+      "noPlatforms": true,
+      "y": 838
+    },
+    {
+      "id": "tile_fence_b",
+      "x": 8344,
+      "noPlatforms": true,
+      "y": 838
+    },
+    {
+      "id": "tile_fence_b",
+      "x": 8781,
+      "noPlatforms": true,
+      "y": 838
+    },
+    {
+      "id": "tile_fence_b",
+      "x": 9218,
+      "noPlatforms": true,
+      "y": 838
+    },
+    {
+      "id": "road_scaffold",
+      "x": 2600,
+      "y": 430,
+      "scale": 1.16
+    },
+    {
+      "id": "road_rubble",
+      "x": 2400,
+      "y": 862
+    },
+    {
+      "id": "road_cable",
+      "x": 1915,
+      "y": 863,
+      "scale": 1.4
+    },
+    {
+      "id": "tile_flowers_a",
+      "x": 4550,
+      "y": 838
+    },
+    {
+      "id": "tile_flowers_a",
+      "x": 5700,
+      "y": 838
+    },
+    {
+      "id": "tile_flowers_a",
+      "x": 8400,
+      "y": 838
+    },
+    {
+      "id": "bakery_front",
+      "x": 7250,
+      "noPlatforms": true,
+      "y": 838
+    },
+    {
+      "id": "road_post",
+      "x": 2250,
+      "y": 868,
+      "scale": 0.9
+    },
+    {
+      "id": "road_post",
+      "x": 2950,
+      "y": 868,
+      "scale": 0.9
+    }
+  ],
+  "npcs": [
+    {
+      "type": "power_box",
+      "x": 1530,
+      "x2": 965,
+      "mode": "roadworks",
+      "name": "repair_box",
+      "id": "repair_box",
+      "y": 868,
+      "role": "sealed"
+    },
+    {
+      "type": "roadworks",
+      "x": 2400,
+      "x2": 1530,
+      "minX": 2242,
+      "maxX": 2958,
+      "name": "roadworks",
+      "id": "roadworks",
+      "y": 868
+    },
+    {
+      "type": "trash_can",
+      "x": 3850,
+      "id": "trash_can_3850",
+      "pushable": true,
+      "y": 868
+    },
+    {
+      "type": "trash_bag",
+      "x": 4120,
+      "id": "trash_bag_4120",
+      "y": 868
+    },
+    {
+      "type": "paper_bag",
+      "x": 4320,
+      "id": "paper_bag_4320",
+      "y": 868
+    },
+    {
+      "type": "food_rival",
+      "x": 3730,
+      "name": "food_rival",
+      "id": "food_rival",
+      "y": 868
+    },
+    {
+      "type": "granny",
+      "x": 7000,
+      "minX": 6220,
+      "maxX": 8080,
+      "mode": "street",
+      "name": "granny",
+      "id": "granny",
+      "y": 868
+    },
+    {
+      "type": "street_lamp",
+      "name": "lamp_215",
+      "x": 215,
+      "y": 868,
+      "id": "lamp_215"
+    },
+    {
+      "type": "street_lamp",
+      "name": "lamp_2160",
+      "x": 2160,
+      "y": 868,
+      "id": "lamp_2160"
+    },
+    {
+      "type": "crate",
+      "name": "blue_crate",
+      "x": 1150,
+      "y": 868,
+      "mode": "blue",
+      "id": "blue_crate"
+    },
+    {
+      "type": "crate",
+      "name": "wood_crate",
+      "x": 1280,
+      "y": 868,
+      "mode": "wood",
+      "id": "wood_crate",
+      "pushable": true
+    },
+    {
+      "type": "street_lamp",
+      "name": "lamp_2960",
+      "x": 2960,
+      "y": 868,
+      "id": "lamp_2960"
+    },
+    {
+      "type": "street_lamp",
+      "name": "lamp_3400",
+      "x": 3400,
+      "y": 868,
+      "id": "lamp_3400"
+    },
+    {
+      "type": "street_lamp",
+      "name": "lamp_5100",
+      "x": 5100,
+      "y": 868,
+      "id": "lamp_5100"
+    },
+    {
+      "type": "street_lamp",
+      "name": "lamp_6300",
+      "x": 6300,
+      "y": 868,
+      "id": "lamp_6300"
+    },
+    {
+      "type": "street_lamp",
+      "name": "lamp_8350",
+      "x": 8350,
+      "y": 868,
+      "id": "lamp_8350"
+    },
+    {
+      "id": "hut_door_leaf",
+      "type": "hut_door",
+      "name": "hut_door",
+      "x": 1049,
+      "y": 838,
+      "facing": 1
+    },
+    {
+      "id": "hut_key_bin",
+      "type": "hut_key_bin",
+      "name": "hut_key_bin",
+      "x": 755,
+      "y": 858
+    },
+    {
+      "id": "road_toolbag",
+      "type": "worker_bag",
+      "name": "worker_bag",
+      "x": 2740,
+      "y": 868
+    },
+    {
+      "id": "start_notice_board",
+      "type": "start_notice_board",
+      "name": "start_notice_board",
+      "x": 520,
+      "y": 838
+    }
+  ],
+  "food": [
+    {
+      "type": "crumbs_pile",
+      "x": 3600,
+      "y": 868,
+      "id": "street_food_0"
+    }
+  ],
+  "zones": [
+    {
+      "kind": "checkpoint",
+      "x": 3100,
+      "id": "street_checkpoint_0",
+      "y": 0,
+      "w": 160,
+      "h": 1080,
+      "spawnX": 3100,
+      "spawnY": 868
+    },
+    {
+      "kind": "arena",
+      "name": "boss",
+      "x": 6100,
+      "w": 2100,
+      "id": "boss",
+      "y": 0,
+      "h": 1080
+    },
+    {
+      "kind": "edge",
+      "x": 8350,
+      "y": 0,
+      "w": 200,
+      "h": 1080,
+      "text": "За углом — кафе. Продолжение следует.",
+      "id": "street_edge_2"
+    },
+    {
+      "kind": "wall",
+      "x": 8700,
+      "y": 0,
+      "w": 60,
+      "h": 1100,
+      "id": "street_wall_3"
+    }
+  ],
+  "pickups": [],
+  "flocks": [],
+  "secrets": [],
+  "solids": [
+    {
+      "id": "street_floor",
+      "x": 0,
+      "y": 868,
+      "w": 9000,
+      "h": 212
+    },
+    {
+      "x": 2242,
+      "y": 0,
+      "w": 716,
+      "h": 430,
+      "id": "street_solid_0"
+    }
+  ],
+  "kind": "location",
+  "height": 1080,
+  "parallax": true,
+  "script": "level1",
+  "spawnPoints": [
+    {
+      "id": "start",
+      "x": 150,
+      "y": 868,
+      "facing": 1
+    },
+    {
+      "id": "from_hut",
+      "x": 949,
+      "y": 868,
+      "facing": 1
+    }
+  ],
+  "doors": [
+    {
+      "id": "hut_entrance",
+      "flag": "hut_key_ready",
+      "x": 820,
+      "y": 600,
+      "w": 265,
+      "h": 268,
+      "cutscene": "hut_enter",
+      "target": {
+        "location": "hut",
+        "spawn": "from_street"
+      }
+    }
+  ],
+  "cameraZones": [
+    {
+      "id": "street_camera",
+      "mode": "horizontal",
+      "x": 0,
+      "y": 0,
+      "w": 9000,
+      "h": 1080,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 9000,
+        "h": 1080
+      }
+    }
+  ]
+}

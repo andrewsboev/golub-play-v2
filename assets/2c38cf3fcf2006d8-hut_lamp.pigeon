@@ -1,0 +1,130 @@
+# Лампа и дневной свет через дверь освещают один и тот же фон и персонажей.
+import light_shards
+
+character hut_lamp:
+    title "Подвесная лампочка"
+    preview "l1_hut_light.bulb"
+    atlas = "l1_hut_light"
+    hitbox -28 28 0 60
+    immune = true
+    shadow = 0
+    depth = DEPTH_BACK
+    room = room_light(0, 0, 1920, 1080, x, y - 24, 1900, "#ffdc9a", 0, "#16191f")
+    setup_daylight()
+    halo = glow(x, y - 24, 62, "#ffc46e", 0.3, depth=19)
+    filament = glow(x, y - 24, 20, "#ffe4a6", 0.65, depth=19)
+    halo.visible = false
+    filament.visible = false
+
+var room = nil
+var apertures = nil
+var halo = nil
+var filament = nil
+var flicker_wait = 7
+var flicker_left = 0
+
+every frame:
+    # Берём фактическую позу створки: свет не опережает анимацию и не идёт по отдельному таймеру.
+    var door = actor("hut_exit_door")
+    var aperture = 0
+    if door != nil:
+        aperture = apertures[door.frame]
+        if aperture == nil: aperture = 0
+    room.portal_open = aperture
+    # Крепление у потолка остаётся на месте; свет следует за колбой на конце провода.
+    angle = sin(age * 1.3) * 1.6
+    origin_y = 0
+    draw_dy = -282
+    var swing = angle * pi / 180
+    var light_x = x - sin(swing) * 258
+    var light_y = y - 282 + cos(swing) * 258
+    room.light_x = light_x
+    room.light_y = light_y
+    halo.x = light_x
+    halo.y = light_y
+    filament.x = light_x
+    filament.y = light_y
+    if state != lit: return
+    flicker_wait -= dt
+    flicker_left = max(0, flicker_left - dt)
+    if flicker_wait <= 0:
+        flicker_left = 0.18
+        flicker_wait = random(6, 12)
+    var power = 1
+    if flicker_left > 0 and sin(flicker_left * 95) > 0: power = 0.82
+    room.intensity = 1.35 * power
+    halo.alpha = 0.3 * power
+    filament.alpha = 0.65 * power
+
+func setup_daylight():
+    # Параметры и таблица восстанавливаются также для снимков, созданных до появления дневного света.
+    room_portal room 285 338 297 570 1250 "#e6efff" 1 0.25
+    if apertures != nil: return
+    apertures = table()
+    apertures.leaf_closed = 0
+    apertures.leaf_010 = 0.04
+    apertures.leaf_020 = 0.09
+    apertures.leaf_030 = 0.16
+    apertures.leaf_040 = 0.25
+    apertures.leaf_050 = 0.36
+    apertures.leaf_060 = 0.5
+    apertures.leaf_068 = 0.62
+    apertures.leaf_074 = 0.72
+    apertures.leaf_079 = 0.8
+    apertures.leaf_083 = 0.89
+    apertures.leaf_open = 1
+
+func sync_light():
+    setup_daylight()
+    if run_flag("hut_bulb_broken"): go broken
+    elif run_flag("hut_light_on"): go lit
+    else: go dark
+
+state dark:
+    pose "bulb"
+    origin_y = 0
+    room.intensity = 0
+    halo.visible = false
+    filament.visible = false
+    if run_flag("hut_bulb_broken"): go broken
+    elif run_flag("hut_light_on"): go lit
+
+state lit:
+    pose "bulb"
+    origin_y = 0
+    room.intensity = 1.35
+    halo.visible = true
+    filament.visible = true
+
+state broken:
+    pose "broken"
+    origin_y = 0
+    room.intensity = 0
+    halo.visible = false
+    filament.visible = false
+
+on location_enter(id):
+    sync_light()
+
+on location_loaded(id):
+    sync_light()
+
+on hut_light_changed:
+    sync_light()
+
+func break_bulb(dir):
+    if state == broken: return false
+    run_flag "hut_bulb_broken" true
+    run_flag "hut_light_on" false
+    go broken
+    broadcast "hut_light_changed"
+    light_shards(x, y - 24, dir)
+    return true
+
+on kick(dir, wing):
+    if not break_bulb(dir): return false
+    shock_pigeon x
+    return true
+
+on weapon_hit(kind):
+    return break_bulb(pigeon.facing)

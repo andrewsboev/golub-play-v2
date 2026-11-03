@@ -1,0 +1,47 @@
+character hut_light_switch:
+    title "Выключатель света"
+    preview "l1_hut_light.switch_off"
+    atlas = "l1_hut_light"
+    hitbox -32 32 0 66
+    immune = true
+    shadow = 0
+    depth = -8.9
+
+func sync_switch():
+    if run_flag("hut_light_on") and not run_flag("hut_bulb_broken"): go lit
+    else: go dark
+
+state dark:
+    pose "switch_off"
+    if run_flag("hut_light_on") and not run_flag("hut_bulb_broken"): go lit
+
+state lit:
+    pose "switch_on"
+
+func toggle():
+    sfx "clink"
+    if run_flag("hut_bulb_broken"):
+        popup x (y - 100) "Лампочка разбита" "#a6afbf"
+        return
+    run_flag "hut_light_on" (not run_flag("hut_light_on"))
+    sync_switch()
+    broadcast "hut_light_changed"
+
+on interact_hint:
+    if abs(dx) > 100 or abs(pigeon.feet_y - y) > 240: return ""
+    if run_flag("hut_bulb_broken"): return "Лампочка разбита ({interact})"
+    if run_flag("hut_light_on"): return "Выключить свет ({interact})"
+    return "Включить свет ({interact})"
+
+on interact:
+    toggle()
+    return true
+
+on location_enter(id):
+    sync_switch()
+
+on location_loaded(id):
+    sync_switch()
+
+on hut_light_changed:
+    sync_switch()
